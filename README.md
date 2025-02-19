@@ -8,3 +8,6 @@ Some examples:
 
 List of ML - Recommendation Systems videos
 https://www.youtube.com/playlist?list=PLPUREHyxElgOYP3KSm4znU-hu_IulLmRq
+
+Food Recomendation
+https://diet-recommendation-system.streamlit.app/Custom_Food_Recommendation
