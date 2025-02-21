@@ -12,4 +12,4 @@ Movie recommendators:
 - https://awontiirim-asiak-movengine-main-page-3quiks.streamlit.app/app
 
 Food Recomendation:
-https://diet-recommendation-system.streamlit.app/Custom_Food_Recommendation
+- https://diet-recommendation-system.streamlit.app/Custom_Food_Recommendation
