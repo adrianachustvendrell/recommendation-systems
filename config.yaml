@@ -1,17 +1,39 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
 credentials:
   usernames:
     jsmith:
       email: jsmith@gmail.com
-      name: John Smith
-      password: abc # To be replaced with hashed password
+      failed_login_attempts: 5
+      first_name: John
+      last_name: Smith
+      logged_in: false
+      password: $2b$12$B/jsb0kN823zDH2PeTqo0OOaXXGm2qtp2rWzFPaLPp.APH6x8PGbC
+      roles:
+      - admin
+      - editor
+      - viewer
     rbriggs:
       email: rbriggs@gmail.com
-      name: Rebecca Briggs
-      password: def # To be replaced with hashed password
-cookie:
-  expiry_days: 30
-  key: random_signature_key # Must be string
-  name: random_cookie_name
-preauthorized:
+      failed_login_attempts: 5
+      first_name: Rebecca
+      last_name: Briggs
+      logged_in: false
+      password: $2b$12$ylH//tkqfFz6g5TsOkQRCOMwXMk0ntddAWMoHByB7PdlcHNh4Nrnu
+      roles:
+      - viewer
+oauth2:
+  google:
+    client_id: null
+    client_secret: null
+    redirect_uri: null
+  microsoft:
+    client_id: null
+    client_secret: null
+    redirect_uri: null
+    tenant_id: null
+pre-authorized:
   emails:
   - melsby@gmail.com
