@@ -13,3 +13,6 @@ Movie recommendators:
 
 Food Recomendation:
 - https://diet-recommendation-system.streamlit.app/Custom_Food_Recommendation
+
+Feedback widget:
+- https://docs.streamlit.io/develop/api-reference/widgets/st.feedback

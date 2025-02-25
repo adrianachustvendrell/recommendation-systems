@@ -1,3 +1,4 @@
+# login.py
 import streamlit as st
 import streamlit_authenticator as stauth
 
@@ -6,8 +7,6 @@ users = ['user1', 'user2']
 passwords = ['password123', 'password456']
 names = ['User One', 'User Two']
 emails = ["user1@gmail.com", "user2@gmail.com"]
-
-# Hash the passwords (still required for security)
 
 # Define credentials as a dictionary
 credentials = {
@@ -26,13 +25,15 @@ authenticator = stauth.Authenticate(
 
 # Login widget
 authentication_status = authenticator.login('main')
-print(authentication_status)
 
-if st.session_state['authentication_status']:
-    authenticator.logout()
+if st.session_state.get('authentication_status'):
     st.write(f'Welcome *{st.session_state["name"]}*!')
     st.title('Some content')
-elif st.session_state['authentication_status'] is False:
+elif st.session_state.get('authentication_status') is False:
     st.error('Username/password is incorrect')
-elif st.session_state['authentication_status'] is None:
+    st.markdown("[Don't have an account? Sign up here!](http://localhost:8501/signup)", unsafe_allow_html=True)
+elif st.session_state.get('authentication_status') is None:
     st.warning('Please enter your username and password')
+
+    # Add link for sign up page
+    st.markdown("[Don't have an account? Sign up here!](http://localhost:8501/signup)", unsafe_allow_html=True)
