@@ -30,9 +30,7 @@ if st.session_state.get('authentication_status'):
     st.write(f'Welcome *{st.session_state["name"]}*!')
     st.title('Some content')
 elif st.session_state.get('authentication_status') is False:
-    st.markdown("[Don't have an account? Sign up here!](http://localhost:8501/signup)", unsafe_allow_html=True)
     st.error('Username/password is incorrect')
-    
 elif st.session_state.get('authentication_status') is None:
     st.warning('Please enter your username and password')
 
