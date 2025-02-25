@@ -1,0 +1,5471 @@
+id_usuario,id_categoria,calificacion,categoria
+123,16,80,Prehistórico
+123,17,90,Árabe
+123,18,90,Romano
+123,19,80,Medieval
+123,20,100,Gótico
+123,21,100,Románico
+123,22,50,Renacentista
+123,23,60,Barroco
+123,24,60,Rococo
+123,25,50,Neoclásico
+123,26,50,Modernista
+123,27,50,Contemporáneo
+123,28,80,Parques
+123,29,80,Jardines botánicos
+123,30,70,Parque infantil
+123,31,50,Playas
+123,32,90,Lagos
+123,33,80,Calles y plazas
+123,34,70,Paseos
+123,35,40,Parques temáticos
+123,37,70,Cines
+123,38,90,Teatros
+123,39,40,Conciertos y música en vivo
+123,40,0,Clubs y discotecas
+123,41,20,Bares y pubs
+123,43,0,Música clasica
+123,44,0,Ópera
+123,45,70,Restaurantes
+123,46,90,Eventos
+123,47,0,Tiendas especializadas
+123,48,100,Tiendas tradicionales
+123,50,80,Exposiciones
+123,51,80,Conferencias
+123,52,0,Ferias
+123,53,0,Congresos
+123,54,90,Fiestas
+123,55,0,Grandes eventos (exposiciones)
+123,57,40,Nauticos
+123,56,40,Eventos deportivos
+123,59,20,Futbol
+123,60,40,Baloncesto
+123,62,80,Arte
+123,63,100,Ciencia y tecnología
+123,64,80,Historia
+123,65,40,Religión
+123,66,50,Ciencias naturales
+123,67,90,Arqueologia
+123,68,90,Historia y cultura local
+123,69,90,Artesanía
+123,70,0,Militar
+123,72,90,Catedrales
+123,73,80,Iglesias
+123,74,50,Conventos
+123,75,80,Monasterios
+123,76,100,Claustros
+123,77,90,Sinagogas
+123,78,100,Mezquitas
+123,79,80,Campanarios
+123,80,70,Cementerios
+123,81,70,Tumbas
+123,82,80,Criptas
+123,83,100,Abadías
+123,84,50,Basílica
+123,85,50,Capilla
+123,86,50,Colegiata
+123,87,100,Castillos
+123,88,80,Torres
+123,89,80,Murallas
+123,90,90,Puertas
+123,110,90,Otras arquitecturas defensivas
+123,91,80,Palacio
+123,92,60,Casa
+123,93,100,Centro histórico
+123,94,20,Ateneo
+123,95,70,Mercados
+123,96,70,Edificios gubernamentales
+123,97,80,Edificios académicos
+123,98,90,Otros edificios públicos
+123,99,100,Estaciones de transportes
+123,100,100,Atarazanas
+123,101,100,Puentes
+123,102,100,Faros
+123,103,40,Estadios y áreas deportivas
+123,105,40,Esculturas
+123,106,70,Fuentes
+123,108,40,Centros de salud y spa
+123,109,30,Otros salud y spa
+124,16,100,Prehistórico
+124,17,90,Árabe
+124,18,90,Romano
+124,19,90,Medieval
+124,20,90,Gótico
+124,21,90,Románico
+124,22,60,Renacentista
+124,23,50,Barroco
+124,24,40,Rococo
+124,25,40,Neoclásico
+124,26,80,Modernista
+124,27,70,Contemporáneo
+124,28,90,Parques
+124,29,100,Jardines botánicos
+124,30,60,Parque infantil
+124,31,30,Playas
+124,32,80,Lagos
+124,33,80,Calles y plazas
+124,34,60,Paseos
+124,35,40,Parques temáticos
+124,37,50,Cines
+124,38,80,Teatros
+124,39,30,Conciertos y música en vivo
+124,40,0,Clubs y discotecas
+124,41,20,Bares y pubs
+124,43,30,Música clasica
+124,44,0,Ópera
+124,45,50,Restaurantes
+124,46,90,Eventos
+124,47,50,Tiendas especializadas
+124,48,90,Tiendas tradicionales
+124,50,90,Exposiciones
+124,51,50,Conferencias
+124,52,50,Ferias
+124,53,50,Congresos
+124,54,90,Fiestas
+124,55,50,Grandes eventos (exposiciones)
+124,57,50,Nauticos
+124,56,20,Eventos deportivos
+124,59,0,Futbol
+124,60,0,Baloncesto
+124,61,10,Otros deportes
+124,62,90,Arte
+124,63,90,Ciencia y tecnología
+124,64,90,Historia
+124,65,30,Religión
+124,66,80,Ciencias naturales
+124,67,90,Arqueologia
+124,68,90,Historia y cultura local
+124,69,80,Artesanía
+124,70,0,Militar
+124,72,90,Catedrales
+124,73,60,Iglesias
+124,74,50,Conventos
+124,75,70,Monasterios
+124,76,100,Claustros
+124,77,80,Sinagogas
+124,78,80,Mezquitas
+124,79,80,Campanarios
+124,80,60,Cementerios
+124,81,60,Tumbas
+124,82,70,Criptas
+124,83,80,Abadías
+124,84,60,Basílica
+124,85,40,Capilla
+124,86,50,Colegiata
+124,87,70,Castillos
+124,88,80,Torres
+124,89,80,Murallas
+124,90,90,Puertas
+124,91,80,Palacio
+124,92,60,Casa
+124,93,90,Centro histórico
+124,94,50,Ateneo
+124,95,70,Mercados
+124,96,60,Edificios gubernamentales
+124,97,90,Edificios académicos
+124,98,70,Otros edificios públicos
+124,99,90,Estaciones de transportes
+124,100,100,Atarazanas
+124,101,80,Puentes
+124,102,90,Faros
+124,103,10,Estadios y áreas deportivas
+124,105,20,Esculturas
+124,106,60,Fuentes
+124,108,40,Centros de salud y spa
+124,109,40,Otros salud y spa
+125,16,50,Prehistórico
+125,17,50,Árabe
+125,18,80,Romano
+125,19,80,Medieval
+125,20,80,Gótico
+125,21,80,Románico
+125,22,80,Renacentista
+125,23,80,Barroco
+125,24,80,Rococo
+125,25,80,Neoclásico
+125,26,90,Modernista
+125,27,80,Contemporáneo
+125,28,100,Parques
+125,29,100,Jardines botánicos
+125,30,100,Parque infantil
+125,31,100,Playas
+125,32,100,Lagos
+125,33,80,Calles y plazas
+125,34,90,Paseos
+125,35,100,Parques temáticos
+125,36,100,Otros espacios abiertos
+125,37,100,Cines
+125,38,100,Teatros
+125,39,100,Conciertos y música en vivo
+125,40,80,Clubs y discotecas
+125,41,100,Bares y pubs
+125,43,10,Música clasica
+125,44,70,Ópera
+125,45,100,Restaurantes
+125,46,80,Eventos
+125,47,80,Tiendas especializadas
+125,48,100,Tiendas tradicionales
+125,50,80,Exposiciones
+125,51,80,Conferencias
+125,52,20,Ferias
+125,53,20,Congresos
+125,54,100,Fiestas
+125,55,100,Grandes eventos (exposiciones)
+125,57,50,Nauticos
+125,56,50,Eventos deportivos
+125,59,50,Futbol
+125,60,50,Baloncesto
+125,62,80,Arte
+125,63,80,Ciencia y tecnología
+125,64,50,Historia
+125,65,50,Religión
+125,66,50,Ciencias naturales
+125,67,50,Arqueologia
+125,68,50,Historia y cultura local
+125,69,80,Artesanía
+125,70,50,Militar
+125,72,80,Catedrales
+125,73,80,Iglesias
+125,74,80,Conventos
+125,75,80,Monasterios
+125,76,80,Claustros
+125,77,80,Sinagogas
+125,78,80,Mezquitas
+125,79,80,Campanarios
+125,80,50,Cementerios
+125,81,50,Tumbas
+125,82,80,Criptas
+125,83,80,Abadías
+125,84,80,Basílica
+125,85,80,Capilla
+125,86,80,Colegiata
+125,87,80,Castillos
+125,88,80,Torres
+125,89,80,Murallas
+125,90,80,Puertas
+125,91,80,Palacio
+125,92,80,Casa
+125,93,80,Centro histórico
+125,94,80,Ateneo
+125,95,80,Mercados
+125,96,80,Edificios gubernamentales
+125,97,80,Edificios académicos
+125,98,80,Otros edificios públicos
+125,99,80,Estaciones de transportes
+125,100,80,Atarazanas
+125,101,80,Puentes
+125,102,100,Faros
+125,103,50,Estadios y áreas deportivas
+125,105,60,Esculturas
+125,106,80,Fuentes
+125,108,80,Centros de salud y spa
+126,16,80,Prehistórico
+126,17,80,Árabe
+126,18,80,Romano
+126,19,80,Medieval
+126,20,90,Gótico
+126,21,90,Románico
+126,22,80,Renacentista
+126,23,80,Barroco
+126,24,80,Rococo
+126,25,70,Neoclásico
+126,26,80,Modernista
+126,27,70,Contemporáneo
+126,115,70,Otros estilos
+126,28,80,Parques
+126,29,80,Jardines botánicos
+126,30,80,Parque infantil
+126,31,80,Playas
+126,32,80,Lagos
+126,33,80,Calles y plazas
+126,34,80,Paseos
+126,35,80,Parques temáticos
+126,36,80,Otros espacios abiertos
+126,37,80,Cines
+126,38,80,Teatros
+126,39,80,Conciertos y música en vivo
+126,40,80,Clubs y discotecas
+126,41,80,Bares y pubs
+126,43,80,Música clasica
+126,44,80,Ópera
+126,114,80,Otros ocio
+126,45,50,Restaurantes
+126,46,50,Eventos
+126,113,50,Otros gastronomía
+126,47,40,Tiendas especializadas
+126,48,50,Tiendas tradicionales
+126,49,40,Otras compras
+126,50,80,Exposiciones
+126,51,40,Conferencias
+126,52,50,Ferias
+126,53,40,Congresos
+126,54,30,Fiestas
+126,55,40,Grandes eventos (exposiciones)
+126,112,30,Otros eventos
+126,57,30,Nauticos
+126,56,80,Eventos deportivos
+126,59,60,Futbol
+126,60,60,Baloncesto
+126,61,60,Otros deportes
+126,62,90,Arte
+126,63,80,Ciencia y tecnología
+126,64,90,Historia
+126,65,20,Religión
+126,66,50,Ciencias naturales
+126,67,80,Arqueologia
+126,68,50,Historia y cultura local
+126,69,50,Artesanía
+126,70,50,Militar
+126,71,70,Otros museos
+126,72,80,Catedrales
+126,73,70,Iglesias
+126,74,60,Conventos
+126,75,60,Monasterios
+126,76,90,Claustros
+126,77,70,Sinagogas
+126,78,70,Mezquitas
+126,79,70,Campanarios
+126,80,20,Cementerios
+126,81,50,Tumbas
+126,82,70,Criptas
+126,83,80,Abadías
+126,84,70,Basílica
+126,85,70,Capilla
+126,86,70,Colegiata
+126,87,80,Castillos
+126,88,80,Torres
+126,89,80,Murallas
+126,90,80,Puertas
+126,110,80,Otras arquitecturas defensivas
+126,91,90,Palacio
+126,92,90,Casa
+126,93,90,Centro histórico
+126,94,50,Ateneo
+126,95,80,Mercados
+126,96,70,Edificios gubernamentales
+126,97,80,Edificios académicos
+126,98,70,Otros edificios públicos
+126,99,70,Estaciones de transportes
+126,100,80,Atarazanas
+126,101,70,Puentes
+126,102,90,Faros
+126,103,70,Estadios y áreas deportivas
+126,104,80,Otros edificios emblemáticos
+126,105,90,Esculturas
+126,106,90,Fuentes
+126,107,90,Otros monumentos
+126,108,50,Centros de salud y spa
+126,109,50,Otros salud y spa
+127,16,60,Prehistórico
+127,17,60,Árabe
+127,18,60,Romano
+127,19,60,Medieval
+127,20,60,Gótico
+127,21,60,Románico
+127,22,60,Renacentista
+127,23,60,Barroco
+127,24,60,Rococo
+127,25,60,Neoclásico
+127,26,60,Modernista
+127,27,60,Contemporáneo
+127,115,60,Otros estilos
+127,28,80,Parques
+127,29,80,Jardines botánicos
+127,30,80,Parque infantil
+127,31,80,Playas
+127,32,20,Lagos
+127,33,80,Calles y plazas
+127,34,80,Paseos
+127,35,60,Parques temáticos
+127,36,80,Otros espacios abiertos
+127,37,70,Cines
+127,38,70,Teatros
+127,39,10,Conciertos y música en vivo
+127,40,10,Clubs y discotecas
+127,41,50,Bares y pubs
+127,43,70,Música clasica
+127,44,10,Ópera
+127,114,60,Otros ocio
+127,45,100,Restaurantes
+127,46,50,Eventos
+127,113,50,Otros gastronomía
+127,47,50,Tiendas especializadas
+127,48,70,Tiendas tradicionales
+127,49,30,Otras compras
+127,50,50,Exposiciones
+127,51,50,Conferencias
+127,52,50,Ferias
+127,53,50,Congresos
+127,54,50,Fiestas
+127,55,50,Grandes eventos (exposiciones)
+127,112,50,Otros eventos
+127,57,10,Nauticos
+127,56,10,Eventos deportivos
+127,59,10,Futbol
+127,60,10,Baloncesto
+127,61,10,Otros deportes
+127,62,60,Arte
+127,63,60,Ciencia y tecnología
+127,64,60,Historia
+127,65,60,Religión
+127,66,60,Ciencias naturales
+127,67,60,Arqueologia
+127,68,60,Historia y cultura local
+127,69,80,Artesanía
+127,70,60,Militar
+127,71,60,Otros museos
+127,72,90,Catedrales
+127,73,90,Iglesias
+127,74,90,Conventos
+127,75,90,Monasterios
+127,76,90,Claustros
+127,77,90,Sinagogas
+127,78,90,Mezquitas
+127,79,90,Campanarios
+127,80,90,Cementerios
+127,81,90,Tumbas
+127,82,90,Criptas
+127,83,90,Abadías
+127,84,90,Basílica
+127,85,90,Capilla
+127,86,90,Colegiata
+127,111,90,Otras arquitectura religiosa
+127,87,80,Castillos
+127,88,80,Torres
+127,89,80,Murallas
+127,90,80,Puertas
+127,110,80,Otras arquitecturas defensivas
+127,91,70,Palacio
+127,92,70,Casa
+127,93,70,Centro histórico
+127,94,70,Ateneo
+127,95,70,Mercados
+127,96,70,Edificios gubernamentales
+127,97,70,Edificios académicos
+127,98,70,Otros edificios públicos
+127,99,70,Estaciones de transportes
+127,100,70,Atarazanas
+127,101,70,Puentes
+127,102,70,Faros
+127,103,70,Estadios y áreas deportivas
+127,104,70,Otros edificios emblemáticos
+127,105,50,Esculturas
+127,106,50,Fuentes
+127,107,50,Otros monumentos
+127,108,100,Centros de salud y spa
+127,109,100,Otros salud y spa
+128,16,20,Prehistórico
+128,17,70,Árabe
+128,18,70,Romano
+128,19,60,Medieval
+128,20,70,Gótico
+128,21,70,Románico
+128,22,70,Renacentista
+128,23,40,Barroco
+128,24,40,Rococo
+128,25,40,Neoclásico
+128,26,40,Modernista
+128,27,70,Contemporáneo
+128,115,40,Otros estilos
+128,28,70,Parques
+128,29,70,Jardines botánicos
+128,30,70,Parque infantil
+128,31,70,Playas
+128,32,70,Lagos
+128,33,70,Calles y plazas
+128,34,70,Paseos
+128,35,30,Parques temáticos
+128,36,30,Otros espacios abiertos
+128,37,30,Cines
+128,38,40,Teatros
+128,39,70,Conciertos y música en vivo
+128,40,60,Clubs y discotecas
+128,41,20,Bares y pubs
+128,43,80,Música clasica
+128,44,70,Ópera
+128,114,20,Otros ocio
+128,45,50,Restaurantes
+128,46,70,Eventos
+128,113,40,Otros gastronomía
+128,47,50,Tiendas especializadas
+128,48,50,Tiendas tradicionales
+128,49,50,Otras compras
+128,50,50,Exposiciones
+128,51,20,Conferencias
+128,52,20,Ferias
+128,53,20,Congresos
+128,54,50,Fiestas
+128,55,50,Grandes eventos (exposiciones)
+128,112,50,Otros eventos
+128,57,10,Nauticos
+128,56,10,Eventos deportivos
+128,59,10,Futbol
+128,60,10,Baloncesto
+128,61,10,Otros deportes
+128,62,60,Arte
+128,63,60,Ciencia y tecnología
+128,64,60,Historia
+128,65,60,Religión
+128,66,60,Ciencias naturales
+128,67,60,Arqueologia
+128,68,60,Historia y cultura local
+128,69,60,Artesanía
+128,70,60,Militar
+128,71,60,Otros museos
+128,72,80,Catedrales
+128,73,80,Iglesias
+128,74,80,Conventos
+128,75,80,Monasterios
+128,76,80,Claustros
+128,77,80,Sinagogas
+128,78,80,Mezquitas
+128,79,80,Campanarios
+128,80,80,Cementerios
+128,81,80,Tumbas
+128,82,80,Criptas
+128,83,80,Abadías
+128,84,80,Basílica
+128,85,80,Capilla
+128,86,80,Colegiata
+128,111,80,Otras arquitectura religiosa
+128,87,70,Castillos
+128,88,70,Torres
+128,89,70,Murallas
+128,90,70,Puertas
+128,110,70,Otras arquitecturas defensivas
+128,91,80,Palacio
+128,92,80,Casa
+128,93,80,Centro histórico
+128,94,80,Ateneo
+128,95,80,Mercados
+128,96,80,Edificios gubernamentales
+128,97,80,Edificios académicos
+128,98,80,Otros edificios públicos
+128,99,80,Estaciones de transportes
+128,100,80,Atarazanas
+128,101,80,Puentes
+128,102,80,Faros
+128,103,80,Estadios y áreas deportivas
+128,104,80,Otros edificios emblemáticos
+128,105,80,Esculturas
+128,106,80,Fuentes
+128,107,80,Otros monumentos
+128,108,60,Centros de salud y spa
+128,109,60,Otros salud y spa
+129,16,90,Prehistórico
+129,17,90,Árabe
+129,18,90,Romano
+129,19,90,Medieval
+129,20,40,Gótico
+129,21,30,Románico
+129,22,30,Renacentista
+129,23,20,Barroco
+129,24,10,Rococo
+129,25,20,Neoclásico
+129,26,20,Modernista
+129,27,40,Contemporáneo
+129,115,50,Otros estilos
+129,28,90,Parques
+129,29,90,Jardines botánicos
+129,30,100,Parque infantil
+129,31,90,Playas
+129,32,90,Lagos
+129,33,80,Calles y plazas
+129,34,70,Paseos
+129,35,90,Parques temáticos
+129,36,40,Otros espacios abiertos
+129,37,90,Cines
+129,38,90,Teatros
+129,39,40,Conciertos y música en vivo
+129,40,30,Clubs y discotecas
+129,41,30,Bares y pubs
+129,43,30,Música clasica
+129,44,0,Ópera
+129,114,60,Otros ocio
+129,45,90,Restaurantes
+129,46,60,Eventos
+129,113,50,Otros gastronomía
+129,47,80,Tiendas especializadas
+129,48,60,Tiendas tradicionales
+129,49,30,Otras compras
+129,50,60,Exposiciones
+129,51,60,Conferencias
+129,52,40,Ferias
+129,53,0,Congresos
+129,54,60,Fiestas
+129,55,50,Grandes eventos (exposiciones)
+129,112,70,Otros eventos
+129,57,0,Nauticos
+129,56,0,Eventos deportivos
+129,59,0,Futbol
+129,60,0,Baloncesto
+129,61,0,Otros deportes
+129,62,80,Arte
+129,63,90,Ciencia y tecnología
+129,64,90,Historia
+129,65,0,Religión
+129,66,90,Ciencias naturales
+129,67,90,Arqueologia
+129,68,90,Historia y cultura local
+129,69,60,Artesanía
+129,70,0,Militar
+129,71,70,Otros museos
+129,72,80,Catedrales
+129,73,60,Iglesias
+129,74,40,Conventos
+129,75,30,Monasterios
+129,76,30,Claustros
+129,77,30,Sinagogas
+129,78,30,Mezquitas
+129,79,30,Campanarios
+129,80,0,Cementerios
+129,81,0,Tumbas
+129,82,0,Criptas
+129,83,30,Abadías
+129,84,30,Basílica
+129,85,30,Capilla
+129,86,30,Colegiata
+129,111,40,Otras arquitectura religiosa
+129,87,90,Castillos
+129,88,90,Torres
+129,89,90,Murallas
+129,90,90,Puertas
+129,110,80,Otras arquitecturas defensivas
+129,91,100,Palacio
+129,92,90,Casa
+129,93,90,Centro histórico
+129,94,80,Ateneo
+129,95,80,Mercados
+129,96,80,Edificios gubernamentales
+129,97,80,Edificios académicos
+129,98,60,Otros edificios públicos
+129,99,40,Estaciones de transportes
+129,100,60,Atarazanas
+129,101,40,Puentes
+129,102,90,Faros
+129,103,20,Estadios y áreas deportivas
+129,104,40,Otros edificios emblemáticos
+129,105,90,Esculturas
+129,106,80,Fuentes
+129,107,60,Otros monumentos
+129,108,90,Centros de salud y spa
+129,109,60,Otros salud y spa
+130,16,50,Prehistórico
+130,17,80,Árabe
+130,18,70,Romano
+130,19,70,Medieval
+130,20,70,Gótico
+130,21,60,Románico
+130,22,70,Renacentista
+130,23,50,Barroco
+130,24,50,Rococo
+130,26,80,Modernista
+130,27,70,Contemporáneo
+130,28,80,Parques
+130,29,80,Jardines botánicos
+130,30,80,Parque infantil
+130,31,80,Playas
+130,32,60,Lagos
+130,33,70,Calles y plazas
+130,34,70,Paseos
+130,35,80,Parques temáticos
+130,37,90,Cines
+130,38,90,Teatros
+130,39,90,Conciertos y música en vivo
+130,40,60,Clubs y discotecas
+130,41,60,Bares y pubs
+130,43,60,Música clasica
+130,44,100,Ópera
+130,45,90,Restaurantes
+130,46,80,Eventos
+130,47,80,Tiendas especializadas
+130,48,60,Tiendas tradicionales
+130,50,80,Exposiciones
+130,51,60,Conferencias
+130,52,60,Ferias
+130,53,70,Congresos
+130,54,70,Fiestas
+130,55,70,Grandes eventos (exposiciones)
+130,57,70,Nauticos
+130,56,70,Eventos deportivos
+130,59,70,Futbol
+130,60,60,Baloncesto
+130,62,70,Arte
+130,63,70,Ciencia y tecnología
+130,64,60,Historia
+130,65,60,Religión
+130,66,60,Ciencias naturales
+130,67,60,Arqueologia
+130,68,70,Historia y cultura local
+130,69,50,Artesanía
+130,70,50,Militar
+130,72,70,Catedrales
+130,73,70,Iglesias
+130,74,70,Conventos
+130,75,70,Monasterios
+130,76,70,Claustros
+130,77,70,Sinagogas
+130,78,70,Mezquitas
+130,79,70,Campanarios
+130,80,70,Cementerios
+130,81,40,Tumbas
+130,82,50,Criptas
+130,83,70,Abadías
+130,84,70,Basílica
+130,85,70,Capilla
+130,86,70,Colegiata
+130,87,70,Castillos
+130,88,70,Torres
+130,89,70,Murallas
+130,90,70,Puertas
+130,110,70,Otras arquitecturas defensivas
+130,91,80,Palacio
+130,92,70,Casa
+130,93,70,Centro histórico
+130,94,70,Ateneo
+130,95,70,Mercados
+130,96,70,Edificios gubernamentales
+130,97,70,Edificios académicos
+130,98,70,Otros edificios públicos
+130,99,70,Estaciones de transportes
+130,100,70,Atarazanas
+130,101,70,Puentes
+130,102,70,Faros
+130,103,70,Estadios y áreas deportivas
+130,105,80,Esculturas
+130,106,70,Fuentes
+130,108,80,Centros de salud y spa
+131,16,60,Prehistórico
+131,17,50,Árabe
+131,18,30,Romano
+131,19,70,Medieval
+131,20,50,Gótico
+131,21,40,Románico
+131,22,60,Renacentista
+131,23,80,Barroco
+131,24,50,Rococo
+131,25,50,Neoclásico
+131,26,20,Modernista
+131,27,100,Contemporáneo
+131,115,50,Otros estilos
+131,28,90,Parques
+131,29,80,Jardines botánicos
+131,30,40,Parque infantil
+131,31,10,Playas
+131,32,30,Lagos
+131,33,20,Calles y plazas
+131,34,20,Paseos
+131,35,70,Parques temáticos
+131,36,50,Otros espacios abiertos
+131,37,50,Cines
+131,38,30,Teatros
+131,39,70,Conciertos y música en vivo
+131,40,60,Clubs y discotecas
+131,41,40,Bares y pubs
+131,43,50,Música clasica
+131,44,100,Ópera
+131,114,10,Otros ocio
+131,45,100,Restaurantes
+131,46,20,Eventos
+131,113,30,Otros gastronomía
+131,47,60,Tiendas especializadas
+131,48,100,Tiendas tradicionales
+131,49,100,Otras compras
+131,50,20,Exposiciones
+131,51,40,Conferencias
+131,52,30,Ferias
+131,53,80,Congresos
+131,54,30,Fiestas
+131,55,50,Grandes eventos (exposiciones)
+131,112,90,Otros eventos
+131,57,30,Nauticos
+131,56,20,Eventos deportivos
+131,59,20,Futbol
+131,60,60,Baloncesto
+131,61,70,Otros deportes
+131,62,70,Arte
+131,63,70,Ciencia y tecnología
+131,64,80,Historia
+131,65,50,Religión
+131,66,40,Ciencias naturales
+131,67,50,Arqueologia
+131,68,40,Historia y cultura local
+131,69,40,Artesanía
+131,70,30,Militar
+131,71,70,Otros museos
+131,72,70,Catedrales
+131,73,80,Iglesias
+131,74,60,Conventos
+131,75,10,Monasterios
+131,76,40,Claustros
+131,77,20,Sinagogas
+131,78,90,Mezquitas
+131,79,60,Campanarios
+131,80,60,Cementerios
+131,81,100,Tumbas
+131,82,60,Criptas
+131,83,70,Abadías
+131,84,90,Basílica
+131,85,10,Capilla
+131,86,50,Colegiata
+131,111,80,Otras arquitectura religiosa
+131,87,60,Castillos
+131,88,30,Torres
+131,89,80,Murallas
+131,90,20,Puertas
+131,110,20,Otras arquitecturas defensivas
+131,91,80,Palacio
+131,92,40,Casa
+131,93,70,Centro histórico
+131,94,50,Ateneo
+131,95,50,Mercados
+131,96,100,Edificios gubernamentales
+131,97,60,Edificios académicos
+131,98,80,Otros edificios públicos
+131,99,60,Estaciones de transportes
+131,100,100,Atarazanas
+131,101,90,Puentes
+131,102,40,Faros
+131,103,80,Estadios y áreas deportivas
+131,104,30,Otros edificios emblemáticos
+131,105,10,Esculturas
+131,106,100,Fuentes
+131,107,30,Otros monumentos
+131,108,60,Centros de salud y spa
+131,109,90,Otros salud y spa
+132,16,80,Prehistórico
+132,17,20,Árabe
+132,18,20,Romano
+132,19,80,Medieval
+132,20,40,Gótico
+132,21,70,Románico
+132,22,50,Renacentista
+132,23,50,Barroco
+132,24,100,Rococo
+132,25,60,Neoclásico
+132,26,80,Modernista
+132,27,60,Contemporáneo
+132,115,100,Otros estilos
+132,28,90,Parques
+132,29,40,Jardines botánicos
+132,30,80,Parque infantil
+132,31,70,Playas
+132,32,10,Lagos
+132,33,100,Calles y plazas
+132,34,70,Paseos
+132,35,60,Parques temáticos
+132,36,90,Otros espacios abiertos
+132,37,30,Cines
+132,38,60,Teatros
+132,39,40,Conciertos y música en vivo
+132,40,40,Clubs y discotecas
+132,41,50,Bares y pubs
+132,43,80,Música clasica
+132,44,70,Ópera
+132,114,80,Otros ocio
+132,45,100,Restaurantes
+132,46,30,Eventos
+132,113,100,Otros gastronomía
+132,47,30,Tiendas especializadas
+132,48,90,Tiendas tradicionales
+132,49,10,Otras compras
+132,50,30,Exposiciones
+132,51,40,Conferencias
+132,52,30,Ferias
+132,53,60,Congresos
+132,54,50,Fiestas
+132,55,80,Grandes eventos (exposiciones)
+132,112,40,Otros eventos
+132,57,70,Nauticos
+132,56,70,Eventos deportivos
+132,59,100,Futbol
+132,60,60,Baloncesto
+132,61,50,Otros deportes
+132,62,90,Arte
+132,63,80,Ciencia y tecnología
+132,64,70,Historia
+132,65,60,Religión
+132,66,30,Ciencias naturales
+132,67,90,Arqueologia
+132,68,100,Historia y cultura local
+132,69,30,Artesanía
+132,70,90,Militar
+132,71,100,Otros museos
+132,72,30,Catedrales
+132,73,60,Iglesias
+132,74,40,Conventos
+132,75,10,Monasterios
+132,76,60,Claustros
+132,77,60,Sinagogas
+132,78,10,Mezquitas
+132,79,30,Campanarios
+132,80,70,Cementerios
+132,81,70,Tumbas
+132,82,50,Criptas
+132,83,10,Abadías
+132,84,50,Basílica
+132,85,90,Capilla
+132,86,40,Colegiata
+132,111,90,Otras arquitectura religiosa
+132,87,10,Castillos
+132,88,100,Torres
+132,89,30,Murallas
+132,90,100,Puertas
+132,110,40,Otras arquitecturas defensivas
+132,91,10,Palacio
+132,92,30,Casa
+132,93,40,Centro histórico
+132,94,40,Ateneo
+132,95,60,Mercados
+132,96,90,Edificios gubernamentales
+132,97,20,Edificios académicos
+132,98,30,Otros edificios públicos
+132,99,40,Estaciones de transportes
+132,100,60,Atarazanas
+132,101,100,Puentes
+132,102,90,Faros
+132,103,50,Estadios y áreas deportivas
+132,104,50,Otros edificios emblemáticos
+132,105,10,Esculturas
+132,106,30,Fuentes
+132,107,60,Otros monumentos
+132,108,80,Centros de salud y spa
+132,109,60,Otros salud y spa
+133,16,40,Prehistórico
+133,17,10,Árabe
+133,18,10,Romano
+133,19,60,Medieval
+133,20,70,Gótico
+133,21,20,Románico
+133,22,10,Renacentista
+133,23,10,Barroco
+133,24,10,Rococo
+133,25,50,Neoclásico
+133,26,70,Modernista
+133,27,50,Contemporáneo
+133,115,50,Otros estilos
+133,28,60,Parques
+133,29,80,Jardines botánicos
+133,30,40,Parque infantil
+133,31,80,Playas
+133,32,80,Lagos
+133,33,70,Calles y plazas
+133,34,70,Paseos
+133,35,80,Parques temáticos
+133,36,40,Otros espacios abiertos
+133,37,80,Cines
+133,38,70,Teatros
+133,39,70,Conciertos y música en vivo
+133,40,80,Clubs y discotecas
+133,41,40,Bares y pubs
+133,43,70,Música clasica
+133,44,50,Ópera
+133,114,60,Otros ocio
+133,45,60,Restaurantes
+133,46,60,Eventos
+133,113,50,Otros gastronomía
+133,47,50,Tiendas especializadas
+133,48,40,Tiendas tradicionales
+133,49,30,Otras compras
+133,50,70,Exposiciones
+133,51,60,Conferencias
+133,52,70,Ferias
+133,53,80,Congresos
+133,54,80,Fiestas
+133,55,50,Grandes eventos (exposiciones)
+133,112,70,Otros eventos
+133,57,80,Nauticos
+133,56,80,Eventos deportivos
+133,59,80,Futbol
+133,60,30,Baloncesto
+133,61,50,Otros deportes
+133,62,70,Arte
+133,63,80,Ciencia y tecnología
+133,64,50,Historia
+133,65,40,Religión
+133,66,40,Ciencias naturales
+133,67,40,Arqueologia
+133,68,50,Historia y cultura local
+133,69,40,Artesanía
+133,70,40,Militar
+133,71,70,Otros museos
+133,72,60,Catedrales
+133,73,50,Iglesias
+133,74,30,Conventos
+133,75,70,Monasterios
+133,76,50,Claustros
+133,77,40,Sinagogas
+133,78,60,Mezquitas
+133,79,80,Campanarios
+133,80,50,Cementerios
+133,81,50,Tumbas
+133,82,20,Criptas
+133,83,100,Abadías
+133,84,50,Basílica
+133,85,90,Capilla
+133,86,20,Colegiata
+133,111,40,Otras arquitectura religiosa
+133,87,20,Castillos
+133,88,100,Torres
+133,89,50,Murallas
+133,90,90,Puertas
+133,110,20,Otras arquitecturas defensivas
+133,91,10,Palacio
+133,92,100,Casa
+133,93,20,Centro histórico
+133,94,30,Ateneo
+133,95,60,Mercados
+133,96,100,Edificios gubernamentales
+133,97,100,Edificios académicos
+133,98,20,Otros edificios públicos
+133,99,40,Estaciones de transportes
+133,100,30,Atarazanas
+133,101,80,Puentes
+133,102,10,Faros
+133,103,50,Estadios y áreas deportivas
+133,104,90,Otros edificios emblemáticos
+133,105,30,Esculturas
+133,106,20,Fuentes
+133,107,100,Otros monumentos
+133,108,60,Centros de salud y spa
+133,109,70,Otros salud y spa
+134,16,70,Prehistórico
+134,17,70,Árabe
+134,18,70,Romano
+134,19,70,Medieval
+134,20,70,Gótico
+134,21,70,Románico
+134,22,70,Renacentista
+134,23,70,Barroco
+134,24,70,Rococo
+134,25,70,Neoclásico
+134,26,70,Modernista
+134,27,70,Contemporáneo
+134,115,70,Otros estilos
+134,28,50,Parques
+134,29,80,Jardines botánicos
+134,30,70,Parque infantil
+134,31,100,Playas
+134,32,90,Lagos
+134,33,70,Calles y plazas
+134,34,90,Paseos
+134,35,90,Parques temáticos
+134,36,60,Otros espacios abiertos
+134,37,80,Cines
+134,38,90,Teatros
+134,39,90,Conciertos y música en vivo
+134,40,80,Clubs y discotecas
+134,41,80,Bares y pubs
+134,43,10,Música clasica
+134,44,10,Ópera
+134,114,60,Otros ocio
+134,45,100,Restaurantes
+134,46,70,Eventos
+134,113,50,Otros gastronomía
+134,47,50,Tiendas especializadas
+134,48,100,Tiendas tradicionales
+134,49,30,Otras compras
+134,50,50,Exposiciones
+134,51,80,Conferencias
+134,52,50,Ferias
+134,53,50,Congresos
+134,54,90,Fiestas
+134,55,50,Grandes eventos (exposiciones)
+134,112,70,Otros eventos
+134,57,10,Nauticos
+134,56,10,Eventos deportivos
+134,59,10,Futbol
+134,60,10,Baloncesto
+134,61,10,Otros deportes
+134,62,70,Arte
+134,63,70,Ciencia y tecnología
+134,64,70,Historia
+134,65,70,Religión
+134,66,70,Ciencias naturales
+134,67,70,Arqueologia
+134,68,70,Historia y cultura local
+134,69,70,Artesanía
+134,70,70,Militar
+134,71,70,Otros museos
+134,72,60,Catedrales
+134,73,60,Iglesias
+134,74,60,Conventos
+134,75,60,Monasterios
+134,76,60,Claustros
+134,77,60,Sinagogas
+134,78,60,Mezquitas
+134,79,60,Campanarios
+134,80,10,Cementerios
+134,81,10,Tumbas
+134,82,60,Criptas
+134,83,60,Abadías
+134,84,60,Basílica
+134,85,60,Capilla
+134,86,60,Colegiata
+134,111,60,Otras arquitectura religiosa
+134,87,60,Castillos
+134,88,60,Torres
+134,89,60,Murallas
+134,90,60,Puertas
+134,110,60,Otras arquitecturas defensivas
+134,91,80,Palacio
+134,92,80,Casa
+134,93,80,Centro histórico
+134,94,80,Ateneo
+134,95,80,Mercados
+134,96,80,Edificios gubernamentales
+134,97,80,Edificios académicos
+134,98,80,Otros edificios públicos
+134,99,80,Estaciones de transportes
+134,100,80,Atarazanas
+134,101,80,Puentes
+134,102,80,Faros
+134,103,80,Estadios y áreas deportivas
+134,104,80,Otros edificios emblemáticos
+134,105,80,Esculturas
+134,106,80,Fuentes
+134,107,80,Otros monumentos
+134,108,10,Centros de salud y spa
+134,109,10,Otros salud y spa
+135,16,70,Prehistórico
+135,17,70,Árabe
+135,18,70,Romano
+135,19,70,Medieval
+135,20,60,Gótico
+135,21,60,Románico
+135,22,60,Renacentista
+135,23,60,Barroco
+135,24,60,Rococo
+135,25,50,Neoclásico
+135,26,50,Modernista
+135,27,30,Contemporáneo
+135,28,50,Parques
+135,29,50,Jardines botánicos
+135,30,60,Parque infantil
+135,31,70,Playas
+135,32,70,Lagos
+135,33,30,Calles y plazas
+135,34,50,Paseos
+135,35,90,Parques temáticos
+135,37,70,Cines
+135,38,80,Teatros
+135,39,70,Conciertos y música en vivo
+135,40,50,Clubs y discotecas
+135,41,50,Bares y pubs
+135,43,50,Música clasica
+135,44,50,Ópera
+135,45,60,Restaurantes
+135,46,60,Eventos
+135,47,70,Tiendas especializadas
+135,48,60,Tiendas tradicionales
+135,50,70,Exposiciones
+135,51,50,Conferencias
+135,52,30,Ferias
+135,53,10,Congresos
+135,54,70,Fiestas
+135,55,80,Grandes eventos (exposiciones)
+135,57,40,Nauticos
+135,56,60,Eventos deportivos
+135,59,50,Futbol
+135,60,70,Baloncesto
+135,62,70,Arte
+135,63,70,Ciencia y tecnología
+135,64,70,Historia
+135,65,40,Religión
+135,66,70,Ciencias naturales
+135,67,50,Arqueologia
+135,68,50,Historia y cultura local
+135,69,50,Artesanía
+135,70,50,Militar
+135,72,80,Catedrales
+135,73,80,Iglesias
+135,74,70,Conventos
+135,75,70,Monasterios
+135,76,70,Claustros
+135,77,70,Sinagogas
+135,78,70,Mezquitas
+135,79,50,Campanarios
+135,80,0,Cementerios
+135,81,0,Tumbas
+135,82,40,Criptas
+135,83,70,Abadías
+135,84,70,Basílica
+135,85,70,Capilla
+135,86,70,Colegiata
+135,87,80,Castillos
+135,88,80,Torres
+135,89,50,Murallas
+135,90,70,Puertas
+135,91,80,Palacio
+135,92,60,Casa
+135,93,60,Centro histórico
+135,94,30,Ateneo
+135,95,70,Mercados
+135,96,70,Edificios gubernamentales
+135,97,60,Edificios académicos
+135,98,50,Otros edificios públicos
+135,99,50,Estaciones de transportes
+135,100,70,Atarazanas
+135,101,60,Puentes
+135,102,70,Faros
+135,103,50,Estadios y áreas deportivas
+135,105,50,Esculturas
+135,106,50,Fuentes
+135,108,40,Centros de salud y spa
+136,16,70,Prehistórico
+136,17,70,Árabe
+136,18,70,Romano
+136,19,70,Medieval
+136,20,70,Gótico
+136,21,70,Románico
+136,22,70,Renacentista
+136,23,70,Barroco
+136,24,70,Rococo
+136,25,70,Neoclásico
+136,26,70,Modernista
+136,27,70,Contemporáneo
+136,115,70,Otros estilos
+136,28,70,Parques
+136,29,70,Jardines botánicos
+136,30,70,Parque infantil
+136,31,70,Playas
+136,32,70,Lagos
+136,33,70,Calles y plazas
+136,34,70,Paseos
+136,35,70,Parques temáticos
+136,36,70,Otros espacios abiertos
+136,37,80,Cines
+136,38,80,Teatros
+136,39,80,Conciertos y música en vivo
+136,40,80,Clubs y discotecas
+136,41,80,Bares y pubs
+136,43,80,Música clasica
+136,44,80,Ópera
+136,114,80,Otros ocio
+136,45,60,Restaurantes
+136,46,60,Eventos
+136,113,50,Otros gastronomía
+136,47,90,Tiendas especializadas
+136,48,90,Tiendas tradicionales
+136,49,90,Otras compras
+136,50,80,Exposiciones
+136,51,80,Conferencias
+136,52,80,Ferias
+136,53,80,Congresos
+136,54,80,Fiestas
+136,55,80,Grandes eventos (exposiciones)
+136,112,80,Otros eventos
+136,57,40,Nauticos
+136,56,40,Eventos deportivos
+136,59,40,Futbol
+136,60,40,Baloncesto
+136,61,40,Otros deportes
+136,62,80,Arte
+136,63,80,Ciencia y tecnología
+136,64,80,Historia
+136,65,80,Religión
+136,66,80,Ciencias naturales
+136,67,80,Arqueologia
+136,68,80,Historia y cultura local
+136,69,80,Artesanía
+136,70,80,Militar
+136,71,80,Otros museos
+136,72,70,Catedrales
+136,73,70,Iglesias
+136,74,70,Conventos
+136,75,70,Monasterios
+136,76,70,Claustros
+136,77,70,Sinagogas
+136,78,70,Mezquitas
+136,79,70,Campanarios
+136,80,70,Cementerios
+136,81,70,Tumbas
+136,82,70,Criptas
+136,83,70,Abadías
+136,84,70,Basílica
+136,85,70,Capilla
+136,86,70,Colegiata
+136,111,70,Otras arquitectura religiosa
+136,87,60,Castillos
+136,88,60,Torres
+136,89,60,Murallas
+136,90,60,Puertas
+136,110,60,Otras arquitecturas defensivas
+136,91,70,Palacio
+136,92,70,Casa
+136,93,70,Centro histórico
+136,94,70,Ateneo
+136,95,70,Mercados
+136,96,70,Edificios gubernamentales
+136,97,70,Edificios académicos
+136,98,70,Otros edificios públicos
+136,99,70,Estaciones de transportes
+136,100,70,Atarazanas
+136,101,70,Puentes
+136,102,70,Faros
+136,103,70,Estadios y áreas deportivas
+136,104,70,Otros edificios emblemáticos
+136,105,60,Esculturas
+136,106,60,Fuentes
+136,107,60,Otros monumentos
+136,108,40,Centros de salud y spa
+136,109,40,Otros salud y spa
+137,16,20,Prehistórico
+137,17,30,Árabe
+137,18,30,Romano
+137,19,50,Medieval
+137,20,20,Gótico
+137,21,20,Románico
+137,22,40,Renacentista
+137,23,30,Barroco
+137,24,40,Rococo
+137,25,60,Neoclásico
+137,26,90,Modernista
+137,27,40,Contemporáneo
+137,115,80,Otros estilos
+137,28,40,Parques
+137,29,80,Jardines botánicos
+137,30,20,Parque infantil
+137,31,80,Playas
+137,32,20,Lagos
+137,33,40,Calles y plazas
+137,34,50,Paseos
+137,35,40,Parques temáticos
+137,36,30,Otros espacios abiertos
+137,37,70,Cines
+137,38,10,Teatros
+137,39,60,Conciertos y música en vivo
+137,40,80,Clubs y discotecas
+137,41,90,Bares y pubs
+137,43,30,Música clasica
+137,44,20,Ópera
+137,114,30,Otros ocio
+137,45,70,Restaurantes
+137,46,70,Eventos
+137,113,90,Otros gastronomía
+137,47,30,Tiendas especializadas
+137,48,100,Tiendas tradicionales
+137,49,50,Otras compras
+137,50,80,Exposiciones
+137,51,50,Conferencias
+137,52,60,Ferias
+137,53,90,Congresos
+137,54,10,Fiestas
+137,55,90,Grandes eventos (exposiciones)
+137,112,50,Otros eventos
+137,57,40,Nauticos
+137,56,40,Eventos deportivos
+137,59,40,Futbol
+137,60,50,Baloncesto
+137,61,20,Otros deportes
+137,62,10,Arte
+137,63,20,Ciencia y tecnología
+137,64,80,Historia
+137,65,30,Religión
+137,66,100,Ciencias naturales
+137,67,30,Arqueologia
+137,68,40,Historia y cultura local
+137,69,50,Artesanía
+137,70,30,Militar
+137,71,80,Otros museos
+137,72,30,Catedrales
+137,73,90,Iglesias
+137,74,60,Conventos
+137,75,50,Monasterios
+137,76,30,Claustros
+137,77,70,Sinagogas
+137,78,50,Mezquitas
+137,79,40,Campanarios
+137,80,60,Cementerios
+137,81,80,Tumbas
+137,82,50,Criptas
+137,83,50,Abadías
+137,84,20,Basílica
+137,85,40,Capilla
+137,86,50,Colegiata
+137,111,40,Otras arquitectura religiosa
+137,87,20,Castillos
+137,88,40,Torres
+137,89,10,Murallas
+137,90,40,Puertas
+137,110,20,Otras arquitecturas defensivas
+137,91,20,Palacio
+137,92,70,Casa
+137,93,50,Centro histórico
+137,94,50,Ateneo
+137,95,30,Mercados
+137,96,70,Edificios gubernamentales
+137,97,60,Edificios académicos
+137,98,10,Otros edificios públicos
+137,99,50,Estaciones de transportes
+137,100,100,Atarazanas
+137,101,10,Puentes
+137,102,100,Faros
+137,103,20,Estadios y áreas deportivas
+137,104,30,Otros edificios emblemáticos
+137,105,60,Esculturas
+137,106,100,Fuentes
+137,107,100,Otros monumentos
+137,108,20,Centros de salud y spa
+137,109,40,Otros salud y spa
+138,16,20,Prehistórico
+138,17,60,Árabe
+138,18,60,Romano
+138,19,50,Medieval
+138,20,70,Gótico
+138,21,50,Románico
+138,22,40,Renacentista
+138,23,30,Barroco
+138,24,30,Rococo
+138,25,60,Neoclásico
+138,26,70,Modernista
+138,27,80,Contemporáneo
+138,115,50,Otros estilos
+138,28,80,Parques
+138,29,80,Jardines botánicos
+138,30,70,Parque infantil
+138,31,60,Playas
+138,32,80,Lagos
+138,33,80,Calles y plazas
+138,34,80,Paseos
+138,35,50,Parques temáticos
+138,36,100,Otros espacios abiertos
+138,37,60,Cines
+138,38,50,Teatros
+138,39,90,Conciertos y música en vivo
+138,40,50,Clubs y discotecas
+138,41,70,Bares y pubs
+138,43,20,Música clasica
+138,44,50,Ópera
+138,114,100,Otros ocio
+138,45,60,Restaurantes
+138,46,70,Eventos
+138,113,50,Otros gastronomía
+138,47,40,Tiendas especializadas
+138,48,30,Tiendas tradicionales
+138,49,20,Otras compras
+138,50,70,Exposiciones
+138,51,70,Conferencias
+138,52,60,Ferias
+138,53,60,Congresos
+138,54,60,Fiestas
+138,55,40,Grandes eventos (exposiciones)
+138,112,50,Otros eventos
+138,57,90,Nauticos
+138,56,70,Eventos deportivos
+138,59,10,Futbol
+138,60,40,Baloncesto
+138,61,100,Otros deportes
+138,62,80,Arte
+138,63,90,Ciencia y tecnología
+138,64,50,Historia
+138,65,10,Religión
+138,66,80,Ciencias naturales
+138,67,30,Arqueologia
+138,68,50,Historia y cultura local
+138,69,50,Artesanía
+138,70,40,Militar
+138,71,80,Otros museos
+138,72,60,Catedrales
+138,73,60,Iglesias
+138,74,60,Conventos
+138,75,60,Monasterios
+138,76,60,Claustros
+138,77,70,Sinagogas
+138,78,60,Mezquitas
+138,79,50,Campanarios
+138,80,60,Cementerios
+138,81,60,Tumbas
+138,82,70,Criptas
+138,83,60,Abadías
+138,84,60,Basílica
+138,85,40,Capilla
+138,86,40,Colegiata
+138,111,60,Otras arquitectura religiosa
+138,87,70,Castillos
+138,88,70,Torres
+138,89,70,Murallas
+138,90,70,Puertas
+138,110,70,Otras arquitecturas defensivas
+138,91,70,Palacio
+138,92,70,Casa
+138,93,90,Centro histórico
+138,94,70,Ateneo
+138,95,90,Mercados
+138,96,70,Edificios gubernamentales
+138,97,50,Edificios académicos
+138,98,50,Otros edificios públicos
+138,99,50,Estaciones de transportes
+138,100,60,Atarazanas
+138,101,70,Puentes
+138,102,40,Faros
+138,103,40,Estadios y áreas deportivas
+138,104,50,Otros edificios emblemáticos
+138,105,50,Esculturas
+138,106,50,Fuentes
+138,107,50,Otros monumentos
+138,108,40,Centros de salud y spa
+138,109,40,Otros salud y spa
+139,16,50,Prehistórico
+139,17,60,Árabe
+139,18,60,Romano
+139,19,60,Medieval
+139,20,60,Gótico
+139,21,60,Románico
+139,22,60,Renacentista
+139,23,60,Barroco
+139,24,60,Rococo
+139,25,60,Neoclásico
+139,26,70,Modernista
+139,27,70,Contemporáneo
+139,115,50,Otros estilos
+139,28,50,Parques
+139,29,50,Jardines botánicos
+139,30,60,Parque infantil
+139,31,60,Playas
+139,32,50,Lagos
+139,33,70,Calles y plazas
+139,34,70,Paseos
+139,35,60,Parques temáticos
+139,36,50,Otros espacios abiertos
+139,37,60,Cines
+139,38,60,Teatros
+139,39,50,Conciertos y música en vivo
+139,40,50,Clubs y discotecas
+139,41,50,Bares y pubs
+139,43,50,Música clasica
+139,44,60,Ópera
+139,114,50,Otros ocio
+139,45,70,Restaurantes
+139,46,70,Eventos
+139,113,50,Otros gastronomía
+139,47,70,Tiendas especializadas
+139,48,70,Tiendas tradicionales
+139,49,50,Otras compras
+139,50,70,Exposiciones
+139,51,70,Conferencias
+139,52,50,Ferias
+139,53,50,Congresos
+139,54,60,Fiestas
+139,55,80,Grandes eventos (exposiciones)
+139,112,50,Otros eventos
+139,57,70,Nauticos
+139,56,80,Eventos deportivos
+139,59,80,Futbol
+139,60,80,Baloncesto
+139,61,50,Otros deportes
+139,62,80,Arte
+139,63,60,Ciencia y tecnología
+139,64,60,Historia
+139,65,50,Religión
+139,66,50,Ciencias naturales
+139,67,50,Arqueologia
+139,68,70,Historia y cultura local
+139,69,50,Artesanía
+139,70,50,Militar
+139,71,60,Otros museos
+139,72,50,Catedrales
+139,73,50,Iglesias
+139,74,50,Conventos
+139,75,50,Monasterios
+139,76,50,Claustros
+139,77,50,Sinagogas
+139,78,50,Mezquitas
+139,79,50,Campanarios
+139,80,50,Cementerios
+139,81,50,Tumbas
+139,82,50,Criptas
+139,83,50,Abadías
+139,84,50,Basílica
+139,85,50,Capilla
+139,86,50,Colegiata
+139,111,50,Otras arquitectura religiosa
+139,87,60,Castillos
+139,88,60,Torres
+139,89,60,Murallas
+139,90,60,Puertas
+139,110,60,Otras arquitecturas defensivas
+139,91,80,Palacio
+139,92,80,Casa
+139,93,60,Centro histórico
+139,94,70,Ateneo
+139,95,80,Mercados
+139,96,70,Edificios gubernamentales
+139,97,50,Edificios académicos
+139,98,70,Otros edificios públicos
+139,99,60,Estaciones de transportes
+139,100,60,Atarazanas
+139,101,60,Puentes
+139,102,70,Faros
+139,103,50,Estadios y áreas deportivas
+139,104,60,Otros edificios emblemáticos
+139,105,60,Esculturas
+139,106,60,Fuentes
+139,107,60,Otros monumentos
+139,108,50,Centros de salud y spa
+139,109,50,Otros salud y spa
+140,16,100,Prehistórico
+140,17,100,Árabe
+140,18,50,Romano
+140,19,100,Medieval
+140,20,100,Gótico
+140,21,100,Románico
+140,22,100,Renacentista
+140,23,100,Barroco
+140,24,80,Rococo
+140,25,80,Neoclásico
+140,26,50,Modernista
+140,27,50,Contemporáneo
+140,115,10,Otros estilos
+140,28,50,Parques
+140,29,100,Jardines botánicos
+140,30,10,Parque infantil
+140,31,50,Playas
+140,32,100,Lagos
+140,33,50,Calles y plazas
+140,34,50,Paseos
+140,35,10,Parques temáticos
+140,36,10,Otros espacios abiertos
+140,37,50,Cines
+140,38,10,Teatros
+140,39,100,Conciertos y música en vivo
+140,40,10,Clubs y discotecas
+140,41,10,Bares y pubs
+140,43,100,Música clasica
+140,44,50,Ópera
+140,114,50,Otros ocio
+140,45,40,Restaurantes
+140,46,40,Eventos
+140,113,40,Otros gastronomía
+140,47,80,Tiendas especializadas
+140,48,50,Tiendas tradicionales
+140,49,10,Otras compras
+140,50,80,Exposiciones
+140,51,10,Conferencias
+140,52,50,Ferias
+140,53,50,Congresos
+140,54,10,Fiestas
+140,55,50,Grandes eventos (exposiciones)
+140,112,50,Otros eventos
+140,57,10,Nauticos
+140,56,10,Eventos deportivos
+140,59,100,Futbol
+140,60,10,Baloncesto
+140,61,10,Otros deportes
+140,62,80,Arte
+140,63,100,Ciencia y tecnología
+140,64,80,Historia
+140,65,50,Religión
+140,66,100,Ciencias naturales
+140,67,100,Arqueologia
+140,68,80,Historia y cultura local
+140,69,50,Artesanía
+140,70,50,Militar
+140,71,50,Otros museos
+140,72,50,Catedrales
+140,73,50,Iglesias
+140,74,50,Conventos
+140,75,50,Monasterios
+140,76,50,Claustros
+140,77,50,Sinagogas
+140,78,50,Mezquitas
+140,79,50,Campanarios
+140,80,50,Cementerios
+140,81,50,Tumbas
+140,82,50,Criptas
+140,83,50,Abadías
+140,84,50,Basílica
+140,85,50,Capilla
+140,86,50,Colegiata
+140,111,50,Otras arquitectura religiosa
+140,87,100,Castillos
+140,88,100,Torres
+140,89,100,Murallas
+140,90,100,Puertas
+140,110,100,Otras arquitecturas defensivas
+140,91,100,Palacio
+140,92,100,Casa
+140,93,100,Centro histórico
+140,94,100,Ateneo
+140,95,100,Mercados
+140,96,100,Edificios gubernamentales
+140,97,100,Edificios académicos
+140,98,100,Otros edificios públicos
+140,99,100,Estaciones de transportes
+140,100,100,Atarazanas
+140,101,100,Puentes
+140,102,100,Faros
+140,103,100,Estadios y áreas deportivas
+140,104,100,Otros edificios emblemáticos
+140,105,60,Esculturas
+140,106,80,Fuentes
+140,107,60,Otros monumentos
+140,108,10,Centros de salud y spa
+140,109,10,Otros salud y spa
+141,16,70,Prehistórico
+141,17,70,Árabe
+141,18,70,Romano
+141,19,70,Medieval
+141,20,70,Gótico
+141,21,70,Románico
+141,22,70,Renacentista
+141,23,70,Barroco
+141,24,70,Rococo
+141,25,70,Neoclásico
+141,26,70,Modernista
+141,27,70,Contemporáneo
+141,115,70,Otros estilos
+141,28,70,Parques
+141,29,70,Jardines botánicos
+141,30,50,Parque infantil
+141,31,80,Playas
+141,32,70,Lagos
+141,33,70,Calles y plazas
+141,34,70,Paseos
+141,35,80,Parques temáticos
+141,36,50,Otros espacios abiertos
+141,37,60,Cines
+141,38,70,Teatros
+141,39,70,Conciertos y música en vivo
+141,40,70,Clubs y discotecas
+141,41,70,Bares y pubs
+141,43,80,Música clasica
+141,44,80,Ópera
+141,114,60,Otros ocio
+141,45,90,Restaurantes
+141,46,90,Eventos
+141,113,70,Otros gastronomía
+141,47,70,Tiendas especializadas
+141,48,60,Tiendas tradicionales
+141,49,60,Otras compras
+141,50,60,Exposiciones
+141,51,70,Conferencias
+141,52,70,Ferias
+141,53,70,Congresos
+141,54,70,Fiestas
+141,55,80,Grandes eventos (exposiciones)
+141,112,70,Otros eventos
+141,57,80,Nauticos
+141,56,90,Eventos deportivos
+141,59,60,Futbol
+141,60,50,Baloncesto
+141,61,50,Otros deportes
+141,62,70,Arte
+141,63,70,Ciencia y tecnología
+141,64,70,Historia
+141,65,70,Religión
+141,66,70,Ciencias naturales
+141,67,70,Arqueologia
+141,68,70,Historia y cultura local
+141,69,70,Artesanía
+141,70,70,Militar
+141,71,70,Otros museos
+141,72,70,Catedrales
+141,73,70,Iglesias
+141,74,70,Conventos
+141,75,70,Monasterios
+141,76,70,Claustros
+141,77,70,Sinagogas
+141,78,70,Mezquitas
+141,79,70,Campanarios
+141,80,70,Cementerios
+141,81,70,Tumbas
+141,82,70,Criptas
+141,83,70,Abadías
+141,84,70,Basílica
+141,85,70,Capilla
+141,86,70,Colegiata
+141,111,70,Otras arquitectura religiosa
+141,87,70,Castillos
+141,88,70,Torres
+141,89,70,Murallas
+141,90,70,Puertas
+141,110,70,Otras arquitecturas defensivas
+141,91,80,Palacio
+141,92,80,Casa
+141,93,80,Centro histórico
+141,94,80,Ateneo
+141,95,80,Mercados
+141,96,80,Edificios gubernamentales
+141,97,80,Edificios académicos
+141,98,80,Otros edificios públicos
+141,99,80,Estaciones de transportes
+141,100,80,Atarazanas
+141,101,80,Puentes
+141,102,80,Faros
+141,103,80,Estadios y áreas deportivas
+141,104,80,Otros edificios emblemáticos
+141,105,60,Esculturas
+141,106,60,Fuentes
+141,107,60,Otros monumentos
+141,108,80,Centros de salud y spa
+141,109,80,Otros salud y spa
+142,16,80,Prehistórico
+142,17,80,Árabe
+142,18,80,Romano
+142,19,80,Medieval
+142,20,80,Gótico
+142,21,80,Románico
+142,22,80,Renacentista
+142,23,80,Barroco
+142,24,80,Rococo
+142,25,80,Neoclásico
+142,26,80,Modernista
+142,27,80,Contemporáneo
+142,115,80,Otros estilos
+142,28,80,Parques
+142,29,100,Jardines botánicos
+142,30,80,Parque infantil
+142,31,80,Playas
+142,32,80,Lagos
+142,33,80,Calles y plazas
+142,34,80,Paseos
+142,35,10,Parques temáticos
+142,36,50,Otros espacios abiertos
+142,37,80,Cines
+142,38,100,Teatros
+142,39,100,Conciertos y música en vivo
+142,40,50,Clubs y discotecas
+142,41,50,Bares y pubs
+142,43,100,Música clasica
+142,44,100,Ópera
+142,114,50,Otros ocio
+142,45,60,Restaurantes
+142,46,60,Eventos
+142,113,60,Otros gastronomía
+142,47,50,Tiendas especializadas
+142,48,50,Tiendas tradicionales
+142,49,50,Otras compras
+142,50,70,Exposiciones
+142,51,10,Conferencias
+142,52,70,Ferias
+142,53,30,Congresos
+142,54,10,Fiestas
+142,55,60,Grandes eventos (exposiciones)
+142,112,30,Otros eventos
+142,57,30,Nauticos
+142,56,30,Eventos deportivos
+142,59,30,Futbol
+142,60,30,Baloncesto
+142,61,30,Otros deportes
+142,62,80,Arte
+142,63,100,Ciencia y tecnología
+142,64,80,Historia
+142,65,10,Religión
+142,66,100,Ciencias naturales
+142,67,100,Arqueologia
+142,68,80,Historia y cultura local
+142,69,80,Artesanía
+142,70,50,Militar
+142,71,70,Otros museos
+142,72,60,Catedrales
+142,73,50,Iglesias
+142,74,20,Conventos
+142,75,50,Monasterios
+142,76,50,Claustros
+142,77,30,Sinagogas
+142,78,30,Mezquitas
+142,79,10,Campanarios
+142,80,10,Cementerios
+142,81,10,Tumbas
+142,82,10,Criptas
+142,83,10,Abadías
+142,84,10,Basílica
+142,85,10,Capilla
+142,86,20,Colegiata
+142,111,20,Otras arquitectura religiosa
+142,87,70,Castillos
+142,88,70,Torres
+142,89,70,Murallas
+142,90,70,Puertas
+142,110,70,Otras arquitecturas defensivas
+142,91,70,Palacio
+142,92,70,Casa
+142,93,70,Centro histórico
+142,94,10,Ateneo
+142,95,70,Mercados
+142,96,60,Edificios gubernamentales
+142,97,70,Edificios académicos
+142,98,60,Otros edificios públicos
+142,99,60,Estaciones de transportes
+142,100,70,Atarazanas
+142,101,60,Puentes
+142,102,70,Faros
+142,103,50,Estadios y áreas deportivas
+142,104,50,Otros edificios emblemáticos
+142,105,70,Esculturas
+142,106,60,Fuentes
+142,107,60,Otros monumentos
+142,108,10,Centros de salud y spa
+142,109,10,Otros salud y spa
+143,16,30,Prehistórico
+143,17,70,Árabe
+143,18,70,Romano
+143,19,90,Medieval
+143,20,70,Gótico
+143,21,70,Románico
+143,22,70,Renacentista
+143,23,50,Barroco
+143,24,30,Rococo
+143,25,50,Neoclásico
+143,26,70,Modernista
+143,27,70,Contemporáneo
+143,28,70,Parques
+143,29,50,Jardines botánicos
+143,30,70,Parque infantil
+143,31,90,Playas
+143,32,70,Lagos
+143,33,90,Calles y plazas
+143,34,70,Paseos
+143,35,50,Parques temáticos
+143,37,80,Cines
+143,38,80,Teatros
+143,39,90,Conciertos y música en vivo
+143,40,70,Clubs y discotecas
+143,41,70,Bares y pubs
+143,43,50,Música clasica
+143,44,50,Ópera
+143,45,70,Restaurantes
+143,46,70,Eventos
+143,47,70,Tiendas especializadas
+143,48,90,Tiendas tradicionales
+143,50,80,Exposiciones
+143,51,80,Conferencias
+143,52,60,Ferias
+143,53,60,Congresos
+143,54,60,Fiestas
+143,55,80,Grandes eventos (exposiciones)
+143,57,60,Nauticos
+143,56,80,Eventos deportivos
+143,59,80,Futbol
+143,60,80,Baloncesto
+143,62,70,Arte
+143,63,60,Ciencia y tecnología
+143,64,90,Historia
+143,65,70,Religión
+143,66,60,Ciencias naturales
+143,67,60,Arqueologia
+143,68,60,Historia y cultura local
+143,69,50,Artesanía
+143,70,50,Militar
+143,72,90,Catedrales
+143,73,70,Iglesias
+143,74,50,Conventos
+143,75,50,Monasterios
+143,76,50,Claustros
+143,77,30,Sinagogas
+143,78,30,Mezquitas
+143,79,50,Campanarios
+143,80,30,Cementerios
+143,81,30,Tumbas
+143,82,30,Criptas
+143,83,30,Abadías
+143,84,70,Basílica
+143,85,50,Capilla
+143,86,30,Colegiata
+143,87,80,Castillos
+143,88,80,Torres
+143,89,90,Murallas
+143,90,80,Puertas
+143,91,80,Palacio
+143,92,50,Casa
+143,93,90,Centro histórico
+143,94,50,Ateneo
+143,95,80,Mercados
+143,96,70,Edificios gubernamentales
+143,97,50,Edificios académicos
+143,98,50,Otros edificios públicos
+143,99,70,Estaciones de transportes
+143,100,70,Atarazanas
+143,101,50,Puentes
+143,102,80,Faros
+143,103,80,Estadios y áreas deportivas
+143,105,60,Esculturas
+143,106,50,Fuentes
+143,108,50,Centros de salud y spa
+144,16,50,Prehistórico
+144,17,50,Árabe
+144,18,50,Romano
+144,19,50,Medieval
+144,20,50,Gótico
+144,21,50,Románico
+144,22,50,Renacentista
+144,23,50,Barroco
+144,24,50,Rococo
+144,25,50,Neoclásico
+144,26,50,Modernista
+144,27,50,Contemporáneo
+144,115,50,Otros estilos
+144,28,90,Parques
+144,29,90,Jardines botánicos
+144,30,90,Parque infantil
+144,31,90,Playas
+144,32,90,Lagos
+144,33,90,Calles y plazas
+144,34,90,Paseos
+144,35,90,Parques temáticos
+144,36,90,Otros espacios abiertos
+144,37,70,Cines
+144,38,70,Teatros
+144,39,70,Conciertos y música en vivo
+144,40,70,Clubs y discotecas
+144,41,70,Bares y pubs
+144,43,70,Música clasica
+144,44,70,Ópera
+144,114,70,Otros ocio
+144,45,70,Restaurantes
+144,46,70,Eventos
+144,113,70,Otros gastronomía
+144,47,20,Tiendas especializadas
+144,48,20,Tiendas tradicionales
+144,49,20,Otras compras
+144,50,60,Exposiciones
+144,51,60,Conferencias
+144,52,60,Ferias
+144,53,60,Congresos
+144,54,60,Fiestas
+144,55,60,Grandes eventos (exposiciones)
+144,112,60,Otros eventos
+144,57,60,Nauticos
+144,56,60,Eventos deportivos
+144,59,60,Futbol
+144,60,60,Baloncesto
+144,61,60,Otros deportes
+144,62,70,Arte
+144,63,70,Ciencia y tecnología
+144,64,70,Historia
+144,65,70,Religión
+144,66,70,Ciencias naturales
+144,67,70,Arqueologia
+144,68,70,Historia y cultura local
+144,69,70,Artesanía
+144,70,70,Militar
+144,71,70,Otros museos
+144,72,80,Catedrales
+144,73,80,Iglesias
+144,74,80,Conventos
+144,75,80,Monasterios
+144,76,80,Claustros
+144,77,80,Sinagogas
+144,78,80,Mezquitas
+144,79,80,Campanarios
+144,80,80,Cementerios
+144,81,80,Tumbas
+144,82,80,Criptas
+144,83,80,Abadías
+144,84,80,Basílica
+144,85,80,Capilla
+144,86,80,Colegiata
+144,111,80,Otras arquitectura religiosa
+144,87,90,Castillos
+144,88,90,Torres
+144,89,90,Murallas
+144,90,90,Puertas
+144,110,90,Otras arquitecturas defensivas
+144,91,80,Palacio
+144,92,80,Casa
+144,93,80,Centro histórico
+144,94,80,Ateneo
+144,95,80,Mercados
+144,96,80,Edificios gubernamentales
+144,97,80,Edificios académicos
+144,98,80,Otros edificios públicos
+144,99,80,Estaciones de transportes
+144,100,80,Atarazanas
+144,101,80,Puentes
+144,102,80,Faros
+144,103,80,Estadios y áreas deportivas
+144,104,80,Otros edificios emblemáticos
+144,105,90,Esculturas
+144,106,90,Fuentes
+144,107,90,Otros monumentos
+144,108,30,Centros de salud y spa
+144,109,30,Otros salud y spa
+145,16,30,Prehistórico
+145,17,80,Árabe
+145,18,10,Romano
+145,19,50,Medieval
+145,20,90,Gótico
+145,21,30,Románico
+145,22,20,Renacentista
+145,23,100,Barroco
+145,24,60,Rococo
+145,25,70,Neoclásico
+145,26,70,Modernista
+145,27,70,Contemporáneo
+145,115,80,Otros estilos
+145,28,50,Parques
+145,29,60,Jardines botánicos
+145,30,50,Parque infantil
+145,31,80,Playas
+145,32,40,Lagos
+145,33,30,Calles y plazas
+145,34,70,Paseos
+145,35,70,Parques temáticos
+145,36,80,Otros espacios abiertos
+145,37,60,Cines
+145,38,10,Teatros
+145,39,40,Conciertos y música en vivo
+145,40,90,Clubs y discotecas
+145,41,90,Bares y pubs
+145,43,60,Música clasica
+145,44,40,Ópera
+145,114,100,Otros ocio
+145,45,70,Restaurantes
+145,46,50,Eventos
+145,113,90,Otros gastronomía
+145,47,90,Tiendas especializadas
+145,48,70,Tiendas tradicionales
+145,49,100,Otras compras
+145,50,60,Exposiciones
+145,51,70,Conferencias
+145,52,80,Ferias
+145,53,20,Congresos
+145,54,60,Fiestas
+145,55,80,Grandes eventos (exposiciones)
+145,112,40,Otros eventos
+145,57,70,Nauticos
+145,56,10,Eventos deportivos
+145,59,10,Futbol
+145,60,20,Baloncesto
+145,61,60,Otros deportes
+145,62,80,Arte
+145,63,60,Ciencia y tecnología
+145,64,100,Historia
+145,65,90,Religión
+145,66,40,Ciencias naturales
+145,67,30,Arqueologia
+145,68,30,Historia y cultura local
+145,69,10,Artesanía
+145,70,20,Militar
+145,71,30,Otros museos
+145,72,60,Catedrales
+145,73,90,Iglesias
+145,74,60,Conventos
+145,75,70,Monasterios
+145,76,80,Claustros
+145,77,70,Sinagogas
+145,78,60,Mezquitas
+145,79,60,Campanarios
+145,80,20,Cementerios
+145,81,20,Tumbas
+145,82,20,Criptas
+145,83,30,Abadías
+145,84,70,Basílica
+145,85,60,Capilla
+145,86,90,Colegiata
+145,111,80,Otras arquitectura religiosa
+145,87,10,Castillos
+145,88,30,Torres
+145,89,10,Murallas
+145,90,20,Puertas
+145,110,30,Otras arquitecturas defensivas
+145,91,80,Palacio
+145,92,40,Casa
+145,93,70,Centro histórico
+145,94,70,Ateneo
+145,95,40,Mercados
+145,96,50,Edificios gubernamentales
+145,97,10,Edificios académicos
+145,98,30,Otros edificios públicos
+145,99,40,Estaciones de transportes
+145,100,70,Atarazanas
+145,101,60,Puentes
+145,102,30,Faros
+145,103,20,Estadios y áreas deportivas
+145,104,40,Otros edificios emblemáticos
+145,105,60,Esculturas
+145,106,90,Fuentes
+145,107,100,Otros monumentos
+145,108,70,Centros de salud y spa
+145,109,80,Otros salud y spa
+146,16,80,Prehistórico
+146,17,80,Árabe
+146,18,80,Romano
+146,19,80,Medieval
+146,20,80,Gótico
+146,21,80,Románico
+146,22,80,Renacentista
+146,23,80,Barroco
+146,24,80,Rococo
+146,25,80,Neoclásico
+146,26,80,Modernista
+146,27,80,Contemporáneo
+146,115,80,Otros estilos
+146,28,80,Parques
+146,29,80,Jardines botánicos
+146,30,80,Parque infantil
+146,31,80,Playas
+146,32,80,Lagos
+146,33,80,Calles y plazas
+146,34,80,Paseos
+146,35,80,Parques temáticos
+146,36,80,Otros espacios abiertos
+146,37,60,Cines
+146,38,60,Teatros
+146,39,60,Conciertos y música en vivo
+146,40,60,Clubs y discotecas
+146,41,60,Bares y pubs
+146,43,60,Música clasica
+146,44,60,Ópera
+146,114,60,Otros ocio
+146,45,60,Restaurantes
+146,46,60,Eventos
+146,113,60,Otros gastronomía
+146,47,50,Tiendas especializadas
+146,48,50,Tiendas tradicionales
+146,49,50,Otras compras
+146,50,70,Exposiciones
+146,51,70,Conferencias
+146,52,70,Ferias
+146,53,70,Congresos
+146,54,70,Fiestas
+146,55,70,Grandes eventos (exposiciones)
+146,112,70,Otros eventos
+146,57,80,Nauticos
+146,56,80,Eventos deportivos
+146,59,80,Futbol
+146,60,80,Baloncesto
+146,61,80,Otros deportes
+146,62,60,Arte
+146,63,60,Ciencia y tecnología
+146,64,60,Historia
+146,65,60,Religión
+146,66,60,Ciencias naturales
+146,67,60,Arqueologia
+146,68,60,Historia y cultura local
+146,69,60,Artesanía
+146,70,60,Militar
+146,71,60,Otros museos
+146,72,70,Catedrales
+146,73,70,Iglesias
+146,74,70,Conventos
+146,75,70,Monasterios
+146,76,70,Claustros
+146,77,70,Sinagogas
+146,78,70,Mezquitas
+146,79,70,Campanarios
+146,80,70,Cementerios
+146,81,70,Tumbas
+146,82,70,Criptas
+146,83,70,Abadías
+146,84,70,Basílica
+146,85,70,Capilla
+146,86,70,Colegiata
+146,111,70,Otras arquitectura religiosa
+146,87,70,Castillos
+146,88,70,Torres
+146,89,70,Murallas
+146,90,70,Puertas
+146,110,70,Otras arquitecturas defensivas
+146,91,60,Palacio
+146,92,60,Casa
+146,93,60,Centro histórico
+146,94,60,Ateneo
+146,95,60,Mercados
+146,96,60,Edificios gubernamentales
+146,97,60,Edificios académicos
+146,98,60,Otros edificios públicos
+146,99,60,Estaciones de transportes
+146,100,60,Atarazanas
+146,101,60,Puentes
+146,102,60,Faros
+146,103,60,Estadios y áreas deportivas
+146,104,60,Otros edificios emblemáticos
+146,105,60,Esculturas
+146,106,60,Fuentes
+146,107,60,Otros monumentos
+146,108,70,Centros de salud y spa
+146,109,70,Otros salud y spa
+147,16,40,Prehistórico
+147,17,80,Árabe
+147,18,80,Romano
+147,19,70,Medieval
+147,20,100,Gótico
+147,21,70,Románico
+147,22,70,Renacentista
+147,23,50,Barroco
+147,24,40,Rococo
+147,25,40,Neoclásico
+147,26,80,Modernista
+147,27,70,Contemporáneo
+147,115,50,Otros estilos
+147,28,70,Parques
+147,29,70,Jardines botánicos
+147,30,80,Parque infantil
+147,31,80,Playas
+147,32,80,Lagos
+147,33,70,Calles y plazas
+147,34,70,Paseos
+147,35,80,Parques temáticos
+147,36,40,Otros espacios abiertos
+147,37,70,Cines
+147,38,80,Teatros
+147,39,70,Conciertos y música en vivo
+147,40,20,Clubs y discotecas
+147,41,50,Bares y pubs
+147,43,80,Música clasica
+147,44,80,Ópera
+147,114,60,Otros ocio
+147,45,80,Restaurantes
+147,46,80,Eventos
+147,113,70,Otros gastronomía
+147,47,60,Tiendas especializadas
+147,48,60,Tiendas tradicionales
+147,49,60,Otras compras
+147,50,70,Exposiciones
+147,51,50,Conferencias
+147,52,80,Ferias
+147,53,80,Congresos
+147,54,70,Fiestas
+147,55,100,Grandes eventos (exposiciones)
+147,112,70,Otros eventos
+147,57,70,Nauticos
+147,56,80,Eventos deportivos
+147,59,80,Futbol
+147,60,80,Baloncesto
+147,61,70,Otros deportes
+147,62,80,Arte
+147,63,80,Ciencia y tecnología
+147,64,80,Historia
+147,65,80,Religión
+147,66,80,Ciencias naturales
+147,67,80,Arqueologia
+147,68,80,Historia y cultura local
+147,69,80,Artesanía
+147,70,80,Militar
+147,71,80,Otros museos
+147,72,90,Catedrales
+147,73,90,Iglesias
+147,74,90,Conventos
+147,75,90,Monasterios
+147,76,90,Claustros
+147,77,90,Sinagogas
+147,78,70,Mezquitas
+147,79,90,Campanarios
+147,80,50,Cementerios
+147,81,20,Tumbas
+147,82,30,Criptas
+147,83,80,Abadías
+147,84,80,Basílica
+147,85,70,Capilla
+147,86,70,Colegiata
+147,111,50,Otras arquitectura religiosa
+147,87,80,Castillos
+147,88,80,Torres
+147,89,80,Murallas
+147,90,80,Puertas
+147,110,80,Otras arquitecturas defensivas
+147,91,80,Palacio
+147,92,70,Casa
+147,93,100,Centro histórico
+147,94,70,Ateneo
+147,95,80,Mercados
+147,96,70,Edificios gubernamentales
+147,97,90,Edificios académicos
+147,98,40,Otros edificios públicos
+147,99,70,Estaciones de transportes
+147,100,80,Atarazanas
+147,101,50,Puentes
+147,102,90,Faros
+147,103,80,Estadios y áreas deportivas
+147,104,70,Otros edificios emblemáticos
+147,105,80,Esculturas
+147,106,80,Fuentes
+147,107,80,Otros monumentos
+147,108,80,Centros de salud y spa
+147,109,80,Otros salud y spa
+148,16,90,Prehistórico
+148,17,10,Árabe
+148,18,60,Romano
+148,19,60,Medieval
+148,20,10,Gótico
+148,21,30,Románico
+148,22,50,Renacentista
+148,23,10,Barroco
+148,24,50,Rococo
+148,25,10,Neoclásico
+148,26,50,Modernista
+148,27,90,Contemporáneo
+148,115,40,Otros estilos
+148,28,90,Parques
+148,29,50,Jardines botánicos
+148,30,100,Parque infantil
+148,31,70,Playas
+148,32,40,Lagos
+148,33,50,Calles y plazas
+148,34,60,Paseos
+148,35,30,Parques temáticos
+148,36,40,Otros espacios abiertos
+148,37,70,Cines
+148,38,40,Teatros
+148,39,90,Conciertos y música en vivo
+148,40,70,Clubs y discotecas
+148,41,80,Bares y pubs
+148,43,20,Música clasica
+148,44,20,Ópera
+148,114,70,Otros ocio
+148,45,90,Restaurantes
+148,46,50,Eventos
+148,113,50,Otros gastronomía
+148,47,70,Tiendas especializadas
+148,48,60,Tiendas tradicionales
+148,49,80,Otras compras
+148,50,80,Exposiciones
+148,51,60,Conferencias
+148,52,20,Ferias
+148,53,10,Congresos
+148,54,70,Fiestas
+148,55,10,Grandes eventos (exposiciones)
+148,112,20,Otros eventos
+148,57,10,Nauticos
+148,56,10,Eventos deportivos
+148,59,10,Futbol
+148,60,10,Baloncesto
+148,61,20,Otros deportes
+148,62,100,Arte
+148,63,30,Ciencia y tecnología
+148,64,10,Historia
+148,65,60,Religión
+148,66,50,Ciencias naturales
+148,67,50,Arqueologia
+148,68,100,Historia y cultura local
+148,69,60,Artesanía
+148,70,60,Militar
+148,71,20,Otros museos
+148,72,100,Catedrales
+148,73,40,Iglesias
+148,74,20,Conventos
+148,75,100,Monasterios
+148,76,30,Claustros
+148,77,50,Sinagogas
+148,78,20,Mezquitas
+148,79,20,Campanarios
+148,80,20,Cementerios
+148,81,30,Tumbas
+148,82,20,Criptas
+148,83,60,Abadías
+148,84,90,Basílica
+148,85,40,Capilla
+148,86,80,Colegiata
+148,111,40,Otras arquitectura religiosa
+148,87,80,Castillos
+148,88,20,Torres
+148,89,40,Murallas
+148,90,20,Puertas
+148,110,10,Otras arquitecturas defensivas
+148,91,100,Palacio
+148,92,40,Casa
+148,93,30,Centro histórico
+148,94,70,Ateneo
+148,95,40,Mercados
+148,96,60,Edificios gubernamentales
+148,97,80,Edificios académicos
+148,98,70,Otros edificios públicos
+148,99,90,Estaciones de transportes
+148,100,20,Atarazanas
+148,101,30,Puentes
+148,102,70,Faros
+148,103,70,Estadios y áreas deportivas
+148,104,90,Otros edificios emblemáticos
+148,105,30,Esculturas
+148,106,100,Fuentes
+148,107,50,Otros monumentos
+148,108,80,Centros de salud y spa
+148,109,50,Otros salud y spa
+149,16,100,Prehistórico
+149,17,100,Árabe
+149,18,100,Romano
+149,19,100,Medieval
+149,20,100,Gótico
+149,21,100,Románico
+149,22,100,Renacentista
+149,23,100,Barroco
+149,24,100,Rococo
+149,25,100,Neoclásico
+149,26,100,Modernista
+149,27,100,Contemporáneo
+149,115,100,Otros estilos
+149,28,80,Parques
+149,29,80,Jardines botánicos
+149,30,90,Parque infantil
+149,31,80,Playas
+149,32,50,Lagos
+149,33,90,Calles y plazas
+149,34,50,Paseos
+149,35,60,Parques temáticos
+149,37,50,Cines
+149,38,50,Teatros
+149,39,70,Conciertos y música en vivo
+149,40,50,Clubs y discotecas
+149,41,50,Bares y pubs
+149,43,70,Música clasica
+149,44,60,Ópera
+149,45,60,Restaurantes
+149,46,50,Eventos
+149,47,60,Tiendas especializadas
+149,48,70,Tiendas tradicionales
+149,50,80,Exposiciones
+149,51,60,Conferencias
+149,52,50,Ferias
+149,53,50,Congresos
+149,54,50,Fiestas
+149,55,80,Grandes eventos (exposiciones)
+149,57,60,Nauticos
+149,56,50,Eventos deportivos
+149,59,30,Futbol
+149,60,30,Baloncesto
+149,61,30,Otros deportes
+149,62,50,Arte
+149,63,80,Ciencia y tecnología
+149,64,50,Historia
+149,65,50,Religión
+149,66,50,Ciencias naturales
+149,67,90,Arqueologia
+149,68,50,Historia y cultura local
+149,69,40,Artesanía
+149,70,40,Militar
+149,72,100,Catedrales
+149,73,90,Iglesias
+149,74,50,Conventos
+149,75,70,Monasterios
+149,76,80,Claustros
+149,77,60,Sinagogas
+149,78,80,Mezquitas
+149,79,80,Campanarios
+149,80,50,Cementerios
+149,81,50,Tumbas
+149,82,50,Criptas
+149,83,50,Abadías
+149,84,90,Basílica
+149,85,60,Capilla
+149,86,50,Colegiata
+149,87,100,Castillos
+149,88,90,Torres
+149,89,90,Murallas
+149,90,90,Puertas
+149,91,100,Palacio
+149,92,70,Casa
+149,93,100,Centro histórico
+149,94,50,Ateneo
+149,95,70,Mercados
+149,96,100,Edificios gubernamentales
+149,97,80,Edificios académicos
+149,98,80,Otros edificios públicos
+149,99,50,Estaciones de transportes
+149,100,90,Atarazanas
+149,101,40,Puentes
+149,102,100,Faros
+149,103,50,Estadios y áreas deportivas
+149,105,80,Esculturas
+149,106,90,Fuentes
+149,108,40,Centros de salud y spa
+149,109,40,Otros salud y spa
+150,16,70,Prehistórico
+150,17,80,Árabe
+150,18,100,Romano
+150,19,100,Medieval
+150,20,100,Gótico
+150,21,100,Románico
+150,22,80,Renacentista
+150,23,10,Barroco
+150,24,10,Rococo
+150,25,50,Neoclásico
+150,26,70,Modernista
+150,27,50,Contemporáneo
+150,28,50,Parques
+150,29,80,Jardines botánicos
+150,30,50,Parque infantil
+150,31,50,Playas
+150,32,50,Lagos
+150,33,80,Calles y plazas
+150,34,80,Paseos
+150,35,10,Parques temáticos
+150,36,100,Otros espacios abiertos
+150,37,70,Cines
+150,38,80,Teatros
+150,39,50,Conciertos y música en vivo
+150,40,10,Clubs y discotecas
+150,41,10,Bares y pubs
+150,43,80,Música clasica
+150,44,40,Ópera
+150,45,70,Restaurantes
+150,113,70,Otros gastronomía
+150,47,50,Tiendas especializadas
+150,48,50,Tiendas tradicionales
+150,50,40,Exposiciones
+150,51,40,Conferencias
+150,52,40,Ferias
+150,53,40,Congresos
+150,54,40,Fiestas
+150,55,40,Grandes eventos (exposiciones)
+150,112,40,Otros eventos
+150,57,10,Nauticos
+150,56,10,Eventos deportivos
+150,59,10,Futbol
+150,60,10,Baloncesto
+150,61,10,Otros deportes
+150,62,90,Arte
+150,63,70,Ciencia y tecnología
+150,64,90,Historia
+150,65,70,Religión
+150,66,50,Ciencias naturales
+150,67,80,Arqueologia
+150,68,50,Historia y cultura local
+150,69,40,Artesanía
+150,70,10,Militar
+150,72,80,Catedrales
+150,73,80,Iglesias
+150,74,80,Conventos
+150,75,80,Monasterios
+150,76,80,Claustros
+150,77,80,Sinagogas
+150,78,80,Mezquitas
+150,79,80,Campanarios
+150,80,80,Cementerios
+150,81,80,Tumbas
+150,82,80,Criptas
+150,83,80,Abadías
+150,84,80,Basílica
+150,85,80,Capilla
+150,86,80,Colegiata
+150,111,80,Otras arquitectura religiosa
+150,87,80,Castillos
+150,88,80,Torres
+150,89,80,Murallas
+150,90,80,Puertas
+150,110,80,Otras arquitecturas defensivas
+150,91,80,Palacio
+150,92,80,Casa
+150,93,80,Centro histórico
+150,94,80,Ateneo
+150,95,80,Mercados
+150,96,80,Edificios gubernamentales
+150,97,80,Edificios académicos
+150,98,80,Otros edificios públicos
+150,99,80,Estaciones de transportes
+150,100,80,Atarazanas
+150,101,80,Puentes
+150,102,80,Faros
+150,103,80,Estadios y áreas deportivas
+150,104,80,Otros edificios emblemáticos
+150,105,70,Esculturas
+150,106,70,Fuentes
+150,107,70,Otros monumentos
+150,108,70,Centros de salud y spa
+150,109,70,Otros salud y spa
+151,16,20,Prehistórico
+151,17,20,Árabe
+151,18,20,Romano
+151,19,20,Medieval
+151,20,20,Gótico
+151,21,20,Románico
+151,22,20,Renacentista
+151,23,20,Barroco
+151,24,20,Rococo
+151,25,20,Neoclásico
+151,26,20,Modernista
+151,27,20,Contemporáneo
+151,115,20,Otros estilos
+151,28,70,Parques
+151,29,50,Jardines botánicos
+151,30,50,Parque infantil
+151,31,80,Playas
+151,32,90,Lagos
+151,33,90,Calles y plazas
+151,34,80,Paseos
+151,35,60,Parques temáticos
+151,36,60,Otros espacios abiertos
+151,37,40,Cines
+151,38,50,Teatros
+151,39,100,Conciertos y música en vivo
+151,40,80,Clubs y discotecas
+151,41,90,Bares y pubs
+151,43,80,Música clasica
+151,44,10,Ópera
+151,114,60,Otros ocio
+151,45,60,Restaurantes
+151,46,100,Eventos
+151,113,70,Otros gastronomía
+151,47,30,Tiendas especializadas
+151,48,80,Tiendas tradicionales
+151,49,60,Otras compras
+151,50,30,Exposiciones
+151,51,30,Conferencias
+151,52,30,Ferias
+151,53,30,Congresos
+151,54,90,Fiestas
+151,55,100,Grandes eventos (exposiciones)
+151,57,70,Nauticos
+151,56,100,Eventos deportivos
+151,59,20,Futbol
+151,60,60,Baloncesto
+151,61,80,Otros deportes
+151,62,30,Arte
+151,63,10,Ciencia y tecnología
+151,64,30,Historia
+151,65,10,Religión
+151,66,20,Ciencias naturales
+151,67,20,Arqueologia
+151,68,60,Historia y cultura local
+151,69,60,Artesanía
+151,70,10,Militar
+151,72,80,Catedrales
+151,73,50,Iglesias
+151,74,70,Conventos
+151,75,80,Monasterios
+151,76,80,Claustros
+151,77,60,Sinagogas
+151,78,50,Mezquitas
+151,79,10,Campanarios
+151,80,50,Cementerios
+151,81,30,Tumbas
+151,82,50,Criptas
+151,83,40,Abadías
+151,84,50,Basílica
+151,85,30,Capilla
+151,86,20,Colegiata
+151,87,90,Castillos
+151,88,80,Torres
+151,89,70,Murallas
+151,90,50,Puertas
+151,91,70,Palacio
+151,92,70,Casa
+151,93,50,Centro histórico
+151,94,50,Ateneo
+151,95,70,Mercados
+151,96,50,Edificios gubernamentales
+151,97,40,Edificios académicos
+151,98,40,Otros edificios públicos
+151,99,70,Estaciones de transportes
+151,100,50,Atarazanas
+151,101,50,Puentes
+151,102,70,Faros
+151,103,90,Estadios y áreas deportivas
+151,105,30,Esculturas
+151,106,80,Fuentes
+151,108,70,Centros de salud y spa
+152,16,80,Prehistórico
+152,17,80,Árabe
+152,18,80,Romano
+152,19,80,Medieval
+152,20,80,Gótico
+152,21,80,Románico
+152,22,80,Renacentista
+152,23,80,Barroco
+152,24,80,Rococo
+152,25,80,Neoclásico
+152,26,80,Modernista
+152,27,80,Contemporáneo
+152,115,80,Otros estilos
+152,28,80,Parques
+152,29,80,Jardines botánicos
+152,30,80,Parque infantil
+152,31,80,Playas
+152,32,80,Lagos
+152,33,80,Calles y plazas
+152,34,80,Paseos
+152,35,80,Parques temáticos
+152,36,80,Otros espacios abiertos
+152,37,100,Cines
+152,38,100,Teatros
+152,39,80,Conciertos y música en vivo
+152,40,60,Clubs y discotecas
+152,41,80,Bares y pubs
+152,43,80,Música clasica
+152,44,100,Ópera
+152,114,60,Otros ocio
+152,45,80,Restaurantes
+152,46,80,Eventos
+152,113,80,Otros gastronomía
+152,47,100,Tiendas especializadas
+152,48,100,Tiendas tradicionales
+152,49,50,Otras compras
+152,50,80,Exposiciones
+152,51,80,Conferencias
+152,52,100,Ferias
+152,53,100,Congresos
+152,54,50,Fiestas
+152,55,80,Grandes eventos (exposiciones)
+152,112,50,Otros eventos
+152,57,60,Nauticos
+152,56,60,Eventos deportivos
+152,59,60,Futbol
+152,60,60,Baloncesto
+152,61,60,Otros deportes
+152,62,80,Arte
+152,63,80,Ciencia y tecnología
+152,64,80,Historia
+152,65,50,Religión
+152,66,80,Ciencias naturales
+152,67,80,Arqueologia
+152,68,80,Historia y cultura local
+152,69,90,Artesanía
+152,70,50,Militar
+152,71,50,Otros museos
+152,72,80,Catedrales
+152,73,50,Iglesias
+152,74,50,Conventos
+152,75,80,Monasterios
+152,76,50,Claustros
+152,77,80,Sinagogas
+152,78,80,Mezquitas
+152,79,50,Campanarios
+152,80,80,Cementerios
+152,81,50,Tumbas
+152,82,50,Criptas
+152,83,80,Abadías
+152,84,80,Basílica
+152,85,80,Capilla
+152,86,80,Colegiata
+152,111,50,Otras arquitectura religiosa
+152,87,100,Castillos
+152,88,80,Torres
+152,89,80,Murallas
+152,90,80,Puertas
+152,110,50,Otras arquitecturas defensivas
+152,91,100,Palacio
+152,92,100,Casa
+152,93,100,Centro histórico
+152,94,100,Ateneo
+152,95,100,Mercados
+152,96,100,Edificios gubernamentales
+152,97,100,Edificios académicos
+152,98,100,Otros edificios públicos
+152,99,100,Estaciones de transportes
+152,100,100,Atarazanas
+152,101,100,Puentes
+152,102,100,Faros
+152,103,100,Estadios y áreas deportivas
+152,104,100,Otros edificios emblemáticos
+152,105,100,Esculturas
+152,106,100,Fuentes
+152,107,100,Otros monumentos
+152,108,80,Centros de salud y spa
+152,109,80,Otros salud y spa
+153,16,20,Prehistórico
+153,17,20,Árabe
+153,18,30,Romano
+153,19,30,Medieval
+153,20,60,Gótico
+153,21,60,Románico
+153,22,60,Renacentista
+153,23,60,Barroco
+153,24,60,Rococo
+153,25,60,Neoclásico
+153,26,60,Modernista
+153,27,60,Contemporáneo
+153,115,40,Otros estilos
+153,28,70,Parques
+153,29,70,Jardines botánicos
+153,30,70,Parque infantil
+153,31,70,Playas
+153,32,70,Lagos
+153,33,70,Calles y plazas
+153,34,70,Paseos
+153,35,70,Parques temáticos
+153,36,70,Otros espacios abiertos
+153,37,80,Cines
+153,38,70,Teatros
+153,39,60,Conciertos y música en vivo
+153,40,50,Clubs y discotecas
+153,41,50,Bares y pubs
+153,43,50,Música clasica
+153,44,30,Ópera
+153,114,50,Otros ocio
+153,45,70,Restaurantes
+153,46,60,Eventos
+153,113,60,Otros gastronomía
+153,47,70,Tiendas especializadas
+153,48,70,Tiendas tradicionales
+153,49,70,Otras compras
+153,50,70,Exposiciones
+153,51,70,Conferencias
+153,52,70,Ferias
+153,53,70,Congresos
+153,54,70,Fiestas
+153,55,70,Grandes eventos (exposiciones)
+153,112,70,Otros eventos
+153,57,50,Nauticos
+153,56,50,Eventos deportivos
+153,59,50,Futbol
+153,60,50,Baloncesto
+153,61,50,Otros deportes
+153,62,70,Arte
+153,63,70,Ciencia y tecnología
+153,64,70,Historia
+153,65,70,Religión
+153,66,70,Ciencias naturales
+153,67,70,Arqueologia
+153,68,70,Historia y cultura local
+153,69,70,Artesanía
+153,70,70,Militar
+153,71,70,Otros museos
+153,72,70,Catedrales
+153,73,70,Iglesias
+153,74,70,Conventos
+153,75,70,Monasterios
+153,76,70,Claustros
+153,77,70,Sinagogas
+153,78,70,Mezquitas
+153,79,70,Campanarios
+153,80,70,Cementerios
+153,81,70,Tumbas
+153,82,70,Criptas
+153,83,70,Abadías
+153,84,70,Basílica
+153,85,70,Capilla
+153,86,70,Colegiata
+153,111,70,Otras arquitectura religiosa
+153,87,80,Castillos
+153,88,80,Torres
+153,89,80,Murallas
+153,90,80,Puertas
+153,110,80,Otras arquitecturas defensivas
+153,91,70,Palacio
+153,92,70,Casa
+153,93,70,Centro histórico
+153,94,70,Ateneo
+153,95,70,Mercados
+153,96,70,Edificios gubernamentales
+153,97,70,Edificios académicos
+153,98,70,Otros edificios públicos
+153,99,70,Estaciones de transportes
+153,100,70,Atarazanas
+153,101,70,Puentes
+153,102,70,Faros
+153,103,70,Estadios y áreas deportivas
+153,104,70,Otros edificios emblemáticos
+153,105,60,Esculturas
+153,106,60,Fuentes
+153,107,60,Otros monumentos
+153,108,80,Centros de salud y spa
+153,109,80,Otros salud y spa
+154,16,10,Prehistórico
+154,17,10,Árabe
+154,18,10,Romano
+154,19,10,Medieval
+154,20,10,Gótico
+154,21,10,Románico
+154,22,10,Renacentista
+154,23,10,Barroco
+154,24,10,Rococo
+154,25,10,Neoclásico
+154,26,10,Modernista
+154,27,10,Contemporáneo
+154,115,10,Otros estilos
+154,28,20,Parques
+154,29,10,Jardines botánicos
+154,30,10,Parque infantil
+154,31,10,Playas
+154,32,10,Lagos
+154,33,20,Calles y plazas
+154,34,20,Paseos
+154,35,10,Parques temáticos
+154,36,10,Otros espacios abiertos
+154,37,10,Cines
+154,38,10,Teatros
+154,39,10,Conciertos y música en vivo
+154,40,10,Clubs y discotecas
+154,41,10,Bares y pubs
+154,43,10,Música clasica
+154,44,10,Ópera
+154,114,10,Otros ocio
+154,45,50,Restaurantes
+154,46,20,Eventos
+154,113,20,Otros gastronomía
+154,47,30,Tiendas especializadas
+154,48,70,Tiendas tradicionales
+154,49,50,Otras compras
+154,50,10,Exposiciones
+154,51,10,Conferencias
+154,52,10,Ferias
+154,53,10,Congresos
+154,54,30,Fiestas
+154,55,20,Grandes eventos (exposiciones)
+154,112,20,Otros eventos
+154,57,10,Nauticos
+154,56,10,Eventos deportivos
+154,59,10,Futbol
+154,60,10,Baloncesto
+154,61,10,Otros deportes
+154,62,10,Arte
+154,63,10,Ciencia y tecnología
+154,64,10,Historia
+154,65,10,Religión
+154,66,10,Ciencias naturales
+154,67,10,Arqueologia
+154,68,10,Historia y cultura local
+154,69,10,Artesanía
+154,70,10,Militar
+154,71,10,Otros museos
+154,72,10,Catedrales
+154,73,10,Iglesias
+154,74,10,Conventos
+154,75,10,Monasterios
+154,76,10,Claustros
+154,77,10,Sinagogas
+154,78,10,Mezquitas
+154,79,10,Campanarios
+154,80,10,Cementerios
+154,81,10,Tumbas
+154,82,10,Criptas
+154,83,10,Abadías
+154,84,10,Basílica
+154,85,10,Capilla
+154,86,10,Colegiata
+154,111,10,Otras arquitectura religiosa
+154,87,10,Castillos
+154,88,10,Torres
+154,89,10,Murallas
+154,90,10,Puertas
+154,110,10,Otras arquitecturas defensivas
+154,91,20,Palacio
+154,92,10,Casa
+154,93,20,Centro histórico
+154,94,10,Ateneo
+154,95,10,Mercados
+154,96,10,Edificios gubernamentales
+154,97,10,Edificios académicos
+154,98,10,Otros edificios públicos
+154,99,10,Estaciones de transportes
+154,100,20,Atarazanas
+154,101,20,Puentes
+154,102,20,Faros
+154,103,20,Estadios y áreas deportivas
+154,104,10,Otros edificios emblemáticos
+154,105,10,Esculturas
+154,106,10,Fuentes
+154,107,10,Otros monumentos
+154,108,30,Centros de salud y spa
+154,109,30,Otros salud y spa
+155,16,60,Prehistórico
+155,17,50,Árabe
+155,18,10,Romano
+155,19,40,Medieval
+155,20,30,Gótico
+155,21,40,Románico
+155,22,40,Renacentista
+155,23,40,Barroco
+155,24,50,Rococo
+155,25,20,Neoclásico
+155,26,10,Modernista
+155,27,20,Contemporáneo
+155,115,80,Otros estilos
+155,28,60,Parques
+155,29,100,Jardines botánicos
+155,30,100,Parque infantil
+155,31,80,Playas
+155,32,50,Lagos
+155,33,30,Calles y plazas
+155,34,80,Paseos
+155,35,70,Parques temáticos
+155,36,90,Otros espacios abiertos
+155,37,80,Cines
+155,38,60,Teatros
+155,39,70,Conciertos y música en vivo
+155,40,60,Clubs y discotecas
+155,41,70,Bares y pubs
+155,43,80,Música clasica
+155,44,70,Ópera
+155,114,80,Otros ocio
+155,45,80,Restaurantes
+155,46,70,Eventos
+155,113,80,Otros gastronomía
+155,47,50,Tiendas especializadas
+155,48,100,Tiendas tradicionales
+155,49,90,Otras compras
+155,50,60,Exposiciones
+155,51,70,Conferencias
+155,52,60,Ferias
+155,53,70,Congresos
+155,54,70,Fiestas
+155,55,80,Grandes eventos (exposiciones)
+155,112,70,Otros eventos
+155,57,50,Nauticos
+155,56,50,Eventos deportivos
+155,59,70,Futbol
+155,60,60,Baloncesto
+155,61,60,Otros deportes
+155,62,70,Arte
+155,63,50,Ciencia y tecnología
+155,64,100,Historia
+155,65,70,Religión
+155,66,100,Ciencias naturales
+155,67,50,Arqueologia
+155,68,30,Historia y cultura local
+155,69,60,Artesanía
+155,70,30,Militar
+155,71,100,Otros museos
+155,72,60,Catedrales
+155,73,40,Iglesias
+155,74,50,Conventos
+155,75,80,Monasterios
+155,76,10,Claustros
+155,77,50,Sinagogas
+155,78,90,Mezquitas
+155,79,30,Campanarios
+155,80,20,Cementerios
+155,81,10,Tumbas
+155,82,20,Criptas
+155,83,20,Abadías
+155,84,70,Basílica
+155,85,70,Capilla
+155,86,80,Colegiata
+155,111,50,Otras arquitectura religiosa
+155,87,40,Castillos
+155,88,50,Torres
+155,89,10,Murallas
+155,90,40,Puertas
+155,110,30,Otras arquitecturas defensivas
+155,91,70,Palacio
+155,92,70,Casa
+155,93,80,Centro histórico
+155,94,60,Ateneo
+155,95,60,Mercados
+155,96,40,Edificios gubernamentales
+155,97,70,Edificios académicos
+155,98,40,Otros edificios públicos
+155,99,60,Estaciones de transportes
+155,100,60,Atarazanas
+155,101,100,Puentes
+155,102,60,Faros
+155,103,70,Estadios y áreas deportivas
+155,104,90,Otros edificios emblemáticos
+155,105,70,Esculturas
+155,106,50,Fuentes
+155,107,80,Otros monumentos
+155,108,60,Centros de salud y spa
+155,109,30,Otros salud y spa
+156,16,70,Prehistórico
+156,17,70,Árabe
+156,18,70,Romano
+156,19,70,Medieval
+156,20,70,Gótico
+156,21,70,Románico
+156,22,70,Renacentista
+156,23,70,Barroco
+156,24,70,Rococo
+156,25,70,Neoclásico
+156,26,70,Modernista
+156,27,70,Contemporáneo
+156,115,70,Otros estilos
+156,28,80,Parques
+156,29,80,Jardines botánicos
+156,30,80,Parque infantil
+156,31,80,Playas
+156,32,80,Lagos
+156,33,80,Calles y plazas
+156,34,80,Paseos
+156,35,80,Parques temáticos
+156,36,80,Otros espacios abiertos
+156,37,60,Cines
+156,38,60,Teatros
+156,39,60,Conciertos y música en vivo
+156,40,60,Clubs y discotecas
+156,41,60,Bares y pubs
+156,43,60,Música clasica
+156,44,60,Ópera
+156,114,60,Otros ocio
+156,45,50,Restaurantes
+156,46,50,Eventos
+156,113,50,Otros gastronomía
+156,47,70,Tiendas especializadas
+156,48,70,Tiendas tradicionales
+156,49,70,Otras compras
+156,50,60,Exposiciones
+156,51,60,Conferencias
+156,52,60,Ferias
+156,53,60,Congresos
+156,54,60,Fiestas
+156,55,60,Grandes eventos (exposiciones)
+156,112,60,Otros eventos
+156,57,30,Nauticos
+156,56,30,Eventos deportivos
+156,59,30,Futbol
+156,60,30,Baloncesto
+156,61,30,Otros deportes
+156,62,80,Arte
+156,63,80,Ciencia y tecnología
+156,64,80,Historia
+156,65,80,Religión
+156,66,80,Ciencias naturales
+156,67,80,Arqueologia
+156,68,80,Historia y cultura local
+156,69,80,Artesanía
+156,70,80,Militar
+156,71,80,Otros museos
+156,72,80,Catedrales
+156,73,80,Iglesias
+156,74,80,Conventos
+156,75,80,Monasterios
+156,76,80,Claustros
+156,77,80,Sinagogas
+156,78,80,Mezquitas
+156,79,80,Campanarios
+156,80,80,Cementerios
+156,81,80,Tumbas
+156,82,80,Criptas
+156,83,80,Abadías
+156,84,80,Basílica
+156,85,80,Capilla
+156,86,80,Colegiata
+156,111,80,Otras arquitectura religiosa
+156,87,60,Castillos
+156,88,60,Torres
+156,89,60,Murallas
+156,90,60,Puertas
+156,110,60,Otras arquitecturas defensivas
+156,91,80,Palacio
+156,92,80,Casa
+156,93,80,Centro histórico
+156,94,80,Ateneo
+156,95,80,Mercados
+156,96,80,Edificios gubernamentales
+156,97,80,Edificios académicos
+156,98,80,Otros edificios públicos
+156,99,80,Estaciones de transportes
+156,100,80,Atarazanas
+156,101,80,Puentes
+156,102,80,Faros
+156,103,80,Estadios y áreas deportivas
+156,104,80,Otros edificios emblemáticos
+156,105,80,Esculturas
+156,106,80,Fuentes
+156,107,80,Otros monumentos
+156,108,60,Centros de salud y spa
+156,109,60,Otros salud y spa
+157,16,80,Prehistórico
+157,17,80,Árabe
+157,18,80,Romano
+157,19,80,Medieval
+157,20,80,Gótico
+157,21,80,Románico
+157,22,80,Renacentista
+157,23,80,Barroco
+157,24,80,Rococo
+157,25,80,Neoclásico
+157,26,80,Modernista
+157,27,80,Contemporáneo
+157,115,80,Otros estilos
+157,28,80,Parques
+157,29,80,Jardines botánicos
+157,30,80,Parque infantil
+157,31,80,Playas
+157,32,80,Lagos
+157,33,80,Calles y plazas
+157,34,80,Paseos
+157,35,80,Parques temáticos
+157,36,80,Otros espacios abiertos
+157,37,10,Cines
+157,38,30,Teatros
+157,39,30,Conciertos y música en vivo
+157,40,10,Clubs y discotecas
+157,41,10,Bares y pubs
+157,43,80,Música clasica
+157,44,80,Ópera
+157,114,10,Otros ocio
+157,45,100,Restaurantes
+157,46,80,Eventos
+157,113,100,Otros gastronomía
+157,47,70,Tiendas especializadas
+157,48,70,Tiendas tradicionales
+157,49,70,Otras compras
+157,50,100,Exposiciones
+157,51,50,Conferencias
+157,52,10,Ferias
+157,53,10,Congresos
+157,54,10,Fiestas
+157,55,100,Grandes eventos (exposiciones)
+157,112,50,Otros eventos
+157,57,50,Nauticos
+157,56,50,Eventos deportivos
+157,59,50,Futbol
+157,60,50,Baloncesto
+157,61,50,Otros deportes
+157,62,100,Arte
+157,63,50,Ciencia y tecnología
+157,64,60,Historia
+157,65,90,Religión
+157,66,50,Ciencias naturales
+157,67,50,Arqueologia
+157,68,80,Historia y cultura local
+157,69,80,Artesanía
+157,70,20,Militar
+157,71,30,Otros museos
+157,72,100,Catedrales
+157,73,100,Iglesias
+157,74,100,Conventos
+157,75,100,Monasterios
+157,76,100,Claustros
+157,77,100,Sinagogas
+157,78,100,Mezquitas
+157,79,70,Campanarios
+157,80,60,Cementerios
+157,81,60,Tumbas
+157,82,50,Criptas
+157,83,100,Abadías
+157,84,100,Basílica
+157,85,100,Capilla
+157,86,100,Colegiata
+157,111,100,Otras arquitectura religiosa
+157,87,70,Castillos
+157,88,50,Torres
+157,89,50,Murallas
+157,90,50,Puertas
+157,110,50,Otras arquitecturas defensivas
+157,91,70,Palacio
+157,92,80,Casa
+157,93,100,Centro histórico
+157,94,50,Ateneo
+157,95,70,Mercados
+157,96,70,Edificios gubernamentales
+157,97,50,Edificios académicos
+157,98,50,Otros edificios públicos
+157,99,100,Estaciones de transportes
+157,100,100,Atarazanas
+157,101,50,Puentes
+157,102,100,Faros
+157,103,50,Estadios y áreas deportivas
+157,104,50,Otros edificios emblemáticos
+157,105,70,Esculturas
+157,106,80,Fuentes
+157,107,50,Otros monumentos
+157,108,100,Centros de salud y spa
+157,109,100,Otros salud y spa
+158,16,70,Prehistórico
+158,17,70,Árabe
+158,18,70,Romano
+158,19,70,Medieval
+158,20,70,Gótico
+158,21,70,Románico
+158,22,70,Renacentista
+158,23,70,Barroco
+158,24,70,Rococo
+158,25,70,Neoclásico
+158,26,70,Modernista
+158,27,70,Contemporáneo
+158,115,70,Otros estilos
+158,28,60,Parques
+158,29,80,Jardines botánicos
+158,30,70,Parque infantil
+158,31,80,Playas
+158,32,70,Lagos
+158,33,60,Calles y plazas
+158,34,70,Paseos
+158,35,70,Parques temáticos
+158,36,70,Otros espacios abiertos
+158,37,50,Cines
+158,38,60,Teatros
+158,39,60,Conciertos y música en vivo
+158,40,60,Clubs y discotecas
+158,41,60,Bares y pubs
+158,43,70,Música clasica
+158,44,80,Ópera
+158,114,60,Otros ocio
+158,45,60,Restaurantes
+158,46,60,Eventos
+158,113,60,Otros gastronomía
+158,47,70,Tiendas especializadas
+158,48,70,Tiendas tradicionales
+158,49,50,Otras compras
+158,50,50,Exposiciones
+158,51,50,Conferencias
+158,52,60,Ferias
+158,53,50,Congresos
+158,54,80,Fiestas
+158,55,60,Grandes eventos (exposiciones)
+158,112,50,Otros eventos
+158,57,60,Nauticos
+158,56,60,Eventos deportivos
+158,59,60,Futbol
+158,60,60,Baloncesto
+158,61,60,Otros deportes
+158,62,80,Arte
+158,63,70,Ciencia y tecnología
+158,64,80,Historia
+158,65,80,Religión
+158,66,80,Ciencias naturales
+158,67,70,Arqueologia
+158,68,80,Historia y cultura local
+158,69,80,Artesanía
+158,70,40,Militar
+158,71,50,Otros museos
+158,72,80,Catedrales
+158,73,80,Iglesias
+158,74,70,Conventos
+158,75,80,Monasterios
+158,76,80,Claustros
+158,77,50,Sinagogas
+158,78,70,Mezquitas
+158,79,60,Campanarios
+158,80,40,Cementerios
+158,81,40,Tumbas
+158,82,40,Criptas
+158,83,70,Abadías
+158,84,70,Basílica
+158,85,70,Capilla
+158,86,60,Colegiata
+158,111,60,Otras arquitectura religiosa
+158,87,70,Castillos
+158,88,70,Torres
+158,89,70,Murallas
+158,90,70,Puertas
+158,110,70,Otras arquitecturas defensivas
+158,91,80,Palacio
+158,92,80,Casa
+158,93,80,Centro histórico
+158,94,80,Ateneo
+158,95,80,Mercados
+158,96,80,Edificios gubernamentales
+158,97,80,Edificios académicos
+158,98,80,Otros edificios públicos
+158,99,80,Estaciones de transportes
+158,100,80,Atarazanas
+158,101,80,Puentes
+158,102,80,Faros
+158,103,80,Estadios y áreas deportivas
+158,104,80,Otros edificios emblemáticos
+158,105,70,Esculturas
+158,106,70,Fuentes
+158,107,70,Otros monumentos
+158,108,70,Centros de salud y spa
+158,109,70,Otros salud y spa
+159,16,100,Prehistórico
+159,17,100,Árabe
+159,18,100,Romano
+159,19,100,Medieval
+159,20,100,Gótico
+159,21,100,Románico
+159,22,100,Renacentista
+159,23,100,Barroco
+159,24,100,Rococo
+159,25,100,Neoclásico
+159,26,100,Modernista
+159,27,100,Contemporáneo
+159,115,100,Otros estilos
+159,28,100,Parques
+159,29,100,Jardines botánicos
+159,30,100,Parque infantil
+159,31,100,Playas
+159,32,10,Lagos
+159,33,100,Calles y plazas
+159,34,100,Paseos
+159,35,10,Parques temáticos
+159,36,100,Otros espacios abiertos
+159,37,100,Cines
+159,38,100,Teatros
+159,39,10,Conciertos y música en vivo
+159,40,100,Clubs y discotecas
+159,41,100,Bares y pubs
+159,43,10,Música clasica
+159,44,100,Ópera
+159,114,100,Otros ocio
+159,45,100,Restaurantes
+159,46,100,Eventos
+159,113,100,Otros gastronomía
+159,47,100,Tiendas especializadas
+159,48,100,Tiendas tradicionales
+159,49,100,Otras compras
+159,50,100,Exposiciones
+159,51,100,Conferencias
+159,52,100,Ferias
+159,53,100,Congresos
+159,54,100,Fiestas
+159,55,10,Grandes eventos (exposiciones)
+159,112,100,Otros eventos
+159,57,10,Nauticos
+159,56,100,Eventos deportivos
+159,59,100,Futbol
+159,60,10,Baloncesto
+159,61,100,Otros deportes
+159,62,100,Arte
+159,63,100,Ciencia y tecnología
+159,64,100,Historia
+159,65,100,Religión
+159,66,100,Ciencias naturales
+159,67,10,Arqueologia
+159,68,100,Historia y cultura local
+159,69,10,Artesanía
+159,70,10,Militar
+159,71,100,Otros museos
+159,72,100,Catedrales
+159,73,100,Iglesias
+159,74,10,Conventos
+159,75,100,Monasterios
+159,76,10,Claustros
+159,77,10,Sinagogas
+159,78,10,Mezquitas
+159,79,100,Campanarios
+159,80,10,Cementerios
+159,81,10,Tumbas
+159,82,10,Criptas
+159,83,100,Abadías
+159,84,100,Basílica
+159,85,100,Capilla
+159,86,10,Colegiata
+159,111,100,Otras arquitectura religiosa
+159,87,100,Castillos
+159,88,100,Torres
+159,89,100,Murallas
+159,90,100,Puertas
+159,110,100,Otras arquitecturas defensivas
+159,91,100,Palacio
+159,92,10,Casa
+159,93,100,Centro histórico
+159,94,10,Ateneo
+159,95,100,Mercados
+159,96,100,Edificios gubernamentales
+159,97,100,Edificios académicos
+159,98,100,Otros edificios públicos
+159,99,100,Estaciones de transportes
+159,100,10,Atarazanas
+159,101,10,Puentes
+159,102,100,Faros
+159,103,100,Estadios y áreas deportivas
+159,104,100,Otros edificios emblemáticos
+159,105,10,Esculturas
+159,106,100,Fuentes
+159,107,100,Otros monumentos
+159,108,100,Centros de salud y spa
+159,109,100,Otros salud y spa
+160,16,70,Prehistórico
+160,17,70,Árabe
+160,18,70,Romano
+160,19,70,Medieval
+160,20,70,Gótico
+160,21,70,Románico
+160,22,70,Renacentista
+160,23,70,Barroco
+160,24,70,Rococo
+160,25,70,Neoclásico
+160,26,70,Modernista
+160,27,70,Contemporáneo
+160,115,70,Otros estilos
+160,28,70,Parques
+160,29,70,Jardines botánicos
+160,30,70,Parque infantil
+160,31,90,Playas
+160,32,70,Lagos
+160,33,80,Calles y plazas
+160,34,90,Paseos
+160,35,70,Parques temáticos
+160,36,60,Otros espacios abiertos
+160,37,80,Cines
+160,38,80,Teatros
+160,39,80,Conciertos y música en vivo
+160,40,80,Clubs y discotecas
+160,41,80,Bares y pubs
+160,43,80,Música clasica
+160,44,80,Ópera
+160,114,80,Otros ocio
+160,45,80,Restaurantes
+160,46,80,Eventos
+160,113,80,Otros gastronomía
+160,47,70,Tiendas especializadas
+160,48,70,Tiendas tradicionales
+160,49,70,Otras compras
+160,50,70,Exposiciones
+160,51,70,Conferencias
+160,52,70,Ferias
+160,53,70,Congresos
+160,54,70,Fiestas
+160,55,70,Grandes eventos (exposiciones)
+160,112,70,Otros eventos
+160,57,70,Nauticos
+160,56,50,Eventos deportivos
+160,59,50,Futbol
+160,60,50,Baloncesto
+160,61,50,Otros deportes
+160,62,70,Arte
+160,63,70,Ciencia y tecnología
+160,64,70,Historia
+160,65,70,Religión
+160,66,70,Ciencias naturales
+160,67,70,Arqueologia
+160,68,70,Historia y cultura local
+160,69,70,Artesanía
+160,70,70,Militar
+160,71,70,Otros museos
+160,72,90,Catedrales
+160,73,90,Iglesias
+160,74,90,Conventos
+160,75,90,Monasterios
+160,76,90,Claustros
+160,77,90,Sinagogas
+160,78,90,Mezquitas
+160,79,90,Campanarios
+160,80,90,Cementerios
+160,81,90,Tumbas
+160,82,90,Criptas
+160,83,90,Abadías
+160,84,90,Basílica
+160,85,90,Capilla
+160,86,90,Colegiata
+160,111,90,Otras arquitectura religiosa
+160,87,90,Castillos
+160,88,90,Torres
+160,89,90,Murallas
+160,90,90,Puertas
+160,110,90,Otras arquitecturas defensivas
+160,91,70,Palacio
+160,92,70,Casa
+160,93,70,Centro histórico
+160,94,70,Ateneo
+160,95,70,Mercados
+160,96,70,Edificios gubernamentales
+160,97,70,Edificios académicos
+160,98,70,Otros edificios públicos
+160,99,70,Estaciones de transportes
+160,100,70,Atarazanas
+160,101,70,Puentes
+160,102,70,Faros
+160,103,70,Estadios y áreas deportivas
+160,104,70,Otros edificios emblemáticos
+160,105,70,Esculturas
+160,106,70,Fuentes
+160,107,70,Otros monumentos
+160,108,80,Centros de salud y spa
+160,109,80,Otros salud y spa
+161,16,50,Prehistórico
+161,17,100,Árabe
+161,18,60,Romano
+161,19,70,Medieval
+161,20,90,Gótico
+161,21,60,Románico
+161,22,70,Renacentista
+161,23,70,Barroco
+161,24,70,Rococo
+161,25,50,Neoclásico
+161,26,50,Modernista
+161,27,50,Contemporáneo
+161,115,20,Otros estilos
+161,28,80,Parques
+161,29,50,Jardines botánicos
+161,30,20,Parque infantil
+161,31,40,Playas
+161,32,60,Lagos
+161,33,40,Calles y plazas
+161,34,30,Paseos
+161,35,50,Parques temáticos
+161,36,50,Otros espacios abiertos
+161,37,70,Cines
+161,38,40,Teatros
+161,39,50,Conciertos y música en vivo
+161,40,20,Clubs y discotecas
+161,41,50,Bares y pubs
+161,43,20,Música clasica
+161,44,30,Ópera
+161,114,50,Otros ocio
+161,45,50,Restaurantes
+161,46,60,Eventos
+161,113,50,Otros gastronomía
+161,47,40,Tiendas especializadas
+161,48,40,Tiendas tradicionales
+161,49,30,Otras compras
+161,50,60,Exposiciones
+161,51,70,Conferencias
+161,52,30,Ferias
+161,53,30,Congresos
+161,54,80,Fiestas
+161,55,70,Grandes eventos (exposiciones)
+161,112,30,Otros eventos
+161,57,50,Nauticos
+161,56,50,Eventos deportivos
+161,59,60,Futbol
+161,60,10,Baloncesto
+161,61,30,Otros deportes
+161,62,30,Arte
+161,63,70,Ciencia y tecnología
+161,64,40,Historia
+161,65,20,Religión
+161,66,70,Ciencias naturales
+161,67,60,Arqueologia
+161,68,30,Historia y cultura local
+161,69,30,Artesanía
+161,70,40,Militar
+161,71,50,Otros museos
+161,72,70,Catedrales
+161,73,50,Iglesias
+161,74,60,Conventos
+161,75,60,Monasterios
+161,76,50,Claustros
+161,77,50,Sinagogas
+161,78,50,Mezquitas
+161,79,60,Campanarios
+161,80,20,Cementerios
+161,81,30,Tumbas
+161,82,30,Criptas
+161,83,40,Abadías
+161,84,40,Basílica
+161,85,40,Capilla
+161,86,40,Colegiata
+161,111,40,Otras arquitectura religiosa
+161,87,100,Castillos
+161,88,90,Torres
+161,89,90,Murallas
+161,90,80,Puertas
+161,110,80,Otras arquitecturas defensivas
+161,91,90,Palacio
+161,92,60,Casa
+161,93,80,Centro histórico
+161,94,60,Ateneo
+161,95,60,Mercados
+161,96,50,Edificios gubernamentales
+161,97,50,Edificios académicos
+161,98,50,Otros edificios públicos
+161,99,30,Estaciones de transportes
+161,100,60,Atarazanas
+161,101,60,Puentes
+161,102,70,Faros
+161,103,60,Estadios y áreas deportivas
+161,104,50,Otros edificios emblemáticos
+161,105,60,Esculturas
+161,106,70,Fuentes
+161,107,60,Otros monumentos
+161,108,50,Centros de salud y spa
+161,109,50,Otros salud y spa
+162,16,90,Prehistórico
+162,17,90,Árabe
+162,18,90,Romano
+162,19,90,Medieval
+162,20,90,Gótico
+162,21,90,Románico
+162,22,90,Renacentista
+162,23,90,Barroco
+162,24,90,Rococo
+162,25,90,Neoclásico
+162,26,90,Modernista
+162,27,90,Contemporáneo
+162,115,90,Otros estilos
+162,28,70,Parques
+162,29,90,Jardines botánicos
+162,30,80,Parque infantil
+162,31,80,Playas
+162,32,90,Lagos
+162,33,70,Calles y plazas
+162,34,70,Paseos
+162,35,50,Parques temáticos
+162,37,80,Cines
+162,38,80,Teatros
+162,39,70,Conciertos y música en vivo
+162,40,60,Clubs y discotecas
+162,41,60,Bares y pubs
+162,43,60,Música clasica
+162,44,70,Ópera
+162,45,70,Restaurantes
+162,46,50,Eventos
+162,47,50,Tiendas especializadas
+162,48,50,Tiendas tradicionales
+162,50,70,Exposiciones
+162,51,70,Conferencias
+162,52,80,Ferias
+162,53,70,Congresos
+162,54,70,Fiestas
+162,55,70,Grandes eventos (exposiciones)
+162,57,50,Nauticos
+162,56,50,Eventos deportivos
+162,59,50,Futbol
+162,60,50,Baloncesto
+162,62,90,Arte
+162,63,90,Ciencia y tecnología
+162,64,90,Historia
+162,65,70,Religión
+162,66,80,Ciencias naturales
+162,67,80,Arqueologia
+162,68,80,Historia y cultura local
+162,69,70,Artesanía
+162,70,50,Militar
+162,72,70,Catedrales
+162,73,70,Iglesias
+162,74,70,Conventos
+162,75,70,Monasterios
+162,76,70,Claustros
+162,77,70,Sinagogas
+162,78,70,Mezquitas
+162,79,70,Campanarios
+162,80,70,Cementerios
+162,81,70,Tumbas
+162,82,70,Criptas
+162,83,70,Abadías
+162,84,70,Basílica
+162,85,70,Capilla
+162,86,70,Colegiata
+162,111,70,Otras arquitectura religiosa
+162,87,60,Castillos
+162,88,60,Torres
+162,89,60,Murallas
+162,90,60,Puertas
+162,110,60,Otras arquitecturas defensivas
+162,91,80,Palacio
+162,92,80,Casa
+162,93,80,Centro histórico
+162,94,80,Ateneo
+162,95,80,Mercados
+162,96,80,Edificios gubernamentales
+162,97,80,Edificios académicos
+162,98,80,Otros edificios públicos
+162,99,80,Estaciones de transportes
+162,100,80,Atarazanas
+162,101,80,Puentes
+162,102,80,Faros
+162,103,80,Estadios y áreas deportivas
+162,104,80,Otros edificios emblemáticos
+162,105,80,Esculturas
+162,106,80,Fuentes
+162,107,80,Otros monumentos
+162,108,50,Centros de salud y spa
+162,109,50,Otros salud y spa
+163,16,50,Prehistórico
+163,17,50,Árabe
+163,18,50,Romano
+163,19,50,Medieval
+163,20,50,Gótico
+163,21,50,Románico
+163,22,50,Renacentista
+163,23,50,Barroco
+163,24,50,Rococo
+163,25,50,Neoclásico
+163,26,50,Modernista
+163,27,50,Contemporáneo
+163,115,50,Otros estilos
+163,28,50,Parques
+163,29,50,Jardines botánicos
+163,30,50,Parque infantil
+163,31,50,Playas
+163,32,50,Lagos
+163,33,50,Calles y plazas
+163,34,50,Paseos
+163,35,50,Parques temáticos
+163,36,50,Otros espacios abiertos
+163,37,50,Cines
+163,38,50,Teatros
+163,39,50,Conciertos y música en vivo
+163,40,50,Clubs y discotecas
+163,41,50,Bares y pubs
+163,43,50,Música clasica
+163,44,50,Ópera
+163,114,50,Otros ocio
+163,45,50,Restaurantes
+163,46,50,Eventos
+163,113,50,Otros gastronomía
+163,47,50,Tiendas especializadas
+163,48,50,Tiendas tradicionales
+163,49,50,Otras compras
+163,50,50,Exposiciones
+163,51,50,Conferencias
+163,52,50,Ferias
+163,53,50,Congresos
+163,54,50,Fiestas
+163,55,50,Grandes eventos (exposiciones)
+163,112,50,Otros eventos
+163,57,50,Nauticos
+163,56,50,Eventos deportivos
+163,59,50,Futbol
+163,60,50,Baloncesto
+163,61,50,Otros deportes
+163,62,50,Arte
+163,63,50,Ciencia y tecnología
+163,64,50,Historia
+163,65,50,Religión
+163,66,50,Ciencias naturales
+163,67,50,Arqueologia
+163,68,50,Historia y cultura local
+163,69,50,Artesanía
+163,70,50,Militar
+163,71,50,Otros museos
+163,72,50,Catedrales
+163,73,50,Iglesias
+163,74,50,Conventos
+163,75,50,Monasterios
+163,76,50,Claustros
+163,77,50,Sinagogas
+163,78,50,Mezquitas
+163,79,50,Campanarios
+163,80,50,Cementerios
+163,81,50,Tumbas
+163,82,50,Criptas
+163,83,50,Abadías
+163,84,50,Basílica
+163,85,50,Capilla
+163,86,50,Colegiata
+163,111,50,Otras arquitectura religiosa
+163,87,50,Castillos
+163,88,50,Torres
+163,89,50,Murallas
+163,90,50,Puertas
+163,110,50,Otras arquitecturas defensivas
+163,91,50,Palacio
+163,92,50,Casa
+163,93,50,Centro histórico
+163,94,50,Ateneo
+163,95,50,Mercados
+163,96,50,Edificios gubernamentales
+163,97,50,Edificios académicos
+163,98,50,Otros edificios públicos
+163,99,50,Estaciones de transportes
+163,100,50,Atarazanas
+163,101,50,Puentes
+163,102,50,Faros
+163,103,50,Estadios y áreas deportivas
+163,104,50,Otros edificios emblemáticos
+163,105,50,Esculturas
+163,106,50,Fuentes
+163,107,50,Otros monumentos
+164,16,50,Prehistórico
+164,17,50,Árabe
+164,18,70,Romano
+164,19,50,Medieval
+164,20,60,Gótico
+164,21,80,Románico
+164,22,80,Renacentista
+164,23,70,Barroco
+164,24,50,Rococo
+164,25,60,Neoclásico
+164,26,80,Modernista
+164,27,70,Contemporáneo
+164,115,70,Otros estilos
+164,28,70,Parques
+164,29,90,Jardines botánicos
+164,30,60,Parque infantil
+164,31,60,Playas
+164,32,50,Lagos
+164,33,70,Calles y plazas
+164,34,70,Paseos
+164,35,60,Parques temáticos
+164,36,70,Otros espacios abiertos
+164,37,70,Cines
+164,38,60,Teatros
+164,39,60,Conciertos y música en vivo
+164,40,40,Clubs y discotecas
+164,41,40,Bares y pubs
+164,43,50,Música clasica
+164,44,30,Ópera
+164,114,50,Otros ocio
+164,45,60,Restaurantes
+164,46,50,Eventos
+164,113,50,Otros gastronomía
+164,47,30,Tiendas especializadas
+164,48,50,Tiendas tradicionales
+164,49,40,Otras compras
+164,50,40,Exposiciones
+164,51,60,Conferencias
+164,52,50,Ferias
+164,53,60,Congresos
+164,54,40,Fiestas
+164,55,40,Grandes eventos (exposiciones)
+164,112,50,Otros eventos
+164,57,10,Nauticos
+164,56,30,Eventos deportivos
+164,59,50,Futbol
+164,60,40,Baloncesto
+164,61,30,Otros deportes
+164,62,60,Arte
+164,63,90,Ciencia y tecnología
+164,64,60,Historia
+164,65,30,Religión
+164,66,50,Ciencias naturales
+164,67,50,Arqueologia
+164,68,50,Historia y cultura local
+164,69,60,Artesanía
+164,70,20,Militar
+164,71,60,Otros museos
+164,72,80,Catedrales
+164,73,30,Iglesias
+164,74,30,Conventos
+164,75,30,Monasterios
+164,76,50,Claustros
+164,77,20,Sinagogas
+164,78,20,Mezquitas
+164,79,60,Campanarios
+164,80,40,Cementerios
+164,81,20,Tumbas
+164,82,20,Criptas
+164,83,40,Abadías
+164,84,40,Basílica
+164,85,30,Capilla
+164,86,30,Colegiata
+164,111,40,Otras arquitectura religiosa
+164,87,70,Castillos
+164,88,60,Torres
+164,89,50,Murallas
+164,90,60,Puertas
+164,110,60,Otras arquitecturas defensivas
+164,91,60,Palacio
+164,92,60,Casa
+164,93,80,Centro histórico
+164,94,60,Ateneo
+164,95,90,Mercados
+164,96,80,Edificios gubernamentales
+164,97,70,Edificios académicos
+164,98,80,Otros edificios públicos
+164,99,60,Estaciones de transportes
+164,100,80,Atarazanas
+164,101,70,Puentes
+164,102,70,Faros
+164,103,60,Estadios y áreas deportivas
+164,104,70,Otros edificios emblemáticos
+164,105,70,Esculturas
+164,106,70,Fuentes
+164,107,70,Otros monumentos
+164,108,40,Centros de salud y spa
+164,109,40,Otros salud y spa
+165,16,30,Prehistórico
+165,17,70,Árabe
+165,18,70,Romano
+165,19,70,Medieval
+165,20,70,Gótico
+165,21,70,Románico
+165,22,70,Renacentista
+165,23,30,Barroco
+165,24,30,Rococo
+165,25,30,Neoclásico
+165,26,30,Modernista
+165,27,30,Contemporáneo
+165,115,30,Otros estilos
+165,28,70,Parques
+165,29,70,Jardines botánicos
+165,30,50,Parque infantil
+165,31,70,Playas
+165,32,50,Lagos
+165,33,100,Calles y plazas
+165,34,100,Paseos
+165,35,50,Parques temáticos
+165,36,50,Otros espacios abiertos
+165,37,90,Cines
+165,38,90,Teatros
+165,39,50,Conciertos y música en vivo
+165,40,30,Clubs y discotecas
+165,41,30,Bares y pubs
+165,43,100,Música clasica
+165,44,80,Ópera
+165,114,50,Otros ocio
+165,45,80,Restaurantes
+165,46,50,Eventos
+165,113,80,Otros gastronomía
+165,47,50,Tiendas especializadas
+165,48,90,Tiendas tradicionales
+165,49,50,Otras compras
+165,50,70,Exposiciones
+165,51,30,Conferencias
+165,52,30,Ferias
+165,53,30,Congresos
+165,54,30,Fiestas
+165,55,30,Grandes eventos (exposiciones)
+165,112,30,Otros eventos
+165,57,30,Nauticos
+165,56,30,Eventos deportivos
+165,59,30,Futbol
+165,60,30,Baloncesto
+165,61,30,Otros deportes
+165,62,90,Arte
+165,63,90,Ciencia y tecnología
+165,64,90,Historia
+165,65,50,Religión
+165,66,90,Ciencias naturales
+165,67,90,Arqueologia
+165,68,90,Historia y cultura local
+165,69,90,Artesanía
+165,70,50,Militar
+165,71,90,Otros museos
+165,72,90,Catedrales
+165,73,90,Iglesias
+165,74,90,Conventos
+165,75,90,Monasterios
+165,76,90,Claustros
+165,77,90,Sinagogas
+165,78,90,Mezquitas
+165,79,90,Campanarios
+165,80,50,Cementerios
+165,81,50,Tumbas
+165,82,50,Criptas
+165,83,90,Abadías
+165,84,90,Basílica
+165,85,90,Capilla
+165,86,90,Colegiata
+165,111,90,Otras arquitectura religiosa
+165,87,70,Castillos
+165,88,70,Torres
+165,89,70,Murallas
+165,90,70,Puertas
+165,110,70,Otras arquitecturas defensivas
+165,91,70,Palacio
+165,92,70,Casa
+165,93,70,Centro histórico
+165,94,70,Ateneo
+165,95,70,Mercados
+165,96,70,Edificios gubernamentales
+165,97,70,Edificios académicos
+165,98,70,Otros edificios públicos
+165,99,70,Estaciones de transportes
+165,100,70,Atarazanas
+165,101,70,Puentes
+165,102,70,Faros
+165,103,70,Estadios y áreas deportivas
+165,104,70,Otros edificios emblemáticos
+165,105,70,Esculturas
+165,106,70,Fuentes
+165,107,70,Otros monumentos
+165,108,80,Centros de salud y spa
+165,109,80,Otros salud y spa
+166,16,100,Prehistórico
+166,17,100,Árabe
+166,18,100,Romano
+166,19,100,Medieval
+166,20,100,Gótico
+166,21,100,Románico
+166,22,100,Renacentista
+166,23,70,Barroco
+166,24,70,Rococo
+166,25,80,Neoclásico
+166,26,70,Modernista
+166,27,70,Contemporáneo
+166,115,70,Otros estilos
+166,28,50,Parques
+166,29,90,Jardines botánicos
+166,30,30,Parque infantil
+166,31,90,Playas
+166,32,100,Lagos
+166,33,100,Calles y plazas
+166,34,100,Paseos
+166,35,90,Parques temáticos
+166,36,50,Otros espacios abiertos
+166,37,80,Cines
+166,38,80,Teatros
+166,39,90,Conciertos y música en vivo
+166,40,50,Clubs y discotecas
+166,41,50,Bares y pubs
+166,43,60,Música clasica
+166,44,60,Ópera
+166,114,50,Otros ocio
+166,45,100,Restaurantes
+166,46,100,Eventos
+166,113,100,Otros gastronomía
+166,47,100,Tiendas especializadas
+166,48,100,Tiendas tradicionales
+166,49,100,Otras compras
+166,50,70,Exposiciones
+166,51,70,Conferencias
+166,52,70,Ferias
+166,53,70,Congresos
+166,54,100,Fiestas
+166,55,100,Grandes eventos (exposiciones)
+166,112,50,Otros eventos
+166,57,70,Nauticos
+166,56,70,Eventos deportivos
+166,59,70,Futbol
+166,60,70,Baloncesto
+166,61,70,Otros deportes
+166,62,90,Arte
+166,63,100,Ciencia y tecnología
+166,64,90,Historia
+166,65,80,Religión
+166,66,100,Ciencias naturales
+166,67,80,Arqueologia
+166,68,100,Historia y cultura local
+166,69,80,Artesanía
+166,70,70,Militar
+166,71,70,Otros museos
+166,72,100,Catedrales
+166,73,90,Iglesias
+166,74,90,Conventos
+166,75,90,Monasterios
+166,76,80,Claustros
+166,77,90,Sinagogas
+166,78,90,Mezquitas
+166,79,90,Campanarios
+166,80,50,Cementerios
+166,81,50,Tumbas
+166,82,50,Criptas
+166,83,80,Abadías
+166,84,90,Basílica
+166,85,90,Capilla
+166,86,90,Colegiata
+166,111,80,Otras arquitectura religiosa
+166,87,100,Castillos
+166,88,90,Torres
+166,89,90,Murallas
+166,90,90,Puertas
+166,110,90,Otras arquitecturas defensivas
+166,91,100,Palacio
+166,92,100,Casa
+166,93,100,Centro histórico
+166,94,80,Ateneo
+166,95,90,Mercados
+166,96,80,Edificios gubernamentales
+166,97,80,Edificios académicos
+166,98,90,Otros edificios públicos
+166,99,80,Estaciones de transportes
+166,100,80,Atarazanas
+166,101,80,Puentes
+166,102,90,Faros
+166,103,70,Estadios y áreas deportivas
+166,104,80,Otros edificios emblemáticos
+166,105,80,Esculturas
+166,106,80,Fuentes
+166,107,80,Otros monumentos
+166,108,70,Centros de salud y spa
+166,109,70,Otros salud y spa
+167,16,50,Prehistórico
+167,17,80,Árabe
+167,18,80,Romano
+167,19,80,Medieval
+167,20,90,Gótico
+167,21,70,Románico
+167,22,80,Renacentista
+167,23,80,Barroco
+167,24,80,Rococo
+167,25,80,Neoclásico
+167,26,90,Modernista
+167,27,90,Contemporáneo
+167,115,50,Otros estilos
+167,28,100,Parques
+167,29,100,Jardines botánicos
+167,30,100,Parque infantil
+167,31,100,Playas
+167,32,90,Lagos
+167,33,90,Calles y plazas
+167,34,100,Paseos
+167,35,90,Parques temáticos
+167,36,90,Otros espacios abiertos
+167,37,90,Cines
+167,38,80,Teatros
+167,39,90,Conciertos y música en vivo
+167,40,70,Clubs y discotecas
+167,41,80,Bares y pubs
+167,43,30,Música clasica
+167,44,30,Ópera
+167,114,50,Otros ocio
+167,45,90,Restaurantes
+167,46,70,Eventos
+167,113,50,Otros gastronomía
+167,47,70,Tiendas especializadas
+167,48,70,Tiendas tradicionales
+167,49,70,Otras compras
+167,50,80,Exposiciones
+167,51,30,Conferencias
+167,52,30,Ferias
+167,53,30,Congresos
+167,54,90,Fiestas
+167,55,90,Grandes eventos (exposiciones)
+167,112,50,Otros eventos
+167,57,30,Nauticos
+167,56,90,Eventos deportivos
+167,59,90,Futbol
+167,60,90,Baloncesto
+167,61,90,Otros deportes
+167,62,90,Arte
+167,63,90,Ciencia y tecnología
+167,64,70,Historia
+167,65,10,Religión
+167,66,80,Ciencias naturales
+167,67,80,Arqueologia
+167,68,70,Historia y cultura local
+167,69,30,Artesanía
+167,70,60,Militar
+167,71,50,Otros museos
+167,72,90,Catedrales
+167,73,90,Iglesias
+167,74,90,Conventos
+167,75,90,Monasterios
+167,76,90,Claustros
+167,77,90,Sinagogas
+167,78,90,Mezquitas
+167,79,90,Campanarios
+167,80,10,Cementerios
+167,81,10,Tumbas
+167,82,50,Criptas
+167,83,90,Abadías
+167,84,90,Basílica
+167,85,90,Capilla
+167,86,90,Colegiata
+167,111,90,Otras arquitectura religiosa
+167,87,90,Castillos
+167,88,90,Torres
+167,89,90,Murallas
+167,90,90,Puertas
+167,110,90,Otras arquitecturas defensivas
+167,91,90,Palacio
+167,92,90,Casa
+167,93,90,Centro histórico
+167,94,90,Ateneo
+167,95,90,Mercados
+167,96,90,Edificios gubernamentales
+167,97,90,Edificios académicos
+167,98,90,Otros edificios públicos
+167,99,90,Estaciones de transportes
+167,100,90,Atarazanas
+167,101,90,Puentes
+167,102,90,Faros
+167,103,70,Estadios y áreas deportivas
+167,104,90,Otros edificios emblemáticos
+167,105,70,Esculturas
+167,106,70,Fuentes
+167,107,80,Otros monumentos
+167,108,70,Centros de salud y spa
+167,109,70,Otros salud y spa
+168,16,80,Prehistórico
+168,17,80,Árabe
+168,18,80,Romano
+168,19,80,Medieval
+168,20,80,Gótico
+168,21,80,Románico
+168,22,80,Renacentista
+168,23,60,Barroco
+168,24,60,Rococo
+168,25,60,Neoclásico
+168,26,80,Modernista
+168,27,50,Contemporáneo
+168,115,50,Otros estilos
+168,28,30,Parques
+168,29,30,Jardines botánicos
+168,30,30,Parque infantil
+168,31,100,Playas
+168,32,100,Lagos
+168,33,100,Calles y plazas
+168,34,80,Paseos
+168,35,80,Parques temáticos
+168,36,80,Otros espacios abiertos
+168,37,100,Cines
+168,38,100,Teatros
+168,39,100,Conciertos y música en vivo
+168,40,70,Clubs y discotecas
+168,41,80,Bares y pubs
+168,43,90,Música clasica
+168,44,100,Ópera
+168,114,100,Otros ocio
+168,45,100,Restaurantes
+168,46,100,Eventos
+168,113,100,Otros gastronomía
+168,47,80,Tiendas especializadas
+168,48,80,Tiendas tradicionales
+168,49,80,Otras compras
+168,50,80,Exposiciones
+168,51,80,Conferencias
+168,52,80,Ferias
+168,53,70,Congresos
+168,54,70,Fiestas
+168,55,80,Grandes eventos (exposiciones)
+168,112,80,Otros eventos
+168,57,100,Nauticos
+168,56,80,Eventos deportivos
+168,59,0,Futbol
+168,60,20,Baloncesto
+168,61,80,Otros deportes
+168,62,80,Arte
+168,63,80,Ciencia y tecnología
+168,64,100,Historia
+168,65,30,Religión
+168,66,80,Ciencias naturales
+168,67,80,Arqueologia
+168,68,80,Historia y cultura local
+168,69,60,Artesanía
+168,70,0,Militar
+168,71,70,Otros museos
+168,72,100,Catedrales
+168,73,50,Iglesias
+168,74,50,Conventos
+168,75,60,Monasterios
+168,76,70,Claustros
+168,77,60,Sinagogas
+168,78,70,Mezquitas
+168,79,30,Campanarios
+168,80,0,Cementerios
+168,81,0,Tumbas
+168,82,60,Criptas
+168,83,30,Abadías
+168,84,70,Basílica
+168,85,40,Capilla
+168,86,40,Colegiata
+168,111,40,Otras arquitectura religiosa
+168,87,80,Castillos
+168,88,80,Torres
+168,89,80,Murallas
+168,90,80,Puertas
+168,110,80,Otras arquitecturas defensivas
+168,91,90,Palacio
+168,92,60,Casa
+168,93,100,Centro histórico
+168,94,60,Ateneo
+168,95,80,Mercados
+168,96,100,Edificios gubernamentales
+168,97,80,Edificios académicos
+168,98,50,Otros edificios públicos
+168,99,70,Estaciones de transportes
+168,100,60,Atarazanas
+168,101,100,Puentes
+168,102,100,Faros
+168,103,50,Estadios y áreas deportivas
+168,104,70,Otros edificios emblemáticos
+168,105,60,Esculturas
+168,106,70,Fuentes
+168,107,70,Otros monumentos
+168,108,80,Centros de salud y spa
+168,109,70,Otros salud y spa
+169,16,10,Prehistórico
+169,17,10,Árabe
+169,18,10,Romano
+169,19,10,Medieval
+169,20,10,Gótico
+169,21,10,Románico
+169,22,10,Renacentista
+169,23,10,Barroco
+169,24,10,Rococo
+169,25,10,Neoclásico
+169,26,10,Modernista
+169,27,10,Contemporáneo
+169,115,10,Otros estilos
+169,28,50,Parques
+169,29,10,Jardines botánicos
+169,30,10,Parque infantil
+169,31,100,Playas
+169,32,100,Lagos
+169,33,80,Calles y plazas
+169,34,80,Paseos
+169,35,10,Parques temáticos
+169,36,50,Otros espacios abiertos
+169,37,100,Cines
+169,38,70,Teatros
+169,39,100,Conciertos y música en vivo
+169,40,50,Clubs y discotecas
+169,41,100,Bares y pubs
+169,43,10,Música clasica
+169,44,10,Ópera
+169,114,60,Otros ocio
+169,45,100,Restaurantes
+169,46,10,Eventos
+169,113,50,Otros gastronomía
+169,47,100,Tiendas especializadas
+169,48,100,Tiendas tradicionales
+169,49,100,Otras compras
+169,50,10,Exposiciones
+169,51,10,Conferencias
+169,52,10,Ferias
+169,53,10,Congresos
+169,54,10,Fiestas
+169,55,10,Grandes eventos (exposiciones)
+169,112,10,Otros eventos
+169,57,10,Nauticos
+169,56,10,Eventos deportivos
+169,59,10,Futbol
+169,60,10,Baloncesto
+169,61,10,Otros deportes
+169,62,100,Arte
+169,63,10,Ciencia y tecnología
+169,64,70,Historia
+169,65,10,Religión
+169,66,60,Ciencias naturales
+169,67,60,Arqueologia
+169,68,80,Historia y cultura local
+169,69,80,Artesanía
+169,70,10,Militar
+169,71,70,Otros museos
+169,72,10,Catedrales
+169,73,10,Iglesias
+169,74,10,Conventos
+169,75,10,Monasterios
+169,76,10,Claustros
+169,77,10,Sinagogas
+169,78,10,Mezquitas
+169,79,10,Campanarios
+169,80,10,Cementerios
+169,81,10,Tumbas
+169,82,10,Criptas
+169,83,10,Abadías
+169,84,10,Basílica
+169,85,10,Capilla
+169,86,10,Colegiata
+169,111,10,Otras arquitectura religiosa
+169,87,10,Castillos
+169,88,10,Torres
+169,89,10,Murallas
+169,90,10,Puertas
+169,110,10,Otras arquitecturas defensivas
+169,91,70,Palacio
+169,92,100,Casa
+169,93,100,Centro histórico
+169,94,50,Ateneo
+169,95,100,Mercados
+169,96,100,Edificios gubernamentales
+169,97,100,Edificios académicos
+169,98,70,Otros edificios públicos
+169,99,50,Estaciones de transportes
+169,100,90,Atarazanas
+169,101,80,Puentes
+169,102,80,Faros
+169,103,50,Estadios y áreas deportivas
+169,104,60,Otros edificios emblemáticos
+169,105,70,Esculturas
+169,106,70,Fuentes
+169,107,70,Otros monumentos
+169,108,70,Centros de salud y spa
+169,109,70,Otros salud y spa
+170,16,70,Prehistórico
+170,17,90,Árabe
+170,18,90,Romano
+170,19,70,Medieval
+170,20,90,Gótico
+170,21,90,Románico
+170,22,90,Renacentista
+170,23,70,Barroco
+170,24,70,Rococo
+170,25,70,Neoclásico
+170,26,80,Modernista
+170,27,80,Contemporáneo
+170,115,60,Otros estilos
+170,28,80,Parques
+170,29,80,Jardines botánicos
+170,30,10,Parque infantil
+170,31,70,Playas
+170,32,80,Lagos
+170,33,30,Calles y plazas
+170,34,60,Paseos
+170,35,80,Parques temáticos
+170,36,60,Otros espacios abiertos
+170,37,90,Cines
+170,38,90,Teatros
+170,39,100,Conciertos y música en vivo
+170,40,40,Clubs y discotecas
+170,41,40,Bares y pubs
+170,43,100,Música clasica
+170,44,100,Ópera
+170,114,60,Otros ocio
+170,45,90,Restaurantes
+170,46,70,Eventos
+170,113,60,Otros gastronomía
+170,47,50,Tiendas especializadas
+170,48,50,Tiendas tradicionales
+170,49,50,Otras compras
+170,50,50,Exposiciones
+170,51,50,Conferencias
+170,52,50,Ferias
+170,53,50,Congresos
+170,54,50,Fiestas
+170,55,50,Grandes eventos (exposiciones)
+170,112,50,Otros eventos
+170,57,80,Nauticos
+170,56,80,Eventos deportivos
+170,59,90,Futbol
+170,60,80,Baloncesto
+170,61,70,Otros deportes
+170,62,80,Arte
+170,63,80,Ciencia y tecnología
+170,64,80,Historia
+170,65,80,Religión
+170,66,80,Ciencias naturales
+170,67,80,Arqueologia
+170,68,80,Historia y cultura local
+170,69,80,Artesanía
+170,70,80,Militar
+170,71,80,Otros museos
+170,72,80,Catedrales
+170,73,80,Iglesias
+170,74,80,Conventos
+170,75,80,Monasterios
+170,76,80,Claustros
+170,77,80,Sinagogas
+170,78,80,Mezquitas
+170,79,80,Campanarios
+170,80,80,Cementerios
+170,81,80,Tumbas
+170,82,80,Criptas
+170,83,80,Abadías
+170,84,80,Basílica
+170,85,80,Capilla
+170,86,80,Colegiata
+170,111,80,Otras arquitectura religiosa
+170,87,80,Castillos
+170,88,80,Torres
+170,89,80,Murallas
+170,90,80,Puertas
+170,110,80,Otras arquitecturas defensivas
+170,91,70,Palacio
+170,92,70,Casa
+170,93,70,Centro histórico
+170,94,70,Ateneo
+170,95,70,Mercados
+170,96,70,Edificios gubernamentales
+170,97,70,Edificios académicos
+170,98,70,Otros edificios públicos
+170,99,70,Estaciones de transportes
+170,100,70,Atarazanas
+170,101,70,Puentes
+170,102,70,Faros
+170,103,70,Estadios y áreas deportivas
+170,104,70,Otros edificios emblemáticos
+170,105,70,Esculturas
+170,106,70,Fuentes
+170,107,70,Otros monumentos
+170,108,90,Centros de salud y spa
+170,109,90,Otros salud y spa
+171,16,30,Prehistórico
+171,17,30,Árabe
+171,18,30,Romano
+171,19,30,Medieval
+171,20,30,Gótico
+171,21,30,Románico
+171,22,30,Renacentista
+171,23,30,Barroco
+171,24,30,Rococo
+171,25,30,Neoclásico
+171,26,30,Modernista
+171,27,30,Contemporáneo
+171,115,30,Otros estilos
+171,28,80,Parques
+171,29,80,Jardines botánicos
+171,30,80,Parque infantil
+171,31,80,Playas
+171,32,80,Lagos
+171,33,80,Calles y plazas
+171,34,80,Paseos
+171,35,80,Parques temáticos
+171,36,80,Otros espacios abiertos
+171,37,60,Cines
+171,38,60,Teatros
+171,39,60,Conciertos y música en vivo
+171,40,60,Clubs y discotecas
+171,41,60,Bares y pubs
+171,43,60,Música clasica
+171,44,60,Ópera
+171,114,60,Otros ocio
+171,45,30,Restaurantes
+171,46,30,Eventos
+171,113,30,Otros gastronomía
+171,47,20,Tiendas especializadas
+171,48,20,Tiendas tradicionales
+171,49,20,Otras compras
+171,50,60,Exposiciones
+171,51,60,Conferencias
+171,52,60,Ferias
+171,53,60,Congresos
+171,54,60,Fiestas
+171,55,60,Grandes eventos (exposiciones)
+171,112,60,Otros eventos
+171,57,50,Nauticos
+171,56,50,Eventos deportivos
+171,59,50,Futbol
+171,60,50,Baloncesto
+171,61,50,Otros deportes
+171,62,80,Arte
+171,63,80,Ciencia y tecnología
+171,64,80,Historia
+171,65,80,Religión
+171,66,80,Ciencias naturales
+171,67,80,Arqueologia
+171,68,80,Historia y cultura local
+171,69,80,Artesanía
+171,70,80,Militar
+171,71,80,Otros museos
+171,72,80,Catedrales
+171,73,80,Iglesias
+171,74,80,Conventos
+171,75,80,Monasterios
+171,76,80,Claustros
+171,77,80,Sinagogas
+171,78,80,Mezquitas
+171,79,80,Campanarios
+171,80,80,Cementerios
+171,81,80,Tumbas
+171,82,80,Criptas
+171,83,80,Abadías
+171,84,80,Basílica
+171,85,80,Capilla
+171,86,80,Colegiata
+171,111,80,Otras arquitectura religiosa
+171,87,90,Castillos
+171,88,90,Torres
+171,89,90,Murallas
+171,90,90,Puertas
+171,110,90,Otras arquitecturas defensivas
+171,91,70,Palacio
+171,92,70,Casa
+171,93,70,Centro histórico
+171,94,70,Ateneo
+171,95,70,Mercados
+171,96,70,Edificios gubernamentales
+171,97,70,Edificios académicos
+171,98,70,Otros edificios públicos
+171,99,70,Estaciones de transportes
+171,100,70,Atarazanas
+171,101,70,Puentes
+171,102,70,Faros
+171,103,70,Estadios y áreas deportivas
+171,104,70,Otros edificios emblemáticos
+171,105,70,Esculturas
+171,106,70,Fuentes
+171,107,70,Otros monumentos
+171,108,60,Centros de salud y spa
+171,109,60,Otros salud y spa
+172,16,30,Prehistórico
+172,17,80,Árabe
+172,18,80,Romano
+172,19,50,Medieval
+172,20,80,Gótico
+172,21,80,Románico
+172,22,80,Renacentista
+172,23,50,Barroco
+172,24,40,Rococo
+172,25,50,Neoclásico
+172,26,90,Modernista
+172,27,90,Contemporáneo
+172,115,10,Otros estilos
+172,28,70,Parques
+172,29,70,Jardines botánicos
+172,30,10,Parque infantil
+172,31,50,Playas
+172,32,50,Lagos
+172,33,80,Calles y plazas
+172,34,60,Paseos
+172,35,10,Parques temáticos
+172,36,10,Otros espacios abiertos
+172,37,70,Cines
+172,38,30,Teatros
+172,39,60,Conciertos y música en vivo
+172,40,10,Clubs y discotecas
+172,41,50,Bares y pubs
+172,43,10,Música clasica
+172,44,10,Ópera
+172,114,10,Otros ocio
+172,45,60,Restaurantes
+172,46,60,Eventos
+172,113,60,Otros gastronomía
+172,47,20,Tiendas especializadas
+172,48,20,Tiendas tradicionales
+172,49,20,Otras compras
+172,50,50,Exposiciones
+172,51,50,Conferencias
+172,52,50,Ferias
+172,53,50,Congresos
+172,54,50,Fiestas
+172,55,50,Grandes eventos (exposiciones)
+172,112,50,Otros eventos
+172,57,30,Nauticos
+172,56,30,Eventos deportivos
+172,59,30,Futbol
+172,60,30,Baloncesto
+172,61,30,Otros deportes
+172,62,50,Arte
+172,63,50,Ciencia y tecnología
+172,64,50,Historia
+172,65,50,Religión
+172,66,50,Ciencias naturales
+172,67,50,Arqueologia
+172,68,50,Historia y cultura local
+172,69,50,Artesanía
+172,70,50,Militar
+172,71,50,Otros museos
+172,72,80,Catedrales
+172,73,80,Iglesias
+172,74,80,Conventos
+172,75,80,Monasterios
+172,76,80,Claustros
+172,77,80,Sinagogas
+172,78,80,Mezquitas
+172,79,80,Campanarios
+172,80,80,Cementerios
+172,81,80,Tumbas
+172,82,80,Criptas
+172,83,80,Abadías
+172,84,80,Basílica
+172,85,80,Capilla
+172,86,80,Colegiata
+172,111,80,Otras arquitectura religiosa
+172,87,60,Castillos
+172,88,60,Torres
+172,89,60,Murallas
+172,90,60,Puertas
+172,110,60,Otras arquitecturas defensivas
+172,91,80,Palacio
+172,92,80,Casa
+172,93,80,Centro histórico
+172,94,80,Ateneo
+172,95,80,Mercados
+172,96,80,Edificios gubernamentales
+172,97,80,Edificios académicos
+172,98,80,Otros edificios públicos
+172,99,80,Estaciones de transportes
+172,100,80,Atarazanas
+172,101,80,Puentes
+172,102,80,Faros
+172,103,80,Estadios y áreas deportivas
+172,104,80,Otros edificios emblemáticos
+172,105,30,Esculturas
+172,106,30,Fuentes
+172,107,30,Otros monumentos
+172,108,10,Centros de salud y spa
+172,109,10,Otros salud y spa
+173,16,50,Prehistórico
+173,17,100,Árabe
+173,18,100,Romano
+173,19,100,Medieval
+173,20,100,Gótico
+173,21,70,Románico
+173,22,100,Renacentista
+173,23,90,Barroco
+173,24,90,Rococo
+173,25,100,Neoclásico
+173,26,100,Modernista
+173,27,100,Contemporáneo
+173,115,60,Otros estilos
+173,28,70,Parques
+173,29,80,Jardines botánicos
+173,30,40,Parque infantil
+173,31,40,Playas
+173,32,70,Lagos
+173,33,100,Calles y plazas
+173,34,90,Paseos
+173,35,40,Parques temáticos
+173,36,60,Otros espacios abiertos
+173,37,100,Cines
+173,38,100,Teatros
+173,39,80,Conciertos y música en vivo
+173,40,50,Clubs y discotecas
+173,41,50,Bares y pubs
+173,43,70,Música clasica
+173,44,70,Ópera
+173,114,60,Otros ocio
+173,45,100,Restaurantes
+173,46,80,Eventos
+173,113,70,Otros gastronomía
+173,47,80,Tiendas especializadas
+173,48,80,Tiendas tradicionales
+173,49,80,Otras compras
+173,50,80,Exposiciones
+173,51,80,Conferencias
+173,52,80,Ferias
+173,53,80,Congresos
+173,54,80,Fiestas
+173,55,80,Grandes eventos (exposiciones)
+173,112,80,Otros eventos
+173,57,60,Nauticos
+173,56,60,Eventos deportivos
+173,59,60,Futbol
+173,60,60,Baloncesto
+173,61,60,Otros deportes
+173,62,100,Arte
+173,63,80,Ciencia y tecnología
+173,64,80,Historia
+173,65,80,Religión
+173,66,80,Ciencias naturales
+173,67,80,Arqueologia
+173,68,80,Historia y cultura local
+173,69,70,Artesanía
+173,70,30,Militar
+173,71,70,Otros museos
+173,72,90,Catedrales
+173,73,90,Iglesias
+173,74,90,Conventos
+173,75,90,Monasterios
+173,76,90,Claustros
+173,77,90,Sinagogas
+173,78,90,Mezquitas
+173,79,90,Campanarios
+173,80,90,Cementerios
+173,81,90,Tumbas
+173,82,90,Criptas
+173,83,90,Abadías
+173,84,90,Basílica
+173,85,90,Capilla
+173,86,90,Colegiata
+173,111,90,Otras arquitectura religiosa
+173,87,80,Castillos
+173,88,80,Torres
+173,89,80,Murallas
+173,90,80,Puertas
+173,110,80,Otras arquitecturas defensivas
+173,91,80,Palacio
+173,92,80,Casa
+173,93,80,Centro histórico
+173,94,80,Ateneo
+173,95,80,Mercados
+173,96,80,Edificios gubernamentales
+173,97,80,Edificios académicos
+173,98,80,Otros edificios públicos
+173,99,80,Estaciones de transportes
+173,100,80,Atarazanas
+173,101,80,Puentes
+173,102,80,Faros
+173,103,80,Estadios y áreas deportivas
+173,104,80,Otros edificios emblemáticos
+173,105,80,Esculturas
+173,106,80,Fuentes
+173,107,80,Otros monumentos
+173,108,70,Centros de salud y spa
+173,109,70,Otros salud y spa
+174,16,70,Prehistórico
+174,17,70,Árabe
+174,18,70,Romano
+174,19,70,Medieval
+174,20,70,Gótico
+174,21,70,Románico
+174,22,70,Renacentista
+174,23,70,Barroco
+174,24,70,Rococo
+174,25,70,Neoclásico
+174,26,70,Modernista
+174,27,70,Contemporáneo
+174,115,70,Otros estilos
+174,28,70,Parques
+174,29,80,Jardines botánicos
+174,30,20,Parque infantil
+174,31,30,Playas
+174,32,90,Lagos
+174,33,50,Calles y plazas
+174,34,70,Paseos
+174,35,30,Parques temáticos
+174,36,50,Otros espacios abiertos
+174,37,60,Cines
+174,38,60,Teatros
+174,39,70,Conciertos y música en vivo
+174,40,60,Clubs y discotecas
+174,41,70,Bares y pubs
+174,43,20,Música clasica
+174,44,20,Ópera
+174,114,70,Otros ocio
+174,45,90,Restaurantes
+174,46,90,Eventos
+174,113,90,Otros gastronomía
+174,47,70,Tiendas especializadas
+174,48,70,Tiendas tradicionales
+174,49,70,Otras compras
+174,50,70,Exposiciones
+174,51,50,Conferencias
+174,52,90,Ferias
+174,53,90,Congresos
+174,54,90,Fiestas
+174,55,90,Grandes eventos (exposiciones)
+174,112,80,Otros eventos
+174,57,20,Nauticos
+174,56,60,Eventos deportivos
+174,59,80,Futbol
+174,60,30,Baloncesto
+174,61,50,Otros deportes
+174,62,60,Arte
+174,63,100,Ciencia y tecnología
+174,64,70,Historia
+174,65,30,Religión
+174,66,100,Ciencias naturales
+174,67,60,Arqueologia
+174,68,70,Historia y cultura local
+174,69,70,Artesanía
+174,70,30,Militar
+174,71,50,Otros museos
+174,72,80,Catedrales
+174,73,80,Iglesias
+174,74,80,Conventos
+174,75,80,Monasterios
+174,76,80,Claustros
+174,77,80,Sinagogas
+174,78,80,Mezquitas
+174,79,80,Campanarios
+174,80,10,Cementerios
+174,81,10,Tumbas
+174,82,20,Criptas
+174,83,80,Abadías
+174,84,80,Basílica
+174,85,80,Capilla
+174,86,80,Colegiata
+174,111,80,Otras arquitectura religiosa
+174,87,90,Castillos
+174,88,90,Torres
+174,89,90,Murallas
+174,90,90,Puertas
+174,110,90,Otras arquitecturas defensivas
+174,91,90,Palacio
+174,92,90,Casa
+174,93,90,Centro histórico
+174,94,90,Ateneo
+174,95,90,Mercados
+174,96,90,Edificios gubernamentales
+174,97,90,Edificios académicos
+174,98,90,Otros edificios públicos
+174,99,90,Estaciones de transportes
+174,100,90,Atarazanas
+174,101,90,Puentes
+174,102,90,Faros
+174,103,90,Estadios y áreas deportivas
+174,104,90,Otros edificios emblemáticos
+174,105,90,Esculturas
+174,106,90,Fuentes
+174,107,90,Otros monumentos
+174,108,50,Centros de salud y spa
+174,109,50,Otros salud y spa
+175,16,50,Prehistórico
+175,17,90,Árabe
+175,18,90,Romano
+175,19,90,Medieval
+175,20,90,Gótico
+175,21,90,Románico
+175,22,90,Renacentista
+175,23,90,Barroco
+175,24,90,Rococo
+175,25,90,Neoclásico
+175,26,90,Modernista
+175,27,50,Contemporáneo
+175,28,50,Parques
+175,29,20,Jardines botánicos
+175,30,0,Parque infantil
+175,31,50,Playas
+175,32,50,Lagos
+175,33,70,Calles y plazas
+175,34,70,Paseos
+175,35,0,Parques temáticos
+175,37,90,Cines
+175,38,70,Teatros
+175,39,90,Conciertos y música en vivo
+175,40,70,Clubs y discotecas
+175,41,90,Bares y pubs
+175,43,90,Música clasica
+175,44,70,Ópera
+175,45,80,Restaurantes
+175,46,30,Eventos
+175,47,20,Tiendas especializadas
+175,48,20,Tiendas tradicionales
+175,50,50,Exposiciones
+175,51,20,Conferencias
+175,52,20,Ferias
+175,53,20,Congresos
+175,54,70,Fiestas
+175,55,20,Grandes eventos (exposiciones)
+175,57,0,Nauticos
+175,56,0,Eventos deportivos
+175,59,0,Futbol
+175,60,0,Baloncesto
+175,62,20,Arte
+175,63,20,Ciencia y tecnología
+175,64,20,Historia
+175,65,20,Religión
+175,66,20,Ciencias naturales
+175,67,20,Arqueologia
+175,68,20,Historia y cultura local
+175,69,20,Artesanía
+175,70,20,Militar
+175,72,90,Catedrales
+175,73,90,Iglesias
+175,74,90,Conventos
+175,75,90,Monasterios
+175,76,90,Claustros
+175,77,90,Sinagogas
+175,78,90,Mezquitas
+175,79,90,Campanarios
+175,80,30,Cementerios
+175,81,30,Tumbas
+175,82,90,Criptas
+175,83,90,Abadías
+175,84,90,Basílica
+175,85,90,Capilla
+175,86,90,Colegiata
+175,87,90,Castillos
+175,88,90,Torres
+175,89,90,Murallas
+175,90,90,Puertas
+175,91,90,Palacio
+175,92,90,Casa
+175,93,90,Centro histórico
+175,94,90,Ateneo
+175,95,50,Mercados
+175,96,90,Edificios gubernamentales
+175,97,90,Edificios académicos
+175,98,90,Otros edificios públicos
+175,99,90,Estaciones de transportes
+175,100,90,Atarazanas
+175,101,90,Puentes
+175,102,90,Faros
+175,103,50,Estadios y áreas deportivas
+175,105,80,Esculturas
+175,106,80,Fuentes
+175,108,20,Centros de salud y spa
+176,16,70,Prehistórico
+176,17,80,Árabe
+176,18,80,Romano
+176,19,80,Medieval
+176,20,60,Gótico
+176,21,60,Románico
+176,22,60,Renacentista
+176,23,60,Barroco
+176,24,60,Rococo
+176,25,60,Neoclásico
+176,26,60,Modernista
+176,27,60,Contemporáneo
+176,115,60,Otros estilos
+176,28,90,Parques
+176,29,80,Jardines botánicos
+176,30,100,Parque infantil
+176,31,100,Playas
+176,32,80,Lagos
+176,33,80,Calles y plazas
+176,34,80,Paseos
+176,35,80,Parques temáticos
+176,36,80,Otros espacios abiertos
+176,37,80,Cines
+176,38,80,Teatros
+176,39,80,Conciertos y música en vivo
+176,40,60,Clubs y discotecas
+176,41,60,Bares y pubs
+176,43,60,Música clasica
+176,44,50,Ópera
+176,114,50,Otros ocio
+176,45,100,Restaurantes
+176,46,100,Eventos
+176,113,100,Otros gastronomía
+176,47,100,Tiendas especializadas
+176,48,100,Tiendas tradicionales
+176,49,100,Otras compras
+176,50,60,Exposiciones
+176,51,60,Conferencias
+176,52,50,Ferias
+176,53,20,Congresos
+176,54,50,Fiestas
+176,55,80,Grandes eventos (exposiciones)
+176,112,80,Otros eventos
+176,57,50,Nauticos
+176,56,50,Eventos deportivos
+176,59,50,Futbol
+176,60,50,Baloncesto
+176,61,50,Otros deportes
+176,62,50,Arte
+176,63,70,Ciencia y tecnología
+176,64,70,Historia
+176,65,50,Religión
+176,66,70,Ciencias naturales
+176,67,70,Arqueologia
+176,68,70,Historia y cultura local
+176,69,70,Artesanía
+176,70,50,Militar
+176,71,50,Otros museos
+176,72,80,Catedrales
+176,73,60,Iglesias
+176,74,60,Conventos
+176,75,70,Monasterios
+176,76,50,Claustros
+176,77,50,Sinagogas
+176,78,50,Mezquitas
+176,79,50,Campanarios
+176,80,10,Cementerios
+176,81,10,Tumbas
+176,82,10,Criptas
+176,83,10,Abadías
+176,84,50,Basílica
+176,85,50,Capilla
+176,86,30,Colegiata
+176,111,50,Otras arquitectura religiosa
+176,87,70,Castillos
+176,88,70,Torres
+176,89,70,Murallas
+176,90,70,Puertas
+176,110,70,Otras arquitecturas defensivas
+176,91,80,Palacio
+176,92,80,Casa
+176,93,100,Centro histórico
+176,94,70,Ateneo
+176,95,90,Mercados
+176,96,100,Edificios gubernamentales
+176,97,60,Edificios académicos
+176,98,80,Otros edificios públicos
+176,99,10,Estaciones de transportes
+176,100,10,Atarazanas
+176,101,40,Puentes
+176,102,80,Faros
+176,103,50,Estadios y áreas deportivas
+176,104,70,Otros edificios emblemáticos
+176,105,50,Esculturas
+176,106,50,Fuentes
+176,107,50,Otros monumentos
+176,108,80,Centros de salud y spa
+176,109,80,Otros salud y spa
+177,16,30,Prehistórico
+177,17,50,Árabe
+177,18,50,Romano
+177,19,50,Medieval
+177,20,60,Gótico
+177,21,80,Románico
+177,22,60,Renacentista
+177,23,60,Barroco
+177,24,50,Rococo
+177,25,50,Neoclásico
+177,26,70,Modernista
+177,27,80,Contemporáneo
+177,28,70,Parques
+177,29,60,Jardines botánicos
+177,30,60,Parque infantil
+177,31,70,Playas
+177,32,70,Lagos
+177,33,80,Calles y plazas
+177,34,80,Paseos
+177,35,40,Parques temáticos
+177,37,70,Cines
+177,38,60,Teatros
+177,39,60,Conciertos y música en vivo
+177,40,50,Clubs y discotecas
+177,41,70,Bares y pubs
+177,43,60,Música clasica
+177,44,50,Ópera
+177,45,80,Restaurantes
+177,46,60,Eventos
+177,113,70,Otros gastronomía
+177,47,70,Tiendas especializadas
+177,48,70,Tiendas tradicionales
+177,49,70,Otras compras
+177,50,50,Exposiciones
+177,51,70,Conferencias
+177,52,50,Ferias
+177,53,60,Congresos
+177,54,70,Fiestas
+177,55,60,Grandes eventos (exposiciones)
+177,57,40,Nauticos
+177,56,70,Eventos deportivos
+177,59,30,Futbol
+177,60,80,Baloncesto
+177,61,80,Otros deportes
+177,62,60,Arte
+177,63,80,Ciencia y tecnología
+177,64,60,Historia
+177,65,60,Religión
+177,66,50,Ciencias naturales
+177,67,60,Arqueologia
+177,68,50,Historia y cultura local
+177,69,70,Artesanía
+177,70,40,Militar
+177,72,80,Catedrales
+177,73,80,Iglesias
+177,74,80,Conventos
+177,75,80,Monasterios
+177,76,80,Claustros
+177,77,80,Sinagogas
+177,78,80,Mezquitas
+177,79,80,Campanarios
+177,80,80,Cementerios
+177,81,80,Tumbas
+177,82,80,Criptas
+177,83,80,Abadías
+177,84,80,Basílica
+177,85,80,Capilla
+177,86,80,Colegiata
+177,111,80,Otras arquitectura religiosa
+177,87,80,Castillos
+177,88,80,Torres
+177,89,80,Murallas
+177,90,80,Puertas
+177,110,80,Otras arquitecturas defensivas
+177,91,70,Palacio
+177,92,90,Casa
+177,93,90,Centro histórico
+177,94,60,Ateneo
+177,95,80,Mercados
+177,96,70,Edificios gubernamentales
+177,97,70,Edificios académicos
+177,98,70,Otros edificios públicos
+177,99,70,Estaciones de transportes
+177,100,70,Atarazanas
+177,101,60,Puentes
+177,102,90,Faros
+177,103,60,Estadios y áreas deportivas
+177,104,70,Otros edificios emblemáticos
+177,105,80,Esculturas
+177,106,80,Fuentes
+177,107,80,Otros monumentos
+177,108,60,Centros de salud y spa
+177,109,60,Otros salud y spa
+178,16,40,Prehistórico
+178,17,100,Árabe
+178,18,100,Romano
+178,19,100,Medieval
+178,20,100,Gótico
+178,21,100,Románico
+178,22,100,Renacentista
+178,23,100,Barroco
+178,24,100,Rococo
+178,25,100,Neoclásico
+178,26,100,Modernista
+178,27,100,Contemporáneo
+178,115,50,Otros estilos
+178,28,40,Parques
+178,29,80,Jardines botánicos
+178,30,20,Parque infantil
+178,31,80,Playas
+178,32,80,Lagos
+178,33,80,Calles y plazas
+178,34,50,Paseos
+178,35,100,Parques temáticos
+178,36,50,Otros espacios abiertos
+178,37,40,Cines
+178,38,60,Teatros
+178,39,80,Conciertos y música en vivo
+178,40,40,Clubs y discotecas
+178,41,20,Bares y pubs
+178,43,50,Música clasica
+178,44,50,Ópera
+178,114,50,Otros ocio
+178,45,50,Restaurantes
+178,46,80,Eventos
+178,113,50,Otros gastronomía
+178,47,20,Tiendas especializadas
+178,48,20,Tiendas tradicionales
+178,49,20,Otras compras
+178,50,80,Exposiciones
+178,51,80,Conferencias
+178,52,60,Ferias
+178,53,60,Congresos
+178,54,80,Fiestas
+178,55,100,Grandes eventos (exposiciones)
+178,112,50,Otros eventos
+178,57,20,Nauticos
+178,56,20,Eventos deportivos
+178,59,20,Futbol
+178,60,20,Baloncesto
+178,61,20,Otros deportes
+178,62,100,Arte
+178,63,100,Ciencia y tecnología
+178,64,100,Historia
+178,65,80,Religión
+178,66,60,Ciencias naturales
+178,67,100,Arqueologia
+178,68,100,Historia y cultura local
+178,69,40,Artesanía
+178,70,20,Militar
+178,71,50,Otros museos
+178,72,100,Catedrales
+178,73,100,Iglesias
+178,74,100,Conventos
+178,75,100,Monasterios
+178,76,100,Claustros
+178,77,100,Sinagogas
+178,78,100,Mezquitas
+178,79,100,Campanarios
+178,80,100,Cementerios
+178,81,100,Tumbas
+178,82,100,Criptas
+178,83,100,Abadías
+178,84,100,Basílica
+178,85,100,Capilla
+178,86,100,Colegiata
+178,111,100,Otras arquitectura religiosa
+178,87,100,Castillos
+178,88,100,Torres
+178,89,100,Murallas
+178,90,100,Puertas
+178,110,100,Otras arquitecturas defensivas
+178,91,100,Palacio
+178,92,100,Casa
+178,93,100,Centro histórico
+178,94,100,Ateneo
+178,95,60,Mercados
+178,96,40,Edificios gubernamentales
+178,97,60,Edificios académicos
+178,98,20,Otros edificios públicos
+178,99,20,Estaciones de transportes
+178,100,100,Atarazanas
+178,101,20,Puentes
+178,102,100,Faros
+178,103,20,Estadios y áreas deportivas
+178,104,50,Otros edificios emblemáticos
+178,105,50,Esculturas
+178,106,50,Fuentes
+178,107,50,Otros monumentos
+178,108,20,Centros de salud y spa
+178,109,20,Otros salud y spa
+179,19,100,Medieval
+179,21,100,Románico
+179,28,80,Parques
+179,37,100,Cines
+179,45,50,Restaurantes
+179,63,100,Ciencia y tecnología
+179,72,100,Catedrales
+180,16,60,Prehistórico
+180,17,60,Árabe
+180,18,60,Romano
+180,19,60,Medieval
+180,20,60,Gótico
+180,21,60,Románico
+180,22,60,Renacentista
+180,23,60,Barroco
+180,24,60,Rococo
+180,25,60,Neoclásico
+180,26,60,Modernista
+180,27,60,Contemporáneo
+180,115,60,Otros estilos
+180,28,90,Parques
+180,29,90,Jardines botánicos
+180,30,90,Parque infantil
+180,31,90,Playas
+180,32,90,Lagos
+180,33,90,Calles y plazas
+180,34,90,Paseos
+180,35,90,Parques temáticos
+180,36,90,Otros espacios abiertos
+180,37,60,Cines
+180,38,60,Teatros
+180,39,60,Conciertos y música en vivo
+180,40,60,Clubs y discotecas
+180,41,60,Bares y pubs
+180,43,60,Música clasica
+180,44,60,Ópera
+180,114,60,Otros ocio
+180,45,60,Restaurantes
+180,46,60,Eventos
+180,113,60,Otros gastronomía
+180,47,30,Tiendas especializadas
+180,48,30,Tiendas tradicionales
+180,49,30,Otras compras
+180,50,80,Exposiciones
+180,51,80,Conferencias
+180,52,80,Ferias
+180,53,80,Congresos
+180,54,80,Fiestas
+180,55,80,Grandes eventos (exposiciones)
+180,112,80,Otros eventos
+180,57,50,Nauticos
+180,56,50,Eventos deportivos
+180,59,50,Futbol
+180,60,50,Baloncesto
+180,61,50,Otros deportes
+180,62,70,Arte
+180,63,70,Ciencia y tecnología
+180,64,70,Historia
+180,65,70,Religión
+180,66,70,Ciencias naturales
+180,67,70,Arqueologia
+180,68,70,Historia y cultura local
+180,69,70,Artesanía
+180,70,70,Militar
+180,71,70,Otros museos
+180,72,70,Catedrales
+180,73,70,Iglesias
+180,74,70,Conventos
+180,75,70,Monasterios
+180,76,70,Claustros
+180,77,70,Sinagogas
+180,78,70,Mezquitas
+180,79,70,Campanarios
+180,80,70,Cementerios
+180,81,70,Tumbas
+180,82,70,Criptas
+180,83,70,Abadías
+180,84,70,Basílica
+180,85,70,Capilla
+180,86,70,Colegiata
+180,111,70,Otras arquitectura religiosa
+180,87,80,Castillos
+180,88,80,Torres
+180,89,80,Murallas
+180,90,80,Puertas
+180,110,80,Otras arquitecturas defensivas
+180,91,80,Palacio
+180,92,80,Casa
+180,93,80,Centro histórico
+180,94,80,Ateneo
+180,95,80,Mercados
+180,96,80,Edificios gubernamentales
+180,97,80,Edificios académicos
+180,98,80,Otros edificios públicos
+180,99,80,Estaciones de transportes
+180,100,80,Atarazanas
+180,101,80,Puentes
+180,102,80,Faros
+180,103,80,Estadios y áreas deportivas
+180,104,80,Otros edificios emblemáticos
+180,105,90,Esculturas
+180,106,90,Fuentes
+180,107,90,Otros monumentos
+180,108,60,Centros de salud y spa
+180,109,60,Otros salud y spa
