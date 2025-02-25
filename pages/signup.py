@@ -17,4 +17,3 @@ with st.form(key='signup_form'):
     if submit_button:
         # Handle user registration logic here (e.g., save new details in a database)
         st.success("Account created successfully. You can now log in.")
-s
