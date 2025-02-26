@@ -1,116 +1,362 @@
-id_padre,padre_categoria,padre
-1,Estilos y periodos,0
-2,Compras,0
-3,Museos,0
-4,Espacios Abiertos,0
-5,Arquitectura religiosa,0
-6,Arquitectura defensiva,0
-7,Arquitectura civil,0
-8,Gastronomia,0
-9,Deportes,0
-10,Monumentos,0
-11,Ocio,0
-12,Salud y SPA,0
-13,Eventos,0
-14,Niños,0
-15,Patrimonio de la Humanidad,0
-16,Prehistórico,1
-17,Árabe,1
-18,Romano,1
-19,Medieval,1
-20,Gótico,1
-21,Románico,1
-22,Renacentista,1
-23,Barroco,1
-24,Rococo,1
-25,Neoclásico,1
-26,Modernista,1
-27,Contemporáneo,1
-28,Parques,4
-29,Jardines botánicos,4
-30,Parque infantil,4
-31,Playas,4
-32,Lagos,4
-33,Calles y plazas,4
-34,Paseos,4
-35,Parques temáticos,4
-36,Otros espacios abiertos,4
-37,Cines,11
-38,Teatros,11
-39,Conciertos y música en vivo,11
-40,Clubs y discotecas,11
-41,Bares y pubs,11
-42,Discotecas,11
-43,Música clasica,11
-44,Ópera,11
-45,Restaurantes,8
-46,Eventos,8
-47,Tiendas especializadas,2
-48,Tiendas tradicionales,2
-49,Otras compras,2
-50,Exposiciones,13
-51,Conferencias,13
-52,Ferias,13
-53,Congresos,13
-54,Fiestas,13
-55,Grandes eventos (exposiciones),13
-56,Eventos deportivos,13
-57,Nauticos,9
-58,Grandes eventos,9
-59,Futbol,9
-60,Baloncesto,9
-61,Otros deportes,9
-62,Arte,3
-63,Ciencia y tecnología,3
-64,Historia,3
-65,Religión,3
-66,Ciencias naturales,3
-67,Arqueologia,3
-68,Historia y cultura local,3
-69,Artesanía,3
-70,Militar,3
-71,Otros museos,3
-72,Catedrales,5
-73,Iglesias,5
-74,Conventos,5
-75,Monasterios,5
-76,Claustros,5
-77,Sinagogas,5
-78,Mezquitas,5
-79,Campanarios,5
-80,Cementerios,5
-81,Tumbas,5
-82,Criptas,5
-83,Abadías,5
-84,Basílica,5
-85,Capilla,5
-86,Colegiata,5
-87,Castillos,6
-88,Torres,6
-89,Murallas,6
-90,Puertas,6
-91,Palacio,7
-92,Casa,7
-93,Centro histórico,7
-94,Ateneo,7
-95,Mercados,7
-96,Edificios gubernamentales,7
-97,Edificios académicos,7
-98,Otros edificios públicos,7
-99,Estaciones de transportes,7
-100,Atarazanas,7
-101,Puentes,7
-102,Faros,7
-103,Estadios y áreas deportivas,7
-104,Otros edificios emblemáticos,7
-105,Esculturas,10
-106,Fuentes,4
-107,Otros monumentos,10
-108,Centros de salud y spa,12
-109,Otros salud y spa,12
-110,Otras arquitecturas defensivas,6
-111,Otras arquitectura religiosa,5
-112,Otros eventos,13
-113,Otros gastronomía,8
-114,Otros ocio,11
-115,Otros estilos,1
+id_item,nombre_item,count,id_categoria,adec,categoria,id_padre,padre_categoria,padre
+17365,Casa de las Rocas-Museo del Corpus,11,65,61,Religión,3,Museos,0
+17365,Casa de las Rocas-Museo del Corpus,11,68,67,Historia y cultura local,3,Museos,0
+17366,Casa-Museo Benlliure,11,62,78,Arte,3,Museos,0
+17366,Casa-Museo Benlliure,11,68,75,Historia y cultura local,3,Museos,0
+17367,Casa-Museo Blasco Ibañez,11,26,20,Modernista,1,Estilos y periodos,0
+17367,Casa-Museo Blasco Ibañez,11,68,61,Historia y cultura local,3,Museos,0
+17369,Centro cultural Fundación Bancaja,30,50,60,Exposiciones,13,Eventos,0
+17369,Centro cultural Fundación Bancaja,30,62,66,Arte,3,Museos,0
+17369,Centro cultural Fundación Bancaja,30,115,45,Otros estilos,1,Estilos y periodos,0
+17371,Centro del Carmen-IVAM,26,27,61,Contemporáneo,1,Estilos y periodos,0
+17371,Centro del Carmen-IVAM,26,62,74,Arte,3,Museos,0
+17371,Centro del Carmen-IVAM,26,50,60,Exposiciones,13,Eventos,0
+17372,Centro Julio Gonzalez-IVAM,23,50,60,Exposiciones,13,Eventos,0
+17372,Centro Julio Gonzalez-IVAM,23,27,64,Contemporáneo,1,Estilos y periodos,0
+17372,Centro Julio Gonzalez-IVAM,23,62,78,Arte,3,Museos,0
+17374,El Oceanográfico,35,27,90,Contemporáneo,1,Estilos y periodos,0
+17374,El Oceanográfico,35,66,90,Ciencias naturales,3,Museos,0
+17375,Museo de Bellas Artes de Valencia-San Pio V,22,62,72,Arte,3,Museos,0
+17375,Museo de Bellas Artes de Valencia-San Pio V,22,64,69,Historia,3,Museos,0
+17375,Museo de Bellas Artes de Valencia-San Pio V,22,65,49,Religión,3,Museos,0
+17375,Museo de Bellas Artes de Valencia-San Pio V,22,115,29,Otros estilos,1,Estilos y periodos,0
+17376,Museo de Cerámica (Palacio Marqués de Dos Aguas),26,62,72,Arte,3,Museos,0
+17376,Museo de Cerámica (Palacio Marqués de Dos Aguas),26,69,65,Artesanía,3,Museos,0
+17377,Museo de historia de Valencia,19,24,66,Rococo,1,Estilos y periodos,0
+17377,Museo de historia de Valencia,19,64,70,Historia,3,Museos,0
+17377,Museo de historia de Valencia,19,68,67,Historia y cultura local,3,Museos,0
+17378,Museo de la Catedral,20,20,58,Gótico,1,Estilos y periodos,0
+17378,Museo de la Catedral,20,22,56,Renacentista,1,Estilos y periodos,0
+17378,Museo de la Catedral,20,62,57,Arte,3,Museos,0
+17378,Museo de la Catedral,20,65,50,Religión,3,Museos,0
+17379,Museo de la Ciudad,14,23,53,Barroco,1,Estilos y periodos,0
+17379,Museo de la Ciudad,14,62,65,Arte,3,Museos,0
+17379,Museo de la Ciudad,14,68,64,Historia y cultura local,3,Museos,0
+17380,Museo de las Ciencias Príncipe Felipe,28,27,90,Contemporáneo,1,Estilos y periodos,0
+17380,Museo de las Ciencias Príncipe Felipe,28,63,62,Ciencia y tecnología,3,Museos,0
+17380,Museo de las Ciencias Príncipe Felipe,28,66,58,Ciencias naturales,3,Museos,0
+17381,Museo de prehistoria y de las culturas de Valencia,14,64,74,Historia,3,Museos,0
+17381,Museo de prehistoria y de las culturas de Valencia,14,67,65,Arqueologia,3,Museos,0
+17382,Museo del Patriarca,12,22,49,Renacentista,1,Estilos y periodos,0
+17382,Museo del Patriarca,12,23,29,Barroco,1,Estilos y periodos,0
+17382,Museo del Patriarca,12,62,72,Arte,3,Museos,0
+17382,Museo del Patriarca,12,65,63,Religión,3,Museos,0
+17383,Museo Fallero,10,27,71,Contemporáneo,1,Estilos y periodos,0
+17383,Museo Fallero,10,68,77,Historia y cultura local,3,Museos,0
+17383,Museo Fallero,10,69,67,Artesanía,3,Museos,0
+17385,Museo Taurino,9,27,73,Contemporáneo,1,Estilos y periodos,0
+17385,Museo Taurino,9,68,73,Historia y cultura local,3,Museos,0
+17386,Museo Valenciano de Historia Natural,9,25,22,Neoclásico,1,Estilos y periodos,0
+17386,Museo Valenciano de Historia Natural,9,66,73,Ciencias naturales,3,Museos,0
+17388,Museo valenciano de la ilustración y la modernidad,13,19,57,Medieval,1,Estilos y periodos,0
+17388,Museo valenciano de la ilustración y la modernidad,13,26,55,Modernista,1,Estilos y periodos,0
+17388,Museo valenciano de la ilustración y la modernidad,13,27,52,Contemporáneo,1,Estilos y periodos,0
+17388,Museo valenciano de la ilustración y la modernidad,13,64,60,Historia,3,Museos,0
+17389,Ayuntamiento de Valencia,33,25,42,Neoclásico,1,Estilos y periodos,0
+17389,Ayuntamiento de Valencia,33,96,59,Edificios gubernamentales,7,Arquitectura civil,0
+17389,Ayuntamiento de Valencia,33,115,22,Otros estilos,1,Estilos y periodos,0
+17390,Biblioteca,15,64,68,Historia,3,Museos,0
+17391,Biblioteca Municipal,25,97,68,Edificios académicos,7,Arquitectura civil,0
+17392,Casa Museo Benlliure,13,62,78,Arte,3,Museos,0
+17392,Casa Museo Benlliure,13,68,75,Historia y cultura local,3,Museos,0
+17392,Casa Museo Benlliure,13,115,25,Otros estilos,1,Estilos y periodos,0
+17393,Ciudad de las Ciencias,37,27,59,Contemporáneo,1,Estilos y periodos,0
+17393,Ciudad de las Ciencias,37,27,90,Contemporáneo,1,Estilos y periodos,0
+17394,Edificio de Correos,29,25,85,Neoclásico,1,Estilos y periodos,0
+17394,Edificio de Correos,29,98,66,Otros edificios públicos,7,Arquitectura civil,0
+17395,Palacio de Benicarló (Cortes Valencianas),19,20,59,Gótico,1,Estilos y periodos,0
+17395,Palacio de Benicarló (Cortes Valencianas),19,96,68,Edificios gubernamentales,7,Arquitectura civil,0
+17396,El Almudín,19,17,72,Árabe,1,Estilos y periodos,0
+17396,El Almudín,19,19,72,Medieval,1,Estilos y periodos,0
+17396,El Almudín,19,50,67,Exposiciones,13,Eventos,0
+17397,Estación del Norte,35,26,80,Modernista,1,Estilos y periodos,0
+17397,Estación del Norte,35,99,66,Estaciones de transportes,7,Arquitectura civil,0
+17398,Estadio de Mestalla,27,27,41,Contemporáneo,1,Estilos y periodos,0
+17398,Estadio de Mestalla,27,59,29,Futbol,9,Deportes,0
+17398,Estadio de Mestalla,27,103,43,Estadios y áreas deportivas,7,Arquitectura civil,0
+17401,La Lonja de la Seda o de los Mercaderes,36,20,70,Gótico,1,Estilos y periodos,0
+17401,La Lonja de la Seda o de los Mercaderes,36,95,76,Mercados,7,Arquitectura civil,0
+17402,Mercado Central,35,26,62,Modernista,1,Estilos y periodos,0
+17402,Mercado Central,35,95,74,Mercados,7,Arquitectura civil,0
+17403,Mercado de Colón,37,26,61,Modernista,1,Estilos y periodos,0
+17403,Mercado de Colón,37,41,53,Bares y pubs,11,Ocio,0
+17403,Mercado de Colón,37,47,54,Tiendas especializadas,2,Compras,0
+17405,Palacio Arzobispal,8,23,41,Barroco,1,Estilos y periodos,0
+17405,Palacio Arzobispal,8,91,75,Palacio,7,Arquitectura civil,0
+17406,Palacio de Justicia,19,25,47,Neoclásico,1,Estilos y periodos,0
+17406,Palacio de Justicia,19,98,46,Otros edificios públicos,7,Arquitectura civil,0
+17407,Palacio de la Generalitat,20,20,60,Gótico,1,Estilos y periodos,0
+17407,Palacio de la Generalitat,20,22,59,Renacentista,1,Estilos y periodos,0
+17407,Palacio de la Generalitat,20,91,69,Palacio,7,Arquitectura civil,0
+17407,Palacio de la Generalitat,20,96,70,Edificios gubernamentales,7,Arquitectura civil,0
+17408,Palacio de los Condes de Alpuente,4,115,30,Otros estilos,1,Estilos y periodos,0
+17409,Palacio del Almirante,0,20,100,Gótico,1,Estilos y periodos,0
+17409,Palacio del Almirante,0,91,100,Palacio,7,Arquitectura civil,0
+17410,Palacio del Marqués de Dos Aguas,24,24,80,Rococo,1,Estilos y periodos,0
+17410,Palacio del Marqués de Dos Aguas,24,91,77,Palacio,7,Arquitectura civil,0
+17411,Palacio del Marqués del Campo,3,23,80,Barroco,1,Estilos y periodos,0
+17411,Palacio del Marqués del Campo,3,24,100,Rococo,1,Estilos y periodos,0
+17411,Palacio del Marqués del Campo,3,62,100,Arte,3,Museos,0
+17411,Palacio del Marqués del Campo,3,68,100,Historia y cultura local,3,Museos,0
+17411,Palacio del Marqués del Campo,3,91,100,Palacio,7,Arquitectura civil,0
+17412,Palau de la Musica,28,27,58,Contemporáneo,1,Estilos y periodos,0
+17412,Palau de la Musica,28,39,58,Conciertos y música en vivo,11,Ocio,0
+17412,Palau de la Musica,28,43,51,Música clasica,11,Ocio,0
+17413,Plaza de Toros,28,17,42,Árabe,1,Estilos y periodos,0
+17413,Plaza de Toros,28,39,51,Conciertos y música en vivo,11,Ocio,0
+17413,Plaza de Toros,28,115,52,Otros estilos,1,Estilos y periodos,0
+17414,Reales Atarazanas,21,20,72,Gótico,1,Estilos y periodos,0
+17414,Reales Atarazanas,21,39,60,Conciertos y música en vivo,11,Ocio,0
+17414,Reales Atarazanas,21,50,66,Exposiciones,13,Eventos,0
+17414,Reales Atarazanas,21,71,64,Otros museos,3,Museos,0
+17415,Teatro Principal,32,24,27,Rococo,1,Estilos y periodos,0
+17415,Teatro Principal,32,38,67,Teatros,11,Ocio,0
+17417,Torre del Miguelete,32,20,68,Gótico,1,Estilos y periodos,0
+17417,Torre del Miguelete,32,79,62,Campanarios,5,Arquitectura religiosa,0
+17418,Basílica de la Virgen - Museo Mariano,36,84,58,Basílica,5,Arquitectura religiosa,0
+17418,Basílica de la Virgen - Museo Mariano,36,23,54,Barroco,1,Estilos y periodos,0
+17418,Basílica de la Virgen - Museo Mariano,36,65,30,Religión,3,Museos,0
+17419,Catedral,35,20,64,Gótico,1,Estilos y periodos,0
+17419,Catedral,35,22,59,Renacentista,1,Estilos y periodos,0
+17419,Catedral,35,23,54,Barroco,1,Estilos y periodos,0
+17419,Catedral,35,72,72,Catedrales,5,Arquitectura religiosa,0
+17420,Iglesia de San Juan de la Cruz,9,20,77,Gótico,1,Estilos y periodos,0
+17420,Iglesia de San Juan de la Cruz,9,23,70,Barroco,1,Estilos y periodos,0
+17420,Iglesia de San Juan de la Cruz,9,73,81,Iglesias,5,Arquitectura religiosa,0
+17421,Iglesia de San Juan del Hospital,23,20,70,Gótico,1,Estilos y periodos,0
+17421,Iglesia de San Juan del Hospital,23,73,67,Iglesias,5,Arquitectura religiosa,0
+17422,Iglesia Santos Juanes,20,20,66,Gótico,1,Estilos y periodos,0
+17422,Iglesia Santos Juanes,20,73,67,Iglesias,5,Arquitectura religiosa,0
+17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,22,51,Renacentista,1,Estilos y periodos,0
+17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,75,68,Monasterios,5,Arquitectura religiosa,0
+17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,97,75,Edificios académicos,7,Arquitectura civil,0
+17426,Porta de la Mar,32,36,30,Otros espacios abiertos,4,Espacios Abiertos,0
+17426,Porta de la Mar,32,107,30,Otros monumentos,10,Monumentos,0
+17427,Torres de Quart,32,19,48,Medieval,1,Estilos y periodos,0
+17427,Torres de Quart,32,88,69,Torres,6,Arquitectura defensiva,0
+17429,Torres de Serranos,32,20,69,Gótico,1,Estilos y periodos,0
+17429,Torres de Serranos,32,88,69,Torres,6,Arquitectura defensiva,0
+17430,Jardín de Ayora,23,28,80,Parques,4,Espacios Abiertos,0
+17431,Jardín Botánico,32,29,69,Jardines botánicos,4,Espacios Abiertos,0
+17432,Jardines de Monforte,29,25,57,Neoclásico,1,Estilos y periodos,0
+17433,Jardines de la Glorieta,29,28,30,Parques,4,Espacios Abiertos,0
+17434,Parque Gulliver,31,30,62,Parque infantil,4,Espacios Abiertos,0
+17435,Paseo de la Alameda,36,34,50,Paseos,4,Espacios Abiertos,0
+17435,Paseo de la Alameda,36,41,30,Bares y pubs,11,Ocio,0
+17436,Paseo Marítimo,35,31,65,Playas,4,Espacios Abiertos,0
+17436,Paseo Marítimo,35,34,65,Paseos,4,Espacios Abiertos,0
+17437,Playa de la Malvarrosa,38,31,66,Playas,4,Espacios Abiertos,0
+17437,Playa de la Malvarrosa,38,31,66,Playas,4,Espacios Abiertos,0
+17438,Playa de las Arenas,37,34,80,Paseos,4,Espacios Abiertos,0
+17439,Plaza de la Virgen,36,33,83,Calles y plazas,4,Espacios Abiertos,0
+17440,Plaza Redonda,34,33,75,Calles y plazas,4,Espacios Abiertos,0
+17440,Plaza Redonda,34,48,65,Tiendas tradicionales,2,Compras,0
+17441,Puerto,34,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
+17441,Puerto,34,40,49,Clubs y discotecas,11,Ocio,0
+17441,Puerto,34,56,46,Eventos deportivos,13,Eventos,0
+17442,Tribunal de las Aguas,25,112,100,Otros eventos,13,Eventos,0
+17442,Tribunal de las Aguas,25,115,80,Otros estilos,1,Estilos y periodos,0
+17444,Jardines de Viveros,37,28,38,Parques,4,Espacios Abiertos,0
+17444,Jardines de Viveros,37,34,72,Paseos,4,Espacios Abiertos,0
+17444,Jardines de Viveros,37,39,55,Conciertos y música en vivo,11,Ocio,0
+17477,Antiguo Convento de Santo Domingo,11,19,70,Medieval,1,Estilos y periodos,0
+17477,Antiguo Convento de Santo Domingo,11,20,73,Gótico,1,Estilos y periodos,0
+17477,Antiguo Convento de Santo Domingo,11,22,66,Renacentista,1,Estilos y periodos,0
+17477,Antiguo Convento de Santo Domingo,11,23,70,Barroco,1,Estilos y periodos,0
+17477,Antiguo Convento de Santo Domingo,11,73,80,Iglesias,5,Arquitectura religiosa,0
+17477,Antiguo Convento de Santo Domingo,11,76,70,Claustros,5,Arquitectura religiosa,0
+17477,Antiguo Convento de Santo Domingo,11,85,74,Capilla,5,Arquitectura religiosa,0
+17478,Palacio de los Condes de Cervellón (Archivo Histórico Municipal),9,25,55,Neoclásico,1,Estilos y periodos,0
+17478,Palacio de los Condes de Cervellón (Archivo Histórico Municipal),9,64,83,Historia,3,Museos,0
+17479,Ateneo Mercantil,22,50,44,Exposiciones,13,Eventos,0
+17479,Ateneo Mercantil,22,51,37,Conferencias,13,Eventos,0
+17479,Ateneo Mercantil,22,94,42,Ateneo,7,Arquitectura civil,0
+17479,Ateneo Mercantil,22,115,34,Otros estilos,1,Estilos y periodos,0
+17480,Baños del Almirante,10,17,69,Árabe,1,Estilos y periodos,0
+17481,Bioparc,5,28,66,Parques,4,Espacios Abiertos,0
+17483,Campo de Golf del Saler,13,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
+17483,Campo de Golf del Saler,13,61,48,Otros deportes,9,Deportes,0
+17484,Casa de la America's Cup,24,27,47,Contemporáneo,1,Estilos y periodos,0
+17484,Casa de la America's Cup,24,31,59,Playas,4,Espacios Abiertos,0
+17484,Casa de la America's Cup,24,47,47,Tiendas especializadas,2,Compras,0
+17484,Casa de la America's Cup,24,50,53,Exposiciones,13,Eventos,0
+17485,Casa del Dragón,5,26,56,Modernista,1,Estilos y periodos,0
+17485,Casa del Dragón,5,92,70,Casa,7,Arquitectura civil,0
+17486,Casa Ferrer,5,26,76,Modernista,1,Estilos y periodos,0
+17486,Casa Ferrer,5,92,84,Casa,7,Arquitectura civil,0
+17487,Casa Ortega,2,26,93,Modernista,1,Estilos y periodos,0
+17487,Casa Ortega,2,92,100,Casa,7,Arquitectura civil,0
+17488,Casa-Museo Concha Piquer,4,68,30,Historia y cultura local,3,Museos,0
+17489,Casa-Museo de la Semana Santa Marinera (Salvador Caurín),2,65,93,Religión,3,Museos,0
+17489,Casa-Museo de la Semana Santa Marinera (Salvador Caurín),2,68,50,Historia y cultura local,3,Museos,0
+17490,Centro de Artesania,4,71,20,Otros museos,3,Museos,0
+17491,Colegio del Arte Mayor de la Seda,8,23,50,Barroco,1,Estilos y periodos,0
+17491,Colegio del Arte Mayor de la Seda,8,68,69,Historia y cultura local,3,Museos,0
+17491,Colegio del Arte Mayor de la Seda,8,69,64,Artesanía,3,Museos,0
+17492,Complejo Arqueológico de la Almoina,13,16,56,Prehistórico,1,Estilos y periodos,0
+17492,Complejo Arqueológico de la Almoina,13,17,71,Árabe,1,Estilos y periodos,0
+17492,Complejo Arqueológico de la Almoina,13,18,70,Romano,1,Estilos y periodos,0
+17492,Complejo Arqueológico de la Almoina,13,19,72,Medieval,1,Estilos y periodos,0
+17493,Complejo Deportivo Cultural Petxina,9,103,64,Estadios y áreas deportivas,7,Arquitectura civil,0
+17494,Convento de la Trinidad,6,20,93,Gótico,1,Estilos y periodos,0
+17494,Convento de la Trinidad,6,74,87,Conventos,5,Arquitectura religiosa,0
+17495,Cripta de la Cárcel de San Vicente,18,17,82,Árabe,1,Estilos y periodos,0
+17495,Cripta de la Cárcel de San Vicente,18,18,22,Romano,1,Estilos y periodos,0
+17495,Cripta de la Cárcel de San Vicente,18,65,59,Religión,3,Museos,0
+17495,Cripta de la Cárcel de San Vicente,18,68,70,Historia y cultura local,3,Museos,0
+17495,Cripta de la Cárcel de San Vicente,18,82,58,Criptas,5,Arquitectura religiosa,0
+17496,Edificio calle Ramilletes 1,2,26,36,Modernista,1,Estilos y periodos,0
+17496,Edificio calle Ramilletes 1,2,92,84,Casa,7,Arquitectura civil,0
+17497,Edificio del Reloj,12,25,50,Neoclásico,1,Estilos y periodos,0
+17497,Edificio del Reloj,12,100,25,Atarazanas,7,Arquitectura civil,0
+17498,Edificio Rialto,19,37,55,Cines,11,Ocio,0
+17498,Edificio Rialto,19,115,41,Otros estilos,1,Estilos y periodos,0
+17499,Estación-Terminal Marítima,17,99,54,Estaciones de transportes,7,Arquitectura civil,0
+17499,Estación-Terminal Marítima,17,115,36,Otros estilos,1,Estilos y periodos,0
+17500,Estatua Ecuestre del Rey Jaume I,28,105,49,Esculturas,10,Monumentos,0
+17501,Feria Valencia,32,27,20,Contemporáneo,1,Estilos y periodos,0
+17501,Feria Valencia,32,52,42,Ferias,13,Eventos,0
+17501,Feria Valencia,32,53,40,Congresos,13,Eventos,0
+17501,Feria Valencia,32,104,26,Otros edificios emblemáticos,7,Arquitectura civil,0
+17502,Fuente del Turia (Plaza de la Virgen),37,20,43,Gótico,1,Estilos y periodos,0
+17502,Fuente del Turia (Plaza de la Virgen),37,106,63,Fuentes,4,Espacios Abiertos,0
+17504,Galería del Tossal (Muralla islámica),8,67,55,Arqueologia,3,Museos,0
+17504,Galería del Tossal (Muralla islámica),8,68,56,Historia y cultura local,3,Museos,0
+17504,Galería del Tossal (Muralla islámica),8,115,45,Otros estilos,1,Estilos y periodos,0
+17507,Iglesia de la Compañía,13,62,81,Arte,3,Museos,0
+17507,Iglesia de la Compañía,13,73,76,Iglesias,5,Arquitectura religiosa,0
+17507,Iglesia de la Compañía,13,115,31,Otros estilos,1,Estilos y periodos,0
+17508,Iglesia de las Escuelas Pías,8,23,53,Barroco,1,Estilos y periodos,0
+17508,Iglesia de las Escuelas Pías,8,73,56,Iglesias,5,Arquitectura religiosa,0
+17509,Iglesia de San Agustín,28,20,72,Gótico,1,Estilos y periodos,0
+17509,Iglesia de San Agustín,28,73,60,Iglesias,5,Arquitectura religiosa,0
+17510,Iglesia de San Esteban,15,17,67,Árabe,1,Estilos y periodos,0
+17510,Iglesia de San Esteban,15,20,68,Gótico,1,Estilos y periodos,0
+17510,Iglesia de San Esteban,15,73,47,Iglesias,5,Arquitectura religiosa,0
+17511,Iglesia de San Martín,13,20,60,Gótico,1,Estilos y periodos,0
+17511,Iglesia de San Martín,13,23,50,Barroco,1,Estilos y periodos,0
+17511,Iglesia de San Martín,13,25,50,Neoclásico,1,Estilos y periodos,0
+17511,Iglesia de San Martín,13,73,45,Iglesias,5,Arquitectura religiosa,0
+17512,Iglesia de San Nicolás,18,20,60,Gótico,1,Estilos y periodos,0
+17512,Iglesia de San Nicolás,18,23,50,Barroco,1,Estilos y periodos,0
+17512,Iglesia de San Nicolás,18,73,93,Iglesias,5,Arquitectura religiosa,0
+17513,Iglesia de Santa Catalina,26,20,70,Gótico,1,Estilos y periodos,0
+17513,Iglesia de Santa Catalina,26,23,90,Barroco,1,Estilos y periodos,0
+17513,Iglesia de Santa Catalina,26,73,100,Iglesias,5,Arquitectura religiosa,0
+17513,Iglesia de Santa Catalina,26,79,100,Campanarios,5,Arquitectura religiosa,0
+17514,Iglesia de Santo Tomás,11,23,41,Barroco,1,Estilos y periodos,0
+17514,Iglesia de Santo Tomás,11,73,66,Iglesias,5,Arquitectura religiosa,0
+17515,Iglesia del antiguo Convento del Carmen,13,20,45,Gótico,1,Estilos y periodos,0
+17515,Iglesia del antiguo Convento del Carmen,13,23,55,Barroco,1,Estilos y periodos,0
+17515,Iglesia del antiguo Convento del Carmen,13,73,67,Iglesias,5,Arquitectura religiosa,0
+17515,Iglesia del antiguo Convento del Carmen,13,79,64,Campanarios,5,Arquitectura religiosa,0
+17516,Iglesia del Carmen,12,23,53,Barroco,1,Estilos y periodos,0
+17516,Iglesia del Carmen,12,73,63,Iglesias,5,Arquitectura religiosa,0
+17517,Iglesia del Salvador,11,20,63,Gótico,1,Estilos y periodos,0
+17517,Iglesia del Salvador,11,25,55,Neoclásico,1,Estilos y periodos,0
+17517,Iglesia del Salvador,11,73,69,Iglesias,5,Arquitectura religiosa,0
+17518,Iglesia y Palacio del Temple,15,25,64,Neoclásico,1,Estilos y periodos,0
+17518,Iglesia y Palacio del Temple,15,73,67,Iglesias,5,Arquitectura religiosa,0
+17518,Iglesia y Palacio del Temple,15,91,74,Palacio,7,Arquitectura civil,0
+17519,Jardín de las Hespérides,14,28,55,Parques,4,Espacios Abiertos,0
+17519,Jardín de las Hespérides,14,34,40,Paseos,4,Espacios Abiertos,0
+17520,Jardines del Turia,36,34,70,Paseos,4,Espacios Abiertos,0
+17520,Jardines del Turia,36,28,68,Parques,4,Espacios Abiertos,0
+17520,Jardines del Turia,36,34,72,Paseos,4,Espacios Abiertos,0
+17520,Jardines del Turia,36,103,61,Estadios y áreas deportivas,7,Arquitectura civil,0
+17521,L'Hemisferic,27,27,59,Contemporáneo,1,Estilos y periodos,0
+17521,L'Hemisferic,27,37,66,Cines,11,Ocio,0
+17521,L'Hemisferic,27,73,60,Iglesias,5,Arquitectura religiosa,0
+17522,L'Umbracle,29,27,61,Contemporáneo,1,Estilos y periodos,0
+17522,L'Umbracle,29,29,72,Jardines botánicos,4,Espacios Abiertos,0
+17522,L'Umbracle,29,34,73,Paseos,4,Espacios Abiertos,0
+17523,Museo de Ciencias Naturales,19,66,69,Ciencias naturales,3,Museos,0
+17523,Museo de Ciencias Naturales,19,67,71,Arqueologia,3,Museos,0
+17523,Museo de Ciencias Naturales,19,115,47,Otros estilos,1,Estilos y periodos,0
+17524,Museo del Arroz,2,68,100,Historia y cultura local,3,Museos,0
+17524,Museo del Arroz,2,115,73,Otros estilos,1,Estilos y periodos,0
+17525,Museo del Artista Fallero,9,27,69,Contemporáneo,1,Estilos y periodos,0
+17525,Museo del Artista Fallero,9,68,72,Historia y cultura local,3,Museos,0
+17525,Museo del Artista Fallero,9,69,55,Artesanía,3,Museos,0
+17526,Museo del Siglo XIX (Convento del Carmen),9,62,79,Arte,3,Museos,0
+17527,Museo del Trenet,3,27,67,Contemporáneo,1,Estilos y periodos,0
+17527,Museo del Trenet,3,63,96,Ciencia y tecnología,3,Museos,0
+17527,Museo del Trenet,3,68,88,Historia y cultura local,3,Museos,0
+17528,Museo Histórico Municipal (Ayuntamiento de Valencia),6,68,81,Historia y cultura local,3,Museos,0
+17529,Museo Militar,2,70,90,Militar,3,Museos,0
+17530,Palacio de Cervelló,8,25,80,Neoclásico,1,Estilos y periodos,0
+17530,Palacio de Cervelló,8,71,80,Otros museos,3,Museos,0
+17531,Palacio de Congresos,25,27,51,Contemporáneo,1,Estilos y periodos,0
+17531,Palacio de Congresos,25,53,44,Congresos,13,Eventos,0
+17531,Palacio de Congresos,25,104,59,Otros edificios emblemáticos,7,Arquitectura civil,0
+17532,Palacio de la Batlia o de Jáudenes (Diputación de Valencia),13,20,50,Gótico,1,Estilos y periodos,0
+17532,Palacio de la Batlia o de Jáudenes (Diputación de Valencia),13,22,50,Renacentista,1,Estilos y periodos,0
+17532,Palacio de la Batlia o de Jáudenes (Diputación de Valencia),13,96,72,Edificios gubernamentales,7,Arquitectura civil,0
+17533,Palacio de las Artes Reina Sofía,12,27,63,Contemporáneo,1,Estilos y periodos,0
+17533,Palacio de las Artes Reina Sofía,12,38,75,Teatros,11,Ocio,0
+17533,Palacio de las Artes Reina Sofía,12,44,65,Ópera,11,Ocio,0
+17533,Palacio de las Artes Reina Sofía,12,104,65,Otros edificios emblemáticos,7,Arquitectura civil,0
+17534,Palacio de los Almirantes de Aragón,3,20,100,Gótico,1,Estilos y periodos,0
+17534,Palacio de los Almirantes de Aragón,3,91,100,Palacio,7,Arquitectura civil,0
+17535,Palacio de los Boil de Arenós,4,20,30,Gótico,1,Estilos y periodos,0
+17536,Palacio de los Marqueses de Scala (Diputación de Valencia),8,20,56,Gótico,1,Estilos y periodos,0
+17536,Palacio de los Marqueses de Scala (Diputación de Valencia),8,22,56,Renacentista,1,Estilos y periodos,0
+17536,Palacio de los Marqueses de Scala (Diputación de Valencia),8,23,56,Barroco,1,Estilos y periodos,0
+17536,Palacio de los Marqueses de Scala (Diputación de Valencia),8,96,82,Edificios gubernamentales,7,Arquitectura civil,0
+17537,Palacio del Intendente Pineda (sede de la UIMP),8,25,50,Neoclásico,1,Estilos y periodos,0
+17537,Palacio del Intendente Pineda (sede de la UIMP),8,50,56,Exposiciones,13,Eventos,0
+17537,Palacio del Intendente Pineda (sede de la UIMP),8,51,46,Conferencias,13,Eventos,0
+17537,Palacio del Intendente Pineda (sede de la UIMP),8,91,74,Palacio,7,Arquitectura civil,0
+17538,Palacio Joan de Valeriola,2,20,50,Gótico,1,Estilos y periodos,0
+17538,Palacio Joan de Valeriola,2,62,50,Arte,3,Museos,0
+17538,Palacio Joan de Valeriola,2,91,40,Palacio,7,Arquitectura civil,0
+17539,Palacio Municipal de la Exposición,9,26,70,Modernista,1,Estilos y periodos,0
+17543,Plaza de Alfonso el Magnánimo,29,33,25,Calles y plazas,4,Espacios Abiertos,0
+17544,Plaza de la Almoina,27,17,64,Árabe,1,Estilos y periodos,0
+17544,Plaza de la Almoina,27,33,68,Calles y plazas,4,Espacios Abiertos,0
+17545,Plaza de la Reina,35,33,71,Calles y plazas,4,Espacios Abiertos,0
+17546,Plaza de San Luis Beltrán,16,33,30,Calles y plazas,4,Espacios Abiertos,0
+17547,Plaza del Ayuntamiento,35,33,66,Calles y plazas,4,Espacios Abiertos,0
+17548,Plaza del Carmen,36,33,64,Calles y plazas,4,Espacios Abiertos,0
+17549,Plaza del Mercado,29,33,90,Calles y plazas,4,Espacios Abiertos,0
+17550,Plaza del Tossal,27,33,69,Calles y plazas,4,Espacios Abiertos,0
+17550,Plaza del Tossal,27,41,47,Bares y pubs,11,Ocio,0
+17551,Puente de la Exposición (la Peineta),33,27,54,Contemporáneo,1,Estilos y periodos,0
+17551,Puente de la Exposición (la Peineta),33,101,59,Puentes,7,Arquitectura civil,0
+17552,Puente del Real,30,20,69,Gótico,1,Estilos y periodos,0
+17552,Puente del Real,30,101,67,Puentes,7,Arquitectura civil,0
+17553,Real Club Naútico de Valencia,17,57,40,Nauticos,9,Deportes,0
+17554,Real Colegio del Corpus Christi (El Patriarca),17,22,61,Renacentista,1,Estilos y periodos,0
+17554,Real Colegio del Corpus Christi (El Patriarca),17,73,62,Iglesias,5,Arquitectura religiosa,0
+17554,Real Colegio del Corpus Christi (El Patriarca),17,76,61,Claustros,5,Arquitectura religiosa,0
+17554,Real Colegio del Corpus Christi (El Patriarca),17,97,64,Edificios académicos,7,Arquitectura civil,0
+17554,Real Colegio del Corpus Christi (El Patriarca),17,105,63,Esculturas,10,Monumentos,0
+17555,Sede Central de la Universidad de Valencia,25,25,60,Neoclásico,1,Estilos y periodos,0
+17555,Sede Central de la Universidad de Valencia,25,97,80,Edificios académicos,7,Arquitectura civil,0
+17556,Teatro de Marionetas La Estrella,0,38,100,Teatros,11,Ocio,0
+17557,Teatro Olympia,0,38,100,Teatros,11,Ocio,0
+17557,Teatro Olympia,0,115,30,Otros estilos,1,Estilos y periodos,0
+17558,Teatro Rialto,0,38,100,Teatros,11,Ocio,0
+17558,Teatro Rialto,0,115,50,Otros estilos,1,Estilos y periodos,0
+18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,62,90,Arte,3,Museos,0
+18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,23,50,Barroco,1,Estilos y periodos,0
+18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,20,30,Gótico,1,Estilos y periodos,0
+18001,Barrio del Carmen,0,45,90,Restaurantes,8,Gastronomia,0
+18001,Barrio del Carmen,0,41,90,Bares y pubs,11,Ocio,0
+18001,Barrio del Carmen,0,42,30,Discotecas,11,Ocio,0
+18001,Barrio del Carmen,0,48,50,Tiendas tradicionales,2,Compras,0
+18001,Barrio del Carmen,0,17,10,Árabe,1,Estilos y periodos,0
+18002,Barrio de Ruzafa,0,45,90,Restaurantes,8,Gastronomia,0
+18002,Barrio de Ruzafa,0,41,80,Bares y pubs,11,Ocio,0
+18002,Barrio de Ruzafa,0,42,40,Discotecas,11,Ocio,0
+18002,Barrio de Ruzafa,0,48,40,Tiendas tradicionales,2,Compras,0
+18002,Barrio de Ruzafa,0,26,40,Modernista,1,Estilos y periodos,0
+18003,La Albufera,0,31,90,Playas,4,Espacios Abiertos,0
+18003,La Albufera,0,34,90,Paseos,4,Espacios Abiertos,0
+18003,La Albufera,0,36,100,Otros espacios abiertos,4,Espacios Abiertos,0
+18004,Barrio del Cabañal,0,45,90,Restaurantes,8,Gastronomia,0
+18004,Barrio del Cabañal,0,41,80,Bares y pubs,11,Ocio,0
+18004,Barrio del Cabañal,0,48,50,Tiendas tradicionales,2,Compras,0
+18004,Barrio del Cabañal,0,115,80,Otros estilos,1,Estilos y periodos,0
+18005,Museo Iluziona,0,68,80,Historia y cultura local,3,Museos,0
+18006,L'ETNO - Museo Valenciado de Etnología,0,68,80,Historia y cultura local,3,Museos,0
