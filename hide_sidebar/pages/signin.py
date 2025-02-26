@@ -14,6 +14,7 @@ with st.form(key="signin_form"):
     new_password = st.text_input("Enter your password", type="password")
     # Un solo botón de envío
     submit_button = st.form_submit_button(label="Submit")
+    #st.markdown("[Don't have an account? Sign up here!](http://localhost:8501/signup)", unsafe_allow_html=True)
 
 
 if submit_button:

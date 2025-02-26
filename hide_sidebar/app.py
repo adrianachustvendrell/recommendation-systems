@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.header("a")
+# Sidebar navigation
+st.sidebar.page_link('app.py', label='Home')
 st.set_page_config(page_title="Welcome", page_icon="🚀", layout="centered")
 
 st.title("Welcome to My App")
