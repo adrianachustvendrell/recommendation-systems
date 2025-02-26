@@ -56,7 +56,9 @@ if submit_button:
     elif new_children == 2 and (not children_ages[1]):  # Si tiene 2 hijos y falta la segunda edad
         st.error("Please enter the age of your child(s).")
     else:
-        st.success("Account created successfully. You can now log in.")
+        st.success("Account created successfully. You can now see your recommendations")
 
 
-# recordar comprobar que sex = M o sex = F (convertir la variable). idem con el resto
+# para añadir datos: recordar comprobar que sex = M o sex = F (convertir la variable). idem con el resto
+
+# redirigir a la pagina main con ya las recomendaciones
