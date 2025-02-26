@@ -1,3 +1,9 @@
 import streamlit as st
-st.title('My First Streamlit App')
-st.write('Welcome to my Streamlit app!')
+
+st.set_page_config(page_title="Welcome", page_icon="🚀", layout="centered")
+
+st.title("Welcome to My App")
+st.write("Sign up to get started!")
+
+if st.button("Sign Up"):
+    st.switch_page("pages/signup.py")  # Redirige a la página de registro
