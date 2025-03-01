@@ -2,21 +2,21 @@
 import streamlit as st
 
 # Title for the sign-up page
-st.title("Sign In")
+st.title("Inicia sesión")
 
 
 # Formulario de registro
 with st.form(key="signin_form"):
-    st.subheader("Log in with your account")
+    #st.subheader("Inicia Sesión")
 
     # Datos básicos
-    new_username = st.text_input("Enter your username")
-    new_password = st.text_input("Enter your password", type="password")
+    new_username = st.text_input("Introduce tu usuario")
+    new_password = st.text_input("Introduce tu contraseña", type="password")
     # Un solo botón de envío
-    submit_button = st.form_submit_button(label="Submit")
+    submit_button = st.form_submit_button(label="Entrar")
     #st.markdown("[Don't have an account? Sign up here!](http://localhost:8501/signup)", unsafe_allow_html=True)
 
 
 if submit_button:
-    st.success("Successfully log in.")
+    st.success("Inicio de sesión correcto.")
 
