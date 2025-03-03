@@ -5,7 +5,7 @@ from pathlib import Path
 
 @st.cache_data
 def load_user_data():
-    file_path = Path("data/info_usuarios.csv")
+    file_path = Path("../data/info_usuarios.csv")
     return pd.read_csv(file_path)  # Ensure the CSV file is in the correct directory
 
 user_data = load_user_data()
@@ -26,8 +26,8 @@ with st.form(key="signin_form"):
     #st.subheader("Inicia Sesión")
 
     # User input fields
-    username = st.text_input("Enter your username")
-    password = st.text_input("Enter your password", type="password")
+    username = st.text_input("Introduce tu usuario")
+    password = st.text_input("Introduce tu contraseña", type="password")
 
     # Submit button
     submit_button = st.form_submit_button(label="Submit")
@@ -44,11 +44,11 @@ if submit_button:
 
         if password == correct_password:
             st.session_state["authenticated"] = True 
-            st.success(f"Welcome, {username}!")
+            st.success(f"Bienvenido, {username}!")
             # st.switch_page("pages/recs_page.py")
             # st.switch_page("recs_page.py")
         else:
-            st.error("Incorrect password. Please try again.")
+            st.error("Contraseña incorrecta. Introdúcela de nuevo.")
     else:
-        st.error("Username not found. Please check your credentials.")
+        st.error("Usuario no encontrado. Revisa tus credenciales.")
 
