@@ -67,7 +67,8 @@ st.title("Registrarse")
 
 with st.form(key="signup_form"):
     new_username = st.text_input("Introduce un usuario")
-    new_age = st.text_input("Introduce tu edad")
+    # new_age = st.text_input("Introduce tu edad")
+    new_age = st.number_input("Introduce tu edad", min_value = 1, step = 1, format = "%d")
     sex_options = ['M (Masculino)', 'F (Femenino)']
     new_sex = st.selectbox("Selecciona tu sexo", sex_options)
 
@@ -89,10 +90,13 @@ with st.form(key="signup_form"):
     new_children2_age = 0
 
     if new_children >= 1:
-        new_children1_age = st.text_input("Introduce la edad de tu primer hijo")
+        # new_children1_age = st.text_input("Introduce la edad de tu primer hijo")
+        new_children1_age = st.number_input("Introduce la edad de tu primer hijo", min_value = 0, step = 1, format = "%d")
 
     if new_children == 2:
-        new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
+        # new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
+        new_children2_age = st.number_input("Introduce la edad de tu segundo hijo", min_value = 0, step = 1, format = "%d")
+
 
     st.subheader("Preferencias")
     
@@ -128,17 +132,29 @@ if submit_button:
         # Convert children ages to integers
         new_children1_age = int(new_children1_age) if new_children >= 1 else 0
         new_children2_age = int(new_children2_age) if new_children == 2 else 0
+        # ✅ Validate username
+        if not new_username.strip():
+            st.error("El nombre de usuario no puede estar vacío.")
 
-        if new_children == 1 and new_children1_age <= 0:
+        # ✅ Validate children's ages
+        elif new_children == 1 and new_children1_age <= 0:
             st.error("Por favor, introduce correctamente la edad del hijo (debe ser mayor a 0).")
+
         elif new_children == 2 and (new_children1_age <= 0 or new_children2_age <= 0):
             st.error("Por favor, introduce correctamente la edad de ambos hijos (deben ser mayores a 0).")
+
+        # ✅ Check if username already exists
         elif check_username_exists(new_username):
             st.error("El nombre de usuario ya está en uso. Por favor, elige otro.")
+        
+        # ✅ If everything is correct, add user
         else:
             add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
             st.success("Cuenta creada satisfactoriamente.")
+            
+            # ✅ Redirect to Sign-in Page
             time.sleep(2)
-            st.switch_page("pages/signin.py") 
+            st.switch_page("pages/signin.py")
+
     except ValueError:
         st.error("Por favor, introduce solo valores numéricos para la edad de los hijos.")
