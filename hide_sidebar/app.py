@@ -31,10 +31,7 @@ carousel_items = []
 for image in random_images:
     # Redimensionar la imagen
     img_path = os.path.join(image_folder, image)
-    img = Image.open(img_path)
-    #img = img.resize(image_size)  # Redimensiona la imagen al tamaño especificado
-    img.save(img_path)  # Guarda la imagen redimensionada de nuevo
-
+    
     item = dict(
         title=f"",
         text=f"",
