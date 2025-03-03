@@ -94,7 +94,33 @@ with st.form(key="signup_form"):
     if new_children == 2:
         new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
 
+    st.subheader("Preferencias")
+    
+    preference_options = ["Deportes", "Música", "Cine", "Lectura", "Tecnología", "Viajes", "Gastronomía"]
+    score_options = [1, 2, 3, 4, 5]
+
+    if "preferences" not in st.session_state:
+        st.session_state.preferences = []
+
+    # Mostrar preferencias ya añadidas
+    for i, (pref, score) in enumerate(st.session_state.preferences):
+        st.write(f"{pref}: {score}")
+
+    # Nuevo selector de preferencia
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        new_pref = st.selectbox("Elige una preferencia", [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]], key="new_pref")
+    with col2:
+        new_score = st.selectbox("Puntuación", score_options, key="new_score")
+
+    add_pref_button = st.form_submit_button("Añadir Preferencia")
+
+    if add_pref_button and new_pref not in [x[0] for x in st.session_state.preferences]:
+        st.session_state.preferences.append((new_pref, new_score))
+
+    # ---- Enviar formulario ----
     submit_button = st.form_submit_button(label="Registrarse")
+    
 
 # Validate and store user
 if submit_button:
