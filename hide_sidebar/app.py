@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_carousel import carousel
 import os
 import random
+from PIL import Image
 
 # Sidebar navigation
 st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="centered")
@@ -18,37 +19,28 @@ with col2:
 
 st.title("ValenciaGO")
 
-# ✅ Dynamically locate the "images" folder
-def find_images_folder(folder_name="images"):
-    """Search for the images folder dynamically."""
-    for root, dirs, _ in os.walk(os.getcwd()):  # Start searching from current directory
-        if folder_name in dirs:
-            return os.path.join(root, folder_name)
-    return None  # Return None if the folder is not found
+image_folder = "../images"
+image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
+random_images = random.sample(image_files, min(10, len(image_files)))  # Obtener hasta 10 imágenes aleatorias
 
-# Find the images folder
-image_folder = find_images_folder()
+# Definir el tamaño estándar para todas las imágenes
+#image_size = (300, 300)  # Cambia el tamaño según tus necesidades
 
-if image_folder:
-    # ✅ Get image files dynamically
-    image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
+# Crear una lista de diccionarios con las imágenes redimensionadas
+carousel_items = []
+for image in random_images:
+    # Redimensionar la imagen
+    img_path = os.path.join(image_folder, image)
+    img = Image.open(img_path)
+    #img = img.resize(image_size)  # Redimensiona la imagen al tamaño especificado
+    img.save(img_path)  # Guarda la imagen redimensionada de nuevo
 
-    if image_files:
-        random_images = random.sample(image_files, min(10, len(image_files)))  # Get up to 10 random images
+    item = dict(
+        title=f"",
+        text=f"",
+        img=img_path,
+    )
+    carousel_items.append(item)
 
-        # ✅ Prepare carousel items
-        carousel_items = []
-        for image in random_images:
-            item = dict(
-                title="",
-                text="",
-                img=os.path.join(image_folder, image),
-            )
-            carousel_items.append(item)
-
-        # ✅ Display carousel
-        carousel(items=carousel_items)
-    else:
-        st.warning("No hay imágenes disponibles en la carpeta.")
-else:
-    st.error("No se encontró la carpeta de imágenes.")
+# Mostrar el carrusel con las imágenes redimensionadas
+carousel(items=carousel_items)
