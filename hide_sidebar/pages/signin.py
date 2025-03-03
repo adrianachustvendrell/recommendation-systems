@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
+import time
 
 @st.cache_data
 def load_user_data():
@@ -9,13 +10,6 @@ def load_user_data():
     return pd.read_csv(file_path)  # Ensure the CSV file is in the correct directory
 
 user_data = load_user_data()
-
-# Check if user is already logged in
-if "authenticated" not in st.session_state:
-    st.session_state["authenticated"] = False
-
-# if st.session_state["authenticated"]:
-#     st.switch_page("recs_page.py")
 
 # Title for the sign-up page
 st.title("Inicia sesión")
@@ -26,8 +20,12 @@ with st.form(key="signin_form"):
     #st.subheader("Inicia Sesión")
 
     # User input fields
+<<<<<<< HEAD
     username = st.text_input("Introduce tu usuario")
     password = st.text_input("Introduce tu contraseña", type="password")
+=======
+    username = st.text_input("Ingresa tu nombre de usuario")
+>>>>>>> d4ce36815c3f8284a7d5491637e41597f2c8ec04
 
     # Submit button
     submit_button = st.form_submit_button(label="Submit")
@@ -39,9 +37,11 @@ if submit_button:
     user_row = user_data[user_data["nombre_usuario"] == username]
 
     if not user_row.empty:
-        # Extract user ID (password)
-        correct_password = str(user_row.iloc[0]["id_usuario"])
+        st.success(f"Welcome, {username}!")
+        time.sleep(2)
+        st.switch_page("app.py") 
 
+<<<<<<< HEAD
         if password == correct_password:
             st.session_state["authenticated"] = True 
             st.success(f"Bienvenido, {username}!")
@@ -51,4 +51,9 @@ if submit_button:
             st.error("Contraseña incorrecta. Introdúcela de nuevo.")
     else:
         st.error("Usuario no encontrado. Revisa tus credenciales.")
+=======
+    else:
+        st.error("Usuario no encontrado. Por favor registrese y vuelva a iniciar sesión.")
+        st.page_link("pages/signup.py", label="👉 Regístrate aquí")
+>>>>>>> d4ce36815c3f8284a7d5491637e41597f2c8ec04
 
