@@ -3,13 +3,20 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 import time
+import os
 
-def load_user_data():
-    file_path = Path("../data/info_usuarios.csv")
-    return pd.read_csv(file_path)  # Ensure the CSV file is in the correct directory
+USER_DATA_FILE = "info_usuarios.csv"
 
-user_data = load_user_data()
+def find_file(filename):
+    """Search for the file in all directories starting from the root folder."""
+    for root, _, files in os.walk(os.getcwd()):  # Start searching from the current directory
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
 
+# Locate the users.csv file dynamically
+user_file_path = find_file(USER_DATA_FILE)
+user_data = pd.read_csv(user_file_path)
 # Title for the sign-up page
 st.title("Inicia sesión")
 
