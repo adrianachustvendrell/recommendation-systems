@@ -66,6 +66,41 @@ def add_user(username, age, sex, job, children, child1_age, child2_age):
     # Save to CSV
     users_df.to_csv(user_file_path, index=False)
 
+    return new_id
+
+
+
+def add_preference(new_id, set_preferencias):
+    """Añade las preferencias de un usuario al DataFrame y las guarda en un archivo CSV."""
+    
+    global preference_user_file_path  # Asegurar la ruta correcta del CSV de preferencias
+    
+    # Crear un DataFrame con las preferencias
+    preferences_data = []
+    for categoria, calificacion in set_preferencias:
+        # Buscar el ID de la categoría en el DataFrame
+        id_categoria = preference_df.loc[preference_df['categoria'] == categoria, 'id_categoria'].values
+        
+        if len(id_categoria) > 0:
+            preferences_data.append({
+                "id_usuario": new_id,
+                "id_categoria": id_categoria[0],  # Extraer el valor del array
+                "calificacion": calificacion,
+                "categoria": categoria
+            })
+    
+    if preferences_data:
+        new_prefs_df = pd.DataFrame(preferences_data)
+        
+        # Cargar archivo existente o crear uno nuevo
+        if os.path.exists(preference_user_file_path):
+            prefs_df = pd.read_csv(preference_user_file_path)
+            prefs_df = pd.concat([prefs_df, new_prefs_df], ignore_index=True)
+        
+        # Guardar en CSV
+        prefs_df.to_csv(preference_user_file_path, index=False)
+
+
 # Streamlit Sign-up Page
 st.title("Registrarse")
 
@@ -170,7 +205,8 @@ if submit_button:
         
         # ✅ If everything is correct, add user
         else:
-            add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
+            new_id = add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
+            add_preference(new_id, st.session_state.preferences)       
             st.success("Cuenta creada satisfactoriamente.")
             
             # ✅ Redirect to Sign-in Page
