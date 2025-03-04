@@ -5,6 +5,7 @@ import time
 
 # File where users will be stored
 USER_DATA_FILE = "info_usuarios.csv"
+PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
 
 def find_file(filename):
     """Search for the file in all directories starting from the root folder."""
@@ -15,6 +16,9 @@ def find_file(filename):
 
 # Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
+preference_user_file_path = find_file(PREFERENCE_USER_DATA_FILE)
+
+preference_df = pd.read_csv(preference_user_file_path)
 
 # Load the users file or create a new one
 if user_file_path:
@@ -100,8 +104,8 @@ with st.form(key="signup_form"):
 
     st.subheader("Preferencias")
     
-    preference_options = ["Deportes", "Música", "Cine", "Lectura", "Tecnología", "Viajes", "Gastronomía"]
-    score_options = [1, 2, 3, 4, 5]
+    preference_options = preference_df['categoria'].unique()
+    score_options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     if "preferences" not in st.session_state:
         st.session_state.preferences = []
