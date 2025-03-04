@@ -110,10 +110,6 @@ with st.form(key="signup_form"):
     if "preferences" not in st.session_state:
         st.session_state.preferences = []
 
-    # Mostrar preferencias ya añadidas
-    for i, (pref, score) in enumerate(st.session_state.preferences):
-        st.write(f"{pref}: {score}")
-
     # Nuevo selector de preferencia
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -125,6 +121,9 @@ with st.form(key="signup_form"):
 
     if add_pref_button and new_pref not in [x[0] for x in st.session_state.preferences]:
         st.session_state.preferences.append((new_pref, new_score))
+        # Mostrar preferencias ya añadidas
+        for i, (pref, score) in enumerate(st.session_state.preferences):
+            st.write(f"{pref}: {score}")
 
     # ---- Enviar formulario ----
     submit_button = st.form_submit_button(label="Registrarse")
