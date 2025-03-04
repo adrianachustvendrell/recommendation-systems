@@ -6,6 +6,7 @@ import time
 # File where users will be stored
 USER_DATA_FILE = "info_usuarios.csv"
 PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
+submit_button = False
 
 def find_file(filename):
     """Search for the file in all directories starting from the root folder."""
@@ -124,62 +125,65 @@ with st.form(key="signup_form"):
     children_options = [0, 1, 2]
     new_children = st.selectbox("Selecciona el número de hijos", children_options)
 
+    continua_button = st.form_submit_button(label="Continúa")
     # Default child ages
     new_children1_age = 0
     new_children2_age = 0
 
-    if new_children >= 1:
-        # new_children1_age = st.text_input("Introduce la edad de tu primer hijo")
-        new_children1_age = st.number_input("Introduce la edad de tu primer hijo", min_value = 0, step = 1, format = "%d")
+    if continua_button:
+        if new_children >= 1:
+            # new_children1_age = st.text_input("Introduce la edad de tu primer hijo")
+            new_children1_age = st.number_input("Introduce la edad de tu primer hijo", min_value = 0, step = 1, format = "%d")
 
-    if new_children == 2:
-        # new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
-        new_children2_age = st.number_input("Introduce la edad de tu segundo hijo", min_value = 0, step = 1, format = "%d")
+        if new_children == 2:
+            # new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
+            new_children2_age = st.number_input("Introduce la edad de tu segundo hijo", min_value = 0, step = 1, format = "%d")
+
+    
+
+        st.subheader("Preferencias")
+
+        # Opciones de preferencias y puntuación
+        preference_options = list(preference_df['categoria'].unique())  # Convertimos a lista
+        score_options = list(range(1, 11))
+
+        # Inicializar session_state si no existe
+        if "preferences" not in st.session_state:
+            st.session_state.preferences = []
+
+        # Filtrar opciones disponibles
+        available_prefs = [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]]
+
+        # Si no hay opciones disponibles, evitar errores
+        if not available_prefs:
+            st.write("⚠️ Ya has seleccionado todas las preferencias disponibles.")
+            st.stop()
+
+        # Crear selección de preferencia sin modificar session_state
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            selected_pref = st.selectbox("Elige una preferencia", available_prefs, index=0)
+        with col2:
+            selected_score = st.selectbox("Puntuación", score_options, key="new_score")
+
+        # Botón para añadir preferencias
+        add_pref_button = st.form_submit_button("Añadir Preferencia")
+
+        if add_pref_button:
+            if selected_pref and selected_pref not in [x[0] for x in st.session_state.preferences]:  # Asegura que no se repita
+                st.session_state.preferences.append((selected_pref, selected_score))
+                st.rerun()  # Recargar la app para actualizar la lista de preferencias y evitar errores de índice
+
+        # Mostrar preferencias seleccionadas
+        st.write("#### Preferencias seleccionadas:")
+        for pref, score in st.session_state.preferences:
+            st.write(f"✔️ {pref}: {score}")
 
 
-    st.subheader("Preferencias")
-
-    # Opciones de preferencias y puntuación
-    preference_options = list(preference_df['categoria'].unique())  # Convertimos a lista
-    score_options = list(range(1, 11))
-
-    # Inicializar session_state si no existe
-    if "preferences" not in st.session_state:
-        st.session_state.preferences = []
-
-    # Filtrar opciones disponibles
-    available_prefs = [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]]
-
-    # Si no hay opciones disponibles, evitar errores
-    if not available_prefs:
-        st.write("⚠️ Ya has seleccionado todas las preferencias disponibles.")
-        st.stop()
-
-    # Crear selección de preferencia sin modificar session_state
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        selected_pref = st.selectbox("Elige una preferencia", available_prefs, index=0)
-    with col2:
-        selected_score = st.selectbox("Puntuación", score_options, key="new_score")
-
-    # Botón para añadir preferencias
-    add_pref_button = st.form_submit_button("Añadir Preferencia")
-
-    if add_pref_button:
-        if selected_pref and selected_pref not in [x[0] for x in st.session_state.preferences]:  # Asegura que no se repita
-            st.session_state.preferences.append((selected_pref, selected_score))
-            st.rerun()  # Recargar la app para actualizar la lista de preferencias y evitar errores de índice
-
-    # Mostrar preferencias seleccionadas
-    st.write("#### Preferencias seleccionadas:")
-    for pref, score in st.session_state.preferences:
-        st.write(f"✔️ {pref}: {score}")
 
 
-
-
-    # ---- Enviar formulario ----
-    submit_button = st.form_submit_button(label="Registrarse")
+        # ---- Enviar formulario ----
+        submit_button = st.form_submit_button(label="Registrarse")
     
 
 # Validate and store user
