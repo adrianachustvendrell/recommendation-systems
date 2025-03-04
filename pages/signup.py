@@ -103,27 +103,45 @@ with st.form(key="signup_form"):
 
 
     st.subheader("Preferencias")
-    
-    preference_options = preference_df['categoria'].unique()
-    score_options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+    # Opciones de preferencias y puntuación
+    preference_options = list(preference_df['categoria'].unique())  # Convertimos a lista
+    score_options = list(range(1, 11))
+
+    # Inicializar session_state si no existe
     if "preferences" not in st.session_state:
         st.session_state.preferences = []
 
-    # Nuevo selector de preferencia
+    # Filtrar opciones disponibles
+    available_prefs = [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]]
+
+    # Si no hay opciones disponibles, evitar errores
+    if not available_prefs:
+        st.write("⚠️ Ya has seleccionado todas las preferencias disponibles.")
+        st.stop()
+
+    # Crear selección de preferencia sin modificar session_state
     col1, col2 = st.columns([3, 1])
     with col1:
-        new_pref = st.selectbox("Elige una preferencia", [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]], key="new_pref")
+        selected_pref = st.selectbox("Elige una preferencia", available_prefs, index=0)
     with col2:
-        new_score = st.selectbox("Puntuación", score_options, key="new_score")
+        selected_score = st.selectbox("Puntuación", score_options, key="new_score")
 
+    # Botón para añadir preferencias
     add_pref_button = st.form_submit_button("Añadir Preferencia")
 
-    if add_pref_button and new_pref not in [x[0] for x in st.session_state.preferences]:
-        st.session_state.preferences.append((new_pref, new_score))
-        # Mostrar preferencias ya añadidas
-        for i, (pref, score) in enumerate(st.session_state.preferences):
-            st.write(f"{pref}: {score}")
+    if add_pref_button:
+        if selected_pref and selected_pref not in [x[0] for x in st.session_state.preferences]:  # Asegura que no se repita
+            st.session_state.preferences.append((selected_pref, selected_score))
+            st.rerun()  # Recargar la app para actualizar la lista de preferencias y evitar errores de índice
+
+    # Mostrar preferencias seleccionadas
+    st.write("#### Preferencias seleccionadas:")
+    for pref, score in st.session_state.preferences:
+        st.write(f"✔️ {pref}: {score}")
+
+
+
 
     # ---- Enviar formulario ----
     submit_button = st.form_submit_button(label="Registrarse")
