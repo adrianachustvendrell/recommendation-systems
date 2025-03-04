@@ -58,3 +58,4 @@ id_usuario,nombre_usuario,edad,sexo,id_ocupacion,hijos,edad_hijo_menor,edad_hijo
 179,Usuario_179,40,F,3,1,3,5,Técnicos y profesionales científicos e intelectuales
 180,Usuario_180,34,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales
 181,Usuario_181,0,F,0,0,0,0,
+182,a,1,M (Masculino),1,0,0,0,Fuerzas armadas

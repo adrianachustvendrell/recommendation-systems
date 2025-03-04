@@ -19,7 +19,7 @@ with col2:
 
 st.title("ValenciaGO")
 
-image_folder = "../images"
+image_folder = "./images"
 image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
 random_images = random.sample(image_files, min(10, len(image_files)))  # Obtener hasta 10 imágenes aleatorias
 
