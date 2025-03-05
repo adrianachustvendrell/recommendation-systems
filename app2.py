@@ -164,7 +164,8 @@ category_colors = {
     "Arquitectura defensiva": "lightgray",
     "Gastronomia": "beige"}
 
-df_unique = df_items.drop_duplicates(subset=["id_item", "latitud", "longitud"])
+#df_unique = df_items.drop_duplicates(subset=["id_item", "latitud", "longitud"])
+df_unique = df_items
 map_center = [df_unique["latitud"].mean(), df_unique["longitud"].mean()]
 folium_map = folium.Map(location=map_center, zoom_start=12)
 
