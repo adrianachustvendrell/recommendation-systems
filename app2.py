@@ -4,7 +4,9 @@ import os
 import random
 import pandas as pd
 import plotly.express as px
-
+from streamlit_folium import folium_static
+import folium
+from folium.plugins import TagFilterButton
 
 # Sidebar navigation
 st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
@@ -143,8 +145,44 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
-search_term = st.text_input("🔎 Buscar un lugar por nombre:")
-filtered_df_items = df_items[df_items["nombre_item"].str.contains(search_term, case=False, na=False)] if search_term else df_items
 
-st.dataframe(filtered_df_items, use_container_width=True)
+#search_term = st.text_input("🔎 Buscar un lugar por nombre:")
+#filtered_df_items = df_items[df_items["nombre_item"].str.contains(search_term, case=False, na=False)] if search_term else df_items
+#st.dataframe(filtered_df_items, use_container_width=True)
+
+category_colors = {
+    "Museos": "blue",
+    "Estilos y periodos": "green",
+    "Eventos": "red",
+    "Arquitectura civil": "purple",
+    "Deportes": "orange",
+    "Ocio": "pink",
+    "Compras": "cadetblue",
+    "Arquitectura religiosa": "darkblue",
+    "Espacios Abiertos": "darkgreen",
+    "Monumentos": "darkred",
+    "Arquitectura defensiva": "lightgray",
+    "Gastronomia": "beige"}
+
+df_unique = df_items.drop_duplicates(subset=["id_item", "latitud", "longitud"])
+map_center = [df_unique["latitud"].mean(), df_unique["longitud"].mean()]
+folium_map = folium.Map(location=map_center, zoom_start=12)
+
+# Add markers to the map with category tags
+for _, row in df_unique.iterrows():
+    color = category_colors.get(row["padre_categoria"], "gray")
+    folium.Marker(
+        location=[row["latitud"], row["longitud"]],
+        popup=row["nombre_item"],
+        icon=folium.Icon(color=color, icon="info-sign"),
+        tags=[row["padre_categoria"]]  # Adding tags for filtering
+    ).add_to(folium_map)
+
+# Add filter button for categories
+TagFilterButton(list(category_colors.keys())).add_to(folium_map)
+
+# Display the map in Streamlit
+folium_static(folium_map)
+
+
 

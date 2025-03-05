@@ -22,9 +22,9 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17375,Museo de Bellas Artes de Valencia-San Pio V,22,39.479289,-0.3710264334737524,115,29,Otros estilos,1,Estilos y periodos,0
 17376,Museo de Cerámica (Palacio Marqués de Dos Aguas),26,39.472735691902024,-0.3746845941779573,62,72,Arte,3,Museos,0
 17376,Museo de Cerámica (Palacio Marqués de Dos Aguas),26,39.472735691902024,-0.3746845941779573,69,65,Artesanía,3,Museos,0
-17377,Museo de historia de Valencia,19,39.47243365,-0.4082376911408705,24,66,Rococo,1,Estilos y periodos,0
-17377,Museo de historia de Valencia,19,39.47243365,-0.4082376911408705,64,70,Historia,3,Museos,0
-17377,Museo de historia de Valencia,19,39.47243365,-0.4082376911408705,68,67,Historia y cultura local,3,Museos,0
+17377,Museo de historia de Valencia,19,39.472502018282526,-0.40842270361313004,24,66,Rococo,1,Estilos y periodos,0
+17377,Museo de historia de Valencia,19,39.472502018282526,-0.40842270361313004,64,70,Historia,3,Museos,0
+17377,Museo de historia de Valencia,19,39.472502018282526,-0.40842270361313004,68,67,Historia y cultura local,3,Museos,0
 17378,Museo de la Catedral,20,39.475311635587715,-0.37536874471750353,20,58,Gótico,1,Estilos y periodos,0
 17378,Museo de la Catedral,20,39.475311635587715,-0.37536874471750353,22,56,Renacentista,1,Estilos y periodos,0
 17378,Museo de la Catedral,20,39.475311635587715,-0.37536874471750353,62,57,Arte,3,Museos,0
@@ -55,8 +55,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17389,Ayuntamiento de Valencia,33,39.4697977,-0.3771993,25,42,Neoclásico,1,Estilos y periodos,0
 17389,Ayuntamiento de Valencia,33,39.4697977,-0.3771993,96,59,Edificios gubernamentales,7,Arquitectura civil,0
 17389,Ayuntamiento de Valencia,33,39.4697977,-0.3771993,115,22,Otros estilos,1,Estilos y periodos,0
-17390,Biblioteca,15,39.9937058,-0.06947737425057154,64,68,Historia,3,Museos,0
-17391,Biblioteca Municipal,25,39.5184368,-0.3661859,97,68,Edificios académicos,7,Arquitectura civil,0
+17390,Biblioteca,15,39.47012830941325,-0.38191031347773546,64,68,Historia,3,Museos,0
+17391,Biblioteca Municipal,25,39.4660039,-0.4092612,97,68,Edificios académicos,7,Arquitectura civil,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,62,78,Arte,3,Museos,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,68,75,Historia y cultura local,3,Museos,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,115,25,Otros estilos,1,Estilos y periodos,0
@@ -102,15 +102,15 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17412,Palau de la Musica,28,39.466161,-0.3604414586965625,27,58,Contemporáneo,1,Estilos y periodos,0
 17412,Palau de la Musica,28,39.466161,-0.3604414586965625,39,58,Conciertos y música en vivo,11,Ocio,0
 17412,Palau de la Musica,28,39.466161,-0.3604414586965625,43,51,Música clasica,11,Ocio,0
-17413,Plaza de Toros,28,39.9858806,-0.04588505539827983,17,42,Árabe,1,Estilos y periodos,0
-17413,Plaza de Toros,28,39.9858806,-0.04588505539827983,39,51,Conciertos y música en vivo,11,Ocio,0
-17413,Plaza de Toros,28,39.9858806,-0.04588505539827983,115,52,Otros estilos,1,Estilos y periodos,0
-17414,Reales Atarazanas,21,39.5355683979766,-0.4346835371571922,20,72,Gótico,1,Estilos y periodos,0
-17414,Reales Atarazanas,21,39.5355683979766,-0.4346835371571922,39,60,Conciertos y música en vivo,11,Ocio,0
-17414,Reales Atarazanas,21,39.5355683979766,-0.4346835371571922,50,66,Exposiciones,13,Eventos,0
-17414,Reales Atarazanas,21,39.5355683979766,-0.4346835371571922,71,64,Otros museos,3,Museos,0
-17415,Teatro Principal,32,38.3463298,-0.4856347,24,27,Rococo,1,Estilos y periodos,0
-17415,Teatro Principal,32,38.3463298,-0.4856347,38,67,Teatros,11,Ocio,0
+17413,Plaza de Toros,28,39.46643775,-0.3761002280314827,17,42,Árabe,1,Estilos y periodos,0
+17413,Plaza de Toros,28,39.46643775,-0.3761002280314827,39,51,Conciertos y música en vivo,11,Ocio,0
+17413,Plaza de Toros,28,39.46643775,-0.3761002280314827,115,52,Otros estilos,1,Estilos y periodos,0
+17414,Reales Atarazanas,21,39.461211230946454,-0.3333335447182755,20,72,Gótico,1,Estilos y periodos,0
+17414,Reales Atarazanas,21,39.461211230946454,-0.3333335447182755,39,60,Conciertos y música en vivo,11,Ocio,0
+17414,Reales Atarazanas,21,39.461211230946454,-0.3333335447182755,50,66,Exposiciones,13,Eventos,0
+17414,Reales Atarazanas,21,39.461211230946454,-0.3333335447182755,71,64,Otros museos,3,Museos,0
+17415,Teatro Principal,32,39.47074535,-0.3744734278807535,24,27,Rococo,1,Estilos y periodos,0
+17415,Teatro Principal,32,39.47074535,-0.3744734278807535,38,67,Teatros,11,Ocio,0
 17417,Torre del Miguelete,32,39.47533000038919,-0.37563264471757374,20,68,Gótico,1,Estilos y periodos,0
 17417,Torre del Miguelete,32,39.47533000038919,-0.37563264471757374,79,62,Campanarios,5,Arquitectura religiosa,0
 17418,Basílica de la Virgen - Museo Mariano,36,39.47644798269103,-0.37462514471752656,84,58,Basílica,5,Arquitectura religiosa,0
@@ -125,8 +125,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17420,Iglesia de San Juan de la Cruz,9,39.472183718312394,-0.37461487416846506,73,81,Iglesias,5,Arquitectura religiosa,0
 17421,Iglesia de San Juan del Hospital,23,39.4743215,-0.37301509580829906,20,70,Gótico,1,Estilos y periodos,0
 17421,Iglesia de San Juan del Hospital,23,39.4743215,-0.37301509580829906,73,67,Iglesias,5,Arquitectura religiosa,0
-17422,Iglesia Santos Juanes,20,38.15978475,-0.8044913052350768,20,66,Gótico,1,Estilos y periodos,0
-17422,Iglesia Santos Juanes,20,38.15978475,-0.8044913052350768,73,67,Iglesias,5,Arquitectura religiosa,0
+17422,Iglesia Santos Juanes,20,39.474212060334715,-0.37952946558594475,20,66,Gótico,1,Estilos y periodos,0
+17422,Iglesia Santos Juanes,20,39.474212060334715,-0.37952946558594475,73,67,Iglesias,5,Arquitectura religiosa,0
 17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,39.499384147087646,-0.36899022140276744,22,51,Renacentista,1,Estilos y periodos,0
 17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,39.499384147087646,-0.36899022140276744,75,68,Monasterios,5,Arquitectura religiosa,0
 17425,Monasterio de San Miguel de los Reyes (Biblioteca Valenciana Nicolau Primitiu),20,39.499384147087646,-0.36899022140276744,97,75,Edificios académicos,7,Arquitectura civil,0
@@ -143,17 +143,17 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17434,Parque Gulliver,31,39.46249950000001,-0.35950157352415285,30,62,Parque infantil,4,Espacios Abiertos,0
 17435,Paseo de la Alameda,36,39.47505153016574,-0.36599885276036404,34,50,Paseos,4,Espacios Abiertos,0
 17435,Paseo de la Alameda,36,39.47505153016574,-0.36599885276036404,41,30,Bares y pubs,11,Ocio,0
-17436,Paseo Marítimo,35,39.18681237511534,-0.22043650338893006,31,65,Playas,4,Espacios Abiertos,0
-17436,Paseo Marítimo,35,39.18681237511534,-0.22043650338893006,34,65,Paseos,4,Espacios Abiertos,0
+17436,Paseo Marítimo,35,39.4745315,-0.32431506635097274,31,65,Playas,4,Espacios Abiertos,0
+17436,Paseo Marítimo,35,39.4745315,-0.32431506635097274,34,65,Paseos,4,Espacios Abiertos,0
 17437,Playa de la Malvarrosa,38,39.47939045,-0.32372016446346363,31,66,Playas,4,Espacios Abiertos,0
 17437,Playa de la Malvarrosa,38,39.47939045,-0.32372016446346363,31,66,Playas,4,Espacios Abiertos,0
 17438,Playa de las Arenas,37,39.46889885,-0.32276051992848515,34,80,Paseos,4,Espacios Abiertos,0
 17439,Plaza de la Virgen,36,39.4763873,-0.3752809368985023,33,83,Calles y plazas,4,Espacios Abiertos,0
 17440,Plaza Redonda,34,39.47357575,-0.3766003783018868,33,75,Calles y plazas,4,Espacios Abiertos,0
 17440,Plaza Redonda,34,39.47357575,-0.3766003783018868,48,65,Tiendas tradicionales,2,Compras,0
-17441,Puerto,34,38.5674036,-0.2137769,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
-17441,Puerto,34,38.5674036,-0.2137769,40,49,Clubs y discotecas,11,Ocio,0
-17441,Puerto,34,38.5674036,-0.2137769,56,46,Eventos deportivos,13,Eventos,0
+17441,Puerto,34,39.44827217147284,-0.3169480823984605,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
+17441,Puerto,34,39.44827217147284,-0.3169480823984605,40,49,Clubs y discotecas,11,Ocio,0
+17441,Puerto,34,39.44827217147284,-0.3169480823984605,56,46,Eventos deportivos,13,Eventos,0
 17442,Tribunal de las Aguas,25,39.47599041235875,-0.37538020361984686,112,100,Otros eventos,13,Eventos,0
 17442,Tribunal de las Aguas,25,39.47599041235875,-0.37538020361984686,115,80,Otros estilos,1,Estilos y periodos,0
 17444,Jardines de Viveros,37,39.48049085,-0.3678095621052625,28,38,Parques,4,Espacios Abiertos,0
@@ -168,10 +168,10 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17477,Antiguo Convento de Santo Domingo,11,39.4742157,-0.368979737725772,85,74,Capilla,5,Arquitectura religiosa,0
 17478,Palacio de los Condes de Cervellón (Archivo Histórico Municipal),9,39.47419028226717,-0.37022102769145077,25,55,Neoclásico,1,Estilos y periodos,0
 17478,Palacio de los Condes de Cervellón (Archivo Histórico Municipal),9,39.47419028226717,-0.37022102769145077,64,83,Historia,3,Museos,0
-17479,Ateneo Mercantil,22,39.398008299442786,-0.4004920932460743,50,44,Exposiciones,13,Eventos,0
-17479,Ateneo Mercantil,22,39.398008299442786,-0.4004920932460743,51,37,Conferencias,13,Eventos,0
-17479,Ateneo Mercantil,22,39.398008299442786,-0.4004920932460743,94,42,Ateneo,7,Arquitectura civil,0
-17479,Ateneo Mercantil,22,39.398008299442786,-0.4004920932460743,115,34,Otros estilos,1,Estilos y periodos,0
+17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,50,44,Exposiciones,13,Eventos,0
+17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,51,37,Conferencias,13,Eventos,0
+17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,94,42,Ateneo,7,Arquitectura civil,0
+17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,115,34,Otros estilos,1,Estilos y periodos,0
 17480,Baños del Almirante,10,39.47503191292955,-0.3732850405674174,17,69,Árabe,1,Estilos y periodos,0
 17481,Bioparc,5,39.4762163,-0.4063979,28,66,Parques,4,Espacios Abiertos,0
 17483,Campo de Golf del Saler,13,39.318848700000004,-0.302172618703825,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
@@ -180,8 +180,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17484,Casa de la America's Cup,24,39.4608921972175,-0.3240629064362844,31,59,Playas,4,Espacios Abiertos,0
 17484,Casa de la America's Cup,24,39.4608921972175,-0.3240629064362844,47,47,Tiendas especializadas,2,Compras,0
 17484,Casa de la America's Cup,24,39.4608921972175,-0.3240629064362844,50,53,Exposiciones,13,Eventos,0
-17485,Casa del Dragón,5,40.4543543,0.2753002,26,56,Modernista,1,Estilos y periodos,0
-17485,Casa del Dragón,5,40.4543543,0.2753002,92,70,Casa,7,Arquitectura civil,0
+17485,Casa del Dragón,5,39.470198745329334,-0.3698432498696374,26,56,Modernista,1,Estilos y periodos,0
+17485,Casa del Dragón,5,39.470198745329334,-0.3698432498696374,92,70,Casa,7,Arquitectura civil,0
 17486,Casa Ferrer,5,39.47337375,-0.37060776441128845,26,76,Modernista,1,Estilos y periodos,0
 17486,Casa Ferrer,5,39.47337375,-0.37060776441128845,92,84,Casa,7,Arquitectura civil,0
 17487,Casa Ortega,2,39.46542080695542,-0.37320738582289686,26,93,Modernista,1,Estilos y periodos,0
@@ -198,8 +198,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17492,Complejo Arqueológico de la Almoina,13,39.47625869475268,-0.37416064471926774,18,70,Romano,1,Estilos y periodos,0
 17492,Complejo Arqueológico de la Almoina,13,39.47625869475268,-0.37416064471926774,19,72,Medieval,1,Estilos y periodos,0
 17493,Complejo Deportivo Cultural Petxina,9,39.4752164,-0.394262,103,64,Estadios y áreas deportivas,7,Arquitectura civil,0
-17494,Convento de la Trinidad,6,38.08564965,-0.942075190860481,20,93,Gótico,1,Estilos y periodos,0
-17494,Convento de la Trinidad,6,38.08564965,-0.942075190860481,74,87,Conventos,5,Arquitectura religiosa,0
+17494,Convento de la Trinidad,6,39.48310648050922,-0.37020479010576535,20,93,Gótico,1,Estilos y periodos,0
+17494,Convento de la Trinidad,6,39.48310648050922,-0.37020479010576535,74,87,Conventos,5,Arquitectura religiosa,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,17,82,Árabe,1,Estilos y periodos,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,18,22,Romano,1,Estilos y periodos,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,65,59,Religión,3,Museos,0
@@ -228,8 +228,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17507,Iglesia de la Compañía,13,39.47502105,-0.37830975689591073,115,31,Otros estilos,1,Estilos y periodos,0
 17508,Iglesia de las Escuelas Pías,8,39.4738295,-0.381659,23,53,Barroco,1,Estilos y periodos,0
 17508,Iglesia de las Escuelas Pías,8,39.4738295,-0.381659,73,56,Iglesias,5,Arquitectura religiosa,0
-17509,Iglesia de San Agustín,28,39.986928500000005,-0.03504642024404245,20,72,Gótico,1,Estilos y periodos,0
-17509,Iglesia de San Agustín,28,39.986928500000005,-0.03504642024404245,73,60,Iglesias,5,Arquitectura religiosa,0
+17509,Iglesia de San Agustín,28,39.468682483385805,-0.3800515269269744,20,72,Gótico,1,Estilos y periodos,0
+17509,Iglesia de San Agustín,28,39.468682483385805,-0.3800515269269744,73,60,Iglesias,5,Arquitectura religiosa,0
 17510,Iglesia de San Esteban,15,39.4761124,-0.37316691172694166,17,67,Árabe,1,Estilos y periodos,0
 17510,Iglesia de San Esteban,15,39.4761124,-0.37316691172694166,20,68,Gótico,1,Estilos y periodos,0
 17510,Iglesia de San Esteban,15,39.4761124,-0.37316691172694166,73,47,Iglesias,5,Arquitectura religiosa,0
@@ -237,9 +237,9 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17511,Iglesia de San Martín,13,39.473283800000004,-0.3756909515830498,23,50,Barroco,1,Estilos y periodos,0
 17511,Iglesia de San Martín,13,39.473283800000004,-0.3756909515830498,25,50,Neoclásico,1,Estilos y periodos,0
 17511,Iglesia de San Martín,13,39.473283800000004,-0.3756909515830498,73,45,Iglesias,5,Arquitectura religiosa,0
-17512,Iglesia de San Nicolás,18,39.484361449999994,-1.102050567274532,20,60,Gótico,1,Estilos y periodos,0
-17512,Iglesia de San Nicolás,18,39.484361449999994,-1.102050567274532,23,50,Barroco,1,Estilos y periodos,0
-17512,Iglesia de San Nicolás,18,39.484361449999994,-1.102050567274532,73,93,Iglesias,5,Arquitectura religiosa,0
+17512,Iglesia de San Nicolás,18,39.47618825,-0.37880991692107235,20,60,Gótico,1,Estilos y periodos,0
+17512,Iglesia de San Nicolás,18,39.47618825,-0.37880991692107235,23,50,Barroco,1,Estilos y periodos,0
+17512,Iglesia de San Nicolás,18,39.47618825,-0.37880991692107235,73,93,Iglesias,5,Arquitectura religiosa,0
 17513,Iglesia de Santa Catalina,26,39.474118250000004,-0.3764004699525199,20,70,Gótico,1,Estilos y periodos,0
 17513,Iglesia de Santa Catalina,26,39.474118250000004,-0.3764004699525199,23,90,Barroco,1,Estilos y periodos,0
 17513,Iglesia de Santa Catalina,26,39.474118250000004,-0.3764004699525199,73,100,Iglesias,5,Arquitectura religiosa,0
@@ -250,11 +250,11 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17515,Iglesia del antiguo Convento del Carmen,13,39.479472589253945,-0.37853197915365094,23,55,Barroco,1,Estilos y periodos,0
 17515,Iglesia del antiguo Convento del Carmen,13,39.479472589253945,-0.37853197915365094,73,67,Iglesias,5,Arquitectura religiosa,0
 17515,Iglesia del antiguo Convento del Carmen,13,39.479472589253945,-0.37853197915365094,79,64,Campanarios,5,Arquitectura religiosa,0
-17516,Iglesia del Carmen,12,38.08591965,-0.9508110699298948,23,53,Barroco,1,Estilos y periodos,0
-17516,Iglesia del Carmen,12,38.08591965,-0.9508110699298948,73,63,Iglesias,5,Arquitectura religiosa,0
-17517,Iglesia del Salvador,11,39.4860051,-1.1004892922305656,20,63,Gótico,1,Estilos y periodos,0
-17517,Iglesia del Salvador,11,39.4860051,-1.1004892922305656,25,55,Neoclásico,1,Estilos y periodos,0
-17517,Iglesia del Salvador,11,39.4860051,-1.1004892922305656,73,69,Iglesias,5,Arquitectura religiosa,0
+17516,Iglesia del Carmen,12,39.47618825,-0.37880991692107235,23,53,Barroco,1,Estilos y periodos,0
+17516,Iglesia del Carmen,12,39.47618825,-0.37880991692107235,73,63,Iglesias,5,Arquitectura religiosa,0
+17517,Iglesia del Salvador,11,39.47720985,-0.37384430284144654,20,63,Gótico,1,Estilos y periodos,0
+17517,Iglesia del Salvador,11,39.47720985,-0.37384430284144654,25,55,Neoclásico,1,Estilos y periodos,0
+17517,Iglesia del Salvador,11,39.47720985,-0.37384430284144654,73,69,Iglesias,5,Arquitectura religiosa,0
 17518,Iglesia y Palacio del Temple,15,39.47672645301736,-0.3710456649536887,25,64,Neoclásico,1,Estilos y periodos,0
 17518,Iglesia y Palacio del Temple,15,39.47672645301736,-0.3710456649536887,73,67,Iglesias,5,Arquitectura religiosa,0
 17518,Iglesia y Palacio del Temple,15,39.47672645301736,-0.3710456649536887,91,74,Palacio,7,Arquitectura civil,0
@@ -283,7 +283,7 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17527,Museo del Trenet,3,39.48679932361114,-0.38278244134021483,63,96,Ciencia y tecnología,3,Museos,0
 17527,Museo del Trenet,3,39.48679932361114,-0.38278244134021483,68,88,Historia y cultura local,3,Museos,0
 17528,Museo Histórico Municipal (Ayuntamiento de Valencia),6,39.46948060689687,-0.3772943036132727,68,81,Historia y cultura local,3,Museos,0
-17529,Museo Militar,2,40.0071083,-0.04830414747056445,70,90,Militar,3,Museos,0
+17529,Museo Militar,2,39.47194995,-0.36206562456222835,70,90,Militar,3,Museos,0
 17530,Palacio de Cervelló,8,39.474303,-0.37041452971411837,25,80,Neoclásico,1,Estilos y periodos,0
 17530,Palacio de Cervelló,8,39.474303,-0.37041452971411837,71,80,Otros museos,3,Museos,0
 17531,Palacio de Congresos,25,39.49619935,-0.4020570971416736,27,51,Contemporáneo,1,Estilos y periodos,0
@@ -341,11 +341,11 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,39.47386384399168,-0.37319583858391275,62,90,Arte,3,Museos,0
 18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,39.47386384399168,-0.37319583858391275,23,50,Barroco,1,Estilos y periodos,0
 18000,Centro de Arte Hortensia Herrero (CAHH) - Palacio Valeriola,0,39.47386384399168,-0.37319583858391275,20,30,Gótico,1,Estilos y periodos,0
-18001,Barrio del Carmen,0,39.486281,-0.4503548,45,90,Restaurantes,8,Gastronomia,0
-18001,Barrio del Carmen,0,39.486281,-0.4503548,41,90,Bares y pubs,11,Ocio,0
-18001,Barrio del Carmen,0,39.486281,-0.4503548,42,30,Discotecas,11,Ocio,0
-18001,Barrio del Carmen,0,39.486281,-0.4503548,48,50,Tiendas tradicionales,2,Compras,0
-18001,Barrio del Carmen,0,39.486281,-0.4503548,17,10,Árabe,1,Estilos y periodos,0
+18001,Barrio del Carmen,0,39.47884429391109,-0.379883679706167,45,90,Restaurantes,8,Gastronomia,0
+18001,Barrio del Carmen,0,39.47884429391109,-0.379883679706167,41,90,Bares y pubs,11,Ocio,0
+18001,Barrio del Carmen,0,39.47884429391109,-0.379883679706167,42,30,Discotecas,11,Ocio,0
+18001,Barrio del Carmen,0,39.47884429391109,-0.379883679706167,48,50,Tiendas tradicionales,2,Compras,0
+18001,Barrio del Carmen,0,39.47884429391109,-0.379883679706167,17,10,Árabe,1,Estilos y periodos,0
 18002,Barrio de Ruzafa,0,39.461688508258916,-0.3733853505246533,45,90,Restaurantes,8,Gastronomia,0
 18002,Barrio de Ruzafa,0,39.461688508258916,-0.3733853505246533,41,80,Bares y pubs,11,Ocio,0
 18002,Barrio de Ruzafa,0,39.461688508258916,-0.3733853505246533,42,40,Discotecas,11,Ocio,0
