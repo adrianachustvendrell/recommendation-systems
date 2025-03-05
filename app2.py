@@ -6,6 +6,9 @@ import pandas as pd
 import plotly.express as px
 
 
+# Sidebar navigation
+st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
+st.sidebar.page_link('app2.py', label='🏠 Home')
 
 
 # -----------------------------------
@@ -31,9 +34,6 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 
 
-# Sidebar navigation
-st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
-st.sidebar.page_link('app2.py', label='🏠 Home')
 
 # Load data
 items_file_path = "./data/items.csv"  # Change this to your actual CSV path

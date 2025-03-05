@@ -5,8 +5,8 @@ import random
 from PIL import Image
 
 # Sidebar navigation
-st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="centered")
-st.sidebar.page_link('app.py', label='Home')
+#st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="centered")
+#st.sidebar.page_link('app2.py', label='Home')
 
 col1, col_space, col2 = st.columns([1, 3, 1])
 with col1:
