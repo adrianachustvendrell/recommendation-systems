@@ -123,7 +123,6 @@ def add_preference(new_id, set_preferencias):
     
     # Crear un DataFrame con las preferencias
     preferences_data = []
-    print(set_preferencias)
     for categoria, subcategoria, calificacion in set_preferencias:
         # Buscar el ID de la categoría en el DataFrame
         id_categoria = preference_df.loc[preference_df['categoria'] == categoria, 'id_categoria'].values
@@ -258,7 +257,7 @@ with col1:
     st.session_state.selected_child = selected_child
 
 with col2:
-    selected_score = st.selectbox("Puntuación", score_options, key="score_select")
+    selected_score = st.selectbox("Valoración", score_options, key="score_select")
 
 # 🚀 Limitar selección a 10 preferencias
 if st.button("Añadir Preferencia"):
