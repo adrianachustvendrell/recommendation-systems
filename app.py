@@ -10,7 +10,7 @@ from folium.plugins import TagFilterButton
 
 # Sidebar navigation
 st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
-st.sidebar.page_link('app2.py', label='🏠 Home')
+st.sidebar.page_link('app.py', label='🏠 Home')
 
 
 # -----------------------------------

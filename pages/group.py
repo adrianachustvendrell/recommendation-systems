@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import time
 
 # --------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
@@ -73,5 +74,7 @@ if len(nombres_grupo) == grupo_size:
     st.session_state.grupo_registrado = True
 
     #NO SÉ CÓMO HACERLO!!!!
-    if st.button("Continuar a recomendaciones"): st.text("HAY QUE ARREGLAR ESTO")
+    if st.button("Continuar a recomendaciones"):
+        time.sleep(2)
+        st.switch_page("app.py") 
         
