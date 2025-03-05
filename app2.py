@@ -48,14 +48,22 @@ df_items = pd.read_csv(items_file_path)
 # -----------------------------------
 
 # --- HEADER SECTION ---
-col1, col_space, col2 = st.columns([1, 3, 1])
+col1, col_space, col2, col_space, col3 = st.columns([1, 1.5, 1, 1.5, 1])
+#col1, col2, col3 = st.columns([1, 1, 1])
+
 with col1:
     if st.button("🔑 Iniciar sesión"):
         st.switch_page("pages/signin.py")
 
 with col2:
+    if st.button("👥 Soy un grupo"):
+        st.switch_page("pages/group.py")
+
+with col3:
     if st.button("📝 Registrarse"):
         st.switch_page("pages/signup.py")
+
+
 
 
 
@@ -65,10 +73,32 @@ with col2:
 # -----------------------------------
 
 
+
+
 st.markdown(
-    "<h1 style='text-align: center; color: #000080; font-family: Fantasy; font-size: 46px'>🌍 Descubre lo Mejor de Valencia 🌍</h1>", 
+    """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap');
+    </style>
+    <h1 style='text-align: center; color: #F63366; font-family: Playfair Display, serif; font-size: 46px'>
+        Descubre lo mejor de 
+        <span style="font-family: 'Dancing Script', cursive; color: #F63366;">Valencia</span>
+    </h1>
+    """, 
     unsafe_allow_html=True
 )
+
+st.markdown(
+    """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+    </style>
+    <h5 style='text-align: center; color: #000010; font-family: Playfair Display, serif;'>Explora los lugares más emblemáticos</h5>
+    """, 
+    unsafe_allow_html=True
+)
+
+
 
 # --- IMAGE CAROUSEL ---
 image_folder = "./images"
@@ -77,8 +107,8 @@ random_images = random.sample(image_files, min(10, len(image_files)))
 
 carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, img)} for img in random_images]
 
+# Centering the carousel text
 st.write("")
-st.write("🎡 **Explora los lugares más emblemáticos de Valencia**")
 carousel(items=carousel_items)
 
 
@@ -167,7 +197,7 @@ category_colors = {
 #df_unique = df_items.drop_duplicates(subset=["id_item", "latitud", "longitud"])
 df_unique = df_items
 map_center = [df_unique["latitud"].mean(), df_unique["longitud"].mean()]
-folium_map = folium.Map(location=map_center, zoom_start=12)
+folium_map = folium.Map(location=map_center, zoom_start=12, tiles="cartodb positron")
 
 # Add markers to the map with category tags
 for _, row in df_unique.iterrows():
@@ -179,10 +209,7 @@ for _, row in df_unique.iterrows():
         tags=[row["padre_categoria"]]  # Adding tags for filtering
     ).add_to(folium_map)
 
-# Add filter button for categories
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
-
-# Display the map in Streamlit
 folium_static(folium_map)
 
 
