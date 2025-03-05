@@ -257,6 +257,10 @@ submit_button = st.button('Registrarse')
 
 
 
+# ---------------------------------
+# CONTROLAR ERRORES FORMULARIO
+# ---------------------------------
+
 # Validate and store user
 if submit_button:
     try:
