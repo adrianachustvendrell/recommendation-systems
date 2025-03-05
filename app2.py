@@ -6,16 +6,15 @@ import pandas as pd
 import plotly.express as px
 
 
+
+
+# -----------------------------------
+# CONFIGURACIÓN DE LA PÁGINA
+# -----------------------------------
+
 # FONTS: 
 
 # <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
-
-
-
-# Sidebar navigation
-st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
-
-st.sidebar.page_link('app2.py', label='🏠 Home')
 
 custom_css = """
     <style>
@@ -30,6 +29,22 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+
+
+# Sidebar navigation
+st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
+st.sidebar.page_link('app2.py', label='🏠 Home')
+
+# Load data
+items_file_path = "./data/items.csv"  # Change this to your actual CSV path
+df_items = pd.read_csv(items_file_path)
+
+
+
+# -----------------------------------
+# BOTONES (FALTA AÑADIR GRUPO)
+# -----------------------------------
+
 # --- HEADER SECTION ---
 col1, col_space, col2 = st.columns([1, 3, 1])
 with col1:
@@ -39,6 +54,14 @@ with col1:
 with col2:
     if st.button("📝 Registrarse"):
         st.switch_page("pages/signup.py")
+
+
+
+
+# -----------------------------------
+# TÍTULO Y CAROUSEL DE FOTOS
+# -----------------------------------
+
 
 st.markdown(
     "<h1 style='text-align: center; color: #000080; font-family: Fantasy; font-size: 46px'>🌍 Descubre lo Mejor de Valencia 🌍</h1>", 
@@ -57,12 +80,13 @@ st.write("🎡 **Explora los lugares más emblemáticos de Valencia**")
 carousel(items=carousel_items)
 
 
-# Load data
-items_file_path = "./data/items.csv"  # Change this to your actual CSV path
-df_items = pd.read_csv(items_file_path)
 
 
-# --- DATA VISUALIZATION ---
+# ---------------------------------
+# ESTADÍSTICAS 
+# ---------------------------------
+
+
 st.markdown("### 📊 **Análisis de Visitantes**")
 
 padre_categorias = list(set(df_items['padre_categoria'].tolist()))
@@ -75,14 +99,13 @@ fig1 = px.bar(category_visits, x="categoria", y="count",
 st.plotly_chart(fig1, use_container_width=True)
 
 
+
 st.write("### 🏛 **Adecuación de lugares por Categoría**")
 
 categorias = list(set(df_items['categoria'].tolist()))
 cat = st.selectbox("📌 **Selecciona una categoría:**", categorias)
-
 df_scores = df_items[df_items["categoria"] == cat]
 df_scores = df_scores.sort_values(by="adec", ascending=True)
-
 fig_height = 50 + 50 * len(df_scores['adec'].tolist())
 
 # Create a horizontal bar chart
@@ -116,7 +139,9 @@ fig.update_layout(
 # Display the chart
 st.plotly_chart(fig, use_container_width=True)
 
-# --- SEARCH & FILTER OPTIONS ---
+
+
+
 st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
 search_term = st.text_input("🔎 Buscar un lugar por nombre:")
 filtered_df_items = df_items[df_items["nombre_item"].str.contains(search_term, case=False, na=False)] if search_term else df_items
