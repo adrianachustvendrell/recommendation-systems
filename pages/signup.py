@@ -3,17 +3,10 @@ import pandas as pd
 import os
 import time
 
-# File where users will be stored
-USER_DATA_FILE = "info_usuarios.csv"
-PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
-submit_button = False
+# --------------------------------------
+# ESTILO PÁGINA
+# --------------------------------------
 
-def find_file(filename):
-    """Search for the file in all directories starting from the root folder."""
-    for root, _, files in os.walk(os.getcwd()):  # Start searching from the current directory
-        if filename in files:
-            return os.path.join(root, filename)
-    return None
 
 custom_css = """
     <style>
@@ -28,11 +21,42 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+
+
+
+
+# --------------------------------------
+# LEER CSV USUARIOS Y PREFERENCIAS
+# --------------------------------------
+
+
+# File where users will be stored
+USER_DATA_FILE = "info_usuarios.csv"
+PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
+ITEMS_DATA_FILE = 'items.csv'
+submit_button = False
+
+
+
+def find_file(filename):
+    """Search for the file in all directories starting from the root folder."""
+    for root, _, files in os.walk(os.getcwd()):  # Start searching from the current directory
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
+
+
+
 # Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
 preference_user_file_path = find_file(PREFERENCE_USER_DATA_FILE)
+items_file_path = find_file(ITEMS_DATA_FILE)
+
 
 preference_df = pd.read_csv(preference_user_file_path)
+items_df = pd.read_csv(items_file_path)
+
+
 
 # Load the users file or create a new one
 if user_file_path:
@@ -41,9 +65,17 @@ else:
     users_df = pd.DataFrame(columns=["id_usuario", "nombre_usuario", "edad", "sexo", "id_ocupacion", "hijos", "edad_hijo_menor", "edad_hijo_mayor", "ocupacion"])
     user_file_path = os.path.join(os.getcwd(), USER_DATA_FILE)  # Save it in the current directory if not found
 
+
+
+
+# --------------------------------------
+# FUNCIONES DE AÑADIR USUARIO/PREFERENCIA
+# --------------------------------------
+
 def check_username_exists(username):
     """Checks if a username is already in the DataFrame."""
     return username in users_df["nombre_usuario"].values
+
 
 def generate_user_id():
     """Generates a new unique id_usuario."""
@@ -51,6 +83,7 @@ def generate_user_id():
         return 1  # Start from 1 if no users exist
     else:
         return users_df["id_usuario"].max() + 1  # Increment the highest ID
+
 
 def add_user(username, age, sex, job, children, child1_age, child2_age):
     """Adds a new user to the DataFrame and saves it."""
@@ -76,7 +109,6 @@ def add_user(username, age, sex, job, children, child1_age, child2_age):
     
     global users_df
     users_df = pd.concat([users_df, new_user], ignore_index=True)
-
     # Save to CSV
     users_df.to_csv(user_file_path, index=False)
 
@@ -85,8 +117,7 @@ def add_user(username, age, sex, job, children, child1_age, child2_age):
 
 
 def add_preference(new_id, set_preferencias):
-    """Añade las preferencias de un usuario al DataFrame y las guarda en un archivo CSV."""
-    
+
     global preference_user_file_path  # Asegurar la ruta correcta del CSV de preferencias
     
     # Crear un DataFrame con las preferencias
@@ -115,12 +146,20 @@ def add_preference(new_id, set_preferencias):
         prefs_df.to_csv(preference_user_file_path, index=False)
 
 
+
+
+
+
+# ---------------------------------
+# FORM DE REGISTRO
+# ---------------------------------
+
+
 # Streamlit Sign-up Page
 st.title("📝 Registrarse")
 
 with st.form(key="signup_form"):
     new_username = st.text_input("Introduce un usuario")
-    # new_age = st.text_input("Introduce tu edad")
     new_age = st.number_input("Introduce tu edad", min_value = 1, step = 1, format = "%d")
     sex_options = ['M (Masculino)', 'F (Femenino)']
     new_sex = st.selectbox("Selecciona tu sexo", sex_options)
@@ -145,59 +184,78 @@ with st.form(key="signup_form"):
 
     if continua_button:
         if new_children >= 1:
-            # new_children1_age = st.text_input("Introduce la edad de tu primer hijo")
             new_children1_age = st.number_input("Introduce la edad de tu primer hijo", min_value = 0, step = 1, format = "%d")
 
         if new_children == 2:
-            # new_children2_age = st.text_input("Introduce la edad de tu segundo hijo")
             new_children2_age = st.number_input("Introduce la edad de tu segundo hijo", min_value = 0, step = 1, format = "%d")
 
-    
-
-    st.subheader("Preferencias")
-
-    # Opciones de preferencias y puntuación
-    preference_options = list(preference_df['categoria'].unique())  # Convertimos a lista
-    score_options = list(range(1, 11))
-
-    # Inicializar session_state si no existe
-    if "preferences" not in st.session_state:
-        st.session_state.preferences = []
-
-    # Filtrar opciones disponibles
-    available_prefs = [p for p in preference_options if p not in [x[0] for x in st.session_state.preferences]]
-
-    # Si no hay opciones disponibles, evitar errores
-    if not available_prefs:
-        st.write("⚠️ Ya has seleccionado todas las preferencias disponibles.")
-        st.stop()
-
-    # Crear selección de preferencia sin modificar session_state
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        selected_pref = st.selectbox("Elige una preferencia", available_prefs, index=0)
-    with col2:
-        selected_score = st.selectbox("Puntuación", score_options, key="new_score")
-
-    # Botón para añadir preferencias
-    add_pref_button = st.form_submit_button("Añadir Preferencia")
-
-    if add_pref_button:
-        if selected_pref and selected_pref not in [x[0] for x in st.session_state.preferences]:  # Asegura que no se repita
-            st.session_state.preferences.append((selected_pref, selected_score))
-            st.rerun()  # Recargar la app para actualizar la lista de preferencias y evitar errores de índice
-
-    # Mostrar preferencias seleccionadas
-    st.write("#### Preferencias seleccionadas:")
-    for pref, score in st.session_state.preferences:
-        st.write(f"✔️ {pref}: {score}")
 
 
 
+# --------------------------------------
+# PREFERENCIAS (fuera del formulario)
+# --------------------------------------
+st.title("🎯 Preferencias")
 
-    # ---- Enviar formulario ----
-    submit_button = st.form_submit_button(label="Registrarse")
-    
+padre_options = list(items_df['padre_categoria'].unique())
+score_options = list(range(10, 110, 10))
+
+if "preferences" not in st.session_state:
+    st.session_state.preferences = []
+
+if "selected_parent" not in st.session_state:
+    st.session_state.selected_parent = padre_options[0]
+
+# 🔹 Filtrar subcategorías ya seleccionadas
+selected_subcategories = {child for _, child, _ in st.session_state.preferences}
+hijos_disponibles = [
+    cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
+    if cat not in selected_subcategories
+]
+
+if "selected_child" not in st.session_state or st.session_state.selected_child not in hijos_disponibles:
+    st.session_state.selected_child = hijos_disponibles[0] if hijos_disponibles else None
+
+# Selector de categoría padre
+selected_parent = st.selectbox(
+    "Elige una categoría",
+    padre_options,
+    index=padre_options.index(st.session_state.selected_parent),
+    key="parent_select"
+)
+
+if selected_parent != st.session_state.selected_parent:
+    st.session_state.selected_parent = selected_parent
+    hijos_disponibles = [
+        cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
+        if cat not in selected_subcategories
+    ]
+    st.session_state.selected_child = hijos_disponibles[0] if hijos_disponibles else None
+    st.rerun()
+
+col1, col2 = st.columns([2, 1])
+with col1:
+    selected_child = st.selectbox("Elige una subcategoría", hijos_disponibles, key="child_select")
+    st.session_state.selected_child = selected_child
+
+with col2:
+    selected_score = st.selectbox("Puntuación", score_options, key="score_select")
+
+# 🚀 Limitar selección a 10 preferencias
+if st.button("Añadir Preferencia"):
+    if len(st.session_state.preferences) >= 10:
+        st.warning("Has alcanzado el límite de 10 preferencias.")
+    elif selected_parent and selected_child:
+        st.session_state.preferences.append((selected_parent, selected_child, selected_score))
+        st.rerun()
+
+st.write(f"#### Preferencias seleccionadas ({len(st.session_state.preferences)}/10):")
+for parent, child, score in st.session_state.preferences:
+    st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
+
+submit_button = st.button('Registrarse')
+
+
 
 # Validate and store user
 if submit_button:
