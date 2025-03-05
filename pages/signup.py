@@ -15,6 +15,19 @@ def find_file(filename):
             return os.path.join(root, filename)
     return None
 
+custom_css = """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Megrim&display=swap');
+
+        html, body, [class*="st-"] {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 # Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
 preference_user_file_path = find_file(PREFERENCE_USER_DATA_FILE)
@@ -103,7 +116,7 @@ def add_preference(new_id, set_preferencias):
 
 
 # Streamlit Sign-up Page
-st.title("Registrarse")
+st.title("📝 Registrarse")
 
 with st.form(key="signup_form"):
     new_username = st.text_input("Introduce un usuario")

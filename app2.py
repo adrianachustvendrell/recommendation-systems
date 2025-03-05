@@ -1,0 +1,125 @@
+import streamlit as st
+from streamlit_carousel import carousel
+import os
+import random
+import pandas as pd
+import plotly.express as px
+
+
+# FONTS: 
+
+# <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+
+
+
+# Sidebar navigation
+st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
+
+st.sidebar.page_link('app2.py', label='🏠 Home')
+
+custom_css = """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Megrim&display=swap');
+
+        html, body, [class*="st-"] {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
+# --- HEADER SECTION ---
+col1, col_space, col2 = st.columns([1, 3, 1])
+with col1:
+    if st.button("🔑 Iniciar sesión"):
+        st.switch_page("pages/signin.py")
+
+with col2:
+    if st.button("📝 Registrarse"):
+        st.switch_page("pages/signup.py")
+
+st.markdown(
+    "<h1 style='text-align: center; color: #000080; font-family: Fantasy; font-size: 46px'>🌍 Descubre lo Mejor de Valencia 🌍</h1>", 
+    unsafe_allow_html=True
+)
+
+# --- IMAGE CAROUSEL ---
+image_folder = "./images"
+image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
+random_images = random.sample(image_files, min(10, len(image_files)))  
+
+carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, img)} for img in random_images]
+
+st.write("")
+st.write("🎡 **Explora los lugares más emblemáticos de Valencia**")
+carousel(items=carousel_items)
+
+
+# Load data
+items_file_path = "./data/items.csv"  # Change this to your actual CSV path
+df_items = pd.read_csv(items_file_path)
+
+
+# --- DATA VISUALIZATION ---
+st.markdown("### 📊 **Análisis de Visitantes**")
+
+padre_categorias = list(set(df_items['padre_categoria'].tolist()))
+padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
+df_filtered = df_items[df_items["padre_categoria"] == padre]
+category_visits = df_filtered.groupby("categoria")["count"].sum().reset_index()
+fig1 = px.bar(category_visits, x="categoria", y="count", 
+              labels = {"categoria": "Categoría ", "count": "Número de visistas "}, 
+              title="Cantidad de Visitas por Categoría", color="categoria")
+st.plotly_chart(fig1, use_container_width=True)
+
+
+st.write("### 🏛 **Adecuación de lugares por Categoría**")
+
+categorias = list(set(df_items['categoria'].tolist()))
+cat = st.selectbox("📌 **Selecciona una categoría:**", categorias)
+
+df_scores = df_items[df_items["categoria"] == cat]
+df_scores = df_scores.sort_values(by="adec", ascending=True)
+
+fig_height = 50 + 50 * len(df_scores['adec'].tolist())
+
+# Create a horizontal bar chart
+fig = px.bar(
+    df_scores,
+    x="adec",
+    y="nombre_item",
+    labels = {"adec": "Adecuación del Lugar ", "nombre_item": "Nombre del item "},
+    orientation="h",
+    text="adec",
+    title="💯 Adecuación de Lugares",
+    color="adec",
+    color_continuous_scale="BuPu",  # Color gradient
+)
+
+fig.update_traces(
+    texttemplate='%{text}%', 
+    textposition='inside',
+    marker=dict(line=dict(width=0.5)),  # Reduce outline thickness
+)
+
+fig.update_layout(
+    xaxis=dict(title="", range=[0, 100]),  # Fixed range
+    yaxis=dict(title="", automargin=True),
+    coloraxis_showscale=False,  # Hide color scale legend
+    # bargap=0.6,  # Increase gap between bars (smaller bars)
+    height=fig_height,
+    margin=dict(l=150, r=20, t=50, b=20),
+)
+
+# Display the chart
+st.plotly_chart(fig, use_container_width=True)
+
+# --- SEARCH & FILTER OPTIONS ---
+st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
+search_term = st.text_input("🔎 Buscar un lugar por nombre:")
+filtered_df_items = df_items[df_items["nombre_item"].str.contains(search_term, case=False, na=False)] if search_term else df_items
+
+st.dataframe(filtered_df_items, use_container_width=True)
+
