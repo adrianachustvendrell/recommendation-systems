@@ -35,6 +35,7 @@ USER_DATA_FILE = "info_usuarios.csv"
 PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
 ITEMS_DATA_FILE = 'items.csv'
 submit_button = False
+preferencias_button = False
 
 
 
@@ -122,9 +123,11 @@ def add_preference(new_id, set_preferencias):
     
     # Crear un DataFrame con las preferencias
     preferences_data = []
-    for categoria, calificacion in set_preferencias:
+    print(set_preferencias)
+    for categoria, subcategoria, calificacion in set_preferencias:
         # Buscar el ID de la categoría en el DataFrame
         id_categoria = preference_df.loc[preference_df['categoria'] == categoria, 'id_categoria'].values
+        id_subcategoria = preference_df.loc[preference_df['categoria'] == subcategoria, 'id_categoria'].values
         
         if len(id_categoria) > 0:
             preferences_data.append({
@@ -132,6 +135,14 @@ def add_preference(new_id, set_preferencias):
                 "id_categoria": id_categoria[0],  # Extraer el valor del array
                 "calificacion": calificacion,
                 "categoria": categoria
+            })
+
+        if len(id_subcategoria) > 0:
+            preferences_data.append({
+                "id_usuario": new_id,
+                "id_categoria": id_subcategoria[0],  # Extraer el valor del array
+                "calificacion": calificacion,
+                "categoria": subcategoria
             })
     
     if preferences_data:
@@ -154,84 +165,92 @@ def add_preference(new_id, set_preferencias):
 # FORM DE REGISTRO
 # ---------------------------------
 
+# --------------------------------------
+# VARIABLES DE SESIÓN PARA NO PERDER DATOS
+# --------------------------------------
+if "new_children1_age" not in st.session_state:
+    st.session_state.new_children1_age = 0
+if "new_children2_age" not in st.session_state:
+    st.session_state.new_children2_age = 0
+if "preferences" not in st.session_state:
+    st.session_state.preferences = []
+if "selected_parent" not in st.session_state:
+    st.session_state.selected_parent = items_df['padre_categoria'].unique()[0]
 
-# Streamlit Sign-up Page
+
+
+
+
+# --------------------------------------
+# FORMULARIO DE REGISTRO
+# --------------------------------------
 st.title("📝 Registrarse")
 
 with st.form(key="signup_form"):
     new_username = st.text_input("Introduce un usuario")
-    new_age = st.number_input("Introduce tu edad", min_value = 1, step = 1, format = "%d")
-    sex_options = ['M (Masculino)', 'F (Femenino)']
-    new_sex = st.selectbox("Selecciona tu sexo", sex_options)
+    new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d")
+    new_sex = st.selectbox("Selecciona tu sexo", ['M (Masculino)', 'F (Femenino)'])
 
     job_options = [
-        "Fuerzas armadas", "Dirección de las empresas y de las administraciones públicas",
-        "Técnicos y profesionales científicos e intelectuales", "Técnicos y profesionales de apoyo",
-        "Empleados de tipo administrativo", "Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",
-        "Trabajadores cualificados en la agricultura y en la pesca", 
-        "Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",
-        "Operadores de instalaciones y maquinaria, y montadores", "Trabajadores no cualificados", "Inactivo o desocupado"
+        "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
+        "Empleados administrativos", "Vendedores", "Agricultores", 
+        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
     ]
     new_job = st.selectbox("Selecciona tu empleo", job_options)
 
-    children_options = [0, 1, 2]
-    new_children = st.selectbox("Selecciona el número de hijos", children_options)
+    new_children = st.selectbox("Selecciona el número de hijos", [0, 1, 2])
 
-    continua_button = st.form_submit_button(label="Edad hijos")
-    # Default child ages
+    # Definir valores predeterminados para evitar NameError
     new_children1_age = 0
     new_children2_age = 0
 
-    if continua_button:
-        if new_children >= 1:
-            new_children1_age = st.number_input("Introduce la edad de tu primer hijo", min_value = 0, step = 1, format = "%d")
+    # Botón para continuar con la edad de los hijos
+    continua_button = st.form_submit_button(label="Continuar")
 
-        if new_children == 2:
-            new_children2_age = st.number_input("Introduce la edad de tu segundo hijo", min_value = 0, step = 1, format = "%d")
+
+with st.form(key="ages"):
+    if new_children >= 1:
+        st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children1_age)
+    if new_children == 2:
+        st.session_state.new_children2_age = st.number_input("Edad del segundo hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children2_age)
+    preferencias_button = st.form_submit_button(label="Continuar")
+
 
 
 
 
 # --------------------------------------
-# PREFERENCIAS (fuera del formulario)
+# SELECCIÓN DE PREFERENCIAS
 # --------------------------------------
+
+
 st.title("🎯 Preferencias")
 
 padre_options = list(items_df['padre_categoria'].unique())
 score_options = list(range(10, 110, 10))
 
-if "preferences" not in st.session_state:
-    st.session_state.preferences = []
-
-if "selected_parent" not in st.session_state:
-    st.session_state.selected_parent = padre_options[0]
-
 # 🔹 Filtrar subcategorías ya seleccionadas
 selected_subcategories = {child for _, child, _ in st.session_state.preferences}
 hijos_disponibles = [
-    cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
-    if cat not in selected_subcategories
-]
+        cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
+        if cat not in selected_subcategories
+    ]
 
-if "selected_child" not in st.session_state or st.session_state.selected_child not in hijos_disponibles:
-    st.session_state.selected_child = hijos_disponibles[0] if hijos_disponibles else None
-
-# Selector de categoría padre
 selected_parent = st.selectbox(
-    "Elige una categoría",
-    padre_options,
-    index=padre_options.index(st.session_state.selected_parent),
-    key="parent_select"
-)
+        "Elige una categoría",
+        padre_options,
+        index=padre_options.index(st.session_state.selected_parent),
+        key="parent_select"
+    )
 
 if selected_parent != st.session_state.selected_parent:
     st.session_state.selected_parent = selected_parent
     hijos_disponibles = [
-        cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
-        if cat not in selected_subcategories
-    ]
-    st.session_state.selected_child = hijos_disponibles[0] if hijos_disponibles else None
-    st.rerun()
+            cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
+            if cat not in selected_subcategories
+        ]
+    if hijos_disponibles:
+            st.session_state.selected_child = hijos_disponibles[0]
 
 col1, col2 = st.columns([2, 1])
 with col1:
@@ -253,7 +272,8 @@ st.write(f"#### Preferencias seleccionadas ({len(st.session_state.preferences)}/
 for parent, child, score in st.session_state.preferences:
     st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
 
-submit_button = st.button('Registrarse')
+with st.form(key="submit"):
+    submit_button = st.form_submit_button("Registrarse")
 
 
 
@@ -263,34 +283,18 @@ submit_button = st.button('Registrarse')
 
 # Validate and store user
 if submit_button:
-    try:
-        # Convert children ages to integers
-        new_children1_age = int(new_children1_age) if new_children >= 1 else 0
-        new_children2_age = int(new_children2_age) if new_children == 2 else 0
-        # ✅ Validate username
-        if not new_username.strip():
-            st.error("El nombre de usuario no puede estar vacío.")
-
-        # ✅ Validate children's ages
-        elif new_children == 1 and new_children1_age <= 0:
-            st.error("Por favor, introduce correctamente la edad del hijo (debe ser mayor a 0).")
-
-        elif new_children == 2 and (new_children1_age <= 0 or new_children2_age <= 0):
-            st.error("Por favor, introduce correctamente la edad de ambos hijos (deben ser mayores a 0).")
-
-        # ✅ Check if username already exists
-        elif check_username_exists(new_username):
-            st.error("El nombre de usuario ya está en uso. Por favor, elige otro.")
+    if not new_username.strip():
+        st.error("El nombre de usuario no puede estar vacío.")
+    # ✅ Check if username already exists
+    elif check_username_exists(new_username):
+        st.error("El nombre de usuario ya está en uso. Por favor, elige otro.")
         
-        # ✅ If everything is correct, add user
-        else:
-            new_id = add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
-            add_preference(new_id, st.session_state.preferences)       
-            st.success("Cuenta creada satisfactoriamente.")
+    # ✅ If everything is correct, add user
+    else:
+        new_id = add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
+        add_preference(new_id, st.session_state.preferences)       
+        st.success("Cuenta creada satisfactoriamente.")
             
-            # ✅ Redirect to Sign-in Page
-            time.sleep(2)
-            st.switch_page("pages/signin.py")
-
-    except ValueError:
-        st.error("Por favor, introduce solo valores numéricos para la edad de los hijos.")
+        # ✅ Redirect to Sign-in Page
+        time.sleep(2)
+        st.switch_page("pages/signin.py")
