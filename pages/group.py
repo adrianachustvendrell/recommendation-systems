@@ -22,6 +22,9 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.title("👥 Soy un grupo")
 
+# Añadir texto adicional debajo del título
+st.write("Los grupos pueden ser de máximo 6 personas. Todas ellas deben estar registradas.")
+
 # --------------------------------
 # CARGAR BASE DE DATOS (CSV)
 # --------------------------------
@@ -52,12 +55,16 @@ def verificar_usuario_en_bd(usuario):
 
 # Verificar los miembros del grupo
 nombres_grupo = []
+usuarios_ingresados = set()  # Usamos un set para evitar nombres duplicados
 
 for i in range(grupo_size):
     nombre = st.text_input(f"Introduce el nombre del usuario #{i+1}:")
     if nombre:
-        if verificar_usuario_en_bd(nombre):
+        if nombre in usuarios_ingresados:
+            st.error(f"¡Error! El nombre de usuario '{nombre}' ya ha sido introducido.")
+        elif verificar_usuario_en_bd(nombre):
             nombres_grupo.append(nombre)
+            usuarios_ingresados.add(nombre)  # Agregar a set para evitar duplicados
             st.success(f"El usuario {nombre} está registrado.")
         else:
             st.error(f"¡Error! El usuario {nombre} no está registrado en la base de datos. No puedes continuar.")
@@ -73,8 +80,6 @@ if len(nombres_grupo) == grupo_size:
     # Guardamos el estado para saber que se puede continuar
     st.session_state.grupo_registrado = True
 
-    #NO SÉ CÓMO HACERLO!!!!
     if st.button("Continuar a recomendaciones"):
         time.sleep(2)
         st.switch_page("app.py") 
-        
