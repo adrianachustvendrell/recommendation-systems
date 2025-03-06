@@ -9,7 +9,7 @@ import folium
 from folium.plugins import TagFilterButton
 
 # Sidebar navigation
-st.set_page_config(page_title="ValenciaGO", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 st.sidebar.page_link('app.py', label='🏠 Home')
 
 
@@ -72,9 +72,6 @@ with col3:
 # TÍTULO Y CAROUSEL DE FOTOS
 # -----------------------------------
 
-
-
-
 st.markdown(
     """
     <style>
@@ -82,11 +79,10 @@ st.markdown(
     </style>
     <h1 style='text-align: center; color: #F63366; font-family: Playfair Display, serif; font-size: 46px'>
         Descubre lo mejor de 
-        <span style="font-family: 'Dancing Script', cursive; color: #F63366;">Valencia</span>
+        <span style="font-family: 'Dancing Script', cursive; color: #F63366; font-size: 60px;">Valencia</span>
     </h1>
     """, 
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -95,9 +91,7 @@ st.markdown(
     </style>
     <h5 style='text-align: center; color: #000010; font-family: Playfair Display, serif;'>Explora los lugares más emblemáticos</h5>
     """, 
-    unsafe_allow_html=True
-)
-
+    unsafe_allow_html=True)
 
 
 # --- IMAGE CAROUSEL ---
@@ -125,54 +119,18 @@ padre_categorias = list(set(df_items['padre_categoria'].tolist()))
 padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
 df_filtered = df_items[df_items["padre_categoria"] == padre]
 category_visits = df_filtered.groupby("categoria")["count"].sum().reset_index()
-fig1 = px.bar(category_visits, x="categoria", y="count", 
-              labels = {"categoria": "Categoría ", "count": "Número de visistas "}, 
-              title="Cantidad de Visitas por Categoría", color="categoria")
-st.plotly_chart(fig1, use_container_width=True)
 
+# Filtrar solo categorías con count > 1
+category_visits = category_visits[category_visits["count"] > 1]
+if not category_visits.empty:
+    fig1 = px.bar(category_visits, x="categoria", y="count", 
+                  labels={"categoria": "Categoría", "count": "Número de visitas"}, 
+                  title="", color="categoria")
+    st.plotly_chart(fig1, use_container_width=True)
+else:
+    st.info("No hay suficientes datos para mostrar el gráfico.")
 
-
-st.write("### 🏛 **Adecuación de lugares por Categoría**")
-
-categorias = list(set(df_items['categoria'].tolist()))
-cat = st.selectbox("📌 **Selecciona una categoría:**", categorias)
-df_scores = df_items[df_items["categoria"] == cat]
-df_scores = df_scores.sort_values(by="adec", ascending=True)
-fig_height = 50 + 50 * len(df_scores['adec'].tolist())
-
-# Create a horizontal bar chart
-fig = px.bar(
-    df_scores,
-    x="adec",
-    y="nombre_item",
-    labels = {"adec": "Adecuación del Lugar ", "nombre_item": "Nombre del item "},
-    orientation="h",
-    text="adec",
-    title="💯 Adecuación de Lugares",
-    color="adec",
-    color_continuous_scale="BuPu",  # Color gradient
-)
-
-fig.update_traces(
-    texttemplate='%{text}%', 
-    textposition='inside',
-    marker=dict(line=dict(width=0.5)),  # Reduce outline thickness
-)
-
-fig.update_layout(
-    xaxis=dict(title="", range=[0, 100]),  # Fixed range
-    yaxis=dict(title="", automargin=True),
-    coloraxis_showscale=False,  # Hide color scale legend
-    # bargap=0.6,  # Increase gap between bars (smaller bars)
-    height=fig_height,
-    margin=dict(l=150, r=20, t=50, b=20),
-)
-
-# Display the chart
-st.plotly_chart(fig, use_container_width=True)
-
-
-
+st.divider()
 
 st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
 
@@ -212,5 +170,42 @@ for _, row in df_unique.iterrows():
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
 folium_static(folium_map)
 
+
+
+#st.write("### 🏛 **Adecuación de lugares por Categoría**")
+
+#categorias = list(set(df_items['categoria'].tolist()))
+#cat = st.selectbox("📌 **Selecciona una categoría:**", categorias)
+#df_scores = df_items[df_items["categoria"] == cat]
+#df_scores = df_scores.sort_values(by="adec", ascending=True)
+#fig_height = 50 + 50 * len(df_scores['adec'].tolist())
+
+# Create a horizontal bar chart
+#fig = px.bar(
+    #df_scores,
+    #x="adec",
+    #y="nombre_item",
+    #labels = {"adec": "Adecuación del Lugar ", "nombre_item": "Nombre del item "},
+    #orientation="h",
+    #text="adec",
+    #title="💯 Adecuación de Lugares",
+    #color="adec",
+    #color_continuous_scale="BuPu",  # Color gradient)
+
+#fig.update_traces(
+    #texttemplate='%{text}%', 
+    #textposition='inside',
+    #marker=dict(line=dict(width=0.5)),  # Reduce outline thickness)
+
+#fig.update_layout(
+    #xaxis=dict(title="", range=[0, 100]),  # Fixed range
+    #yaxis=dict(title="", automargin=True),
+    #coloraxis_showscale=False,  # Hide color scale legend
+    # bargap=0.6,  # Increase gap between bars (smaller bars)
+    #height=fig_height,
+    #margin=dict(l=150, r=20, t=50, b=20),)
+
+# Display the chart
+#st.plotly_chart(fig, use_container_width=True)
 
 

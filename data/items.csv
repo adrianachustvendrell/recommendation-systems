@@ -56,7 +56,7 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17389,Ayuntamiento de Valencia,33,39.4697977,-0.3771993,96,59,Edificios gubernamentales,7,Arquitectura civil,0
 17389,Ayuntamiento de Valencia,33,39.4697977,-0.3771993,115,22,Otros estilos,1,Estilos y periodos,0
 17390,Biblioteca,15,39.47012830941325,-0.38191031347773546,64,68,Historia,3,Museos,0
-17391,Biblioteca Municipal,25,39.4660039,-0.4092612,97,68,Edificios académicos,7,Arquitectura civil,0
+17391,Biblioteca Municipal,25,39.4759327,-0.3754527835365846,97,68,Edificios académicos,7,Arquitectura civil,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,62,78,Arte,3,Museos,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,68,75,Historia y cultura local,3,Museos,0
 17392,Casa Museo Benlliure,13,39.4807869,-0.3789647125549202,115,25,Otros estilos,1,Estilos y periodos,0
@@ -141,10 +141,10 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17432,Jardines de Monforte,29,39.47764695,-0.3648338978167587,25,57,Neoclásico,1,Estilos y periodos,0
 17433,Jardines de la Glorieta,29,39.4726707,-0.3694179913533834,28,30,Parques,4,Espacios Abiertos,0
 17434,Parque Gulliver,31,39.46249950000001,-0.35950157352415285,30,62,Parque infantil,4,Espacios Abiertos,0
-17435,Paseo de la Alameda,36,39.47505153016574,-0.36599885276036404,34,50,Paseos,4,Espacios Abiertos,0
-17435,Paseo de la Alameda,36,39.47505153016574,-0.36599885276036404,41,30,Bares y pubs,11,Ocio,0
-17436,Paseo Marítimo,35,39.4745315,-0.32431506635097274,31,65,Playas,4,Espacios Abiertos,0
-17436,Paseo Marítimo,35,39.4745315,-0.32431506635097274,34,65,Paseos,4,Espacios Abiertos,0
+17435,Paseo de la Alameda,36,39.4726188532404,-0.3640302053382602,34,50,Paseos,4,Espacios Abiertos,0
+17435,Paseo de la Alameda,36,39.4726188532404,-0.3640302053382602,41,30,Bares y pubs,11,Ocio,0
+17436,Paseo Marítimo,35,39.4711628,-0.324448272404363,31,65,Playas,4,Espacios Abiertos,0
+17436,Paseo Marítimo,35,39.4711628,-0.324448272404363,34,65,Paseos,4,Espacios Abiertos,0
 17437,Playa de la Malvarrosa,38,39.47939045,-0.32372016446346363,31,66,Playas,4,Espacios Abiertos,0
 17437,Playa de la Malvarrosa,38,39.47939045,-0.32372016446346363,31,66,Playas,4,Espacios Abiertos,0
 17438,Playa de las Arenas,37,39.46889885,-0.32276051992848515,34,80,Paseos,4,Espacios Abiertos,0
@@ -173,7 +173,7 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,94,42,Ateneo,7,Arquitectura civil,0
 17479,Ateneo Mercantil,22,39.4708448,-0.37601297096777864,115,34,Otros estilos,1,Estilos y periodos,0
 17480,Baños del Almirante,10,39.47503191292955,-0.3732850405674174,17,69,Árabe,1,Estilos y periodos,0
-17481,Bioparc,5,39.4762163,-0.4063979,28,66,Parques,4,Espacios Abiertos,0
+17481,Bioparc,5,39.4760812,-0.4059412,28,66,Parques,4,Espacios Abiertos,0
 17483,Campo de Golf del Saler,13,39.318848700000004,-0.302172618703825,36,60,Otros espacios abiertos,4,Espacios Abiertos,0
 17483,Campo de Golf del Saler,13,39.318848700000004,-0.302172618703825,61,48,Otros deportes,9,Deportes,0
 17484,Casa de la America's Cup,24,39.4608921972175,-0.3240629064362844,27,47,Contemporáneo,1,Estilos y periodos,0
@@ -198,8 +198,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17492,Complejo Arqueológico de la Almoina,13,39.47625869475268,-0.37416064471926774,18,70,Romano,1,Estilos y periodos,0
 17492,Complejo Arqueológico de la Almoina,13,39.47625869475268,-0.37416064471926774,19,72,Medieval,1,Estilos y periodos,0
 17493,Complejo Deportivo Cultural Petxina,9,39.4752164,-0.394262,103,64,Estadios y áreas deportivas,7,Arquitectura civil,0
-17494,Convento de la Trinidad,6,39.48310648050922,-0.37020479010576535,20,93,Gótico,1,Estilos y periodos,0
-17494,Convento de la Trinidad,6,39.48310648050922,-0.37020479010576535,74,87,Conventos,5,Arquitectura religiosa,0
+17494,Convento de la Trinidad,6,39.4830986,-0.3701777,20,93,Gótico,1,Estilos y periodos,0
+17494,Convento de la Trinidad,6,39.4830986,-0.3701777,74,87,Conventos,5,Arquitectura religiosa,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,17,82,Árabe,1,Estilos y periodos,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,18,22,Romano,1,Estilos y periodos,0
 17495,Cripta de la Cárcel de San Vicente,18,39.475734,-0.3741936827898542,65,59,Religión,3,Museos,0
@@ -321,8 +321,8 @@ id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,
 17549,Plaza del Mercado,29,39.47394385,-0.3784016274135877,33,90,Calles y plazas,4,Espacios Abiertos,0
 17550,Plaza del Tossal,27,39.4761956,-0.38017980070509605,33,69,Calles y plazas,4,Espacios Abiertos,0
 17550,Plaza del Tossal,27,39.4761956,-0.38017980070509605,41,47,Bares y pubs,11,Ocio,0
-17551,Puente de la Exposición (la Peineta),33,39.4730999,-0.36603721741780826,27,54,Contemporáneo,1,Estilos y periodos,0
-17551,Puente de la Exposición (la Peineta),33,39.4730999,-0.36603721741780826,101,59,Puentes,7,Arquitectura civil,0
+17551,Puente de la Exposición (la Peineta),33,39.4726754,-0.3668672,27,54,Contemporáneo,1,Estilos y periodos,0
+17551,Puente de la Exposición (la Peineta),33,39.4726754,-0.3668672,101,59,Puentes,7,Arquitectura civil,0
 17552,Puente del Real,30,39.4763646,-0.36882461074066325,20,69,Gótico,1,Estilos y periodos,0
 17552,Puente del Real,30,39.4763646,-0.36882461074066325,101,67,Puentes,7,Arquitectura civil,0
 17553,Real Club Naútico de Valencia,17,39.4264895,-0.33181148164413143,57,40,Nauticos,9,Deportes,0
