@@ -1,8 +1,6 @@
 id_item,nombre_item,count,latitud,longitud,id_categoria,adec,categoria,id_padre,padre_categoria,padre
 17365,Casa de las Rocas-Museo del Corpus,11,39.47911295,-0.37677953652243706,65,61,Religión,3,Museos,0
 17365,Casa de las Rocas-Museo del Corpus,11,39.47911295,-0.37677953652243706,68,67,Historia y cultura local,3,Museos,0
-17366,Casa-Museo Benlliure,11,39.4807869,-0.3789647125549202,62,78,Arte,3,Museos,0
-17366,Casa-Museo Benlliure,11,39.4807869,-0.3789647125549202,68,75,Historia y cultura local,3,Museos,0
 17367,Casa-Museo Blasco Ibañez,11,39.48267545,-0.3259761598834049,26,20,Modernista,1,Estilos y periodos,0
 17367,Casa-Museo Blasco Ibañez,11,39.48267545,-0.3259761598834049,68,61,Historia y cultura local,3,Museos,0
 17369,Centro cultural Fundación Bancaja,30,39.4737548616517,-0.37015740361308525,50,60,Exposiciones,13,Eventos,0
