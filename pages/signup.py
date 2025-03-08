@@ -175,7 +175,7 @@ if "new_children2_age" not in st.session_state:
 if "preferences" not in st.session_state:
     st.session_state.preferences = []
 if "selected_parent" not in st.session_state:
-    st.session_state.selected_parent = ""
+    st.session_state.selected_parent = items_df['padre_categoria'].unique()[0]
 if "form_completed" not in st.session_state:
     st.session_state.form_completed = False
 
@@ -186,7 +186,7 @@ st.title("📝 Registrarse")
 
 st.session_state.new_username = st.text_input("Introduce un usuario", st.session_state.get("new_username", ""))
 st.session_state.new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d", value=st.session_state.get("new_age", 1))
-st.session_state.new_sex = st.selectbox("Selecciona tu sexo", ['M (Masculino)', 'F (Femenino)'], index=['M (Masculino)', 'F (Femenino)'].index(st.session_state.get("new_sex", 'M (Masculino)')))
+st.session_state.new_sex = st.selectbox("Selecciona tu sexo", ['M', 'F'], index=['M', 'F'].index(st.session_state.get("new_sex", 'M')))
 
 job_options = [
     "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
@@ -214,6 +214,7 @@ if st.session_state.form_completed:
     if preferencias_button:
         st.session_state.form_completed = "preferences"
         st.rerun()
+
 
 # --------------------------------------
 # SELECCIÓN DE PREFERENCIAS (MOSTRAR SOLO CUANDO SE HAYA COMPLETADO EL FORM ANTERIOR)
@@ -274,22 +275,27 @@ if st.session_state.form_completed == "preferences":
 # ---------------------------------
 # CONTROLAR ERRORES FORMULARIO
 # ---------------------------------
-"""
+
 # Validate and store user
 if submit_button:
-    if not new_username.strip():
+    if not st.session_state.new_username.strip():
         st.error("El nombre de usuario no puede estar vacío.")
     # ✅ Check if username already exists
-    elif check_username_exists(new_username):
+    elif check_username_exists(st.session_state.new_username):
         st.error("El nombre de usuario ya está en uso. Por favor, elige otro.")
         
     # ✅ If everything is correct, add user
     else:
-        new_id = add_user(new_username, new_age, new_sex, new_job, new_children, new_children1_age, new_children2_age)
+        new_id = add_user(st.session_state.new_username, 
+                          st.session_state.new_age, 
+                          st.session_state.new_sex, 
+                          st.session_state.new_job, 
+                          st.session_state.new_children, 
+                          st.session_state.new_children1_age, 
+                          st.session_state.new_children2_age)
         add_preference(new_id, st.session_state.preferences)       
         st.success("Cuenta creada satisfactoriamente.")
             
         # ✅ Redirect to Sign-in Page
         time.sleep(2)
         st.switch_page("pages/signin.py")
-"""
