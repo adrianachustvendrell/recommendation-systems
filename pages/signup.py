@@ -195,31 +195,36 @@ job_options = [
 ]
 st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
 
+# Selección de número de hijos
 st.session_state.new_children = st.selectbox("Selecciona el número de hijos", [0, 1, 2], index=[0, 1, 2].index(st.session_state.get("new_children", 0)))
 
-if st.button("Continuar"):
-    st.session_state.form_completed = True
+# Botón principal de continuar
+if st.button("Continuar", key="btn_continuar"):
+    if st.session_state.new_children == 0:
+        st.session_state.form_completed = "preferences"  # Ir directamente a preferencias
+    else:
+        st.session_state.form_completed = True  # Si hay hijos, pedir edades
     st.rerun()
 
 # --------------------------------------
 # FORMULARIO DE EDAD DE HIJOS
 # --------------------------------------
-if st.session_state.form_completed:
+if st.session_state.get("form_completed") == True and st.session_state.new_children > 0:
     if st.session_state.new_children >= 1:
-        st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children1_age)
+        st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.get("new_children1_age", 0))
     if st.session_state.new_children == 2:
-        st.session_state.new_children2_age = st.number_input("Edad del segundo hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children2_age)
-    preferencias_button = st.button(label="Continuar", key=1235)
+        st.session_state.new_children2_age = st.number_input("Edad del segundo hijo", min_value=0, step=1, format="%d", value=st.session_state.get("new_children2_age", 0))
     
-    if preferencias_button:
+    if st.button(label="Continuar a Preferencias", key="btn_preferencias"):
         st.session_state.form_completed = "preferences"
-        st.rerun()
+
 
 
 # --------------------------------------
 # SELECCIÓN DE PREFERENCIAS (MOSTRAR SOLO CUANDO SE HAYA COMPLETADO EL FORM ANTERIOR)
 # --------------------------------------
-if st.session_state.form_completed == "preferences":
+
+if st.session_state.get("form_completed") == "preferences":
     st.title("🎯 Preferencias")
     padre_options = list(items_df['padre_categoria'].unique())
     score_options = list(range(10, 110, 10))
