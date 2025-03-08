@@ -164,6 +164,7 @@ def add_preference(new_id, set_preferencias):
 # FORM DE REGISTRO
 # ---------------------------------
 
+
 # --------------------------------------
 # VARIABLES DE SESIÓN PARA NO PERDER DATOS
 # --------------------------------------
@@ -174,112 +175,106 @@ if "new_children2_age" not in st.session_state:
 if "preferences" not in st.session_state:
     st.session_state.preferences = []
 if "selected_parent" not in st.session_state:
-    st.session_state.selected_parent = items_df['padre_categoria'].unique()[0]
-
-
-
-
+    st.session_state.selected_parent = ""
+if "form_completed" not in st.session_state:
+    st.session_state.form_completed = False
 
 # --------------------------------------
-# FORMULARIO DE REGISTRO
+# FORMULARIO DE REGISTRO SIN FORM
 # --------------------------------------
 st.title("📝 Registrarse")
 
-with st.form(key="signup_form"):
-    new_username = st.text_input("Introduce un usuario")
-    new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d")
-    new_sex = st.selectbox("Selecciona tu sexo", ['M (Masculino)', 'F (Femenino)'])
+st.session_state.new_username = st.text_input("Introduce un usuario", st.session_state.get("new_username", ""))
+st.session_state.new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d", value=st.session_state.get("new_age", 1))
+st.session_state.new_sex = st.selectbox("Selecciona tu sexo", ['M (Masculino)', 'F (Femenino)'], index=['M (Masculino)', 'F (Femenino)'].index(st.session_state.get("new_sex", 'M (Masculino)')))
 
-    job_options = [
-        "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
-        "Empleados administrativos", "Vendedores", "Agricultores", 
-        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
-    ]
-    new_job = st.selectbox("Selecciona tu empleo", job_options)
+job_options = [
+    "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
+    "Empleados administrativos", "Vendedores", "Agricultores", 
+    "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
+]
+st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
 
-    new_children = st.selectbox("Selecciona el número de hijos", [0, 1, 2])
+st.session_state.new_children = st.selectbox("Selecciona el número de hijos", [0, 1, 2], index=[0, 1, 2].index(st.session_state.get("new_children", 0)))
 
-    # Definir valores predeterminados para evitar NameError
-    new_children1_age = 0
-    new_children2_age = 0
+if st.button("Continuar"):
+    st.session_state.form_completed = True
+    st.rerun()
 
-    # Botón para continuar con la edad de los hijos
-    continua_button = st.form_submit_button(label="Continuar")
-
-
-with st.form(key="ages"):
-    if new_children >= 1:
+# --------------------------------------
+# FORMULARIO DE EDAD DE HIJOS
+# --------------------------------------
+if st.session_state.form_completed:
+    if st.session_state.new_children >= 1:
         st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children1_age)
-    if new_children == 2:
+    if st.session_state.new_children == 2:
         st.session_state.new_children2_age = st.number_input("Edad del segundo hijo", min_value=0, step=1, format="%d", value=st.session_state.new_children2_age)
-    preferencias_button = st.form_submit_button(label="Continuar")
-
-
-
-
-
-# --------------------------------------
-# SELECCIÓN DE PREFERENCIAS
-# --------------------------------------
-
-
-st.title("🎯 Preferencias")
-
-padre_options = list(items_df['padre_categoria'].unique())
-score_options = list(range(10, 110, 10))
-
-# 🔹 Filtrar subcategorías ya seleccionadas
-selected_subcategories = {child for _, child, _ in st.session_state.preferences}
-hijos_disponibles = [
-        cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
-        if cat not in selected_subcategories
-    ]
-
-selected_parent = st.selectbox(
-        "Elige una categoría",
-        padre_options,
-        index=padre_options.index(st.session_state.selected_parent),
-        key="parent_select"
-    )
-
-if selected_parent != st.session_state.selected_parent:
-    st.session_state.selected_parent = selected_parent
-    hijos_disponibles = [
-            cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
-            if cat not in selected_subcategories
-        ]
-    if hijos_disponibles:
-            st.session_state.selected_child = hijos_disponibles[0]
-
-col1, col2 = st.columns([2, 1])
-with col1:
-    selected_child = st.selectbox("Elige una subcategoría", hijos_disponibles, key="child_select")
-    st.session_state.selected_child = selected_child
-
-with col2:
-    selected_score = st.selectbox("Valoración", score_options, key="score_select")
-
-# 🚀 Limitar selección a 10 preferencias
-if st.button("Añadir Preferencia"):
-    if len(st.session_state.preferences) >= 10:
-        st.warning("Has alcanzado el límite de 10 preferencias.")
-    elif selected_parent and selected_child:
-        st.session_state.preferences.append((selected_parent, selected_child, selected_score))
+    preferencias_button = st.button(label="Continuar", key=1235)
+    
+    if preferencias_button:
+        st.session_state.form_completed = "preferences"
         st.rerun()
 
-st.write(f"#### Preferencias seleccionadas ({len(st.session_state.preferences)}/10):")
-for parent, child, score in st.session_state.preferences:
-    st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
+# --------------------------------------
+# SELECCIÓN DE PREFERENCIAS (MOSTRAR SOLO CUANDO SE HAYA COMPLETADO EL FORM ANTERIOR)
+# --------------------------------------
+if st.session_state.form_completed == "preferences":
+    st.title("🎯 Preferencias")
+    padre_options = list(items_df['padre_categoria'].unique())
+    score_options = list(range(10, 110, 10))
 
-with st.form(key="submit"):
-    submit_button = st.form_submit_button("Registrarse")
+    # 🔹 Filtrar subcategorías ya seleccionadas
+    selected_subcategories = {child for _, child, _ in st.session_state.preferences}
+    hijos_disponibles = [
+            cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
+            if cat not in selected_subcategories
+        ]
+
+    selected_parent = st.selectbox(
+            "Elige una categoría",
+            padre_options,
+            index=padre_options.index(st.session_state.selected_parent),
+            key="parent_select"
+        )
+
+    if selected_parent != st.session_state.selected_parent:
+        st.session_state.selected_parent = selected_parent
+        hijos_disponibles = [
+                cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
+                if cat not in selected_subcategories
+            ]
+        if hijos_disponibles:
+                st.session_state.selected_child = hijos_disponibles[0]
+
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        selected_child = st.selectbox("Elige una subcategoría", hijos_disponibles, key="child_select")
+        st.session_state.selected_child = selected_child
+
+    with col2:
+        selected_score = st.selectbox("Valoración", score_options, key="score_select")
+
+    # 🚀 Limitar selección a 10 preferencias
+    if st.button("Añadir Preferencia"):
+        if len(st.session_state.preferences) >= 10:
+            st.warning("Has alcanzado el límite de 10 preferencias.")
+        elif selected_parent and selected_child:
+            st.session_state.preferences.append((selected_parent, selected_child, selected_score))
+            st.rerun()
+
+    st.write(f"#### Preferencias seleccionadas ({len(st.session_state.preferences)}/10):")
+    for parent, child, score in st.session_state.preferences:
+        st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
+
+    with st.form(key="submit"):
+        submit_button = st.form_submit_button("Registrarse")
 
 
 
 # ---------------------------------
 # CONTROLAR ERRORES FORMULARIO
 # ---------------------------------
-
+"""
 # Validate and store user
 if submit_button:
     if not new_username.strip():
@@ -297,3 +292,4 @@ if submit_button:
         # ✅ Redirect to Sign-in Page
         time.sleep(2)
         st.switch_page("pages/signin.py")
+"""
