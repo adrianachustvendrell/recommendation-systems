@@ -83,4 +83,4 @@ if len(nombres_grupo) == grupo_size:
 
     if st.button("Continuar a recomendaciones"):
         time.sleep(2)
-        st.switch_page("app.py") 
+        st.switch_page("pages/recommendation.py") 

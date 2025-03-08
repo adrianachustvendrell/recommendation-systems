@@ -12,36 +12,41 @@ from folium.plugins import TagFilterButton
 st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 st.sidebar.page_link('app.py', label='🏠 Home')
 
-
 # -----------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
 # -----------------------------------
 
 # FONTS: 
-
-# <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
-
 custom_css = """
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Megrim&display=swap');
-
         html, body, [class*="st-"] {
             font-family: "DM Serif Text", serif;
             font-weight: 400;
             font-style: normal;
         }
+
+        /* Carousel image styling */
+        .carousel img {
+            height: 400px;  /* Define a fixed height for images */
+            object-fit: contain;  /* This ensures the image is adjusted to fit without being cropped */
+            width: auto;  /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto;  /* Center the images */
+        }
+
+        /* Ensure that when the sidebar is hidden, the image height stays fixed */
+        .css-1v3fvcr {
+            width: 100% !important;  /* Ensures that the container for the carousel is full width */
+        }
+        
     </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
-
-
-
 # Load data
 items_file_path = "./data/items.csv"  # Change this to your actual CSV path
 df_items = pd.read_csv(items_file_path)
-
-
 
 # -----------------------------------
 # BOTONES (FALTA AÑADIR GRUPO)
@@ -49,7 +54,6 @@ df_items = pd.read_csv(items_file_path)
 
 # --- HEADER SECTION ---
 col1, col_space, col2, col_space, col3 = st.columns([1, 1.5, 1, 1.5, 1])
-#col1, col2, col3 = st.columns([1, 1, 1])
 
 with col1:
     if st.button("🔑 Iniciar sesión"):
@@ -62,11 +66,6 @@ with col2:
 with col3:
     if st.button("📝 Registrarse"):
         st.switch_page("pages/signup.py")
-
-
-
-
-
 
 # -----------------------------------
 # TÍTULO Y CAROUSEL DE FOTOS
@@ -93,7 +92,6 @@ st.markdown(
     """, 
     unsafe_allow_html=True)
 
-
 # --- IMAGE CAROUSEL ---
 image_folder = "./images"
 image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
@@ -105,16 +103,10 @@ carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, im
 st.write("")
 carousel(items=carousel_items)
 
-
-
-
 # ---------------------------------
 # ESTADÍSTICAS 
 # ---------------------------------
-
-
 st.markdown("### 📊 **Análisis de Visitantes**")
-
 padre_categorias = list(set(df_items['padre_categoria'].tolist()))
 padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
 df_filtered = df_items[df_items["padre_categoria"] == padre]
@@ -134,10 +126,6 @@ st.divider()
 
 st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
 
-#search_term = st.text_input("🔎 Buscar un lugar por nombre:")
-#filtered_df_items = df_items[df_items["nombre_item"].str.contains(search_term, case=False, na=False)] if search_term else df_items
-#st.dataframe(filtered_df_items, use_container_width=True)
-
 category_colors = {
     "Museos": "blue",
     "Estilos y periodos": "green",
@@ -150,7 +138,8 @@ category_colors = {
     "Espacios Abiertos": "darkgreen",
     "Monumentos": "darkred",
     "Arquitectura defensiva": "lightgray",
-    "Gastronomia": "beige"}
+    "Gastronomia": "beige"
+}
 
 #df_unique = df_items.drop_duplicates(subset=["id_item", "latitud", "longitud"])
 df_unique = df_items
@@ -168,44 +157,4 @@ for _, row in df_unique.iterrows():
     ).add_to(folium_map)
 
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
-folium_static(folium_map)
-
-
-
-#st.write("### 🏛 **Adecuación de lugares por Categoría**")
-
-#categorias = list(set(df_items['categoria'].tolist()))
-#cat = st.selectbox("📌 **Selecciona una categoría:**", categorias)
-#df_scores = df_items[df_items["categoria"] == cat]
-#df_scores = df_scores.sort_values(by="adec", ascending=True)
-#fig_height = 50 + 50 * len(df_scores['adec'].tolist())
-
-# Create a horizontal bar chart
-#fig = px.bar(
-    #df_scores,
-    #x="adec",
-    #y="nombre_item",
-    #labels = {"adec": "Adecuación del Lugar ", "nombre_item": "Nombre del item "},
-    #orientation="h",
-    #text="adec",
-    #title="💯 Adecuación de Lugares",
-    #color="adec",
-    #color_continuous_scale="BuPu",  # Color gradient)
-
-#fig.update_traces(
-    #texttemplate='%{text}%', 
-    #textposition='inside',
-    #marker=dict(line=dict(width=0.5)),  # Reduce outline thickness)
-
-#fig.update_layout(
-    #xaxis=dict(title="", range=[0, 100]),  # Fixed range
-    #yaxis=dict(title="", automargin=True),
-    #coloraxis_showscale=False,  # Hide color scale legend
-    # bargap=0.6,  # Increase gap between bars (smaller bars)
-    #height=fig_height,
-    #margin=dict(l=150, r=20, t=50, b=20),)
-
-# Display the chart
-#st.plotly_chart(fig, use_container_width=True)
-
-
+folium_static(folium_map, width=1000)
