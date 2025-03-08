@@ -76,7 +76,7 @@ if submit_button:
     if not user_row.empty:
         st.success(f"¡Bienvenido, {username}!")
         time.sleep(2)
-        st.switch_page("app.py") 
+        st.switch_page("recommendation.py") 
 
     else:
         st.error("Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")

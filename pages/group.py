@@ -67,7 +67,8 @@ for i in range(grupo_size):
             usuarios_ingresados.add(nombre)  # Agregar a set para evitar duplicados
             st.success(f"El usuario {nombre} está registrado.")
         else:
-            st.error(f"¡Error! El usuario {nombre} no está registrado en la base de datos. No puedes continuar.")
+            st.error("Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
+            st.page_link("pages/signup.py", label="👉 Regístrate aquí")
             break  # Si un usuario no está registrado, se detiene el registro de los siguientes
     else:
         if len(nombres_grupo) < i:  # Si hay un nombre ya ingresado, muestra un error
