@@ -267,8 +267,7 @@ if st.session_state.form_completed == "preferences":
     for parent, child, score in st.session_state.preferences:
         st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
 
-    with st.form(key="submit"):
-        submit_button = st.form_submit_button("Registrarse")
+    submit_button = st.button(label="Registrarse", key=1234)
 
 
 
