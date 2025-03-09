@@ -5,7 +5,7 @@ from PIL import Image
 import pandas as pd
 from streamlit_folium import folium_static
 import folium
-import openai  # Necesitas instalar openai con `pip install openai`
+#import openai  # Necesitas instalar openai con `pip install openai`
 
 
 # Configurar la página para que ocupe todo el ancho disponible
@@ -64,11 +64,10 @@ if images:
                 categorias_info = categorias + padre_categoria
                 bullet_list = "\n".join([f"* {categoria}" for categoria in categorias_info])
                 
-
-                st.markdown(f"**Categorías:**")
-                st.markdown(bullet_list)
                 st.markdown(f"**Descripción:**")
                 st.markdown(item['descripcion'].iloc[0][3:])
+                st.markdown(f"**Categorías:**")
+                st.markdown(bullet_list)
 
                 # Mostrar mapa
                 latitud = float(item["latitud"].iloc[0])
@@ -81,7 +80,7 @@ if images:
                     icon=folium.Icon(color="#f63366", icon="info-sign")
                 ).add_to(folium_map)
 
-                folium_static(folium_map, width=600)
+                folium_static(folium_map, width=600, height=400)
 
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
