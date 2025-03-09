@@ -67,6 +67,8 @@ if images:
 
                 st.markdown(f"**Categorías:**")
                 st.markdown(bullet_list)
+                st.markdown(f"**Descripción:**")
+                st.markdown(item['descripcion'].iloc[0][3:])
 
                 # Mostrar mapa
                 latitud = float(item["latitud"].iloc[0])
