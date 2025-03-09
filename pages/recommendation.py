@@ -5,6 +5,8 @@ from PIL import Image
 import pandas as pd
 from streamlit_folium import folium_static
 import folium
+import openai  # Necesitas instalar openai con `pip install openai`
+
 
 # Configurar la página para que ocupe todo el ancho disponible
 st.set_page_config(layout='wide')
@@ -21,7 +23,7 @@ st.markdown(f"**Opciones seleccionadas:** {', '.join(selection)}")
 items = pd.read_csv("data/items.csv")
 IMAGE_FOLDER = 'images'
 
-# Función para obtener dos imágenes aleatorias (solo si no están en session_state)
+# Función para obtener imágenes aleatorias
 def get_random_images(folder, n=2):
     if not os.path.exists(folder):
         st.error(f"La carpeta '{folder}' no existe.")
@@ -32,7 +34,7 @@ def get_random_images(folder, n=2):
         return []
     return random.sample(files, n)
 
-# Si no se han cargado las imágenes, las guardamos en session_state para que no cambien al hacer clic
+# Cargar imágenes en session_state para persistencia
 if 'images' not in st.session_state:
     st.session_state.images = get_random_images(IMAGE_FOLDER)
 
@@ -43,41 +45,34 @@ if 'show_info' not in st.session_state:
 # Mostrar imágenes aleatorias con interacción
 images = st.session_state.images
 if images:
-    # Aquí se ajusta el espacio entre las columnas mediante CSS
-    st.markdown("<style>.stColumn {padding-right: 40px;} </style>", unsafe_allow_html=True)
     cols = st.columns(len(images))
     for i, img_file in enumerate(images):
         img_path = os.path.join(IMAGE_FOLDER, img_file)
         with cols[i]:
-            # Mostrar imagen
             id_item = img_file.split('.')[0]
             item = items[items["id_item"] == int(id_item)]
             item_name = item["nombre_item"].unique()[0]
             image = Image.open(img_path)
             st.image(image, use_container_width=True, caption=f"{item_name}")
             
-            # Mostrar botón para ver más información
             if st.button(f"Ver más", key=f"btn_{i}"):
                 st.session_state.show_info[i] = not st.session_state.show_info[i]
 
-            # Mostrar información adicional si se ha activado
             if st.session_state.show_info[i]:
                 categorias = item['categoria'].tolist()
                 padre_categoria = item['padre_categoria'].tolist()
                 categorias_info = categorias + padre_categoria
                 bullet_list = "\n".join([f"* {categoria}" for categoria in categorias_info])
+                
 
-                # Mostrar la información
-                st.markdown(f"**Descripción:**")
+                st.markdown(f"**Categorías:**")
                 st.markdown(bullet_list)
 
-                # Asegurarse de que latitud y longitud son números flotantes
-                latitud = float(item["latitud"].iloc[0])  # Acceder al primer valor
-                longitud = float(item["longitud"].iloc[0])  # Acceder al primer valor
-
+                # Mostrar mapa
+                latitud = float(item["latitud"].iloc[0])
+                longitud = float(item["longitud"].iloc[0])
                 map_center = [latitud, longitud]
                 folium_map = folium.Map(location=map_center, zoom_start=12, tiles="cartodb positron")
-
                 folium.Marker(
                     location=[latitud, longitud],
                     popup=item["nombre_item"].iloc[0],
@@ -85,6 +80,7 @@ if images:
                 ).add_to(folium_map)
 
                 folium_static(folium_map, width=600)
+
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
 st.markdown(
