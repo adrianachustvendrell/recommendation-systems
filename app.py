@@ -7,6 +7,8 @@ import plotly.express as px
 from streamlit_folium import folium_static
 import folium
 from folium.plugins import TagFilterButton
+import streamlit.components.v1 as components
+
 
 # Sidebar navigation
 st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
@@ -48,8 +50,9 @@ st.markdown(custom_css, unsafe_allow_html=True)
 items_file_path = "./data/items.csv"  # Change this to your actual CSV path
 df_items = pd.read_csv(items_file_path)
 
+
 # -----------------------------------
-# BOTONES (FALTA AÑADIR GRUPO)
+# BOTONES 
 # -----------------------------------
 
 # --- HEADER SECTION ---
@@ -66,6 +69,9 @@ with col2:
 with col3:
     if st.button("📝 Registrarse"):
         st.switch_page("pages/signup.py")
+
+
+
 
 # -----------------------------------
 # TÍTULO Y CAROUSEL DE FOTOS
@@ -103,6 +109,9 @@ carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, im
 st.write("")
 carousel(items=carousel_items)
 
+
+
+
 # ---------------------------------
 # ESTADÍSTICAS 
 # ---------------------------------
@@ -123,6 +132,12 @@ else:
     st.info("No hay suficientes datos para mostrar el gráfico.")
 
 st.divider()
+
+
+
+# ---------------------------------
+# mAPA
+# ---------------------------------
 
 st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
 
@@ -155,6 +170,37 @@ for _, row in df_unique.iterrows():
         icon=folium.Icon(color=color, icon="info-sign"),
         tags=[row["padre_categoria"]]  # Adding tags for filtering
     ).add_to(folium_map)
+    
+
+
+legend_html = """
+    <div style="
+        position: fixed; 
+        top: 20px; left: 20%; transform: translateX(-50%);
+        width: auto; height: auto;
+        background-color: white; z-index:9999; font-size:14px;
+        border-radius: 10px; padding: 10px 20px; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        text-align: center;
+    ">
+        <span style="color: #38A9DC;">⬤</span> Museos | 
+        <span style="color: #6FAB25;">⬤</span> Estilos y periodos | 
+        <span style="color: #D43E2A;">⬤</span> Eventos | 
+        <span style="color: #D051B8;">⬤</span> Arquitectura civil | 
+        <span style="color: #F69730;">⬤</span> Deportes | 
+        <span style="color: #FF8EE9;">⬤</span> Ocio | 
+        <span style="color: #436978;">⬤</span> Compras <br>
+        <span style="color: #00598D;">⬤</span> Arquitectura religiosa | 
+        <span style="color: #718023;">⬤</span> Espacios Abiertos | 
+        <span style="color: #9F3336;">⬤</span> Monumentos | 
+        <span style="color: #A3A3A3;">⬤</span> Arquitectura defensiva | 
+        <span style="color: #FFCA91;">⬤</span> Gastronomía
+    </div>
+"""
+components.html(legend_html, width=2000, height=100)
+
+
+
 
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
 folium_static(folium_map, width=1000)
