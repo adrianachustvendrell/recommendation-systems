@@ -201,7 +201,7 @@ legend_html = """
         <span style="color: #FFCA91;">⬤</span> Gastronomía
     </div>
 """
-components.html(legend_html, width=2000, height=100)
+components.html(legend_html, width=page_width, height=100)
 
 
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
