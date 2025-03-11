@@ -34,7 +34,7 @@ custom_css = """
 
         /* Carousel image styling */
         .carousel img {
-            height: 400px;  /* Define a fixed height for images */
+            height: 500px;  /* Define a fixed height for images */
             object-fit: contain;  /* This ensures the image is adjusted to fit without being cropped */
             width: auto;  /* Maintain aspect ratio */
             display: block;
@@ -111,7 +111,7 @@ carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, im
 
 # Centering the carousel text
 st.write("")
-carousel(items=carousel_items)
+carousel(items=carousel_items, container_height=500)
 
 
 
