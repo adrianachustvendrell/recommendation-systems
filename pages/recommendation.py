@@ -30,7 +30,7 @@ selection = st.pills("Selecciona el sistema recomendador", options, selection_mo
 
 st.markdown(f"**Opciones seleccionadas:** {', '.join(selection)}")
 
-items = pd.read_csv("data/items.csv")
+items = pd.read_csv("data/items.csv", encoding='latin1')
 IMAGE_FOLDER = 'images'
 
 # Función para obtener imágenes aleatorias
