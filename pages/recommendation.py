@@ -5,18 +5,28 @@ from PIL import Image
 import pandas as pd
 from streamlit_folium import folium_static
 import folium
-import openai  # Necesitas instalar openai con `pip install openai`
-
+from streamlit_javascript import st_javascript
+#import openai  # Necesitas instalar openai con `pip install openai`
 
 # Configurar la página para que ocupe todo el ancho disponible
 st.set_page_config(layout='wide')
 
+# Inject JavaScript to get page width
+page_width = st_javascript("window.innerWidth")
+
+if "user_logged_in" not in st.session_state:
+    st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
+    st.switch_page("pages/signin.py") 
+
+else:
+    user_id = st.session_state.user_logged_in  # Retrieve user ID
+    st.title(f"👋 Bienvenido, **{user_id}**.")
 # Título
-st.title("Esta es la recomendación que hemos preparado para ti")
+st.markdown("### 📝 Esta es la recomendación que hemos preparado para ti")
 
 # Opciones de selección
 options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
-selection = st.pills("Sistema recomendador", options, selection_mode="multi", default=["Demográfico"])
+selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="multi", default=["Demográfico"])
 
 st.markdown(f"**Opciones seleccionadas:** {', '.join(selection)}")
 
@@ -36,7 +46,7 @@ def get_random_images(folder, n=2):
 
 # Cargar imágenes en session_state para persistencia
 if 'images' not in st.session_state:
-    st.session_state.images = get_random_images(IMAGE_FOLDER)
+    st.session_state.images = get_random_images(IMAGE_FOLDER, 5)
 
 # Estado para mostrar más información
 if 'show_info' not in st.session_state:
@@ -45,8 +55,10 @@ if 'show_info' not in st.session_state:
 # Mostrar imágenes aleatorias con interacción
 images = st.session_state.images
 if images:
-    cols = st.columns(len(images))
-    for i, img_file in enumerate(images):
+    # cols = st.columns(len(images))
+    st.markdown("### 🏆 Mejores recomendaciones para ti")
+    cols = st.columns(3) # Si se cambia el número de columnas hay que ajustas el slice de imagenes en la siguiente linea
+    for i, img_file in enumerate(images[:3]):
         img_path = os.path.join(IMAGE_FOLDER, img_file)
         with cols[i]:
             id_item = img_file.split('.')[0]
@@ -59,30 +71,68 @@ if images:
                 st.session_state.show_info[i] = not st.session_state.show_info[i]
 
             if st.session_state.show_info[i]:
-                categorias = item['categoria'].tolist()
-                padre_categoria = item['padre_categoria'].tolist()
+                categorias = item['categoria'].drop_duplicates().tolist()
+                padre_categoria = item['padre_categoria'].drop_duplicates().tolist()
                 categorias_info = categorias + padre_categoria
                 bullet_list = "\n".join([f"* {categoria}" for categoria in categorias_info])
                 
-
-                st.markdown(f"**Categorías:**")
-                st.markdown(bullet_list)
                 st.markdown(f"**Descripción:**")
                 st.markdown(item['descripcion'].iloc[0][3:])
+                st.markdown(f"**Categorías:**")
+                st.markdown(bullet_list)
 
                 # Mostrar mapa
                 latitud = float(item["latitud"].iloc[0])
                 longitud = float(item["longitud"].iloc[0])
                 map_center = [latitud, longitud]
-                folium_map = folium.Map(location=map_center, zoom_start=12, tiles="cartodb positron")
+                folium_map = folium.Map(location=map_center, zoom_start=13, tiles="cartodb positron")
                 folium.Marker(
                     location=[latitud, longitud],
                     popup=item["nombre_item"].iloc[0],
                     icon=folium.Icon(color="#f63366", icon="info-sign")
                 ).add_to(folium_map)
 
-                folium_static(folium_map, width=600)
+                folium_static(folium_map, width=page_width/3, height=400)
+    
+    
+    st.markdown("### 🎖️ También podría interesarte")
+    cols2 = st.columns(2) 
+    x = 3 # Seria la posicion de la imagen siguiente a la ultima anterior
+    for i, img_file in enumerate(images[x:len(images)]):
+        img_path = os.path.join(IMAGE_FOLDER, img_file)
+        with cols2[i]:
+            id_item = img_file.split('.')[0]
+            item = items[items["id_item"] == int(id_item)]
+            item_name = item["nombre_item"].unique()[0]
+            image = Image.open(img_path)
+            st.image(image, use_container_width=True, caption=f"{item_name}")
+            
+            if st.button(f"Ver más", key=f"btn_{i+x}"):
+                st.session_state.show_info[i+x] = not st.session_state.show_info[i+x]
 
+            if st.session_state.show_info[i+x]:
+                categorias = item['categoria'].drop_duplicates().tolist()
+                padre_categoria = item['padre_categoria'].drop_duplicates().tolist()
+                categorias_info = categorias + padre_categoria
+                bullet_list = "\n".join([f"* {categoria}" for categoria in categorias_info])
+                
+                st.markdown(f"**Descripción:**")
+                st.markdown(item['descripcion'].iloc[0][3:])
+                st.markdown(f"**Categorías:**")
+                st.markdown(bullet_list)
+
+                # Mostrar mapa
+                latitud = float(item["latitud"].iloc[0])
+                longitud = float(item["longitud"].iloc[0])
+                map_center = [latitud, longitud]
+                folium_map = folium.Map(location=map_center, zoom_start=13, tiles="cartodb positron")
+                folium.Marker(
+                    location=[latitud, longitud],
+                    popup=item["nombre_item"].iloc[0],
+                    icon=folium.Icon(color="#f63366", icon="info-sign")
+                ).add_to(folium_map)
+
+                folium_static(folium_map, width=page_width/2, height=400)
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
 st.markdown(

@@ -263,7 +263,7 @@ if st.session_state.get("form_completed") == "preferences":
     # 🚀 Limitar selección a 10 preferencias
     if st.button("Añadir Preferencia"):
         if len(st.session_state.preferences) >= 10:
-            st.warning("Has alcanzado el límite de 10 preferencias.")
+            st.warning("⚠️ Has alcanzado el límite de 10 preferencias.")
         elif selected_parent and selected_child:
             st.session_state.preferences.append((selected_parent, selected_child, selected_score))
             st.rerun()
@@ -283,10 +283,10 @@ if st.session_state.get("form_completed") == "preferences":
 # Validate and store user
 if submit_button:
     if not st.session_state.new_username.strip():
-        st.error("El nombre de usuario no puede estar vacío.")
+        st.error("❌ El nombre de usuario no puede estar vacío.")
     # ✅ Check if username already exists
     elif check_username_exists(st.session_state.new_username):
-        st.error("El nombre de usuario ya está en uso. Por favor, elige otro.")
+        st.error("❌ El nombre de usuario ya está en uso. Por favor, elige otro.")
         
     # ✅ If everything is correct, add user
     else:
@@ -298,7 +298,7 @@ if submit_button:
                           st.session_state.new_children1_age, 
                           st.session_state.new_children2_age)
         add_preference(new_id, st.session_state.preferences)       
-        st.success("Cuenta creada satisfactoriamente.")
+        st.success("👌 Cuenta creada satisfactoriamente.")
             
         # ✅ Redirect to Sign-in Page
         time.sleep(2)

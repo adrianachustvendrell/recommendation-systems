@@ -8,11 +8,15 @@ from streamlit_folium import folium_static
 import folium
 from folium.plugins import TagFilterButton
 import streamlit.components.v1 as components
+from streamlit_javascript import st_javascript
 
 
 # Sidebar navigation
 st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
-st.sidebar.page_link('app.py', label='🏠 Home')
+# st.sidebar.page_link('app.py', label='🏠 Home')
+
+# Inject JavaScript to get page width
+page_width = st_javascript("window.innerWidth")
 
 # -----------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
@@ -116,13 +120,13 @@ carousel(items=carousel_items)
 # ESTADÍSTICAS 
 # ---------------------------------
 st.markdown("### 📊 **Análisis de Visitantes**")
-padre_categorias = list(set(df_items['padre_categoria'].tolist()))
+padre_categorias = df_items['padre_categoria'].drop_duplicates().tolist()
 padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
 df_filtered = df_items[df_items["padre_categoria"] == padre]
 category_visits = df_filtered.groupby("categoria")["count"].sum().reset_index()
 
 # Filtrar solo categorías con count > 1
-category_visits = category_visits[category_visits["count"] > 1]
+category_visits = category_visits[category_visits["count"] >= 1]
 if not category_visits.empty:
     fig1 = px.bar(category_visits, x="categoria", y="count", 
                   labels={"categoria": "Categoría", "count": "Número de visitas"}, 
@@ -197,10 +201,8 @@ legend_html = """
         <span style="color: #FFCA91;">⬤</span> Gastronomía
     </div>
 """
-components.html(legend_html, width=2000, height=100)
-
-
+components.html(legend_html, width=page_width, height=100)
 
 
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
-folium_static(folium_map, width=1000)
+folium_static(folium_map, width=page_width)

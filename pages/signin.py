@@ -74,10 +74,11 @@ if submit_button:
     user_row = user_data[user_data["nombre_usuario"] == username]
 
     if not user_row.empty:
-        st.success(f"¡Bienvenido, {username}!")
+        st.success(f"¡Bienvenido, {username}! ✅")
+        st.session_state.user_logged_in = username
         time.sleep(2)
-        st.switch_page("pages/recommendation.py") 
+        st.switch_page("pages/recommendation.py")
 
     else:
-        st.error("Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
+        st.error("⚠️ Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
         st.page_link("pages/signup.py", label="👉 Regístrate aquí")
