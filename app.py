@@ -50,6 +50,13 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+# def load_css():
+#     with open("styles.css") as f:
+#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# # Call the function to apply styles
+# load_css()
+
 # Load data
 items_file_path = "./data/items.csv"  # Change this to your actual CSV path
 df_items = pd.read_csv(items_file_path)
