@@ -1,4 +1,5 @@
 from huggingface_hub import InferenceClient
+import time
 
 # Initialize the client
 client = InferenceClient(token="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")
