@@ -1,0 +1,52 @@
+/* Global Styles */
+html, body, [class*="st-"] {
+    font-family: 'Poppins', sans-serif;  /* Custom Font */
+    background-color: #f5f5f5;  /* Light Gray Background */
+    color: #333333;  /* Dark Gray Text */
+}
+
+/* Titles & Headers */
+h1, h2, h3, h4 {
+    color: #f63366;  /* Streamlit's Primary Color */
+    font-weight: bold;
+}
+
+/* Customize Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #ffffff !important;  /* White Sidebar */
+    padding: 20px;
+    border-right: 3px solid #f63366;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #f63366 !important;
+    color: white !important;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.stButton > button:hover {
+    background-color: white !important;
+    color: #f63366 !important;
+    border: 2px solid #f63366;
+}
+
+/* Text Input */
+.stTextInput>div>div>input {
+    border-radius: 8px;
+    border: 1px solid #f63366;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* DataFrames */
+[data-testid="stDataFrame"] {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide "Made with Streamlit" footer */
+footer {visibility: hidden;}
