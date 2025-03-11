@@ -187,7 +187,7 @@ for _, row in df_unique.iterrows():
 legend_html = """
     <div style="
         position: fixed; 
-        top: 20px; left: 20%; transform: translateX(-50%);
+        top: 20px; left: 30%; transform: translateX(-50%);
         width: auto; height: auto;
         background-color: white; z-index:9999; font-size:14px;
         border-radius: 10px; padding: 10px 20px; 
