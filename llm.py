@@ -2,14 +2,14 @@ from huggingface_hub import InferenceClient
 import time
 
 # Initialize the client
-client = InferenceClient(token="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")
+client = InferenceClient(token="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")
 
 # Function to generate description for an item
 def generate_description(item_name, retries=3, delay=5):
     for attempt in range(retries):
         try:
             result = client.text_generation(
-                model="EleutherAI/gpt-neo-2.7B",
+                model="microsoft/phi-4",
                 prompt=f"Descríbeme en español {item_name} de Valencia en tres frases todo en un párrafo. Hazlo atractivo para turistas. Quiero que toda la descripción esté en un párrafo; no quiero ningún bullet point. También quiero que sea en castellano.",
             )
             return result['generated_text']
