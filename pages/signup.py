@@ -186,7 +186,13 @@ st.title("📝 Registrarse")
 
 st.session_state.new_username = st.text_input("Introduce un usuario", st.session_state.get("new_username", ""))
 st.session_state.new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d", value=st.session_state.get("new_age", 1))
-st.session_state.new_sex = st.selectbox("Selecciona tu sexo", ['M', 'F'], index=['M', 'F'].index(st.session_state.get("new_sex", 'M')))
+sex_options = {"Masculino": "M", "Femenino": "F"}
+reverse_sex_options = {v: k for k, v in sex_options.items()}  # {'M': 'Masculino', 'F': 'Femenino'}
+current_sex = st.session_state.get("new_sex", "M")  
+current_sex_friendly = reverse_sex_options.get(current_sex, "Masculino") 
+selected_sex = st.selectbox("Selecciona tu sexo", list(sex_options.keys()), index=list(sex_options.keys()).index(current_sex_friendly))
+st.session_state.new_sex = sex_options[selected_sex]
+
 
 job_options = [
     "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
