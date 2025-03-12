@@ -234,34 +234,40 @@ if st.session_state.get("form_completed") == True and st.session_state.new_child
 # --------------------------------------
 # SELECCIÓN DE PREFERENCIAS (MOSTRAR SOLO CUANDO SE HAYA COMPLETADO EL FORM ANTERIOR)
 # --------------------------------------
+import streamlit as st
 
 if st.session_state.get("form_completed") == "preferences":
     st.title("🎯 Preferencias")
+    
     padre_options = list(items_df['padre_categoria'].unique())
     score_options = list(range(10, 110, 10))
+
+    # 🔹 Inicializar preferencias si no existen
+    if "preferences" not in st.session_state:
+        st.session_state.preferences = []
 
     # 🔹 Filtrar subcategorías ya seleccionadas
     selected_subcategories = {child for _, child, _ in st.session_state.preferences}
     hijos_disponibles = [
-            cat for cat in items_df[items_df['padre_categoria'] == st.session_state.selected_parent]['categoria'].unique()
-            if cat not in selected_subcategories
-        ]
+        cat for cat in items_df[items_df['padre_categoria'] == st.session_state.get("selected_parent", padre_options[0])]['categoria'].unique()
+        if cat not in selected_subcategories
+    ]
 
     selected_parent = st.selectbox(
-            "Elige una categoría",
-            padre_options,
-            index=padre_options.index(st.session_state.selected_parent),
-            key="parent_select"
-        )
+        "Elige una categoría",
+        padre_options,
+        index=padre_options.index(st.session_state.get("selected_parent", padre_options[0])),
+        key="parent_select"
+    )
 
-    if selected_parent != st.session_state.selected_parent:
+    if selected_parent != st.session_state.get("selected_parent", None):
         st.session_state.selected_parent = selected_parent
         hijos_disponibles = [
-                cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
-                if cat not in selected_subcategories
-            ]
+            cat for cat in items_df[items_df['padre_categoria'] == selected_parent]['categoria'].unique()
+            if cat not in selected_subcategories
+        ]
         if hijos_disponibles:
-                st.session_state.selected_child = hijos_disponibles[0]
+            st.session_state.selected_child = hijos_disponibles[0]
 
     col1, col2 = st.columns([2, 1])
     with col1:
@@ -280,8 +286,17 @@ if st.session_state.get("form_completed") == "preferences":
             st.rerun()
 
     st.write(f"#### Preferencias seleccionadas ({len(st.session_state.preferences)}/10):")
-    for parent, child, score in st.session_state.preferences:
-        st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
+
+    # 🔥 Mostrar preferencias con botón para eliminar
+    for i, (parent, child, score) in enumerate(st.session_state.preferences):
+        col1, col2 = st.columns([4, 1])
+        with col1:
+            st.markdown(f"✅ **{parent} ➝ {child}**: {score}")
+        with col2:
+            if st.button(f"❌", key=f"remove_{i}"):
+                del st.session_state.preferences[i]  # Eliminar la preferencia
+                st.rerun()
+
 
     submit_button = st.button(label="Registrarse", key=1234)
 
