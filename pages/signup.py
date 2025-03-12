@@ -207,7 +207,7 @@ children_options = {"Sin hijos": 0, "Con hijos": 1}
 reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
 current_children = st.session_state.get("new_children", 0)  # Por defecto 0
 current_children_friendly = reverse_children_options.get(current_children, "Sin hijos")  # Convertir 0 → "Sin hijos"
-selected_children = st.selectbox("Selecciona el número de hijos", list(children_options.keys()), index=list(children_options.keys()).index(current_children_friendly))
+selected_children = st.selectbox("¿Tienes hijos?", list(children_options.keys()), index=list(children_options.keys()).index(current_children_friendly))
 st.session_state.new_children = children_options[selected_children]
 
 # Botón principal de continuar
