@@ -201,8 +201,14 @@ job_options = [
 ]
 st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
 
-# Selección de número de hijos
-st.session_state.new_children = st.selectbox("Selecciona el número de hijos", [0, 1, 2], index=[0, 1, 2].index(st.session_state.get("new_children", 0)))
+
+
+children_options = {"Sin hijos": 0, "Con hijos": 1}
+reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
+current_children = st.session_state.get("new_children", 0)  # Por defecto 0
+current_children_friendly = reverse_children_options.get(current_children, "Sin hijos")  # Convertir 0 → "Sin hijos"
+selected_children = st.selectbox("Selecciona el número de hijos", list(children_options.keys()), index=list(children_options.keys()).index(current_children_friendly))
+st.session_state.new_children = children_options[selected_children]
 
 # Botón principal de continuar
 if st.button("Continuar", key="btn_continuar"):
@@ -218,8 +224,7 @@ if st.button("Continuar", key="btn_continuar"):
 if st.session_state.get("form_completed") == True and st.session_state.new_children > 0:
     if st.session_state.new_children >= 1:
         st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.get("new_children1_age", 0))
-    if st.session_state.new_children == 2:
-        st.session_state.new_children2_age = st.number_input("Edad del segundo hijo", min_value=0, step=1, format="%d", value=st.session_state.get("new_children2_age", 0))
+        st.session_state.new_children2_age = st.number_input("Edad del segundo hijo (0 si sólo tienes un hijo)", min_value=0, step=1, format="%d", value=st.session_state.get("new_children2_age", 0))
     
     if st.button(label="Continuar a Preferencias", key="btn_preferencias"):
         st.session_state.form_completed = "preferences"
