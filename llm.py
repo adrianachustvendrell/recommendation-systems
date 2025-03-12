@@ -1,18 +1,27 @@
 from huggingface_hub import InferenceClient
 import time
+from groq import Groq
 
-# Initialize the client
-client = InferenceClient(token="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")
+client = Groq(
+    api_key='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',
+)
 
 # Function to generate description for an item
 def generate_description(item_name, retries=3, delay=5):
     for attempt in range(retries):
         try:
-            result = client.text_generation(
-                model="microsoft/phi-4",
-                prompt=f"Descríbeme en español {item_name} de Valencia en tres frases todo en un párrafo. Hazlo atractivo para turistas. Quiero que toda la descripción esté en un párrafo; no quiero ningún bullet point. También quiero que sea en castellano.",
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {
+                        "role": "user",
+                        "content": f"Escribeme una breve descripción en castellano de {item_name} en Valencia. Quiero tres frases en un párrafo, sin emoticonos ni negritas ni cursivas. Hazlo atractivo para turistas.",
+                    }
+                ],
+                model="llama-3.3-70b-versatile",
             )
-            return result['generated_text']
+
+            return chat_completion.choices[0].message.content
+        
         except Exception as e:
             if attempt < retries - 1:
                 time.sleep(delay)  # Wait before retrying

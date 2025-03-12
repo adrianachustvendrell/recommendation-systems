@@ -59,7 +59,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 # Load data
 items_file_path = "./data/items.csv"  # Change this to your actual CSV path
-df_items = pd.read_csv(items_file_path, encoding='latin1')
+df_items = pd.read_csv(items_file_path)
 
 
 # -----------------------------------
