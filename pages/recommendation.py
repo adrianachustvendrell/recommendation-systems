@@ -9,7 +9,7 @@ import importlib
 # ---------------------------------
 # CARGAR LOS TIPOS DE RECOMENDADORES
 # ---------------------------------
-from demographic import demografico  
+from pages.demographic import demografico  
 
 
 def mostrar_recomendaciones(diccionario_recomendaciones, items, IMAGE_FOLDER='images', page_width=None):
