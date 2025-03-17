@@ -58,13 +58,21 @@ usuarios = pd.read_csv("../data/info_usuarios.csv")
 
 
 def demografico(usuario_id):
+    """
+    El uso de un logaritmo para ajustar la popularidad del ítem es una técnica común en sistemas de recomendación
+    para manejar los efectos de distribuciones sesgadas y evitar que la popularidad domine la puntuación final. 
+
+    - El logaritmo reduce el impacto de la popularidad sin eliminarla por completo.
+    - Hace que las recomendaciones estén más influenciadas por la afinidad con el usuario que por el simple número de visitas.
+    - Se mejora el balance entre relevancia y popularidad.  
+    """
+    
     # Obtener el tipo de usuario
     usuario = usuarios.loc[usuarios['id_usuario'] == usuario_id]
     if usuario.empty:
         return f"Usuario con id {usuario_id} no encontrado."
     
     tipo_usuario = usuario['tipos_usuario'].iloc[0]
-    print(usuario)
     preferencias = viajeros.get(tipo_usuario, {})
     
     if not preferencias:
@@ -94,12 +102,27 @@ def demografico(usuario_id):
     if not recomendaciones:
         return "No hay recomendaciones disponibles para este usuario."
 
-    recomendaciones = {k:v for k, v in recomendaciones.items()}
-    recomendaciones = dict(sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True))
-    return recomendaciones
 
+    recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
 
-# Ejemplo de uso
+    # Seleccionar las 3 mejores recomendaciones
+    top_3 = recomendaciones_ordenadas[:3]
+
+    # Seleccionar las 2 adicionales por debajo del percentil 20
+    percentil_20 = np.percentile(list(recomendaciones.values()), 20)
+    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20]
+
+    if len(candidatos_sorpresa) > 2:
+        sorpresa = candidatos_sorpresa[:2]
+    else:
+        sorpresa = candidatos_sorpresa
+    
+    # Combinar las 3 mejores + 2 "sorpresa"
+    seleccionadas = top_3 + sorpresa
+    recomendaciones_finales = {k: v for k, v in seleccionadas}
+
+    return recomendaciones_finales
+
 recomendaciones = demografico(178)
 print(recomendaciones)
 
