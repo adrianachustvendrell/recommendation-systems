@@ -49,15 +49,15 @@ viajeros = {
 
 
 
-items = pd.read_csv("../data/items.csv")
+items = pd.read_csv("data/items.csv")
 #print(items.columns)
 
-usuarios = pd.read_csv("../data/info_usuarios.csv")
+usuarios = pd.read_csv("data/info_usuarios.csv")
 #print(usuarios.columns)
 
+puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
 
-
-def demografico(usuario_id):
+def demografico(usuario):
     """
     El uso de un logaritmo para ajustar la popularidad del ítem es una técnica común en sistemas de recomendación
     para manejar los efectos de distribuciones sesgadas y evitar que la popularidad domine la puntuación final. 
@@ -66,20 +66,25 @@ def demografico(usuario_id):
     - Hace que las recomendaciones estén más influenciadas por la afinidad con el usuario que por el simple número de visitas.
     - Se mejora el balance entre relevancia y popularidad.  
     """
-    
+
     # Obtener el tipo de usuario
-    usuario = usuarios.loc[usuarios['id_usuario'] == usuario_id]
+    usuario = usuarios.loc[usuarios['nombre_usuario'] == usuario]
+
     if usuario.empty:
-        return f"Usuario con id {usuario_id} no encontrado."
+        return f"Usuario con id {usuario} no encontrado."
     
     tipo_usuario = usuario['tipos_usuario'].iloc[0]
     preferencias = viajeros.get(tipo_usuario, {})
-    
+
     if not preferencias:
         return f"No hay preferencias definidas para el tipo de usuario {tipo_usuario}."
 
     # Filtrar ítems con categorías relevantes para el usuario
     items_filtrados = items[items['categoria'].isin(preferencias.keys())]
+
+    # Filtrar ítems NO vistos
+    id_usuario = int(usuario['id_usuario'].iloc[0])
+    vistos = puntuaciones_usuario[puntuaciones_usuario.id_usuario == id_usuario]["id_item"]
 
     recomendaciones = {}
 
@@ -96,7 +101,7 @@ def demografico(usuario_id):
         
         id_item = item['id_item']
         
-        if id_item not in recomendaciones or score > recomendaciones[id_item]:
+        if id_item not in recomendaciones or score > recomendaciones[id_item] and id_item not in vistos:
             recomendaciones[id_item] = score
 
     if not recomendaciones:
@@ -105,6 +110,7 @@ def demografico(usuario_id):
 
     recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
 
+    
     # Seleccionar las 3 mejores recomendaciones
     top_3 = recomendaciones_ordenadas[:3]
 
@@ -120,10 +126,6 @@ def demografico(usuario_id):
     # Combinar las 3 mejores + 2 "sorpresa"
     seleccionadas = top_3 + sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
-
     return recomendaciones_finales
-
-recomendaciones = demografico(178)
-print(recomendaciones)
 
 
