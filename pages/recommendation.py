@@ -22,7 +22,7 @@ else:
     user_id = st.session_state.user_logged_in  # Retrieve user ID
     st.title(f"👋 Bienvenido, **{user_id}**.")
 # Título
-st.markdown("### 📝 Esta es la recomendación que hemos preparado para ti")
+#st.markdown("### Esta es la recomendación que hemos preparado para ti")
 
 # Opciones de selección
 options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
@@ -56,7 +56,7 @@ if 'show_info' not in st.session_state:
 images = st.session_state.images
 if images:
     # cols = st.columns(len(images))
-    st.markdown("### 🏆 Mejores recomendaciones para ti")
+    st.markdown("### Esta es la recomendación que hemos preparado para ti")
     cols = st.columns(3) # Si se cambia el número de columnas hay que ajustas el slice de imagenes en la siguiente linea
     for i, img_file in enumerate(images[:3]):
         img_path = os.path.join(IMAGE_FOLDER, img_file)
@@ -95,7 +95,7 @@ if images:
                 folium_static(folium_map, width=page_width/3, height=400)
     
     
-    st.markdown("### 🎖️ También podría interesarte")
+    st.markdown("### También podría interesarte...")
     cols2 = st.columns(2) 
     x = 3 # Seria la posicion de la imagen siguiente a la ultima anterior
     for i, img_file in enumerate(images[x:len(images)]):

@@ -1,59 +1,59 @@
 id_usuario,nombre_usuario,edad,sexo,id_ocupacion,hijos,edad_hijo_menor,edad_hijo_mayor,ocupacion,tipos_usuario
-123,Usuario_123,37,F,3,1,3,8,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-124,Usuario_124,42,M,8,1,3,8,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",familias_ninyos
-125,Usuario_125,35,F,10,0,0,0,Trabajadores no cualificados,viajero_borrachera
-126,Usuario_126,50,M,4,0,0,0,Técnicos y profesionales de apoyo,viajero_disfrute
-127,Usuario_127,66,F,11,1,35,44,Inactivo o desocupado,viajero_jubilado
-128,Usuario_128,79,F,11,1,50,56,Inactivo o desocupado,viajero_jubilado
-129,Usuario_129,42,F,5,1,5,11,Empleados de tipo administrativo,familias_ninyos
-130,Usuario_130,37,F,3,1,1,6,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-131,Usuario_131,25,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,jovenes_culto
-132,Usuario_132,52,M,2,1,20,32,Dirección de las empresas y de las administraciones públicas,viajero_disfrute
-133,Usuario_133,24,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,jovenes_culto
-134,Usuario_134,41,F,5,1,4,7,Empleados de tipo administrativo,familias_ninyos
-135,Usuario_135,40,M,1,1,4,6,Fuerzas armadas,familias_ninyos
-136,Usuario_136,40,F,5,1,0,0,Empleados de tipo administrativo,familias_ninyos
-137,Usuario_137,26,F,5,0,0,0,Empleados de tipo administrativo,viajero_disfrute
-138,Usuario_138,33,M,8,0,0,0,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",viajero_disfrute
-139,Usuario_139,35,M,4,1,0,2,Técnicos y profesionales de apoyo,familias_ninyos
-140,Usuario_140,46,M,5,1,0,0,Empleados de tipo administrativo,familias_ninyos
-141,Usuario_141,42,M,1,0,0,0,Fuerzas armadas,viajero_militar
-142,Usuario_142,60,F,1,1,36,40,Fuerzas armadas,viajero_jubilado
-143,Usuario_143,33,M,2,1,0,3,Dirección de las empresas y de las administraciones públicas,familias_ninyos
-144,Usuario_144,28,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,jovenes_culto
-145,Usuario_145,27,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",viajero_disfrute
-146,Usuario_146,63,M,2,0,0,0,Dirección de las empresas y de las administraciones públicas,viajero_jubilado
-147,Usuario_147,56,M,3,1,30,33,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-148,Usuario_148,26,F,10,0,0,0,Trabajadores no cualificados,viajero_borrachera
-149,Usuario_149,32,F,1,0,0,0,Fuerzas armadas,viajero_militar
-150,Usuario_150,43,F,1,0,0,0,Fuerzas armadas,viajero_militar
-151,Usuario_151,31,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,viajero_disfrute
-152,Usuario_152,49,F,3,1,0,19,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-153,Usuario_153,42,F,5,1,5,7,Empleados de tipo administrativo,familias_ninyos
-154,Usuario_154,63,F,3,1,29,39,Técnicos y profesionales científicos e intelectuales,viajero_jubilado
-155,Usuario_155,34,F,5,1,0,10,Empleados de tipo administrativo,familias_ninyos
-156,Usuario_156,77,F,11,1,46,55,Inactivo o desocupado,viajero_jubilado
-157,Usuario_157,63,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_jubilado
-158,Usuario_158,43,F,1,0,13,16,Fuerzas armadas,viajero_militar
-159,Usuario_159,34,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,viajero_disfrute
-160,Usuario_160,55,F,3,1,30,33,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-161,Usuario_161,25,F,1,0,0,0,Fuerzas armadas,jovenes_culto
-162,Usuario_162,59,M,4,1,27,28,Técnicos y profesionales de apoyo,viajero_disfrute
-163,Usuario_163,43,M,3,1,0,2,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-164,Usuario_164,52,M,3,1,0,13,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-165,Usuario_165,48,F,3,1,0,23,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-166,Usuario_166,24,F,1,0,0,0,Fuerzas armadas,jovenes_culto
-167,Usuario_167,32,F,1,0,0,0,Fuerzas armadas,viajero_militar
-168,Usuario_168,36,F,4,0,0,0,Técnicos y profesionales de apoyo,viajero_disfrute
-169,Usuario_169,29,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,jovenes_culto
-170,Usuario_170,55,M,1,0,0,0,Fuerzas armadas,viajero_militar
-171,Usuario_171,29,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,jovenes_culto
-172,Usuario_172,37,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-173,Usuario_173,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-174,Usuario_174,41,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-175,Usuario_175,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
-176,Usuario_176,34,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",viajero_disfrute
-177,Usuario_177,23,F,1,0,0,0,Fuerzas armadas,jovenes_culto
-178,Usuario_178,36,F,1,0,0,0,Fuerzas armadas,viajero_militar
-179,Usuario_179,40,F,3,1,3,5,Técnicos y profesionales científicos e intelectuales,familias_ninyos
-180,Usuario_180,34,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,viajero_disfrute
+123,Usuario_123,37,F,3,1,3,8,Técnicos y profesionales científicos e intelectuales,tipo5
+124,Usuario_124,42,M,8,1,3,8,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo5
+125,Usuario_125,35,F,10,0,0,0,Trabajadores no cualificados,tipo2
+126,Usuario_126,50,M,4,0,0,0,Técnicos y profesionales de apoyo,tipo1
+127,Usuario_127,66,F,11,1,35,44,Inactivo o desocupado,tipo4
+128,Usuario_128,79,F,11,1,50,56,Inactivo o desocupado,tipo4
+129,Usuario_129,42,F,5,1,5,11,Empleados de tipo administrativo,tipo5
+130,Usuario_130,37,F,3,1,1,6,Técnicos y profesionales científicos e intelectuales,tipo5
+131,Usuario_131,25,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo3
+132,Usuario_132,52,M,2,1,20,32,Dirección de las empresas y de las administraciones públicas,tipo1
+133,Usuario_133,24,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
+134,Usuario_134,41,F,5,1,4,7,Empleados de tipo administrativo,tipo5
+135,Usuario_135,40,M,1,1,4,6,Fuerzas armadas,tipo5
+136,Usuario_136,40,F,5,1,0,0,Empleados de tipo administrativo,tipo5
+137,Usuario_137,26,F,5,0,0,0,Empleados de tipo administrativo,tipo1
+138,Usuario_138,33,M,8,0,0,0,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo1
+139,Usuario_139,35,M,4,1,0,2,Técnicos y profesionales de apoyo,tipo5
+140,Usuario_140,46,M,5,1,0,0,Empleados de tipo administrativo,tipo5
+141,Usuario_141,42,M,1,0,0,0,Fuerzas armadas,tipo6
+142,Usuario_142,60,F,1,1,36,40,Fuerzas armadas,tipo4
+143,Usuario_143,33,M,2,1,0,3,Dirección de las empresas y de las administraciones públicas,tipo5
+144,Usuario_144,28,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
+145,Usuario_145,27,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1
+146,Usuario_146,63,M,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo4
+147,Usuario_147,56,M,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1
+148,Usuario_148,26,F,10,0,0,0,Trabajadores no cualificados,tipo2
+149,Usuario_149,32,F,1,0,0,0,Fuerzas armadas,tipo6
+150,Usuario_150,43,F,1,0,0,0,Fuerzas armadas,tipo6
+151,Usuario_151,31,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1
+152,Usuario_152,49,F,3,1,0,19,Técnicos y profesionales científicos e intelectuales,tipo5
+153,Usuario_153,42,F,5,1,5,7,Empleados de tipo administrativo,tipo5
+154,Usuario_154,63,F,3,1,29,39,Técnicos y profesionales científicos e intelectuales,tipo4
+155,Usuario_155,34,F,5,1,0,10,Empleados de tipo administrativo,tipo5
+156,Usuario_156,77,F,11,1,46,55,Inactivo o desocupado,tipo4
+157,Usuario_157,63,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo4
+158,Usuario_158,43,F,1,0,13,16,Fuerzas armadas,tipo6
+159,Usuario_159,34,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1
+160,Usuario_160,55,F,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1
+161,Usuario_161,25,F,1,0,0,0,Fuerzas armadas,tipo3
+162,Usuario_162,59,M,4,1,27,28,Técnicos y profesionales de apoyo,tipo1
+163,Usuario_163,43,M,3,1,0,2,Técnicos y profesionales científicos e intelectuales,tipo5
+164,Usuario_164,52,M,3,1,0,13,Técnicos y profesionales científicos e intelectuales,tipo5
+165,Usuario_165,48,F,3,1,0,23,Técnicos y profesionales científicos e intelectuales,tipo5
+166,Usuario_166,24,F,1,0,0,0,Fuerzas armadas,tipo3
+167,Usuario_167,32,F,1,0,0,0,Fuerzas armadas,tipo6
+168,Usuario_168,36,F,4,0,0,0,Técnicos y profesionales de apoyo,tipo1
+169,Usuario_169,29,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
+170,Usuario_170,55,M,1,0,0,0,Fuerzas armadas,tipo6
+171,Usuario_171,29,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
+172,Usuario_172,37,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
+173,Usuario_173,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
+174,Usuario_174,41,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
+175,Usuario_175,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
+176,Usuario_176,34,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1
+177,Usuario_177,23,F,1,0,0,0,Fuerzas armadas,tipo3
+178,Usuario_178,36,F,1,0,0,0,Fuerzas armadas,tipo6
+179,Usuario_179,40,F,3,1,3,5,Técnicos y profesionales científicos e intelectuales,tipo5
+180,Usuario_180,34,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
