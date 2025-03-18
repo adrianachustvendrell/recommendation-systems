@@ -18,6 +18,22 @@ st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wid
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
 
+st_javascript("""
+    // Function to adjust the height of the carousel container
+    function adjustCarouselHeight() {
+        let images = document.querySelectorAll('.carousel img');
+        let minHeight = Math.min(...Array.from(images).map(img => img.height));
+        let container = document.querySelector('.carousel-container');
+        if (container) {
+            container.style.height = minHeight + 'px';
+        }
+    }
+
+    // Run the adjustment function once images are loaded
+    window.onload = adjustCarouselHeight;
+    window.onresize = adjustCarouselHeight;
+""")
+
 # -----------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
 # -----------------------------------
@@ -34,18 +50,24 @@ custom_css = """
 
         /* Carousel image styling */
         .carousel img {
-            height: 500px;  /* Define a fixed height for images */
             object-fit: contain;  /* This ensures the image is adjusted to fit without being cropped */
             width: auto;  /* Maintain aspect ratio */
             display: block;
             margin: 0 auto;  /* Center the images */
         }
 
-        /* Ensure that when the sidebar is hidden, the image height stays fixed */
+        /* Ensure that the container for the carousel is full width */
         .css-1v3fvcr {
-            width: 100% !important;  /* Ensures that the container for the carousel is full width */
+            width: 100% !important;
         }
-        
+
+        /* Optional: container to control carousel */
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
     </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
