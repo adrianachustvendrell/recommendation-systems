@@ -11,6 +11,7 @@ import numpy as np
 # IMPORTAR LOS DISTINTOS TIPOS DE SR
 # ---------------------------------------
 from pages.demographic import demografico
+from pages.content import contenido_recomendacion
 
 
 # Configurar la página para que ocupe todo el ancho disponible
@@ -31,6 +32,17 @@ options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
 selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="single", default=["Demográfico"])
 
 st.markdown(f"Opción seleccionada: {selection}")
+
+def score_to_stars(score):
+    """
+    Convierte un puntaje entre 0-5 a una calificación de estrellas (de 0 a 5).
+    Utiliza estrellas llenas (⭐), vacías (☆), y medias (✩).
+    """
+    full_stars = int(score) 
+    half_star = 1 if (score - full_stars) >= 0.5 else 0  
+    empty_stars = 5 - full_stars - half_star 
+
+    return "⭐" * full_stars + ("✩" if half_star else "") + "☆" * empty_stars
 
 # Mostrar los ítems a partir de un diccionario
 def mostrar_items(diccionario):
@@ -60,7 +72,7 @@ def mostrar_items(diccionario):
             if i <= 2:  # Mostrar solo las 3 primeras imágenes arriba
                 with cols[i % 3]:
                     st.image(image, use_container_width=True, caption=item_name)
-                    st.markdown(f"**Puntuación:** {score}")
+                    st.markdown(f"**Puntuación:** {score} / 5 ({score_to_stars(score)})")
                     
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i}"
@@ -163,6 +175,8 @@ def toggle_info(i):
 def obtener_items_seleccionados(seleccion):
     if selection  == "Demográfico":
         diccionario = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
+    elif selection  == "Basado en contenido":
+        diccionario = contenido_recomendacion(user_id)
     else:
         diccionario = {}
     
