@@ -86,7 +86,7 @@ def generate_user_id():
         return users_df["id_usuario"].max() + 1  # Increment the highest ID
 
 
-def add_user(username, age, sex, job, children, child1_age, child2_age):
+def add_user(username, age, sex, job, children, child1_age, child2_age, tipo):
     """Adds a new user to the DataFrame and saves it."""
     new_id = generate_user_id()  # Generate a unique ID
     id_ocupacion = job_options.index(job) + 1  # Assign a numerical ID for occupation (modify if needed)
@@ -105,7 +105,8 @@ def add_user(username, age, sex, job, children, child1_age, child2_age):
         "hijos": [children],
         "edad_hijo_menor": [child1_age],
         "edad_hijo_mayor": [child2_age],
-        "ocupacion": [job]
+        "ocupacion": [job],
+        "tipos_usuario": [tipo]
     })
     
     global users_df
@@ -302,6 +303,32 @@ if st.session_state.get("form_completed") == "preferences":
 
 
 
+# -----------------------------------
+# OBTENER TIPO DE USUARIO
+# -----------------------------------
+
+if st.session_state.new_age < 60:
+    #tipo 2: viajero borrachera
+    if st.session_state.new_age > 18 and (st.session_state.new_job == 'Trabajadores no cualificados' or st.session_state.new_job == 'Inactivo o desocupado') and st.session_state.new_children == 0:
+        tipo = 'tipo2'
+    #tipo 5: viajero niños
+    elif st.session_state.new_age > 30 and st.session_state.new_children > 0 and (st.session_state.new_children1_age < 12 or st.session_state.new_children2_age < 12):
+        tipo = 'tipo5'
+    #tipo 3: viajero joven con cultura 
+    elif st.session_state.new_age < 30 and st.session_state.new_age > 18 and (st.session_state.new_job == 'Dirección de las empresas y de las administraciones públicas' or st.session_state.new_job == 'Técnicos y profesionales científicos e intelectuales'or st.session_state.new_job == 'Técnicos y profesionales de apoyo'):
+        tipo = 'tipo3'
+    else:
+        #tipo 6: militares
+        if st.session_state.new_job == 'Fuerzas armadas':
+            tipo = 'tipo6'
+        #tipo 1: viajero disfrute (grupo grande)  
+        else:
+            tipo = 'tipo1'
+#tipo 4: viajero jubilado
+else:
+    tipo = 'tipo4'
+
+
 # ---------------------------------
 # CONTROLAR ERRORES FORMULARIO
 # ---------------------------------
@@ -322,7 +349,8 @@ if submit_button:
                           st.session_state.new_job, 
                           st.session_state.new_children, 
                           st.session_state.new_children1_age, 
-                          st.session_state.new_children2_age)
+                          st.session_state.new_children2_age,
+                          tipo)
         add_preference(new_id, st.session_state.preferences)       
         st.success("👌 Cuenta creada satisfactoriamente.")
             
