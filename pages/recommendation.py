@@ -13,7 +13,7 @@ import numpy as np
 from pages.demographic import demografico
 from pages.content import contenido_recomendacion
 
-
+st.cache_data.clear()
 # Configurar la página para que ocupe todo el ancho disponible
 st.set_page_config(layout='wide')
 
@@ -72,7 +72,7 @@ def mostrar_items(diccionario):
             if i <= 2:  # Mostrar solo las 3 primeras imágenes arriba
                 with cols[i % 3]:
                     st.image(image, use_container_width=True, caption=item_name)
-                    st.markdown(f"**Puntuación:** {score} / 5 ({score_to_stars(score)})")
+                    st.markdown(f"**Puntuación:** {np.round(score, 2)} ⭐")
                     
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i}"

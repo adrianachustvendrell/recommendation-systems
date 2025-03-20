@@ -24,6 +24,9 @@ def contenido_recomendacion(usuario):
         return f"El usuario {usuario} no tiene preferencias de categorías."
 
     categorias_usuario = calificaciones[['id_usuario', 'id_categoria', 'calificacion', 'categoria']].drop_duplicates()
+
+    threshold = sum(categorias_usuario['calificacion'].tolist())/len(categorias_usuario['calificacion'].tolist())
+    categorias_usuario = categorias_usuario[categorias_usuario['calificacion'] >= threshold]
     categorias_usuario = categorias_usuario.set_index('categoria')
 
     items_filtrados = items[items['categoria'].isin(categorias_usuario.index)]
@@ -41,7 +44,9 @@ def contenido_recomendacion(usuario):
         if categoria_item in categorias_usuario.index:
             pref = categorias_usuario.loc[categoria_item, 'calificacion']
             score = (adec / 100) * (pref / 100)
-            score *= (1 + np.log(1 + count))
+            score *= (1 + np.log(16 + count))
+            score = np.round(score, 2)
+            
             id_item = item['id_item']
 
             if id_item not in recomendaciones:
@@ -53,7 +58,26 @@ def contenido_recomendacion(usuario):
         return "No hay recomendaciones disponibles para este usuario."
 
     recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
-    top_3 = recomendaciones_ordenadas[:3]
+    recomendaciones_diversas = {}
+    categories_added = set() 
+
+    for id_item, score in recomendaciones_ordenadas:
+        item = items[items['id_item'] == id_item].iloc[0]
+        padre_categoria = item['padre_categoria']
+        
+        if padre_categoria not in categories_added:
+            recomendaciones_diversas[id_item] = score
+            categories_added.add(padre_categoria)
+
+        if len(recomendaciones_diversas) == 3:
+            break
+
+    if len(recomendaciones_diversas) < 3:
+        for id_item, score in recomendaciones_ordenadas:
+            if id_item not in recomendaciones_diversas:
+                recomendaciones_diversas[id_item] = score
+            if len(recomendaciones_diversas) == 3:
+                break
 
     percentil_20 = np.percentile(list(recomendaciones.values()), 20)
     candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20]
@@ -63,6 +87,6 @@ def contenido_recomendacion(usuario):
     else:
         sorpresa = candidatos_sorpresa
 
-    seleccionadas = top_3 + sorpresa
+    seleccionadas = list(recomendaciones_diversas.items()) + sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
     return recomendaciones_finales
