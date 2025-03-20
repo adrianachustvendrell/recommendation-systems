@@ -6,12 +6,16 @@ from streamlit_folium import folium_static
 import folium
 from streamlit_javascript import st_javascript
 import numpy as np
-
-# ---------------------------------------
-# IMPORTAR LOS DISTINTOS TIPOS DE SR
-# ---------------------------------------
 from pages.demographic import demografico
 from pages.content import contenido_recomendacion
+
+
+
+
+# --------------------------------------
+# CONFIGURACIÓN DE LA PÁGINA
+# --------------------------------------
+
 
 st.cache_data.clear()
 # Configurar la página para que ocupe todo el ancho disponible
@@ -20,6 +24,45 @@ st.set_page_config(layout='wide')
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
 
+
+# Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
+st.markdown(
+    """
+    <style>
+        .stImage img {
+            height: 300px !important; /* Altura fija */
+            width: auto;
+            object-fit: cover; /* Recortar para mantener la relación de aspecto */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px; /* Espacio debajo de la imagen */
+        }
+        .stButton>button {
+            background-color: #f63366; /* Rosa-rojo de Streamlit */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 8px;
+        }
+        .stButton>button:hover {
+            background-color: white;
+            color: #f63366; /* Cambio de color al pasar el ratón */
+        }
+        .stImage figcaption {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 8px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if "user_logged_in" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
@@ -27,11 +70,18 @@ else:
     user_id = st.session_state.user_logged_in  # Retrieve user ID
     st.title(f"👋 Bienvenido, **{user_id}**.")
 
-# Opciones de selección
-options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
-selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="single", default=["Demográfico"])
 
-st.markdown(f"Opción seleccionada: {selection}")
+
+
+
+
+
+
+
+# -------------------------------------------
+# FUNCIONES DE ÍTEMS, SCORES...
+# -------------------------------------------
+
 
 def score_to_stars(score):
     """
@@ -44,7 +94,9 @@ def score_to_stars(score):
 
     return "⭐" * full_stars + ("✩" if half_star else "") + "☆" * empty_stars
 
-# Mostrar los ítems a partir de un diccionario
+
+
+
 def mostrar_items(diccionario):
     items = pd.read_csv("data/items.csv")
     IMAGE_FOLDER = 'images'
@@ -111,7 +163,7 @@ def mostrar_items(diccionario):
 
                         folium_static(folium_map, width=page_width / 3, height=400)
 
-    # Título "También podría interesarte..."
+
     st.markdown("### También podría interesarte...")
 
     # Dos imágenes grandes debajo (i > 2 para las siguientes imágenes)
@@ -172,6 +224,7 @@ def toggle_info(i):
     """ Cambia el estado de visibilidad de la información. """
     st.session_state.show_info[i] = not st.session_state.show_info[i]
 
+
 def obtener_items_seleccionados(seleccion):
     if selection  == "Demográfico":
         diccionario = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
@@ -182,36 +235,26 @@ def obtener_items_seleccionados(seleccion):
     
     mostrar_items(diccionario)
 
+
+
+
+
+
+
+# -------------------------------------------
+# SELECCIÓN DE RECOMENDADOR (PÁGINA PRINCIPAL)
+# -------------------------------------------
+
+# Opciones de selección
+options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
+selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="single", default=["Demográfico"])
+
+st.markdown(f"Opción seleccionada: {selection}")
+
+
 if selection:
     obtener_items_seleccionados(selection[0])
 
-# Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
-st.markdown(
-    """
-    <style>
-        .stImage img {
-            height: 300px !important; /* Altura fija */
-            width: auto;
-            object-fit: cover; /* Recortar para mantener la relación de aspecto */
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin-bottom: 20px; /* Espacio debajo de la imagen */
-        }
-        .stButton>button {
-            background-color: #f63366; /* Rosa-rojo de Streamlit */
-            color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 8px;
-        }
-        .stButton>button:hover {
-            background-color: white;
-            color: #f63366; /* Cambio de color al pasar el ratón */
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
+
+
