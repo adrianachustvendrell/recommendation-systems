@@ -340,6 +340,8 @@ if submit_button:
     # ✅ Check if username already exists
     elif check_username_exists(st.session_state.new_username):
         st.error("❌ El nombre de usuario ya está en uso. Por favor, elige otro.")
+    elif len(st.session_state.preferences) == 0:
+        st.error("❌ Selecciona al menos una preferencia.")
         
     # ✅ If everything is correct, add user
     else:
