@@ -85,7 +85,7 @@ def demografico(usuario):
     # Filtrar ítems NO vistos
     id_usuario = int(usuario['id_usuario'].iloc[0])
     vistos = puntuaciones_usuario[puntuaciones_usuario.id_usuario == id_usuario]["id_item"]
-
+    
     recomendaciones = {}
 
     for _, item in items_filtrados.iterrows():
