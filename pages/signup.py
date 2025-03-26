@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import time
+import random
 
 # --------------------------------------
 # ESTILO PÁGINA
@@ -169,6 +170,7 @@ def add_preference(new_id, set_preferencias):
 # --------------------------------------
 # VARIABLES DE SESIÓN PARA NO PERDER DATOS
 # --------------------------------------
+cont_button = False
 if "new_children1_age" not in st.session_state:
     st.session_state.new_children1_age = 0
 if "new_children2_age" not in st.session_state:
@@ -179,6 +181,8 @@ if "selected_parent" not in st.session_state:
     st.session_state.selected_parent = items_df['padre_categoria'].unique()[0]
 if "form_completed" not in st.session_state:
     st.session_state.form_completed = False
+if "selected_item" not in st.session_state:
+    st.session_state.selected_item = {}
 
 # --------------------------------------
 # FORMULARIO DE REGISTRO SIN FORM
@@ -298,8 +302,42 @@ if st.session_state.get("form_completed") == "preferences":
                 del st.session_state.preferences[i]  # Eliminar la preferencia
                 st.rerun()
 
+    cont_button = st.button('Continuar', key=1111)
 
-    submit_button = st.button(label="Registrarse", key=1234)
+if cont_button:
+    if len(st.session_state.preferences) == 0:
+        st.error("❌ Selecciona al menos una preferencia.")
+    else:
+        cat = set()
+        for i in range(len(st.session_state.preferences)):
+            cat.add(random.choice(st.session_state.preferences)[1])
+            if len(cat) == 5:
+                break
+
+        print(cat)
+        items_propuestos = set()
+        cat_lista = list(cat)  # Convertir el set en lista para poder indexarlo
+
+        while len(items_propuestos) < 5:
+            r = random.randint(0, len(cat_lista) - 1)  # Elegir un índice aleatorio
+            items = items_df.loc[items_df['categoria'] == cat_lista[r], 'nombre_item']
+            items = items.tolist()
+            print(items)
+            items_propuestos.add(random.choice(items))
+
+        col1, col2 = st.columns([2, 1])
+        for elem in items_propuestos:
+            with col1:
+                selected_item = st.write("Ítem", elem, key="item_select")
+
+            with col2:
+                selected_scores = st.selectbox("Valoración", score_options, key=f"{elem}_select")
+                st.session_state.selected_item[selected_item] = selected_scores
+
+        submit_button = st.button(label="Registrarse", key=1234)
+
+
+
 
 
 
@@ -340,8 +378,6 @@ if submit_button:
     # ✅ Check if username already exists
     elif check_username_exists(st.session_state.new_username):
         st.error("❌ El nombre de usuario ya está en uso. Por favor, elige otro.")
-    elif len(st.session_state.preferences) == 0:
-        st.error("❌ Selecciona al menos una preferencia.")
         
     # ✅ If everything is correct, add user
     else:
