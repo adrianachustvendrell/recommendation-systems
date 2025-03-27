@@ -58,74 +58,87 @@ usuarios = pd.read_csv("data/info_usuarios.csv")
 puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
 
 def demografico(usuario):
-    """
-    El uso de un logaritmo para ajustar la popularidad del ítem es una técnica común en sistemas de recomendación
-    para manejar los efectos de distribuciones sesgadas y evitar que la popularidad domine la puntuación final. 
+    usuario_data = usuarios.loc[usuarios['nombre_usuario'] == usuario]
+    if usuario_data.empty:
+        return f"Usuario con nombre {usuario} no encontrado."
 
-    - El logaritmo reduce el impacto de la popularidad sin eliminarla por completo.
-    - Hace que las recomendaciones estén más influenciadas por la afinidad con el usuario que por el simple número de visitas.
-    - Se mejora el balance entre relevancia y popularidad.  
-    """
-
-    # Obtener el tipo de usuario
-    usuario = usuarios.loc[usuarios['nombre_usuario'] == usuario]
-
-    if usuario.empty:
-        return f"Usuario con id {usuario} no encontrado."
-    
-    tipo_usuario = usuario['tipos_usuario'].iloc[0]
+    id_usuario = int(usuario_data['id_usuario'].iloc[0])
+    tipo_usuario = usuario_data['tipos_usuario'].iloc[0]
     preferencias = viajeros.get(tipo_usuario, {})
 
     if not preferencias:
         return f"No hay preferencias definidas para el tipo de usuario {tipo_usuario}."
 
-    # Filtrar ítems con categorías relevantes para el usuario
-    items_filtrados = items[items['categoria'].isin(preferencias.keys())]
+    threshold = np.mean(list(preferencias.values()))
+    categorias_filtradas = {k: v for k, v in preferencias.items() if v >= threshold}
+    items_filtrados = items[items['categoria'].isin(categorias_filtradas.keys())]
 
-    # Filtrar ítems NO vistos
-    id_usuario = int(usuario['id_usuario'].iloc[0])
-    vistos = puntuaciones_usuario[puntuaciones_usuario.id_usuario == id_usuario]["id_item"]
+    vistos = puntuaciones_usuario[puntuaciones_usuario['id_usuario'] == id_usuario]['id_item'].unique()
+    items_filtrados = items_filtrados[~items_filtrados['id_item'].isin(vistos)]
     
     recomendaciones = {}
-
     for _, item in items_filtrados.iterrows():
-        cat = item['categoria']
+        categoria_item = item['categoria']
         adec = item['adec']
-        pref = preferencias[cat]
+        pref = categorias_filtradas.get(categoria_item, 0)
         count = item['count']
         
-        # Calcular la puntuación basada en adecuación y preferencia
-        score = (adec / 100) * (pref / 100)
-        # Ajustar por popularidad
-        score *= (1 + np.log(1 + count))
-        
+        score = (adec / 100) * (pref / 100) * (1 + np.log(1 + count))
+        score = np.round(score, 2)
         id_item = item['id_item']
-        
-        if id_item not in recomendaciones or score > recomendaciones[id_item] and id_item not in vistos:
-            recomendaciones[id_item] = score
 
+        if id_item not in recomendaciones:
+            recomendaciones[id_item] = score
+        else:
+            recomendaciones[id_item] = max(recomendaciones[id_item], score)
+    
     if not recomendaciones:
         return "No hay recomendaciones disponibles para este usuario."
-
-
+    
     recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
+    recomendaciones_diversas = {}
+    categories_added = set()
 
+    for id_item, score in recomendaciones_ordenadas:
+        item = items[items['id_item'] == id_item].iloc[0]
+        padre_categoria = item['padre_categoria']
+        
+        if padre_categoria not in categories_added:
+            recomendaciones_diversas[id_item] = score
+            categories_added.add(padre_categoria)
+        
+        if len(recomendaciones_diversas) == 3:
+            break
     
-    # Seleccionar las 3 mejores recomendaciones
-    top_3 = recomendaciones_ordenadas[:3]
-
-    # Seleccionar las 2 adicionales por debajo del percentil 20
+    if len(recomendaciones_diversas) < 3:
+        for id_item, score in recomendaciones_ordenadas:
+            if id_item not in recomendaciones_diversas:
+                recomendaciones_diversas[id_item] = score
+            if len(recomendaciones_diversas) == 3:
+                break
+    
     percentil_20 = np.percentile(list(recomendaciones.values()), 20)
-    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20]
-
-    if len(candidatos_sorpresa) > 2:
-        sorpresa = candidatos_sorpresa[:2]
-    else:
-        sorpresa = candidatos_sorpresa
+    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20][:2]
     
-    # Combinar las 3 mejores + 2 "sorpresa"
-    seleccionadas = top_3 + sorpresa
+    seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
-    return recomendaciones_finales
 
+    # Cálculo del rating para cada ítem recomendado
+    gente_tipo = usuarios[usuarios["tipos_usuario"] == tipo_usuario]["id_usuario"]
+    puntuaciones_tipo = puntuaciones_usuario[puntuaciones_usuario["id_usuario"].isin(gente_tipo)]
+    puntuaciones_relevantes = puntuaciones_tipo[puntuaciones_tipo["id_item"].isin(recomendaciones_finales.keys())]
+    
+    # Diccionario con los ratings en escala de 0 a 5
+    ratings = {}
+    if not puntuaciones_relevantes.empty:
+        for id_item in recomendaciones_finales.keys():
+            item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
+            if not item_puntuaciones.empty:
+                ratings[id_item] = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+            else:
+                ratings[id_item] = "¡Sé el primero en calificarlo!"
+    else:
+        ratings = {id_item: "¡Sé el primero en calificarlo!" for id_item in recomendaciones_finales.keys()}
 
+    #print(ratings)
+    return recomendaciones_finales, ratings

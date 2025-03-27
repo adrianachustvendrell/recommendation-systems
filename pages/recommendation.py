@@ -29,6 +29,13 @@ page_width = st_javascript("window.innerWidth")
 st.markdown(
     """
     <style>
+        header.stAppHeader {
+        background-color: transparent;
+    }
+    section.stMain .block-container {
+        padding-top: 0rem;
+        z-index: 1;
+    }
         .stImage img {
             height: 300px !important; /* Altura fija */
             width: auto;
@@ -75,9 +82,6 @@ else:
 
 
 
-
-
-
 # -------------------------------------------
 # FUNCIONES DE ÍTEMS, SCORES...
 # -------------------------------------------
@@ -97,7 +101,7 @@ def score_to_stars(score):
 
 
 
-def mostrar_items(diccionario):
+def mostrar_items(diccionario, rating):
     items = pd.read_csv("data/items.csv")
     IMAGE_FOLDER = 'images'
 
@@ -112,6 +116,7 @@ def mostrar_items(diccionario):
     cols = st.columns(3)
     for i, (id_item, score) in enumerate(diccionario.items()):
         item = items[items["id_item"] == id_item]
+        item_id = item["id_item"].unique()[0]
         if item.empty:
             continue
         
@@ -124,8 +129,9 @@ def mostrar_items(diccionario):
             if i <= 2:  # Mostrar solo las 3 primeras imágenes arriba
                 with cols[i % 3]:
                     st.image(image, use_container_width=True, caption=item_name)
-                    st.markdown(f"**Puntuación:** {np.round(score, 2)} ⭐")
-                    
+                    st.markdown(f"{np.round(score, 2)}% coincidencia")
+                    st.markdown(f"{rating[item_id]}/5⭐")
+
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i}"
                     is_info_visible = st.session_state.show_info[i]
@@ -171,6 +177,7 @@ def mostrar_items(diccionario):
     for i, (id_item, score) in enumerate(diccionario.items()):
         if i > 2:  # Solo mostrar los siguientes ítems en las imágenes grandes
             item = items[items["id_item"] == id_item]
+            item_id = item["id_item"].unique()[0]
             if item.empty:
                 continue
             
@@ -182,7 +189,7 @@ def mostrar_items(diccionario):
                 image = Image.open(img_path)
                 with cols[(i-3) % 2]:  # Aquí aseguramos que las imágenes se distribuyan correctamente en las 2 columnas
                     st.image(image, use_container_width=True, caption=item_name)
-                    
+                    st.markdown(f"{rating[item_id]}/5⭐")
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i+3}"
                     is_info_visible = st.session_state.show_info[i]
@@ -227,16 +234,13 @@ def toggle_info(i):
 
 def obtener_items_seleccionados(seleccion):
     if selection  == "Demográfico":
-        diccionario = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
+        diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
         diccionario = contenido_recomendacion(user_id)
     else:
         diccionario = {}
     
-    mostrar_items(diccionario)
-
-
-
+    mostrar_items(diccionario, rating)
 
 
 
