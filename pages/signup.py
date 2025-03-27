@@ -37,6 +37,7 @@ PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
 ITEMS_DATA_FILE = 'items.csv'
 submit_button = False
 preferencias_button = False
+cont_button = False
 
 
 
@@ -170,7 +171,7 @@ def add_preference(new_id, set_preferencias):
 # --------------------------------------
 # VARIABLES DE SESIÓN PARA NO PERDER DATOS
 # --------------------------------------
-cont_button = False
+
 if "new_children1_age" not in st.session_state:
     st.session_state.new_children1_age = 0
 if "new_children2_age" not in st.session_state:
@@ -181,67 +182,88 @@ if "selected_parent" not in st.session_state:
     st.session_state.selected_parent = items_df['padre_categoria'].unique()[0]
 if "form_completed" not in st.session_state:
     st.session_state.form_completed = False
+if "items_propuestos" not in st.session_state:
+    st.session_state.items_propuestos = []  # Usa una lista en lugar de un set
 if "selected_item" not in st.session_state:
     st.session_state.selected_item = {}
+if "step" not in st.session_state:
+    st.session_state.step = "inicio"  # Control del flujo
 
+
+
+score_options = list(range(10, 110, 10))
 # --------------------------------------
 # FORMULARIO DE REGISTRO SIN FORM
 # --------------------------------------
-st.title("📝 Registrarse")
+if st.session_state.step == "inicio":
+    st.title("📝 Registrarse")
 
-st.session_state.new_username = st.text_input("Introduce un usuario", st.session_state.get("new_username", ""))
-st.session_state.new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d", value=st.session_state.get("new_age", 1))
-sex_options = {"Masculino": "M", "Femenino": "F"}
-reverse_sex_options = {v: k for k, v in sex_options.items()}  # {'M': 'Masculino', 'F': 'Femenino'}
-current_sex = st.session_state.get("new_sex", "M")  
-current_sex_friendly = reverse_sex_options.get(current_sex, "Masculino") 
-selected_sex = st.selectbox("Selecciona tu sexo", list(sex_options.keys()), index=list(sex_options.keys()).index(current_sex_friendly))
-st.session_state.new_sex = sex_options[selected_sex]
-
-
-job_options = [
-    "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
-    "Empleados administrativos", "Vendedores", "Agricultores", 
-    "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
-]
-st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
+    st.session_state.new_username = st.text_input("Introduce un usuario", st.session_state.get("new_username", ""))
+    st.session_state.new_age = st.number_input("Introduce tu edad", min_value=1, step=1, format="%d", value=st.session_state.get("new_age", 1))
+    sex_options = {"Masculino": "M", "Femenino": "F"}
+    reverse_sex_options = {v: k for k, v in sex_options.items()}  # {'M': 'Masculino', 'F': 'Femenino'}
+    current_sex = st.session_state.get("new_sex", "M")  
+    current_sex_friendly = reverse_sex_options.get(current_sex, "Masculino") 
+    selected_sex = st.selectbox("Selecciona tu sexo", list(sex_options.keys()), index=list(sex_options.keys()).index(current_sex_friendly))
+    st.session_state.new_sex = sex_options[selected_sex]
 
 
+    job_options = [
+        "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
+        "Empleados administrativos", "Vendedores", "Agricultores", 
+        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
+    ]
+    st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
 
-children_options = {"Sin hijos": 0, "Con hijos": 1}
-reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
-current_children = st.session_state.get("new_children", 0)  # Por defecto 0
-current_children_friendly = reverse_children_options.get(current_children, "Sin hijos")  # Convertir 0 → "Sin hijos"
-selected_children = st.selectbox("¿Tienes hijos?", list(children_options.keys()), index=list(children_options.keys()).index(current_children_friendly))
-st.session_state.new_children = children_options[selected_children]
 
-# Botón principal de continuar
-if st.button("Continuar", key="btn_continuar"):
-    if st.session_state.new_children == 0:
-        st.session_state.form_completed = "preferences"  # Ir directamente a preferencias
-    else:
-        st.session_state.form_completed = True  # Si hay hijos, pedir edades
-    st.rerun()
+
+    children_options = {"Sin hijos": 0, "Con hijos": 1}
+    reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
+    current_children = st.session_state.get("new_children", 0)  # Por defecto 0
+    current_children_friendly = reverse_children_options.get(current_children, "Sin hijos")  # Convertir 0 → "Sin hijos"
+    selected_children = st.selectbox("¿Tienes hijos?", list(children_options.keys()), index=list(children_options.keys()).index(current_children_friendly))
+    st.session_state.new_children = children_options[selected_children]
+
+    # Botón principal de continuar
+    if st.button("Continuar →", key="btn_continuar"):
+        if not st.session_state.new_username.strip():
+            st.error("❌ El nombre de usuario no puede estar vacío.")
+        elif check_username_exists(st.session_state.new_username):
+            st.error("❌ El nombre de usuario ya está en uso. Por favor, elige otro.")
+        else:
+            if st.session_state.new_children == 0:
+                st.session_state.step = "preferences"
+            else:
+                st.session_state.step = "edad_hijos"
+            st.rerun()
+
 
 # --------------------------------------
 # FORMULARIO DE EDAD DE HIJOS
 # --------------------------------------
-if st.session_state.get("form_completed") == True and st.session_state.new_children > 0:
+elif st.session_state.step == "edad_hijos":
+    st.title('🧒 Hijos')
     if st.session_state.new_children >= 1:
         st.session_state.new_children1_age = st.number_input("Edad del primer hijo", min_value=0, step=1, format="%d", value=st.session_state.get("new_children1_age", 0))
         st.session_state.new_children2_age = st.number_input("Edad del segundo hijo (0 si sólo tienes un hijo)", min_value=0, step=1, format="%d", value=st.session_state.get("new_children2_age", 0))
     
-    if st.button(label="Continuar a Preferencias", key="btn_preferencias"):
-        st.session_state.form_completed = "preferences"
-
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("← Volver"):
+            st.session_state.step = "inicio"
+            st.rerun()
+    
+    with col2:
+        if st.button("Continuar → ", key="btn_preferencias_huidsjk"):
+            st.session_state.step = "preferences"
+            st.rerun()
 
 
 # --------------------------------------
 # SELECCIÓN DE PREFERENCIAS (MOSTRAR SOLO CUANDO SE HAYA COMPLETADO EL FORM ANTERIOR)
 # --------------------------------------
-import streamlit as st
 
-if st.session_state.get("form_completed") == "preferences":
+elif st.session_state.step == "preferences":
     st.title("🎯 Preferencias")
     
     padre_options = list(items_df['padre_categoria'].unique())
@@ -302,48 +324,83 @@ if st.session_state.get("form_completed") == "preferences":
                 del st.session_state.preferences[i]  # Eliminar la preferencia
                 st.rerun()
 
-    cont_button = st.button('Continuar', key=1111)
 
-if cont_button:
-    if len(st.session_state.preferences) == 0:
-        st.error("❌ Selecciona al menos una preferencia.")
-    else:
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("← Volver"):
+            if st.session_state.new_children == 0:
+                st.session_state.step = "inicio"
+            else:
+                st.session_state.step = "edad_hijos"
+            st.rerun()
+
+    with col2:
+        if st.button("Continuar →", key="btn_puntuaciones"):
+            if not st.session_state.preferences:
+                st.warning("⚠️ Selecciona al menos una preferencia.")
+            else:
+                st.session_state.step = "puntuacion"
+                st.rerun()
+
+# -------------------------------------------
+# PREFERENCIAS ÍTEMS
+# -------------------------------------------
+
+elif st.session_state.step == "puntuacion":
+    st.title("🎖️ ¿Cómo puntuarías estos lugares?")
+
+    # Generar los ítems solo si aún no se han guardado en session_state
+    if not st.session_state.items_propuestos:
         cat = set()
         for i in range(len(st.session_state.preferences)):
             cat.add(random.choice(st.session_state.preferences)[1])
             if len(cat) == 5:
                 break
 
-        print(cat)
-        items_propuestos = set()
         cat_lista = list(cat)  # Convertir el set en lista para poder indexarlo
 
-        while len(items_propuestos) < 5:
+        while len(st.session_state.items_propuestos) < 5:
             r = random.randint(0, len(cat_lista) - 1)  # Elegir un índice aleatorio
-            items = items_df.loc[items_df['categoria'] == cat_lista[r], 'nombre_item']
-            items = items.tolist()
-            print(items)
-            items_propuestos.add(random.choice(items))
+            items = items_df.loc[items_df['categoria'] == cat_lista[r], 'nombre_item'].tolist()
+            if items:
+                st.session_state.items_propuestos.append(random.choice(items))
 
-        col1, col2 = st.columns([2, 1])
-        for elem in items_propuestos:
-            with col1:
-                selected_item = st.write("Ítem", elem, key="item_select")
+    # Mostrar en dos columnas
+    cols = st.columns(2)
 
-            with col2:
-                selected_scores = st.selectbox("Valoración", score_options, key=f"{elem}_select")
-                st.session_state.selected_item[selected_item] = selected_scores
+    # importante no cambiar esto !!!11s
+    st.session_state.items_propuestos = set(st.session_state.items_propuestos)
+    st.session_state.items_propuestos = list(st.session_state.items_propuestos)
 
-        submit_button = st.button(label="Registrarse", key=1234)
+    for idx, elem in enumerate(st.session_state.items_propuestos):
+        col = cols[idx % 2]  # Alternar entre col[0] y col[1]
 
+        with col:
+            # Usar un índice en selectbox que corresponda a la valoración actual de cada ítem
+            selected_score = st.selectbox(
+                    label=f"**{elem}**",
+                    options=score_options,
+                    key=f"{elem}_select",  # Clave única para cada ítem
+                    )
+        # Guardar la valoración seleccionada
+        st.session_state.selected_item[elem] = selected_score
 
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("← Volver"):
+            st.session_state.step = "preferences"
+            st.rerun()
 
-
+    with col2:
+        # Botón de registro
+        submit_button = st.button(label="Registrarse →")
 
 
 # -----------------------------------
 # OBTENER TIPO DE USUARIO
 # -----------------------------------
+
 
 if st.session_state.new_age < 60:
     #tipo 2: viajero borrachera
@@ -373,15 +430,7 @@ else:
 
 # Validate and store user
 if submit_button:
-    if not st.session_state.new_username.strip():
-        st.error("❌ El nombre de usuario no puede estar vacío.")
-    # ✅ Check if username already exists
-    elif check_username_exists(st.session_state.new_username):
-        st.error("❌ El nombre de usuario ya está en uso. Por favor, elige otro.")
-        
-    # ✅ If everything is correct, add user
-    else:
-        new_id = add_user(st.session_state.new_username, 
+    new_id = add_user(st.session_state.new_username, 
                           st.session_state.new_age, 
                           st.session_state.new_sex, 
                           st.session_state.new_job, 
@@ -389,9 +438,11 @@ if submit_button:
                           st.session_state.new_children1_age, 
                           st.session_state.new_children2_age,
                           tipo)
-        add_preference(new_id, st.session_state.preferences)       
-        st.success("👌 Cuenta creada satisfactoriamente.")
+    add_preference(new_id, st.session_state.preferences)       
+    st.success("👌 Cuenta creada satisfactoriamente.")
             
-        # ✅ Redirect to Sign-in Page
-        time.sleep(2)
-        st.switch_page("pages/signin.py")
+    # Redirect to Sign-in Page
+    time.sleep(2)
+    st.switch_page("pages/signin.py")
+
+
