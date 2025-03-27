@@ -160,8 +160,9 @@ def add_preference(new_id, set_preferencias):
         prefs_df.to_csv(preference_user_file_path, index=False)
 
 
-
-
+def toggle_info(i):
+    """ Cambia el estado de visibilidad de la información. """
+    st.session_state.show_info[i] = not st.session_state.show_info[i]
 
 
 # ---------------------------------
@@ -373,46 +374,53 @@ elif st.session_state.step == "puntuacion":
 
 
 
+
+
+
+    # Inicializar estado si no existe
+    if "show_info" not in st.session_state:
+        st.session_state.show_info = {i: False for i in range(len(st.session_state.items_propuestos))}  # Default to False for all items
+
+
+    # Crear las columnas para mostrar los elementos
     cols = st.columns(2)
 
-    # Función para cerrar el popup (realmente es solo controlar el estado de la vista)
-    def close_popup(elem):
-        st.session_state.popup_open[elem] = False
-
-    # Estado de los popups
-    if "popup_open" not in st.session_state:
-        st.session_state.popup_open = {}
-
+    # Mostrar elementos y sus detalles en columnas
     for idx, elem in enumerate(st.session_state.items_propuestos):
-        col = cols[idx % 2]  # Alternar entre col[0] y col[1]
+        col = cols[idx % 2]  # Alternar entre las dos columnas
 
         with col:
-            # Mostrar el nombre del ítem, que actúa como un botón
-            if st.button(f"{elem}", key=f"button_{elem}"):
-                st.session_state.popup_open[elem] = True
-
-            # Mostrar el selectbox para la valoración del ítem
-            selected_score = st.selectbox(
-                label=f"Valora {elem}",
-                options=score_options,
-                key=f"{elem}_select",  # Clave única para cada ítem
+            # Crear un enlace para abrir el popup
+            st.write(f"📌 {elem}")
+            
+            # Definir la clave del botón y la visibilidad de la información
+            button_key = f"btnnnn_{elem}"
+            is_info_visible = st.session_state.show_info[idx]  # Cambiar 'i' por 'idx' aquí
+            
+            button_text = "Ver más" if not is_info_visible else "Ver menos"
+            button_style = (
+                "background-color: #888888; color: white;" if is_info_visible else "background-color: white; color: #f63366;"
             )
             
-            # Guardar la valoración seleccionada
-            st.session_state.selected_item[elem] = selected_score
+            # Botón para mostrar/ocultar detalles
+            if st.button(button_text, key=button_key, help="Haga clic para ver más/menos detalles", use_container_width=True, 
+                        on_click=lambda idx=idx: toggle_info(idx)):  # Pasar 'idx' en el lambda
+                pass  # El on_click actualiza automáticamente el estado en session_state
 
-            # Si el popup está abierto para el ítem
-            if st.session_state.popup_open.get(elem, False):
-                with st.expander(f"Detalles de {elem}", expanded=True):  # Usamos un expander como "popup"
-                    st.write(f"**{elem}**")
-
-                    # Mostrar la descripción e imagen del ítem
+            # Mostrar la información adicional si está visible
+            if is_info_visible:
+                st.write(f"Detalles de {elem}")
+                # Aquí puedes agregar más detalles como imágenes o descripciones, por ejemplo:
+                st.write(f"Descripción del {elem}")
+                        
+                # Mostrar la información adicional cuando el botón ha sido presionado
+                if is_info_visible:
                     fila_desc = items_df['descripcion'][items_df['nombre_item'] == elem].iloc[0]
                     fila_id = items_df['id_item'][items_df['nombre_item'] == elem].iloc[0]
                     img_file = f"{fila_id}.jpg"
                     img_path = os.path.join('images', img_file)
 
-                    # Verificar si la imagen existe y cargarla
+                    # Mostrar imagen si existe
                     if os.path.exists(img_path):
                         image = Image.open(img_path)
                         st.image(image, caption=f"{elem} - Imagen")
@@ -421,10 +429,26 @@ elif st.session_state.step == "puntuacion":
 
                     st.write(fila_desc)
 
-                    # Agregar un botón para "cerrar" el popup simulando un comportamiento
-                    if st.button("Cerrar", key=f"close_{elem}"):
-                        st.session_state.popup_open[elem] = False
+            # Selectbox para la valoración
+            selected_score = st.selectbox(
+                    label="Selecciona una valoración",
+                    options=score_options,
+                    key=f"{elem}_select"
+                )
 
+            # Guardar la valoración seleccionada
+            st.session_state.selected_item[elem] = selected_score
+
+
+
+
+
+
+
+
+
+
+            
 
 
 
