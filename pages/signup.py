@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import time
 import random
+from PIL import Image
 
 # --------------------------------------
 # ESTILO PÁGINA
@@ -183,11 +184,11 @@ if "selected_parent" not in st.session_state:
 if "form_completed" not in st.session_state:
     st.session_state.form_completed = False
 if "items_propuestos" not in st.session_state:
-    st.session_state.items_propuestos = []  # Usa una lista en lugar de un set
+    st.session_state.items_propuestos = set()
 if "selected_item" not in st.session_state:
     st.session_state.selected_item = {}
 if "step" not in st.session_state:
-    st.session_state.step = "inicio"  # Control del flujo
+    st.session_state.step = "inicio" 
 
 
 
@@ -363,29 +364,74 @@ elif st.session_state.step == "puntuacion":
             r = random.randint(0, len(cat_lista) - 1)  # Elegir un índice aleatorio
             items = items_df.loc[items_df['categoria'] == cat_lista[r], 'nombre_item'].tolist()
             if items:
-                st.session_state.items_propuestos.append(random.choice(items))
+                st.session_state.items_propuestos.add(random.choice(items))
 
-    # Mostrar en dos columnas
+    # Asegúrate de que los elementos estén en una lista
+    st.session_state.items_propuestos = list(st.session_state.items_propuestos)
+
+
+
+
+
     cols = st.columns(2)
 
-    # importante no cambiar esto !!!11s
-    st.session_state.items_propuestos = set(st.session_state.items_propuestos)
-    st.session_state.items_propuestos = list(st.session_state.items_propuestos)
+    # Función para cerrar el popup (realmente es solo controlar el estado de la vista)
+    def close_popup(elem):
+        st.session_state.popup_open[elem] = False
+
+    # Estado de los popups
+    if "popup_open" not in st.session_state:
+        st.session_state.popup_open = {}
 
     for idx, elem in enumerate(st.session_state.items_propuestos):
         col = cols[idx % 2]  # Alternar entre col[0] y col[1]
 
         with col:
-            # Usar un índice en selectbox que corresponda a la valoración actual de cada ítem
-            selected_score = st.selectbox(
-                    label=f"**{elem}**",
-                    options=score_options,
-                    key=f"{elem}_select",  # Clave única para cada ítem
-                    )
-        # Guardar la valoración seleccionada
-        st.session_state.selected_item[elem] = selected_score
+            # Mostrar el nombre del ítem, que actúa como un botón
+            if st.button(f"{elem}", key=f"button_{elem}"):
+                st.session_state.popup_open[elem] = True
 
-    
+            # Mostrar el selectbox para la valoración del ítem
+            selected_score = st.selectbox(
+                label=f"Valora {elem}",
+                options=score_options,
+                key=f"{elem}_select",  # Clave única para cada ítem
+            )
+            
+            # Guardar la valoración seleccionada
+            st.session_state.selected_item[elem] = selected_score
+
+            # Si el popup está abierto para el ítem
+            if st.session_state.popup_open.get(elem, False):
+                with st.expander(f"Detalles de {elem}", expanded=True):  # Usamos un expander como "popup"
+                    st.write(f"**{elem}**")
+
+                    # Mostrar la descripción e imagen del ítem
+                    fila_desc = items_df['descripcion'][items_df['nombre_item'] == elem].iloc[0]
+                    fila_id = items_df['id_item'][items_df['nombre_item'] == elem].iloc[0]
+                    img_file = f"{fila_id}.jpg"
+                    img_path = os.path.join('images', img_file)
+
+                    # Verificar si la imagen existe y cargarla
+                    if os.path.exists(img_path):
+                        image = Image.open(img_path)
+                        st.image(image, caption=f"{elem} - Imagen")
+                    else:
+                        st.warning("Imagen no encontrada.")
+
+                    st.write(fila_desc)
+
+                    # Agregar un botón para "cerrar" el popup simulando un comportamiento
+                    if st.button("Cerrar", key=f"close_{elem}"):
+                        st.session_state.popup_open[elem] = False
+
+
+
+
+
+
+                        
+            
     col1, col2 = st.columns(2)
     with col1:
         if st.button("← Volver"):
