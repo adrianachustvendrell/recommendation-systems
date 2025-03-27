@@ -130,7 +130,10 @@ def mostrar_items(diccionario, rating):
                 with cols[i % 3]:
                     st.image(image, use_container_width=True, caption=item_name)
                     st.markdown(f"{np.round(score, 2)}% coincidencia")
-                    st.markdown(f"{rating[item_id]}/5⭐")
+                    if rating[item_id] > 0:
+                        st.markdown(f"{rating[item_id]}/5⭐")
+                    else:
+                        st.markdown(f"¡Sé el primero en calificarlo!")
 
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i}"
@@ -189,7 +192,11 @@ def mostrar_items(diccionario, rating):
                 image = Image.open(img_path)
                 with cols[(i-3) % 2]:  # Aquí aseguramos que las imágenes se distribuyan correctamente en las 2 columnas
                     st.image(image, use_container_width=True, caption=item_name)
-                    st.markdown(f"{rating[item_id]}/5⭐")
+                    if rating[item_id] > 0:
+                        st.markdown(f"{rating[item_id]}/5⭐")
+                    else:
+                        st.markdown(f"¡Sé el primero en calificarlo!")
+
                     # Botón de "Ver más" para cada imagen
                     button_key = f"btn_{i+3}"
                     is_info_visible = st.session_state.show_info[i]
@@ -236,7 +243,7 @@ def obtener_items_seleccionados(seleccion):
     if selection  == "Demográfico":
         diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
-        diccionario = contenido_recomendacion(user_id)
+        diccionario, rating = contenido_recomendacion(user_id)
     else:
         diccionario = {}
     

@@ -124,21 +124,24 @@ def demografico(usuario):
     recomendaciones_finales = {k: v for k, v in seleccionadas}
 
     # Cálculo del rating para cada ítem recomendado
-    gente_tipo = usuarios[usuarios["tipos_usuario"] == tipo_usuario]["id_usuario"]
-    puntuaciones_tipo = puntuaciones_usuario[puntuaciones_usuario["id_usuario"].isin(gente_tipo)]
-    puntuaciones_relevantes = puntuaciones_tipo[puntuaciones_tipo["id_item"].isin(recomendaciones_finales.keys())]
+    #gente_tipo = usuarios[usuarios["tipos_usuario"] == tipo_usuario]["id_usuario"]
+    #puntuaciones_tipo = puntuaciones_usuario[puntuaciones_usuario["id_usuario"].isin(gente_tipo)]
+    #puntuaciones_relevantes = puntuaciones_tipo[puntuaciones_tipo["id_item"].isin(recomendaciones_finales.keys())]
     
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
+
     # Diccionario con los ratings en escala de 0 a 5
     ratings = {}
     if not puntuaciones_relevantes.empty:
         for id_item in recomendaciones_finales.keys():
             item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
             if not item_puntuaciones.empty:
-                ratings[id_item] = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+                puntuacion = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+                if puntuacion > 0:
+                    ratings[id_item] = puntuacion
+                else:
+                    ratings[id_item] = 0
             else:
-                ratings[id_item] = "¡Sé el primero en calificarlo!"
-    else:
-        ratings = {id_item: "¡Sé el primero en calificarlo!" for id_item in recomendaciones_finales.keys()}
-
-    #print(ratings)
+                ratings[id_item] = 0
+    
     return recomendaciones_finales, ratings

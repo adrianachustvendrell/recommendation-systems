@@ -25,7 +25,7 @@ def contenido_recomendacion(usuario):
 
     categorias_usuario = calificaciones[['id_usuario', 'id_categoria', 'calificacion', 'categoria']].drop_duplicates()
 
-    threshold = sum(categorias_usuario['calificacion'].tolist())/len(categorias_usuario['calificacion'].tolist())
+    threshold = categorias_usuario['calificacion'].mean()
     categorias_usuario = categorias_usuario[categorias_usuario['calificacion'] >= threshold]
     categorias_usuario = categorias_usuario.set_index('categoria')
 
@@ -80,13 +80,24 @@ def contenido_recomendacion(usuario):
                 break
 
     percentil_20 = np.percentile(list(recomendaciones.values()), 20)
-    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20]
+    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20][:2]
 
-    if len(candidatos_sorpresa) > 2:
-        sorpresa = candidatos_sorpresa[:2]
-    else:
-        sorpresa = candidatos_sorpresa
-
-    seleccionadas = list(recomendaciones_diversas.items()) + sorpresa
+    seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
-    return recomendaciones_finales
+
+    # Cálculo del rating basado en la media de todas las puntuaciones de todos los usuarios para cada ítem
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
+
+    ratings = {}
+    for id_item in recomendaciones_finales.keys():
+        item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
+        if not item_puntuaciones.empty:
+            puntuacion = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+            if puntuacion > 0:
+                ratings[id_item] = puntuacion
+            else:
+                ratings[id_item] = 0
+        else:
+            ratings[id_item] = 0
+
+    return recomendaciones_finales, ratings
