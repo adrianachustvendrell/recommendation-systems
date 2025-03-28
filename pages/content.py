@@ -79,9 +79,12 @@ def contenido_recomendacion(usuario):
             if len(recomendaciones_diversas) == 3:
                 break
 
-    percentil_20 = np.percentile(list(recomendaciones.values()), 20)
-    candidatos_sorpresa = [(k, v) for k, v in recomendaciones_ordenadas if v <= percentil_20][:2]
-
+    percentil_40 = np.percentile(list(recomendaciones.values()), 40)
+    candidatos_bajo_percentil = [k for k, v in recomendaciones_ordenadas if v <= percentil_40]
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(candidatos_bajo_percentil)]
+    ratio_promedios = puntuaciones_relevantes.groupby("id_item")["ratio"].mean()
+    candidatos_sorpresa = ratio_promedios.nlargest(2).index.tolist()
+    candidatos_sorpresa = [(item, recomendaciones[item]) for item in candidatos_sorpresa]
     seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
 
