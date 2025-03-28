@@ -1,6 +1,18 @@
 import pandas as pd
 import numpy as np
 
+def calcular_score(adec, pref, count):
+    """
+    Calcula el score en un rango de 0 a 100 considerando:
+    - adec (adecuación del ítem a la categoría, de 0 a 100)
+    - pref (preferencia del usuario por la categoría, de 0 a 100, con más peso que adec)
+    - count (número de visitas, sumado directamente)
+    """
+    score = (0.4 * adec + 0.6 * pref + count)  # Más peso a pref, se suma count
+    score_normalizado = (score / (100 + max(count, 1))) * 100  # Normalización a [0,100]
+    return min(max(score_normalizado, 0), 100)
+
+
 viajeros = {
     "tipo1": {  # Viajero promedio (disfrute)
         "Parques": 90, "Playas": 80, "Calles y plazas": 100, "Paseos": 100, "Parques temáticos": 90, 
@@ -83,8 +95,7 @@ def demografico(usuario):
         pref = categorias_filtradas.get(categoria_item, 0)
         count = item['count']
         
-        score = (adec / 100) * (pref / 100) * (1 + np.log(1 + count))
-        score = np.round(score, 2)
+        score = calcular_score(adec, pref, count)
         id_item = item['id_item']
 
         if id_item not in recomendaciones:

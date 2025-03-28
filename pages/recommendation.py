@@ -129,7 +129,29 @@ def mostrar_items(diccionario, rating):
             if i <= 2:  # Mostrar solo las 3 primeras imágenes arriba
                 with cols[i % 3]:
                     st.image(image, use_container_width=True, caption=item_name)
-                    st.markdown(f"{np.round(score, 2)}% coincidencia")
+
+                    st.markdown(
+                        """
+                        <style>
+                            .score-matching {
+                                background-color: green;
+                                color: white;
+                                padding: 5px 10px;  /* Ajusta el padding para que sea más pequeño */
+                                border-radius: 5px;
+                                font-weight: bold;
+                                display: inline-block;  /* Hace que el fondo se ajuste al texto */
+                                width: auto;  /* El ancho se ajusta al contenido */
+                                max-width: 200px;  /* Puedes ajustar el max-width para hacerlo más compacto */
+                                text-align: center;  /* Centra el texto dentro del contenedor */
+                            }
+                        </style>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
+                    # Modificar la sección donde se muestra la coincidencia de puntuación
+                    st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia</div>', unsafe_allow_html=True)
+
                     if rating[item_id] > 0:
                         st.markdown(f"{rating[item_id]}/5⭐")
                     else:

@@ -1,6 +1,19 @@
 import pandas as pd
 import numpy as np
 
+def calcular_score(adec, pref, count):
+    """
+    Calcula el score en un rango de 0 a 100 considerando:
+    - adec (adecuación del ítem a la categoría, de 0 a 100)
+    - pref (preferencia del usuario por la categoría, de 0 a 100, con más peso que adec)
+    - count (número de visitas, sumado directamente)
+    """
+    score = (0.4 * adec + 0.6 * pref + count)  # Más peso a pref, se suma count
+    score_normalizado = (score / (100 + max(count, 1))) * 100  # Normalización a [0,100]
+    return min(max(score_normalizado, 0), 100)
+
+
+
 items = pd.read_csv("data/items.csv")
 usuarios = pd.read_csv("data/info_usuarios.csv")
 puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
@@ -43,10 +56,7 @@ def contenido_recomendacion(usuario):
         
         if categoria_item in categorias_usuario.index:
             pref = categorias_usuario.loc[categoria_item, 'calificacion']
-            score = (adec / 100) * (pref / 100)
-            score *= (1 + np.log(16 + count))
-            score = np.round(score, 2)
-            
+            score = calcular_score(adec, pref, count)            
             id_item = item['id_item']
 
             if id_item not in recomendaciones:
