@@ -70,7 +70,9 @@ custom_css = """
 
     </style>
 """
+
 st.markdown(custom_css, unsafe_allow_html=True)
+
 
 # def load_css():
 #     with open("styles.css") as f:
