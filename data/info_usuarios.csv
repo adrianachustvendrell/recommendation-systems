@@ -1,59 +1,59 @@
-id_usuario,nombre_usuario,edad,sexo,id_ocupacion,hijos,edad_hijo_menor,edad_hijo_mayor,ocupacion,tipos_usuario
-123,Usuario_123,37,F,3,1,3,8,Técnicos y profesionales científicos e intelectuales,tipo5
-124,Usuario_124,42,M,8,1,3,8,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo5
-125,Usuario_125,35,F,10,0,0,0,Trabajadores no cualificados,tipo2
-126,Usuario_126,50,M,4,0,0,0,Técnicos y profesionales de apoyo,tipo1
-127,Usuario_127,66,F,11,1,35,44,Inactivo o desocupado,tipo4
-128,Usuario_128,79,F,11,1,50,56,Inactivo o desocupado,tipo4
-129,Usuario_129,42,F,5,1,5,11,Empleados de tipo administrativo,tipo5
-130,Usuario_130,37,F,3,1,1,6,Técnicos y profesionales científicos e intelectuales,tipo5
-131,Usuario_131,25,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo3
-132,Usuario_132,52,M,2,1,20,32,Dirección de las empresas y de las administraciones públicas,tipo1
-133,Usuario_133,24,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
-134,Usuario_134,41,F,5,1,4,7,Empleados de tipo administrativo,tipo5
-135,Usuario_135,40,M,1,1,4,6,Fuerzas armadas,tipo5
-136,Usuario_136,40,F,5,1,0,0,Empleados de tipo administrativo,tipo5
-137,Usuario_137,26,F,5,0,0,0,Empleados de tipo administrativo,tipo1
-138,Usuario_138,33,M,8,0,0,0,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo1
-139,Usuario_139,35,M,4,1,0,2,Técnicos y profesionales de apoyo,tipo5
-140,Usuario_140,46,M,5,1,0,0,Empleados de tipo administrativo,tipo5
-141,Usuario_141,42,M,1,0,0,0,Fuerzas armadas,tipo6
-142,Usuario_142,60,F,1,1,36,40,Fuerzas armadas,tipo4
-143,Usuario_143,33,M,2,1,0,3,Dirección de las empresas y de las administraciones públicas,tipo5
-144,Usuario_144,28,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
-145,Usuario_145,27,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1
-146,Usuario_146,63,M,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo4
-147,Usuario_147,56,M,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1
-148,Usuario_148,26,F,10,0,0,0,Trabajadores no cualificados,tipo2
-149,Usuario_149,32,F,1,0,0,0,Fuerzas armadas,tipo6
-150,Usuario_150,43,F,1,0,0,0,Fuerzas armadas,tipo6
-151,Usuario_151,31,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1
-152,Usuario_152,49,F,3,1,0,19,Técnicos y profesionales científicos e intelectuales,tipo5
-153,Usuario_153,42,F,5,1,5,7,Empleados de tipo administrativo,tipo5
-154,Usuario_154,63,F,3,1,29,39,Técnicos y profesionales científicos e intelectuales,tipo4
-155,Usuario_155,34,F,5,1,0,10,Empleados de tipo administrativo,tipo5
-156,Usuario_156,77,F,11,1,46,55,Inactivo o desocupado,tipo4
-157,Usuario_157,63,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo4
-158,Usuario_158,43,F,1,0,13,16,Fuerzas armadas,tipo6
-159,Usuario_159,34,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1
-160,Usuario_160,55,F,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1
-161,Usuario_161,25,F,1,0,0,0,Fuerzas armadas,tipo6
-162,Usuario_162,59,M,4,1,27,28,Técnicos y profesionales de apoyo,tipo1
-163,Usuario_163,43,M,3,1,0,2,Técnicos y profesionales científicos e intelectuales,tipo5
-164,Usuario_164,52,M,3,1,0,13,Técnicos y profesionales científicos e intelectuales,tipo5
-165,Usuario_165,48,F,3,1,0,23,Técnicos y profesionales científicos e intelectuales,tipo5
-166,Usuario_166,24,F,1,0,0,0,Fuerzas armadas,tipo6
-167,Usuario_167,32,F,1,0,0,0,Fuerzas armadas,tipo6
-168,Usuario_168,36,F,4,0,0,0,Técnicos y profesionales de apoyo,tipo1
-169,Usuario_169,29,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
-170,Usuario_170,55,M,1,0,0,0,Fuerzas armadas,tipo6
-171,Usuario_171,29,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3
-172,Usuario_172,37,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
-173,Usuario_173,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
-174,Usuario_174,41,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
-175,Usuario_175,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
-176,Usuario_176,34,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1
-177,Usuario_177,23,F,1,0,0,0,Fuerzas armadas,tipo6
-178,Usuario_178,36,F,1,0,0,0,Fuerzas armadas,tipo6
-179,Usuario_179,40,F,3,1,3,5,Técnicos y profesionales científicos e intelectuales,tipo5
-180,Usuario_180,34,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1
+id_usuario,nombre_usuario,edad,sexo,id_ocupacion,hijos,edad_hijo_menor,edad_hijo_mayor,ocupacion,tipos_usuario,vecinos
+123,Usuario_123,37,F,3,1,3,8,Técnicos y profesionales científicos e intelectuales,tipo5,"{124: 1.0, 134: 1.0, 169: 1.0, 165: 0.987878, 158: 0.981981, 153: 0.980196, 138: 0.970725, 130: 0.924911}"
+124,Usuario_124,42,M,8,1,3,8,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo5,"{123: 1.0, 131: 1.0, 140: 1.0, 142: 1.0, 153: 1.0, 156: 1.0, 159: 1.0, 173: 0.997177}"
+125,Usuario_125,35,F,10,0,0,0,Trabajadores no cualificados,tipo2,"{129: 1.0, 132: 1.0, 154: 1.0, 164: 1.0, 165: 1.0, 175: 1.0, 176: 1.0, 172: 0.931381}"
+126,Usuario_126,50,M,4,0,0,0,Técnicos y profesionales de apoyo,tipo1,"{146: 1.0, 165: 1.0, 159: 0.98198, 177: 0.98198, 124: 0.965581, 139: 0.960769, 149: 0.917663, 138: 0.906845}"
+127,Usuario_127,66,F,11,1,35,44,Inactivo o desocupado,tipo4,"{145: 1.0, 151: 1.0, 155: 1.0, 167: 1.0, 157: 0.981981, 125: 0.917663, 163: 0.825137, 124: 0.57312}"
+128,Usuario_128,79,F,11,1,50,56,Inactivo o desocupado,tipo4,"{172: 1.0, 175: 0.816496, 156: 0.693375, 131: 0.57735, 178: 0.565917, 179: 0.440226, 167: 0.333333, 123: 0.124534}"
+129,Usuario_129,42,F,5,1,5,11,Empleados de tipo administrativo,tipo5,"{125: 1.0, 133: 1.0, 139: 1.0, 146: 1.0, 165: 1.0, 159: 0.979635, 143: 0.901127, 172: 0.817057}"
+130,Usuario_130,37,F,3,1,1,6,Técnicos y profesionales científicos e intelectuales,tipo5,"{131: 1.0, 138: 1.0, 143: 1.0, 144: 1.0, 147: 1.0, 154: 1.0, 165: 1.0, 173: 1.0}"
+131,Usuario_131,25,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo3,"{124: 1.0, 130: 1.0, 153: 0.958373, 128: 0.57735, 167: 0.57735, 127: 0.544331, 163: 0.333333, 143: -0.235702}"
+132,Usuario_132,52,M,2,1,20,32,Dirección de las empresas y de las administraciones públicas,tipo1,"{125: 1.0, 159: 1.0, 129: 0.57735, 139: 0.522233, 172: 0.457495, 144: 0.420084, 176: -0.114708, 140: -0.306185}"
+133,Usuario_133,24,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3,"{129: 1.0, 162: 1.0, 163: 1.0, 172: 1.0, 179: 1.0, 135: 0.866025, 171: 0.730297, 165: 0.57735}"
+134,Usuario_134,41,F,5,1,4,7,Empleados de tipo administrativo,tipo5,"{123: 1.0, 147: 1.0, 152: 1.0, 163: 1.0, 165: 1.0, 168: 1.0, 176: 1.0, 180: 1.0}"
+135,Usuario_135,40,M,1,1,4,6,Fuerzas armadas,tipo5,"{140: 1.0, 144: 1.0, 159: 1.0, 160: 1.0, 172: 1.0, 164: 0.987878, 165: 0.981981, 176: 0.98198}"
+136,Usuario_136,40,F,5,1,0,0,Empleados de tipo administrativo,tipo5,"{176: 1.0, 160: 0.981981, 175: 0.944911, 174: 0.53033, 146: 0.514496, 158: 0.5, 177: 0.333335, 123: 0.201737}"
+137,Usuario_137,26,F,5,0,0,0,Empleados de tipo administrativo,tipo1,"{138: 1.0, 159: 1.0, 169: 1.0, 126: 0.5, 135: 0.333333, 124: 0.311805, 125: 0.070534, 131: -0.408248}"
+138,Usuario_138,33,M,8,0,0,0,"Artesanos y trabajadores cualificados de industrias manufactureras, construcción, y minería, excepto operadores de instalaciones y maquinaria",tipo1,"{130: 1.0, 137: 1.0, 153: 1.0, 160: 1.0, 168: 1.0, 173: 1.0, 135: 0.976265, 123: 0.970725}"
+139,Usuario_139,35,M,4,1,0,2,Técnicos y profesionales de apoyo,tipo5,"{129: 1.0, 140: 1.0, 159: 1.0, 160: 1.0, 162: 1.0, 164: 1.0, 175: 1.0, 126: 0.960769}"
+140,Usuario_140,46,M,5,1,0,0,Empleados de tipo administrativo,tipo5,"{124: 1.0, 135: 1.0, 139: 1.0, 152: 1.0, 164: 1.0, 168: 1.0, 176: 1.0, 161: 0.962251}"
+141,Usuario_141,42,M,1,0,0,0,Fuerzas armadas,tipo6,"{150: 1.0, 170: 1.0, 173: 1.0, 126: 0.565917, 156: 0.522233, 152: 0.333333, 151: -0.294753, 179: -0.333333}"
+142,Usuario_142,60,F,1,1,36,40,Fuerzas armadas,tipo4,"{124: 1.0, 163: 1.0, 180: 1.0, 168: 0.998625, 162: 0.974244, 164: 0.907842, 169: 0.866026, 152: 0.693376}"
+143,Usuario_143,33,M,2,1,0,3,Dirección de las empresas y de las administraciones públicas,tipo5,"{130: 1.0, 154: 0.962251, 157: 0.94281, 129: 0.901127, 176: 0.814756, 180: 0.802955, 167: 0.57735, 139: 0.500001}"
+144,Usuario_144,28,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3,"{130: 1.0, 135: 1.0, 146: 1.0, 152: 1.0, 153: 1.0, 174: 1.0, 176: 1.0, 138: 0.860663}"
+145,Usuario_145,27,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1,"{127: 1.0, 144: 0.333333, 129: -1.0, 134: -1.0}"
+146,Usuario_146,63,M,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo4,"{126: 1.0, 129: 1.0, 144: 1.0, 160: 1.0, 163: 1.0, 165: 1.0, 169: 1.0, 175: 1.0}"
+147,Usuario_147,56,M,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1,"{130: 1.0, 134: 1.0, 165: 1.0, 180: 0.612372, 146: 0.589768}"
+148,Usuario_148,26,F,10,0,0,0,Trabajadores no cualificados,tipo2,"{124: 0.816497, 160: 0.544331, 142: 2e-06, 164: -0.5}"
+149,Usuario_149,32,F,1,0,0,0,Fuerzas armadas,tipo6,"{177: 1.0, 126: 0.917663, 124: 0.866025, 176: 0.866025, 151: 0.515152, 164: 0.5, 158: 0.374012, 173: 0.311804}"
+150,Usuario_150,43,F,1,0,0,0,Fuerzas armadas,tipo6,"{141: 1.0, 173: 0.5, 169: -0.070534, 174: -0.258199, 135: -0.292769, 172: -0.309427, 158: -0.375, 138: -0.440226}"
+151,Usuario_151,31,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1,"{127: 1.0, 154: 1.0, 173: 1.0, 174: 1.0, 177: 1.0, 180: 1.0, 146: 0.998273, 124: 0.917663}"
+152,Usuario_152,49,F,3,1,0,19,Técnicos y profesionales científicos e intelectuales,tipo5,"{134: 1.0, 140: 1.0, 144: 1.0, 169: 1.0, 171: 1.0, 156: 0.980196, 174: 0.94281, 124: 0.942809}"
+153,Usuario_153,42,F,5,1,5,7,Empleados de tipo administrativo,tipo5,"{124: 1.0, 138: 1.0, 144: 1.0, 159: 1.0, 162: 1.0, 173: 1.0, 123: 0.980196, 131: 0.958373}"
+154,Usuario_154,63,F,3,1,29,39,Técnicos y profesionales científicos e intelectuales,tipo4,"{125: 1.0, 130: 1.0, 151: 1.0, 157: 1.0, 158: 1.0, 171: 1.0, 180: 1.0, 143: 0.962251}"
+155,Usuario_155,34,F,5,1,0,10,Empleados de tipo administrativo,tipo5,"{127: 1.0, 176: 0.866026, 157: 0.25, 173: -0.493742, 142: -1.0, 164: -1.0}"
+156,Usuario_156,77,F,11,1,46,55,Inactivo o desocupado,tipo4,"{124: 1.0, 169: 1.0, 175: 1.0, 152: 0.980196, 126: 0.825137, 128: 0.693375, 141: 0.522233, 174: 0.432789}"
+157,Usuario_157,63,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo4,"{154: 1.0, 158: 1.0, 163: 1.0, 127: 0.981981, 143: 0.94281, 162: 0.931381, 164: 0.917663, 124: 0.889946}"
+158,Usuario_158,43,F,1,0,13,16,Fuerzas armadas,tipo6,"{154: 1.0, 157: 1.0, 164: 1.0, 165: 1.0, 176: 1.0, 177: 1.0, 123: 0.981981, 139: 0.960769}"
+159,Usuario_159,34,F,2,0,0,0,Dirección de las empresas y de las administraciones públicas,tipo1,"{124: 1.0, 132: 1.0, 135: 1.0, 137: 1.0, 139: 1.0, 153: 1.0, 160: 1.0, 163: 1.0}"
+160,Usuario_160,55,F,3,1,30,33,Técnicos y profesionales científicos e intelectuales,tipo1,"{135: 1.0, 138: 1.0, 139: 1.0, 146: 1.0, 159: 1.0, 173: 1.0, 136: 0.981981, 153: 0.958373}"
+161,Usuario_161,25,F,1,0,0,0,Fuerzas armadas,tipo6,"{140: 0.962251, 160: 0.333333, 149: 0.0, 144: -0.03637, 136: -0.301512, 130: -0.5, 175: -0.5, 126: -1.0}"
+162,Usuario_162,59,M,4,1,27,28,Técnicos y profesionales de apoyo,tipo1,"{133: 1.0, 139: 1.0, 153: 1.0, 169: 1.0, 168: 0.978839, 142: 0.974244, 157: 0.931381, 146: 0.8073}"
+163,Usuario_163,43,M,3,1,0,2,Técnicos y profesionales científicos e intelectuales,tipo5,"{133: 1.0, 134: 1.0, 142: 1.0, 146: 1.0, 157: 1.0, 159: 1.0, 164: 1.0, 172: 1.0}"
+164,Usuario_164,52,M,3,1,0,13,Técnicos y profesionales científicos e intelectuales,tipo5,"{125: 1.0, 139: 1.0, 140: 1.0, 158: 1.0, 159: 1.0, 163: 1.0, 165: 1.0, 135: 0.987878}"
+165,Usuario_165,48,F,3,1,0,23,Técnicos y profesionales científicos e intelectuales,tipo5,"{125: 1.0, 126: 1.0, 129: 1.0, 130: 1.0, 134: 1.0, 146: 1.0, 147: 1.0, 158: 1.0}"
+166,Usuario_166,24,F,1,0,0,0,Fuerzas armadas,tipo6,{}
+167,Usuario_167,32,F,1,0,0,0,Fuerzas armadas,tipo6,"{127: 1.0, 172: 1.0, 173: 1.0, 176: 1.0, 180: 1.0, 124: 0.7, 131: 0.57735, 143: 0.57735}"
+168,Usuario_168,36,F,4,0,0,0,Técnicos y profesionales de apoyo,tipo1,"{134: 1.0, 138: 1.0, 140: 1.0, 169: 1.0, 142: 0.998625, 162: 0.978839, 146: 0.95615, 126: 0.879637}"
+169,Usuario_169,29,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3,"{123: 1.0, 137: 1.0, 146: 1.0, 152: 1.0, 156: 1.0, 159: 1.0, 162: 1.0, 168: 1.0}"
+170,Usuario_170,55,M,1,0,0,0,Fuerzas armadas,tipo6,"{141: 1.0, 158: 0.581391, 134: 0.57735, 131: -0.333333, 129: -0.5, 180: -0.5, 151: -0.567282, 153: -0.980196}"
+171,Usuario_171,29,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo3,"{152: 1.0, 154: 1.0, 165: 1.0, 174: 1.0, 179: 1.0, 139: 0.929981, 135: 0.866025, 146: 0.816496}"
+172,Usuario_172,37,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1,"{128: 1.0, 133: 1.0, 135: 1.0, 163: 1.0, 165: 1.0, 167: 1.0, 176: 1.0, 180: 0.987878}"
+173,Usuario_173,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1,"{130: 1.0, 138: 1.0, 141: 1.0, 151: 1.0, 153: 1.0, 160: 1.0, 167: 1.0, 124: 0.997177}"
+174,Usuario_174,41,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1,"{144: 1.0, 151: 1.0, 171: 1.0, 175: 1.0, 172: 0.978281, 176: 0.944912, 152: 0.94281, 180: 0.904533}"
+175,Usuario_175,37,F,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1,"{125: 1.0, 130: 1.0, 139: 1.0, 146: 1.0, 156: 1.0, 174: 1.0, 136: 0.944911, 128: 0.816496}"
+176,Usuario_176,34,F,6,0,0,0,"Trabajadores de los servicios de restauración, personales, protección y vendedores de los comercios",tipo1,"{125: 1.0, 130: 1.0, 134: 1.0, 136: 1.0, 140: 1.0, 144: 1.0, 146: 1.0, 158: 1.0}"
+177,Usuario_177,23,F,1,0,0,0,Fuerzas armadas,tipo6,"{146: 1.0, 149: 1.0, 151: 1.0, 158: 1.0, 126: 0.98198, 127: 0.5, 136: 0.333335, 129: 0.327328}"
+178,Usuario_178,36,F,1,0,0,0,Fuerzas armadas,tipo6,"{138: 0.693375, 128: 0.565917, 158: 0.102061, 133: -0.30151, 126: -0.443607, 149: -0.5, 177: -0.5, 169: -0.570352}"
+179,Usuario_179,40,F,3,1,3,5,Técnicos y profesionales científicos e intelectuales,tipo5,"{133: 1.0, 171: 1.0, 175: 0.5, 176: 0.5, 173: 0.442719, 128: 0.440226, 126: 0.145096, 172: -0.140028}"
+180,Usuario_180,34,M,3,0,0,0,Técnicos y profesionales científicos e intelectuales,tipo1,"{130: 1.0, 134: 1.0, 142: 1.0, 151: 1.0, 154: 1.0, 167: 1.0, 172: 0.987878, 174: 0.904533}"
