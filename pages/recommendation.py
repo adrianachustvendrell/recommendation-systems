@@ -8,7 +8,7 @@ from streamlit_javascript import st_javascript
 import numpy as np
 from pages.demographic import demografico
 from pages.content import contenido_recomendacion
-
+from pages.collaborative import colaborativa_recomendacion
 
 
 
@@ -76,9 +76,6 @@ if "user_logged_in" not in st.session_state:
 else:
     user_id = st.session_state.user_logged_in  # Retrieve user ID
     st.title(f"👋 Bienvenido, **{user_id}**.")
-
-
-
 
 
 
@@ -266,6 +263,8 @@ def obtener_items_seleccionados(seleccion):
         diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
         diccionario, rating = contenido_recomendacion(user_id)
+    elif selection  == "Colaborativo":
+        diccionario, rating = colaborativa_recomendacion(user_id)
     else:
         diccionario = {}
     
@@ -279,7 +278,7 @@ def obtener_items_seleccionados(seleccion):
 # -------------------------------------------
 
 # Opciones de selección
-options = ["Demográfico", "Basado en contenido", "SR Colaborativo"]
+options = ["Demográfico", "Basado en contenido", "Colaborativo"]
 selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="single", default=["Demográfico"])
 
 st.markdown(f"Opción seleccionada: {selection}")
