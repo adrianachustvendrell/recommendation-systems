@@ -36,6 +36,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 USER_DATA_FILE = "info_usuarios.csv"
 PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
 ITEMS_DATA_FILE = 'items.csv'
+BASE_DATA_FILE = 'puntuaciones_usuario_base.csv'
 submit_button = False
 preferencias_button = False
 cont_button = False
@@ -55,6 +56,7 @@ def find_file(filename):
 user_file_path = find_file(USER_DATA_FILE)
 preference_user_file_path = find_file(PREFERENCE_USER_DATA_FILE)
 items_file_path = find_file(ITEMS_DATA_FILE)
+base_file_path = find_file(BASE_DATA_FILE)
 
 
 preference_df = pd.read_csv(preference_user_file_path)
@@ -160,9 +162,47 @@ def add_preference(new_id, set_preferencias):
         prefs_df.to_csv(preference_user_file_path, index=False)
 
 
+
+
+def add_base(new_id, selected_items):
+
+    global base_file_path  # Asegurar la ruta correcta del CSV de preferencias
+
+    # Crear un DataFrame con las preferencias
+    items_data = []
+    for elem, score in selected_items.items():
+        # Buscar el ID de la categoría en el DataFrame
+        idi = items_df['id_item'][items_df['nombre_item'] == elem].iloc[0]
+        
+        items_data.append({
+                "id_usuario": new_id,
+                "id_item": idi,  
+                "ratio": score,
+            })
+
+    if items_data:
+        new_base_df = pd.DataFrame(items_data)
+        
+        # Cargar archivo existente o crear uno nuevo
+        if os.path.exists(base_file_path):
+            base_df = pd.read_csv(base_file_path)
+            base_df = pd.concat([base_df, new_base_df], ignore_index=True)
+        
+        # Guardar en CSV
+        base_df.to_csv(base_file_path, index=False)
+
+
+
 def toggle_info(i):
     """ Cambia el estado de visibilidad de la información. """
     st.session_state.show_info[i] = not st.session_state.show_info[i]
+
+
+
+
+
+
+
 
 
 # ---------------------------------
@@ -194,6 +234,16 @@ if "step" not in st.session_state:
 
 
 score_options = list(range(10, 110, 10))
+job_options = [
+        "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
+        "Empleados administrativos", "Vendedores", "Agricultores", 
+        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
+    ]
+
+
+
+
+
 # --------------------------------------
 # FORMULARIO DE REGISTRO SIN FORM
 # --------------------------------------
@@ -210,11 +260,6 @@ if st.session_state.step == "inicio":
     st.session_state.new_sex = sex_options[selected_sex]
 
 
-    job_options = [
-        "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
-        "Empleados administrativos", "Vendedores", "Agricultores", 
-        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
-    ]
     st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
 
 
@@ -485,7 +530,8 @@ if submit_button:
                           st.session_state.new_children1_age, 
                           st.session_state.new_children2_age,
                           tipo)
-    add_preference(new_id, st.session_state.preferences)       
+    add_preference(new_id, st.session_state.preferences)    
+    add_base(new_id, st.session_state.selected_item)   
     st.success("👌 Cuenta creada satisfactoriamente.")
             
     # Redirect to Sign-in Page
