@@ -370,13 +370,6 @@ elif st.session_state.step == "puntuacion":
     # Asegúrate de que los elementos estén en una lista
     st.session_state.items_propuestos = list(st.session_state.items_propuestos)
 
-
-
-
-
-
-
-
     # Inicializar estado si no existe
     if "show_info" not in st.session_state:
         st.session_state.show_info = {i: False for i in range(len(st.session_state.items_propuestos))}  # Default to False for all items
@@ -390,28 +383,23 @@ elif st.session_state.step == "puntuacion":
         col = cols[idx % 2]  # Alternar entre las dos columnas
 
         with col:
-            # Crear un enlace para abrir el popup
-            st.write(f"📌 {elem}")
-            
+
             # Definir la clave del botón y la visibilidad de la información
             button_key = f"btnnnn_{elem}"
             is_info_visible = st.session_state.show_info[idx]  # Cambiar 'i' por 'idx' aquí
             
-            button_text = "Ver más" if not is_info_visible else "Ver menos"
+            button_text = f"📌 {elem} +" if not is_info_visible else f"📌 {elem} -"
             button_style = (
                 "background-color: #888888; color: white;" if is_info_visible else "background-color: white; color: #f63366;"
             )
             
             # Botón para mostrar/ocultar detalles
-            if st.button(button_text, key=button_key, help="Haga clic para ver más/menos detalles", use_container_width=True, 
+            if st.button(button_text, key=button_key, use_container_width=True, 
                         on_click=lambda idx=idx: toggle_info(idx)):  # Pasar 'idx' en el lambda
                 pass  # El on_click actualiza automáticamente el estado en session_state
 
             # Mostrar la información adicional si está visible
             if is_info_visible:
-                st.write(f"Detalles de {elem}")
-                # Aquí puedes agregar más detalles como imágenes o descripciones, por ejemplo:
-                st.write(f"Descripción del {elem}")
                         
                 # Mostrar la información adicional cuando el botón ha sido presionado
                 if is_info_visible:
@@ -423,36 +411,25 @@ elif st.session_state.step == "puntuacion":
                     # Mostrar imagen si existe
                     if os.path.exists(img_path):
                         image = Image.open(img_path)
-                        st.image(image, caption=f"{elem} - Imagen")
+                        st.image(image)
                     else:
                         st.warning("Imagen no encontrada.")
 
                     st.write(fila_desc)
 
+            
             # Selectbox para la valoración
             selected_score = st.selectbox(
-                    label="Selecciona una valoración",
-                    options=score_options,
-                    key=f"{elem}_select"
-                )
+                label="Selecciona una valoración",  # Se necesita, pero será ocultado
+                options=score_options,
+                key=f"{elem}_select",
+                label_visibility="collapsed"
+            )
+
+            st.markdown('\n\n\n')
 
             # Guardar la valoración seleccionada
             st.session_state.selected_item[elem] = selected_score
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
 
                         
             
