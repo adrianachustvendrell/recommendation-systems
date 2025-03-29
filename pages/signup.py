@@ -4,6 +4,7 @@ import os
 import time
 import random
 from PIL import Image
+from scipy.stats import pearsonr
 
 # --------------------------------------
 # ESTILO PÁGINA
@@ -91,7 +92,7 @@ def generate_user_id():
         return users_df["id_usuario"].max() + 1  # Increment the highest ID
 
 
-def add_user(username, age, sex, job, children, child1_age, child2_age, tipo):
+def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
     """Adds a new user to the DataFrame and saves it."""
     new_id = generate_user_id()  # Generate a unique ID
     id_ocupacion = job_options.index(job) + 1  # Assign a numerical ID for occupation (modify if needed)
@@ -111,7 +112,8 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo):
         "edad_hijo_menor": [child1_age],
         "edad_hijo_mayor": [child2_age],
         "ocupacion": [job],
-        "tipos_usuario": [tipo]
+        "tipos_usuario": [tipo],
+        "vecinos":[top_neighbours]
     })
     
     global users_df
@@ -384,7 +386,9 @@ elif st.session_state.step == "preferences":
     with col2:
         if st.button("Continuar →", key="btn_puntuaciones"):
             if not st.session_state.preferences:
-                st.warning("⚠️ Selecciona al menos una preferencia.")
+                st.error("❌ Selecciona al menos tres preferencias.")
+            elif len(st.session_state.preferences) < 3:
+                st.error("❌ Selecciona más preferencias  (al menos 3).")
             else:
                 st.session_state.step = "puntuacion"
                 st.rerun()
@@ -458,7 +462,7 @@ elif st.session_state.step == "puntuacion":
                         image = Image.open(img_path)
                         st.image(image)
                     else:
-                        st.warning("Imagen no encontrada.")
+                        st.error("❌ Imagen no encontrada.")
 
                     st.write(fila_desc)
 
@@ -489,8 +493,12 @@ elif st.session_state.step == "puntuacion":
         submit_button = st.button(label="Registrarse →")
 
 
+
+
+
+
 # -----------------------------------
-# OBTENER TIPO DE USUARIO
+# OBTENER TIPO DE USUARIO DEMOGRÁFICO
 # -----------------------------------
 
 
@@ -516,26 +524,75 @@ else:
     tipo = 'tipo4'
 
 
+
+
+
+
+
+# -----------------------------------
+# OBTENER VECINOS COLABORATIVO
+# -----------------------------------
+
+
+#usuarios = pd.DataFrame(users_df['id_usuario'])
+ratings_df = pd.read_csv(base_file_path)
+# Crear matriz usuario-item (usuarios en filas, ítems en columnas)
+user_item_matrix = ratings_df.pivot(index="id_usuario", columns="id_item", values="ratio")
+
+nuevo_usuario_rating = {}
+for elem, score in st.session_state.selected_item.items():
+    # Buscar el ID de la categoría en el DataFrame
+    idi = items_df['id_item'][items_df['nombre_item'] == elem].iloc[0]
+    nuevo_usuario_rating[idi] = score
+
+
+# Suponiendo que nuevo_usuario_ratings es un diccionario con ítems y calificaciones
+top_neighbors = {}
+nuevo_usuario_series = pd.Series(nuevo_usuario_rating)
+
+similarities = {}
+for user in user_item_matrix.index:
+    # Filtrar ítems comunes entre el nuevo usuario y el usuario existente
+    common_items = user_item_matrix.loc[user].dropna().reindex(nuevo_usuario_series.index).dropna()
+    nuevo_common = nuevo_usuario_series.reindex(common_items.index).dropna()
+    
+    if len(common_items) > 1:  # Se necesitan al menos 2 valores para Pearson
+        if common_items.std() > 0 and nuevo_common.std() > 0:
+            corr, _ = pearsonr(common_items, nuevo_common)
+            similarities[user] = round(float(corr), 6)
+
+# Ordenar por similitud y seleccionar los 8 más cercanos
+top_neighbors = dict(sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:8])
+
+
+
+
+
+
 # ---------------------------------
 # CONTROLAR ERRORES FORMULARIO
 # ---------------------------------
 
 # Validate and store user
 if submit_button:
-    new_id = add_user(st.session_state.new_username, 
-                          st.session_state.new_age, 
-                          st.session_state.new_sex, 
-                          st.session_state.new_job, 
-                          st.session_state.new_children, 
-                          st.session_state.new_children1_age, 
-                          st.session_state.new_children2_age,
-                          tipo)
-    add_preference(new_id, st.session_state.preferences)    
-    add_base(new_id, st.session_state.selected_item)   
-    st.success("👌 Cuenta creada satisfactoriamente.")
-            
-    # Redirect to Sign-in Page
-    time.sleep(2)
-    st.switch_page("pages/signin.py")
+    if nuevo_common.std() == 0:
+        st.error("❌ Todos los ítems tienen la misma valoración. Cambia al menos uno.")
+    else:
+        new_id = add_user(st.session_state.new_username, 
+                            st.session_state.new_age, 
+                            st.session_state.new_sex, 
+                            st.session_state.new_job, 
+                            st.session_state.new_children, 
+                            st.session_state.new_children1_age, 
+                            st.session_state.new_children2_age,
+                            tipo,
+                            top_neighbors)
+        add_preference(new_id, st.session_state.preferences)    
+        add_base(new_id, st.session_state.selected_item)   
+        st.success("👌 Cuenta creada satisfactoriamente.")
+                
+        # Redirect to Sign-in Page
+        time.sleep(2)
+        st.switch_page("pages/signin.py")
 
 
