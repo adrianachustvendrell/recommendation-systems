@@ -10,7 +10,7 @@ import os
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------
 
-st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Iniciar sesión", page_icon="🚀", layout="wide")
 
 custom_css = """
     <style>
