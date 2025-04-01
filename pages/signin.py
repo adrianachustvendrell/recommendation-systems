@@ -44,6 +44,12 @@ def find_file(filename):
 # Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
 user_data = pd.read_csv(user_file_path)
+
+
+if st.button("🏠 Home"):
+    st.switch_page("app.py") 
+
+
 # Title for the sign-up page
 st.title("🔑 Inicia sesión")
 

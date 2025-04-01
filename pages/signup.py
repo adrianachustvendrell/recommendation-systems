@@ -243,6 +243,8 @@ job_options = [
     ]
 
 
+if st.button("🏠 Home"):
+    st.switch_page("app.py") 
 
 
 
