@@ -262,6 +262,7 @@ def toggle_info(i):
 
 
 def obtener_items_seleccionados(selection):
+    print(selection)
     if selection  == "Demográfico":
         diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
@@ -269,7 +270,7 @@ def obtener_items_seleccionados(selection):
     elif selection  == "Colaborativo":
         diccionario, rating = colaborativa_recomendacion(user_id)
     else:
-        diccionario = {}
+        diccionario, rating = {}, {}
     
     mostrar_items(diccionario, rating)
 
@@ -288,7 +289,7 @@ st.markdown(f"Opción seleccionada: {selection}")
 
 
 if selection:
-    obtener_items_seleccionados(selection[0])
+    obtener_items_seleccionados(selection)
 
 
 
