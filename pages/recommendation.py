@@ -18,8 +18,6 @@ from pages.collaborative import colaborativa_recomendacion
 
 
 st.cache_data.clear()
-# Configurar la página para que ocupe todo el ancho disponible
-st.set_page_config(layout='wide')
 
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
@@ -73,7 +71,7 @@ st.markdown(
 
 if st.button("🏠 Home"):
     st.switch_page("app.py")
-    
+
 if "user_logged_in" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
