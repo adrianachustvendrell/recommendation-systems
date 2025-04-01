@@ -215,7 +215,8 @@ def toggle_info(i):
 # --------------------------------------
 # VARIABLES DE SESIÓN PARA NO PERDER DATOS
 # --------------------------------------
-
+if "new_username" not in st.session_state:
+    st.session_state.new_username = None
 if "new_children1_age" not in st.session_state:
     st.session_state.new_children1_age = 0
 if "new_children2_age" not in st.session_state:

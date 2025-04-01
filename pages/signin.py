@@ -68,6 +68,7 @@ with st.form(key="signin_form"):
         username = st.text_input("Introudce tu usuario", value=st.session_state.new_username)
     else:
         username = st.text_input("Introudce tu usuario")
+        st.session_state.new_username = username
 
     # Submit button
     submit_button = st.form_submit_button(label="Iniciar sesión")
