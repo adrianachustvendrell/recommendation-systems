@@ -16,13 +16,13 @@ from pages.collaborative import colaborativa_recomendacion
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------------
 
-
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 st.cache_data.clear()
 
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
 
-st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
+
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
 st.markdown(
