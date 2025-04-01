@@ -575,7 +575,7 @@ top_neighbors = dict(sorted(similarities.items(), key=lambda x: x[1], reverse=Tr
 
 # Validate and store user
 if submit_button:
-    if nuevo_common.std() == 0:
+    if len(set(st.session_state.selected_item.values())) == 1:
         st.error("❌ Todos los ítems tienen la misma valoración. Cambia al menos uno.")
     else:
         new_id = add_user(st.session_state.new_username, 
