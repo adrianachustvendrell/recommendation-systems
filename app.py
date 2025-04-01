@@ -11,6 +11,7 @@ import streamlit.components.v1 as components
 from streamlit_javascript import st_javascript
 
 
+
 # Sidebar navigation
 st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 # st.sidebar.page_link('app.py', label='🏠 Home')
