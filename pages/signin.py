@@ -10,6 +10,8 @@ import os
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------
 
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
+
 custom_css = """
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Megrim&display=swap');
@@ -22,6 +24,9 @@ custom_css = """
     </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
+
+if "new_username" not in st.session_state:
+    st.session_state.new_username = None
 
 
 
@@ -41,6 +46,12 @@ def find_file(filename):
 # Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
 user_data = pd.read_csv(user_file_path)
+
+
+if st.button("🏠 Home"):
+    st.switch_page("app.py") 
+
+
 # Title for the sign-up page
 st.title("🔑 Inicia sesión")
 
@@ -52,10 +63,14 @@ st.title("🔑 Inicia sesión")
 
 # Formulario de registro
 with st.form(key="signin_form"):
-    #st.subheader("Inicia Sesión")
+    if st.session_state.new_username:
+        #st.subheader("Inicia Sesión")
 
-    # User input fields
-    username = st.text_input("Introudce tu usuario")
+        # User input fields
+        username = st.text_input("Introudce tu usuario", value=st.session_state.new_username)
+    else:
+        username = st.text_input("Introudce tu usuario")
+        st.session_state.new_username = username
 
     # Submit button
     submit_button = st.form_submit_button(label="Iniciar sesión")

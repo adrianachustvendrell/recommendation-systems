@@ -7,6 +7,7 @@ import time
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------
 
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 custom_css = """
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Megrim&display=swap');
@@ -20,6 +21,10 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+
+if st.button("🏠 Home"):
+    st.switch_page("app.py")
+    
 st.title("👥 Soy un grupo")
 
 # Añadir texto adicional debajo del título

@@ -16,13 +16,12 @@ from pages.collaborative import colaborativa_recomendacion
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------------
 
-
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 st.cache_data.clear()
-# Configurar la página para que ocupe todo el ancho disponible
-st.set_page_config(layout='wide')
 
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
+
 
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
@@ -70,12 +69,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+if st.button("🏠 Home"):
+    st.switch_page("app.py")
+
 if "user_logged_in" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
 else:
     user_id = st.session_state.user_logged_in  # Retrieve user ID
     st.title(f"👋 Bienvenido, **{user_id}**.")
+
 
 
 
@@ -258,7 +261,7 @@ def toggle_info(i):
     st.session_state.show_info[i] = not st.session_state.show_info[i]
 
 
-def obtener_items_seleccionados(seleccion):
+def obtener_items_seleccionados(selection):
     if selection  == "Demográfico":
         diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
