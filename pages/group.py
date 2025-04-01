@@ -20,6 +20,10 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+
+if st.button("🏠 Home"):
+    st.switch_page("app.py")
+    
 st.title("👥 Soy un grupo")
 
 # Añadir texto adicional debajo del título
