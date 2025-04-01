@@ -23,6 +23,9 @@ custom_css = """
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
+if "new_username" not in st.session_state:
+    st.session_state.new_username = None
+
 
 
 # --------------------------------
@@ -52,10 +55,13 @@ st.title("🔑 Inicia sesión")
 
 # Formulario de registro
 with st.form(key="signin_form"):
-    #st.subheader("Inicia Sesión")
+    if st.session_state.new_username:
+        #st.subheader("Inicia Sesión")
 
-    # User input fields
-    username = st.text_input("Introudce tu usuario")
+        # User input fields
+        username = st.text_input("Introudce tu usuario", value=st.session_state.new_username)
+    else:
+        username = st.text_input("Introudce tu usuario")
 
     # Submit button
     submit_button = st.form_submit_button(label="Iniciar sesión")
