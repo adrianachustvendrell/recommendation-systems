@@ -259,7 +259,7 @@ def toggle_info(i):
     st.session_state.show_info[i] = not st.session_state.show_info[i]
 
 
-def obtener_items_seleccionados(seleccion):
+def obtener_items_seleccionados(selection):
     if selection  == "Demográfico":
         diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
     elif selection  == "Basado en contenido":
