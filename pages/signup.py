@@ -10,6 +10,7 @@ from scipy.stats import pearsonr
 # ESTILO PÁGINA
 # --------------------------------------
 
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 
 custom_css = """
     <style>

@@ -24,6 +24,7 @@ st.set_page_config(layout='wide')
 # Inject JavaScript to get page width
 page_width = st_javascript("window.innerWidth")
 
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
 st.markdown(
@@ -70,6 +71,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+if st.button("🏠 Home"):
+    st.switch_page("app.py")
+    
 if "user_logged_in" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
