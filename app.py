@@ -134,15 +134,23 @@ st.markdown(
     unsafe_allow_html=True)
 
 # --- IMAGE CAROUSEL ---
-image_folder = "./images"
-image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
-random_images = random.sample(image_files, min(10, len(image_files)))  
+# --- CACHE DE LAS IMÁGENES ---
+@st.cache_data
+def get_random_images():
+    image_folder = "./images"
+    image_files = [f for f in os.listdir(image_folder) if f.endswith((".png", ".jpg", ".jpeg"))]
+    return random.sample(image_files, min(10, len(image_files)))  # Selecciona 10 aleatorias
 
-carousel_items = [{"title": "", "text": "", "img": os.path.join(image_folder, img)} for img in random_images]
+# Obtener imágenes (una sola vez)
+random_images = get_random_images()
 
-# Centering the carousel text
+# Crear estructura del carrusel
+carousel_items = [{"title": "", "text": "", "img": os.path.join("./images", img)} for img in random_images]
+
+# --- MOSTRAR CARRUSEL ---
 st.write("")
 carousel(items=carousel_items, container_height=500)
+
 
 
 
