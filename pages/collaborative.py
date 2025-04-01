@@ -2,6 +2,23 @@ import pandas as pd
 import numpy as np
 import ast
 
+items = pd.read_csv("data/items.csv")
+usuarios = pd.read_csv("data/info_usuarios.csv")
+puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
+preferencias_usuario = pd.read_csv("data/prefs_usuarios.csv")
+
+
+def reserva(n, excluidos):
+    """
+    Selecciona los mejores ítems basados en la ponderación del ratio (0.4) y el count (0.6),
+    evitando los ítems ya recomendados.
+    """
+    best_scores = puntuaciones_usuario.groupby("id_item")["ratio"].mean() * 0.4 + items.set_index("id_item")["count"] * 0.6
+    best_scores = best_scores[~best_scores.index.isin(excluidos)]
+    mejores_items = best_scores.nlargest(n).index.tolist()
+    return mejores_items
+
+
 def calcular_score(adec, pref, count):
     """
     Calcula el score en un rango de 0 a 100 considerando:
@@ -13,12 +30,6 @@ def calcular_score(adec, pref, count):
     score_normalizado = (score / (100 + max(count, 1))) * 100  # Normalización a [0,100]
     return min(max(score_normalizado, 0), 100)
 
-
-
-items = pd.read_csv("data/items.csv")
-usuarios = pd.read_csv("data/info_usuarios.csv")
-puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
-preferencias_usuario = pd.read_csv("data/prefs_usuarios.csv")
 
 
 def colaborativa_recomendacion(usuario):
@@ -86,15 +97,12 @@ def colaborativa_recomendacion(usuario):
         if padre_categoria not in categories_added:
             recomendaciones_diversas[id_item] = score
             categories_added.add(padre_categoria)
+
         if len(recomendaciones_diversas) == 3:
             break
 
-    if len(recomendaciones_diversas) < 3:
-        for id_item, score in recomendaciones_ordenadas:
-            if id_item not in recomendaciones_diversas:
-                recomendaciones_diversas[id_item] = score
-            if len(recomendaciones_diversas) == 3:
-                break
+
+
 
     # Candidatos de sorpresa
     percentil_40 = np.percentile(list(recomendaciones.values()), 40)
@@ -106,6 +114,16 @@ def colaborativa_recomendacion(usuario):
 
     seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
+    print("LONGITUD RECOMENDACIONES_FINALES", len(recomendaciones_finales))
+
+    # ÍTEMS RESERVA
+    if len(recomendaciones_finales) < 5:
+        n = 5 - len(recomendaciones_finales)
+        excluidos = set(recomendaciones_finales.keys())
+        items_reserva = reserva(n, excluidos)
+        for item in items_reserva:
+            recomendaciones_finales[item] = 1
+
 
     # Calcular ratings finales para mostrar
     puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
