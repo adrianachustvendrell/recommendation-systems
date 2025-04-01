@@ -114,7 +114,7 @@ def colaborativa_recomendacion(usuario):
 
     seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
-    print("LONGITUD RECOMENDACIONES_FINALES", len(recomendaciones_finales))
+    # print("LONGITUD RECOMENDACIONES_FINALES", len(recomendaciones_finales))
 
     # ÍTEMS RESERVA
     if len(recomendaciones_finales) < 5:

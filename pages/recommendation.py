@@ -261,16 +261,98 @@ def toggle_info(i):
     st.session_state.show_info[i] = not st.session_state.show_info[i]
 
 
+# -------------------------------------------------
+# Funciones auxiliares para ponderar recomendadores
+# -------------------------------------------------
+
+def get_result_2(d1, r1, d2, r2, alpha, beta):
+    dic, r = {}, {}
+    scaled_d1 = {k: v * alpha for k, v in d1.items()}
+    scaled_d2 = {k: v * beta for k, v in d2.items()}
+
+    combine_top3 = list(scaled_d1.items())[:3] + list(scaled_d2.items())[:3]
+    combine_surprise = list(scaled_d1.items())[3:] + list(scaled_d2.items())[3:]
+
+    sorted_combine_top3 = sorted(combine_top3, key=lambda x: x[1], reverse=True)
+    sorted_combine_surprise = sorted(combine_surprise, key=lambda x: x[1], reverse=True)
+
+    final_top3 = dict(sorted_combine_top3[:3])
+    final_surprise = dict(sorted_combine_surprise[:2])
+
+    ids = list({**final_top3, **final_surprise}.keys())
+
+    for i in ids:
+        if i in d1:
+            dic[i] = d1[i]
+            r[i] = r1[i]
+        else:
+            dic[i] = d2[i]
+            r[i] = r2[i]
+    return dic, r
+
+def get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma):
+    dic, r = {}, {}
+    
+    scaled_d1 = {k: v * alpha for k, v in d1.items()}
+    scaled_d2 = {k: v * beta for k, v in d2.items()}
+    scaled_d3 = {k: v * gamma for k, v in d3.items()}
+
+    combine_top3 = list(scaled_d1.items())[:3] + list(scaled_d2.items())[:3] + list(scaled_d3.items())[:3]
+    combine_surprise = list(scaled_d1.items())[3:] + list(scaled_d2.items())[3:] + list(scaled_d3.items())[3:]
+
+    sorted_combine_top3 = sorted(combine_top3, key=lambda x: x[1], reverse=True)
+    sorted_combine_surprise = sorted(combine_surprise, key=lambda x: x[1], reverse=True)
+
+    final_top3 = dict(sorted_combine_top3[:3])
+    final_surprise = dict(sorted_combine_surprise[:2])
+
+    ids = list({**final_top3, **final_surprise}.keys())
+    
+    for i in ids:
+        if i in d1:
+            dic[i] = d1[i]
+            r[i] = r1[i]
+        elif i in d2:
+            dic[i] = d2[i]
+            r[i] = r2[i]
+        else:
+            dic[i] = d3[i]
+            r[i] = r3[i]
+    
+    return dic, r
+
 def obtener_items_seleccionados(selection):
-    print(selection)
-    if selection  == "Demográfico":
-        diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
-    elif selection  == "Basado en contenido":
-        diccionario, rating = contenido_recomendacion(user_id)
-    elif selection  == "Colaborativo":
-        diccionario, rating = colaborativa_recomendacion(user_id)
+    if len(selection) == 1:
+        if selection[0]  == "Demográfico":
+            diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
+        elif selection[0]  == "Basado en contenido":
+            diccionario, rating = contenido_recomendacion(user_id)
+        elif selection[0]  == "Colaborativo":
+            diccionario, rating = colaborativa_recomendacion(user_id)
+        else:
+            diccionario = {}
+    elif len(selection) == 2:
+        if "Demográfico" in selection:
+            d1, r1 = demografico(user_id)
+            if "Basado en contenido" in selection:
+                d2, r2 = contenido_recomendacion(user_id)
+                alpha, beta = 0.4, 0.6
+                diccionario, rating = get_result_2(d1, r1, d2, r2, alpha, beta)
+            elif "Colaborativo" in selection:
+                d2, r2 = colaborativa_recomendacion(user_id)
+                alpha, gamma = 0.35, 0.65
+                diccionario, rating = get_result_2(d1, r1, d2, r2, alpha, gamma)
+        else:
+            d1, r1 = contenido_recomendacion(user_id)
+            d2, r2 = colaborativa_recomendacion(user_id)
+            beta, gamma = 0.45, 0.55
+            diccionario, rating = get_result_2(d1, r1, d2, r2, beta, gamma)
     else:
-        diccionario, rating = {}, {}
+        d1, r1 = demografico(user_id)
+        d2, r2 = contenido_recomendacion(user_id)
+        d3, r3 = colaborativa_recomendacion(user_id)
+        alpha, beta, gamma = 0.25, 0.35, 0.4
+        diccionario, rating = get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma)
     
     mostrar_items(diccionario, rating)
 
@@ -283,7 +365,7 @@ def obtener_items_seleccionados(selection):
 
 # Opciones de selección
 options = ["Demográfico", "Basado en contenido", "Colaborativo"]
-selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="single", default=["Demográfico"])
+selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="multi", default=["Demográfico"])
 
 st.markdown(f"Opción seleccionada: {selection}")
 
