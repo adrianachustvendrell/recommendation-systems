@@ -1,6 +1,22 @@
 import pandas as pd
 import numpy as np
 
+items = pd.read_csv("data/items.csv")
+usuarios = pd.read_csv("data/info_usuarios.csv")
+puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
+
+def reserva(n, excluidos):
+    """
+    Selecciona los mejores ítems basados en la ponderación del ratio (0.4) y el count (0.6),
+    evitando los ítems ya recomendados.
+    """
+    best_scores = puntuaciones_usuario.groupby("id_item")["ratio"].mean() * 0.4 + items.set_index("id_item")["count"] * 0.6
+    best_scores = best_scores[~best_scores.index.isin(excluidos)]
+    mejores_items = best_scores.nlargest(n).index.tolist()
+    return mejores_items
+
+
+
 def calcular_score(adec, pref, count):
     """
     Calcula el score en un rango de 0 a 100 considerando:
@@ -60,14 +76,6 @@ viajeros = {
 }
 
 
-
-items = pd.read_csv("data/items.csv")
-#print(items.columns)
-
-usuarios = pd.read_csv("data/info_usuarios.csv")
-#print(usuarios.columns)
-
-puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
 
 def demografico(usuario):
     usuario_data = usuarios.loc[usuarios['nombre_usuario'] == usuario]
@@ -137,11 +145,15 @@ def demografico(usuario):
     seleccionadas = list(recomendaciones_diversas.items()) + candidatos_sorpresa
     recomendaciones_finales = {k: v for k, v in seleccionadas}
 
-    # Cálculo del rating para cada ítem recomendado
-    #gente_tipo = usuarios[usuarios["tipos_usuario"] == tipo_usuario]["id_usuario"]
-    #puntuaciones_tipo = puntuaciones_usuario[puntuaciones_usuario["id_usuario"].isin(gente_tipo)]
-    #puntuaciones_relevantes = puntuaciones_tipo[puntuaciones_tipo["id_item"].isin(recomendaciones_finales.keys())]
-    
+    # ÍTEMS RESERVA
+    if len(recomendaciones_finales) < 5:
+        n = 5 - len(recomendaciones_finales)
+        excluidos = set(recomendaciones_finales.keys())
+        items_reserva = reserva(n, excluidos)
+        for item in items_reserva:
+            recomendaciones_finales[item] = 1
+
+
     puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
 
     # Diccionario con los ratings en escala de 0 a 5
@@ -158,4 +170,6 @@ def demografico(usuario):
             else:
                 ratings[id_item] = 0
     
+
+
     return recomendaciones_finales, ratings
