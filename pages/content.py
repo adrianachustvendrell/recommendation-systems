@@ -3,14 +3,15 @@ import numpy as np
 
 def reserva(n, excluidos):
     """
-    Selecciona los mejores ítems basados en la ponderación del ratio (0.4) y el count (0.6),
-    evitando los ítems ya recomendados.
+    Selecciona los mejores N ítems únicos basados en la ponderación del ratio (0.4) y el count (0.6),
+    evitando los ítems ya recomendados y garantizando que no haya elementos repetidos.
     """
-    best_scores = puntuaciones_usuario.groupby("id_item")["ratio"].mean() * 0.4 + items.set_index("id_item")["count"] * 0.6
+    best_scores = (puntuaciones_usuario.groupby("id_item")["ratio"].mean() * 0.4 + 
+                   items.set_index("id_item")["count"] * 0.6)
     best_scores = best_scores[~best_scores.index.isin(excluidos)]
-    mejores_items = best_scores.nlargest(n).index.tolist()
+    sorted_items = best_scores.sort_values(ascending=False).index.tolist()
+    mejores_items = list(dict.fromkeys(sorted_items))[:n]
     return mejores_items
-
 
 
 def calcular_score(adec, pref, count):
@@ -118,6 +119,7 @@ def contenido_recomendacion(usuario):
         for item in items_reserva:
             recomendaciones_finales[item] = 1
 
+    print("recomendaciones_finales", recomendaciones_finales)
 
     # Cálculo del rating basado en la media de todas las puntuaciones de todos los usuarios para cada ítem
     puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
