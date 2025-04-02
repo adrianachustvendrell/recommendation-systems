@@ -119,8 +119,6 @@ def contenido_recomendacion(usuario):
         for item in items_reserva:
             recomendaciones_finales[item] = 1
 
-    print("recomendaciones_finales", recomendaciones_finales)
-
     # Cálculo del rating basado en la media de todas las puntuaciones de todos los usuarios para cada ítem
     puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones_finales.keys())]
 

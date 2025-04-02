@@ -367,8 +367,7 @@ def obtener_items_seleccionados(selection):
 options = ["Demográfico", "Basado en contenido", "Colaborativo"]
 selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="multi", default=["Demográfico"])
 
-st.markdown(f"Opción seleccionada: {selection}")
-
+st.markdown(f"Opción/Opciones seleccionada/s: {selection}")
 
 if selection:
     obtener_items_seleccionados(selection)
