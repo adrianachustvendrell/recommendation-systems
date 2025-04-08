@@ -156,7 +156,7 @@ def mostrar_items(diccionario, rating):
                     st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia</div>', unsafe_allow_html=True)
 
                     if rating[item_id] > 0:
-                        st.markdown(f"{rating[item_id]}/5⭐")
+                        st.markdown(f"Otros usuarios han puntuado: {rating[item_id]}/5⭐")
                     else:
                         st.markdown(f"¡Sé el primero en calificarlo!")
 
@@ -218,7 +218,7 @@ def mostrar_items(diccionario, rating):
                 with cols[(i-3) % 2]:  # Aquí aseguramos que las imágenes se distribuyan correctamente en las 2 columnas
                     st.image(image, use_container_width=True, caption=item_name)
                     if rating[item_id] > 0:
-                        st.markdown(f"{rating[item_id]}/5⭐")
+                        st.markdown(f"Otros usuarios han puntuado: {rating[item_id]}/5⭐")
                     else:
                         st.markdown(f"¡Sé el primero en calificarlo!")
 
