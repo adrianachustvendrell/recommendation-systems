@@ -155,35 +155,11 @@ carousel(items=carousel_items, container_height=500)
 
 
 
-
-# ---------------------------------
-# ESTADÍSTICAS 
-# ---------------------------------
-st.markdown("### 📊 **Análisis de Visitantes**")
-padre_categorias = df_items['padre_categoria'].drop_duplicates().tolist()
-padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
-df_filtered = df_items[df_items["padre_categoria"] == padre]
-category_visits = df_filtered.groupby("categoria")["count"].sum().reset_index()
-
-# Filtrar solo categorías con count > 1
-category_visits = category_visits[category_visits["count"] >= 1]
-if not category_visits.empty:
-    fig1 = px.bar(category_visits, x="categoria", y="count", 
-                  labels={"categoria": "Categoría", "count": "Número de visitas"}, 
-                  title="", color="categoria")
-    st.plotly_chart(fig1, use_container_width=True)
-else:
-    st.info("No hay suficientes datos para mostrar el gráfico.")
-
-st.divider()
-
-
-
 # ---------------------------------
 # mAPA
 # ---------------------------------
 
-st.write("### 🔍 **Búsqueda de Lugares Turísticos**")
+st.write("### 🔍 **Búsqueda de lugares turísticos**")
 
 category_colors = {
     "Museos": "blue",
@@ -218,6 +194,8 @@ for _, row in df_unique.iterrows():
 
 
 legend_html = """
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <div style="
         position: fixed; 
         top: 20px; left: 30%; transform: translateX(-50%);
@@ -226,6 +204,7 @@ legend_html = """
         border-radius: 10px; padding: 10px 20px; 
         box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         text-align: center;
+        font-family: 'Roboto', sans-serif;
     ">
         <span style="color: #38A9DC;">⬤</span> Museos | 
         <span style="color: #6FAB25;">⬤</span> Estilos y periodos | 
@@ -241,8 +220,32 @@ legend_html = """
         <span style="color: #FFCA91;">⬤</span> Gastronomía
     </div>
 """
+
 components.html(legend_html, width=page_width, height=100)
 
 
 TagFilterButton(list(category_colors.keys())).add_to(folium_map)
 folium_static(folium_map, width=page_width)
+
+# ---------------------------------
+# ESTADÍSTICAS 
+# ---------------------------------
+st.markdown("### 📊 **Análisis de visitantes**")
+padre_categorias = df_items['padre_categoria'].drop_duplicates().tolist()
+padre = st.selectbox("📌 **Selecciona un tipo de lugar:**", padre_categorias)
+df_filtered = df_items[df_items["padre_categoria"] == padre]
+category_visits = df_filtered.groupby("categoria")["count"].sum().reset_index()
+
+# Filtrar solo categorías con count > 1
+category_visits = category_visits[category_visits["count"] >= 1]
+if not category_visits.empty:
+    fig1 = px.bar(category_visits, x="categoria", y="count", 
+                  labels={"categoria": "Categoría", "count": "Número de visitas"}, 
+                  title="", color="categoria")
+    st.plotly_chart(fig1, use_container_width=True)
+else:
+    st.info("No hay suficientes datos para mostrar el gráfico.")
+
+st.divider()
+
+
