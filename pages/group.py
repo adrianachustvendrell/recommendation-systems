@@ -22,6 +22,11 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 
+if "grupo_registrado" not in st.session_state:
+    st.session_state.grupo_registrado = False
+
+
+
 if st.button("🏠 Home"):
     st.switch_page("app.py")
     

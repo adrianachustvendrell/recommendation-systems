@@ -23,6 +23,9 @@ st.cache_data.clear()
 page_width = st_javascript("window.innerWidth")
 
 
+if "user_logged_in" not in st.session_state:
+    st.session_state.user_logged_in = False
+
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
 st.markdown(
@@ -72,7 +75,7 @@ st.markdown(
 if st.button("🏠 Home"):
     st.switch_page("app.py")
 
-if "user_logged_in" not in st.session_state:
+if "user_logged_in" not in st.session_state and "grupo_registrado" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
 else:
