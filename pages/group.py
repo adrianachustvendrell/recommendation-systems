@@ -90,6 +90,7 @@ if len(nombres_grupo) == grupo_size:
     
     # Guardamos el estado para saber que se puede continuar
     st.session_state.grupo_registrado = True
+    st.session_state.ids_grupo = nombres_grupo
 
     if st.button("Continuar a recomendaciones"):
         time.sleep(2)
