@@ -80,7 +80,7 @@ if "user_logged_in" not in st.session_state and "grupo_registrado" not in st.ses
     st.switch_page("pages/signin.py") 
 else:
     user_id = st.session_state.user_logged_in  # Retrieve user ID
-    st.title(f"👋 Bienvenido, **{user_id}**.")
+    st.title(f"👋 Bienvenido, grupo.")
 
 
 
@@ -153,7 +153,7 @@ def mostrar_items(diccionario, rating):
                     )
 
                     # Modificar la sección donde se muestra la coincidencia de puntuación
-                    st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia</div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia para tu grupo</div>', unsafe_allow_html=True)
 
                     if rating[item_id] > 0:
                         st.markdown(f"{rating[item_id]}/5⭐")
