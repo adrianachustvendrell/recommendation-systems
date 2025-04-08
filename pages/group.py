@@ -65,6 +65,8 @@ grupo_size = st.selectbox("¿Cuántos sois en el grupo?", [2, 3, 4, 5, 6])
 def verificar_usuario_en_bd(usuario):
     df_usuarios = pd.read_csv(user_file_path)
     return usuario in df_usuarios['nombre_usuario'].values
+
+
 # Verificar los miembros del grupo
 nombres_grupo = []
 usuarios_ingresados = set()  # Usamos un set para evitar nombres duplicados
@@ -99,7 +101,7 @@ if st.button("Continuar a recomendaciones"):
     elif completar_nombres:
         st.warning("Por favor, introduce todos los nombres.")
     elif len(nombres_grupo) == grupo_size:
-        
+
         # Guardamos el estado para saber que se puede continuar
         st.session_state.grupo_registrado = True
         st.session_state.ids_grupo = nombres_grupo
