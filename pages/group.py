@@ -25,6 +25,9 @@ st.markdown(custom_css, unsafe_allow_html=True)
 if "grupo_registrado" not in st.session_state:
     st.session_state.grupo_registrado = False
 
+if 'ids_grupo' not in st.session_state:
+    st.session_state.ids_grupo = []
+
 
 
 if st.button("🏠 Home"):
