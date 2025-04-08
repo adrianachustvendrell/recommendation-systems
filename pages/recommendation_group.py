@@ -23,8 +23,11 @@ st.cache_data.clear()
 page_width = st_javascript("window.innerWidth")
 
 
-if "user_logged_in" not in st.session_state:
-    st.session_state.user_logged_in = False
+if "grupo_registrado" not in st.session_state:
+    st.session_state.grupo_registrado = False
+
+if 'ids_grupo' not in st.session_state:
+    st.session_state.ids_grupo = []
 
 
 # Estilo adicional para fijar el alto de las imágenes, mejorar la apariencia y modificar el botón
@@ -75,11 +78,11 @@ st.markdown(
 if st.button("🏠 Home"):
     st.switch_page("app.py")
 
-if "user_logged_in" not in st.session_state and "grupo_registrado" not in st.session_state:
+if "grupo_registrado" not in st.session_state:
     st.warning("⚠️ No has iniciado sesión. Redirigiendo a la página de inicio de sesión...")
     st.switch_page("pages/signin.py") 
+
 else:
-    user_id = st.session_state.user_logged_in  # Retrieve user ID
     st.title(f"👋 Bienvenido, grupo.")
 
 
@@ -324,16 +327,18 @@ def get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma):
     
     return dic, r
 
-def obtener_items_seleccionados(selection):
+def obtener_items_seleccionados(selection, user_id):
     if len(selection) == 1:
         if selection[0]  == "Demográfico":
             diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
+
         elif selection[0]  == "Basado en contenido":
             diccionario, rating = contenido_recomendacion(user_id)
         elif selection[0]  == "Colaborativo":
             diccionario, rating = colaborativa_recomendacion(user_id)
         else:
             diccionario = {}
+
     elif len(selection) == 2:
         if "Demográfico" in selection:
             d1, r1 = demografico(user_id)
@@ -357,7 +362,7 @@ def obtener_items_seleccionados(selection):
         alpha, beta, gamma = 0.25, 0.35, 0.4
         diccionario, rating = get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma)
     
-    mostrar_items(diccionario, rating)
+    return diccionario, rating
 
 
 
@@ -371,9 +376,12 @@ options = ["Demográfico", "Basado en contenido", "Colaborativo"]
 selection = st.pills("Selecciona el sistema recomendador", options, selection_mode="multi", default=["Demográfico"])
 
 print(selection)
-if selection:
-    obtener_items_seleccionados(selection)
+ids_grupo = st.session_state.ids_grupo
 
+print("ids_grupo", ids_grupo)
+for indiv in ids_grupo:
+    if selection:
+        diccionario, rating = obtener_items_seleccionados(selection, indiv)
 
 
 
