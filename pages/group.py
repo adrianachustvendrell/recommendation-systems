@@ -65,15 +65,20 @@ grupo_size = st.selectbox("¿Cuántos sois en el grupo?", [2, 3, 4, 5, 6])
 def verificar_usuario_en_bd(usuario):
     df_usuarios = pd.read_csv(user_file_path)
     return usuario in df_usuarios['nombre_usuario'].values
-
 # Verificar los miembros del grupo
 nombres_grupo = []
 usuarios_ingresados = set()  # Usamos un set para evitar nombres duplicados
+duplicados_detectados = False
+completar_nombres = False
 
+# Mostrar los inputs dinámicamente según el tamaño del grupo
 for i in range(grupo_size):
-    nombre = st.text_input(f"Introduce el nombre del usuario #{i+1}:")
+    nombre = st.text_input(f"Introduce el nombre del usuario #{i + 1}:", key=f"nombre_{i}")
+
     if nombre:
+        # Verificar si el nombre ya ha sido ingresado
         if nombre in usuarios_ingresados:
+            duplicados_detectados = True
             st.error(f"¡Error! El nombre de usuario '{nombre}' ya ha sido introducido.")
         elif verificar_usuario_en_bd(nombre):
             nombres_grupo.append(nombre)
@@ -84,17 +89,22 @@ for i in range(grupo_size):
             st.page_link("pages/signup.py", label="👉 Regístrate aquí")
             break  # Si un usuario no está registrado, se detiene el registro de los siguientes
     else:
-        if len(nombres_grupo) < i:  # Si hay un nombre ya ingresado, muestra un error
-            st.warning("Por favor, introduce todos los nombres.")
-        break
+        # Marcar que faltan nombres si el campo está vacío
+        completar_nombres = True
 
-if len(nombres_grupo) == grupo_size:
-    st.success("¡Todos los miembros del grupo están registrados!")
-    
-    # Guardamos el estado para saber que se puede continuar
-    st.session_state.grupo_registrado = True
-    st.session_state.ids_grupo = nombres_grupo
+# Si el botón de continuar es presionado
+if st.button("Continuar a recomendaciones"):
+    if duplicados_detectados:
+        st.error("¡Error! Hay nombres duplicados. Por favor, corrige eso.")
+    elif completar_nombres:
+        st.warning("Por favor, introduce todos los nombres.")
+    elif len(nombres_grupo) == grupo_size:
+        
+        # Guardamos el estado para saber que se puede continuar
+        st.session_state.grupo_registrado = True
+        st.session_state.ids_grupo = nombres_grupo
 
-    if st.button("Continuar a recomendaciones"):
+        # Simula el cambio de página
         time.sleep(2)
-        st.switch_page("pages/recommendation_group.py") 
+        st.switch_page("pages/recommendation_group.py")
+
