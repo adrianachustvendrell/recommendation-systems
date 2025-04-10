@@ -329,7 +329,6 @@ def get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma):
 
 def res_ponderado_por_rec(group_ids_list, rec):
     res = []
-    print('rec', rec)
     if rec == 'Demográfico':
         for user_id in group_ids_list:
             d1, r1 = demografico(user_id)
@@ -342,6 +341,7 @@ def res_ponderado_por_rec(group_ids_list, rec):
         for user_id in group_ids_list:
             d3, r3 = colaborativa_recomendacion(user_id)
             res.append((d3, r3))
+    print(res)
     return res[0]
 
 def obtener_items_seleccionados(selection, group_ids):
