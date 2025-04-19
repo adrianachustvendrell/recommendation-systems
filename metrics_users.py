@@ -1,6 +1,15 @@
 from metrics import obtener_items_seleccionados
 import pandas as pd
 
+
+
+
+
+# ----------------------------------------------------------
+# SELECCIONAR LOS 20 PRIMEROS USUARIOS Y CALCULAR SUS ÍTEMS
+# ----------------------------------------------------------
+
+
 # seleccionar los primeros 20 usuarios
 df_usuarios = pd.read_csv('data/info_usuarios.csv')
 df = df_usuarios.loc[:19, ['id_usuario', 'nombre_usuario']]
@@ -26,6 +35,13 @@ df['Colaborativo'] = lista_colaborativo
 df['Híbrido'] = lista_hibrido
 
 
+
+
+
+
+# ----------------------------------------------------------
+# AÑADIR LAS PUNTUACIONES DE TEST
+# ----------------------------------------------------------
 
 
 # Leer el test set
@@ -54,6 +70,12 @@ df['Test'] = lista_test
 
 
 
+
+
+
+# ----------------------------------------------------------
+# CALCULAR F1, RECALL Y PRECISIÓN CON UMBRALES
+# ----------------------------------------------------------
 
 # Umbrales
 umbral_recomendadores = 0.5
@@ -105,6 +127,12 @@ df = df.join(df.apply(calcular_metricas_por_usuario, axis=1))
 
 
 
+
+
+# ----------------------------------------------------------
+# CALCULAR EL MAE UTILIZANDO LA INTERSECCIÓN
+# ----------------------------------------------------------
+
 # Función para calcular el MAE
 def calcular_mae(recomendados, test_items, user_test_data):
     # Inicializar la suma de los errores absolutos
@@ -129,6 +157,8 @@ def calcular_mae(recomendados, test_items, user_test_data):
     mae = error_total / num_items if num_items > 0 else 0
     return mae
 
+
+
 # Función para calcular el MAE para cada recomendador
 def calcular_mae_por_usuario(row):
     # Obtener los ítems recomendados de los diferentes recomendadores
@@ -152,6 +182,9 @@ def calcular_mae_por_usuario(row):
 
 # Aplicar la función de MAE a cada fila del dataframe
 df = df.join(df.apply(calcular_mae_por_usuario, axis=1))
+
+
+
 
 
 # Guardar el DataFrame en un archivo CSV
