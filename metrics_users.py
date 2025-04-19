@@ -81,7 +81,8 @@ def calcular_metricas_por_usuario(row):
     recomendadores = {
         "Demografico": row['Demografico'],
         "Contenido": row['Contenido'],
-        "Colaborativo": row['Colaborativo']
+        "Colaborativo": row['Colaborativo'],
+        "Híbrido": row['Híbrido']
     }
     
     # Obtener los ítems del test
@@ -134,7 +135,8 @@ def calcular_mae_por_usuario(row):
     recomendadores = {
         "Demografico": row['Demografico'],
         "Contenido": row['Contenido'],
-        "Colaborativo": row['Colaborativo']
+        "Colaborativo": row['Colaborativo'],
+        "Híbrido": row['Híbrido']
     }
     
     # Obtener los ítems del test para el usuario
