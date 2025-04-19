@@ -8,6 +8,7 @@
 
 import pandas as pd
 import numpy as np
+import ast
 
 items = pd.read_csv("data/items.csv")
 usuarios = pd.read_csv("data/info_usuarios.csv")
@@ -283,38 +284,43 @@ def get_result_3(d1, d2, d3, alpha, beta, gamma):
 
 def obtener_items_seleccionados(selection, user_id):
     if len(selection) == 1:
-        if selection[0]  == "Demográfico":
-            diccionario = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
-        elif selection[0]  == "Basado en contenido":
-            diccionario = contenido_recomendacion(user_id)
-        elif selection[0]  == "Colaborativo":
-            diccionario = colaborativa_recomendacion(user_id)
+        metodo = selection[0]
+        if metodo == "Demográfico":
+            return demografico(user_id)
+        elif metodo == "Basado en contenido":
+            return contenido_recomendacion(user_id)
+        elif metodo == "Colaborativo":
+            return colaborativa_recomendacion(user_id)
         else:
-            diccionario = {}
+            return {}
+    
     elif len(selection) == 2:
-        if "Demográfico" in selection:
+        if "Demográfico" in selection and "Basado en contenido" in selection:
             d1 = demografico(user_id)
-            if "Basado en contenido" in selection:
-                d2 = contenido_recomendacion(user_id)
-                alpha, beta = 0.4, 0.6
-                diccionario = get_result_2(d1, d2, alpha, beta)
-            elif "Colaborativo" in selection:
-                d2 = colaborativa_recomendacion(user_id)
-                alpha, gamma = 0.35, 0.65
-                diccionario = get_result_2(d1, d2, alpha, gamma)
-        else:
+            d2 = contenido_recomendacion(user_id)
+            alpha, beta = 0.4, 0.6
+            return get_result_2(d1, d2, alpha, beta)
+        
+        elif "Demográfico" in selection and "Colaborativo" in selection:
+            d1 = demografico(user_id)
+            d2 = colaborativa_recomendacion(user_id)
+            alpha, beta = 0.35, 0.65
+            return get_result_2(d1, d2, alpha, beta)
+        
+        elif "Basado en contenido" in selection and "Colaborativo" in selection:
             d1 = contenido_recomendacion(user_id)
             d2 = colaborativa_recomendacion(user_id)
-            beta, gamma = 0.45, 0.55
-            diccionario = get_result_2(d1, r1, d2, r2, beta, gamma)
-    else:
+            alpha, beta = 0.45, 0.55
+            return get_result_2(d1, d2, alpha, beta)
+    
+    elif len(selection) == 3:
         d1 = demografico(user_id)
         d2 = contenido_recomendacion(user_id)
         d3 = colaborativa_recomendacion(user_id)
         alpha, beta, gamma = 0.25, 0.35, 0.4
-        diccionario = get_result_3(d1, d2, d3, alpha, beta, gamma)
+        return get_result_3(d1, d2, d3, alpha, beta, gamma)
+    
 
-    return diccionario
 
 
 
