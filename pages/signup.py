@@ -270,7 +270,7 @@ if st.session_state.step == "inicio":
 
 
 
-    children_options = {"Sin hijos": 0, "Con hijos": 1}
+    children_options = {"No": 0, "Sí": 1}
     reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
     current_children = st.session_state.get("new_children", 0)  # Por defecto 0
     current_children_friendly = reverse_children_options.get(current_children, "Sin hijos")  # Convertir 0 → "Sin hijos"
