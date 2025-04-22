@@ -78,8 +78,10 @@ df['Test'] = lista_test
 # ----------------------------------------------------------
 
 # Umbrales
-umbral_recomendadores = 0.5
-umbral_test = 0.5
+# Umbrales
+umbral_recomendadores = 40  # Aumentar el umbral de recomendadores
+umbral_test = 65  # Aumentar el umbral de ítems relevantes
+
 
 # Función para calcular las métricas de Precision, Recall, F1
 def calcular_metricas(recomendados, relevantes):
