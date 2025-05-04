@@ -7,6 +7,20 @@ usuarios = pd.read_csv("data/info_usuarios.csv")
 puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
 preferencias_usuario = pd.read_csv("data/prefs_usuarios.csv")
 
+def reserva(n, excluidos):
+    """
+    Selecciona los mejores N ítems únicos basados en la ponderación del ratio (0.4) y el count (0.6),
+    evitando los ítems ya recomendados y garantizando que no haya elementos repetidos.
+    """
+    best_scores = (puntuaciones_usuario.groupby("id_item")["ratio"].mean() * 0.4 + 
+                   items.set_index("id_item")["count"] * 0.6)
+    best_scores = best_scores[~best_scores.index.isin(excluidos)]
+    sorted_items = best_scores.sort_values(ascending=False).index.tolist()
+    mejores_items = list(dict.fromkeys(sorted_items))[:n]
+    return mejores_items
+
+
+
 def calcular_score(adec, pref, count):
     """
     Calcula el score en un rango de 0 a 100 considerando:
@@ -66,6 +80,8 @@ viajeros = {
 }
 
 
+puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
+
 
 def demografico(usuario):
     usuario_data = usuarios.loc[usuarios['nombre_usuario'] == usuario]
@@ -101,11 +117,39 @@ def demografico(usuario):
         else:
             recomendaciones[id_item] = max(recomendaciones[id_item], score)
     
+
+    if len(recomendaciones) < 5:
+        n = 5 - len(recomendaciones)
+        excluidos = set(recomendaciones.keys())
+        items_reserva = reserva(n, excluidos)
+        for item in items_reserva:
+            recomendaciones[item] = 1
+
     if not recomendaciones:
         return "No hay recomendaciones disponibles para este usuario."
     
     recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
-    return dict(recomendaciones_ordenadas)
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones.keys())]
+
+    # Diccionario con los ratings en escala de 0 a 5
+    ratings = {}
+    if not puntuaciones_relevantes.empty:
+        for id_item in recomendaciones_ordenadas[0]:
+            item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
+            if not item_puntuaciones.empty:
+                puntuacion = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+                if puntuacion > 0:
+                    ratings[id_item] = puntuacion
+                else:
+                    ratings[id_item] = 0
+            else:
+                ratings[id_item] = 0
+
+
+    print("RATINGS DEMOGRÁFICO", ratings)
+    return dict(recomendaciones_ordenadas), ratings
+
+
 
 def contenido_recomendacion(usuario):
     """
@@ -152,11 +196,39 @@ def contenido_recomendacion(usuario):
             else:
                 recomendaciones[id_item] = max(recomendaciones[id_item], score)
 
+
+    if len(recomendaciones) < 5:
+        n = 5 - len(recomendaciones)
+        excluidos = set(recomendaciones.keys())
+        items_reserva = reserva(n, excluidos)
+        for item in items_reserva:
+            recomendaciones[item] = 1
+            
     if not recomendaciones:
         return "No hay recomendaciones disponibles para este usuario."
 
     recomendaciones_ordenadas = sorted(recomendaciones.items(), key=lambda x: x[1], reverse=True)
-    return dict(recomendaciones_ordenadas)
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones.keys())]
+
+    # Diccionario con los ratings en escala de 0 a 5
+    ratings = {}
+    if not puntuaciones_relevantes.empty:
+        for id_item in recomendaciones_ordenadas[0]:
+            item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
+            if not item_puntuaciones.empty:
+                puntuacion = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+                print(puntuacion)
+                if puntuacion > 0:
+                    ratings[id_item] = puntuacion
+                else:
+                    ratings[id_item] = 0
+            else:
+                ratings[id_item] = 0
+    
+    print("RATINGS CONTENIDO", ratings)
+    return dict(recomendaciones_ordenadas), ratings
+
+
 
 def colaborativa_recomendacion(usuario):
     """
@@ -193,6 +265,15 @@ def colaborativa_recomendacion(usuario):
                     recomendaciones[id_item] = 0
                 recomendaciones[id_item] += ratio * similitud
 
+
+    if len(recomendaciones) < 5:
+        n = 5 - len(recomendaciones)
+        excluidos = set(recomendaciones.keys())
+        items_reserva = reserva(n, excluidos)
+        for item in items_reserva:
+            recomendaciones[item] = 1
+
+
     if not recomendaciones:
         return "No hay recomendaciones colaborativas disponibles para este usuario."
 
@@ -211,78 +292,21 @@ def colaborativa_recomendacion(usuario):
         return "No hay recomendaciones con puntuaciones significativas."
 
     recomendaciones_ordenadas = sorted(recomendaciones_normalizadas.items(), key=lambda x: x[1], reverse=True)
-    return dict(recomendaciones_ordenadas)
+    puntuaciones_relevantes = puntuaciones_usuario[puntuaciones_usuario["id_item"].isin(recomendaciones.keys())]
 
-def get_result_2(d1, d2, alpha, beta):
-    dic = {}
-    scaled_d1 = {k: v * alpha for k, v in d1.items()}
-    scaled_d2 = {k: v * beta for k, v in d2.items()}
+    # Diccionario con los ratings en escala de 0 a 5
+    ratings = {}
+    if not puntuaciones_relevantes.empty:
+        for id_item in recomendaciones_ordenadas[0]:
+            item_puntuaciones = puntuaciones_relevantes[puntuaciones_relevantes["id_item"] == id_item]
+            if not item_puntuaciones.empty:
+                puntuacion = np.round(item_puntuaciones["ratio"].mean() / 20, 1)
+                if puntuacion > 0:
+                    ratings[id_item] = puntuacion
+                else:
+                    ratings[id_item] = 0
+            else:
+                ratings[id_item] = 0
 
-    combine = list(scaled_d1.items()) + list(scaled_d2.items())
-    sorted_combine = sorted(combine, key=lambda x: x[1], reverse=True)
-    final_top = dict(sorted_combine)
-    ids = list({**final_top}.keys())
-
-    for i in ids:
-        if i in d1:
-            dic[i] = d1[i]
-        else:
-            dic[i] = d2[i]
-    return dic
-
-def get_result_3(d1, d2, d3, alpha, beta, gamma):
-    dic = {} 
-    
-    scaled_d1 = {k: v * alpha for k, v in d1.items()}
-    scaled_d2 = {k: v * beta for k, v in d2.items()}
-    scaled_d3 = {k: v * gamma for k, v in d3.items()}
-
-    combine = list(scaled_d1.items()) + list(scaled_d2.items()) + list(scaled_d3.items())
-    sorted_combine = sorted(combine, key=lambda x: x[1], reverse=True)
-    final_top = dict(sorted_combine)
-    ids = list({**final_top}.keys())
-    
-    for i in ids:
-        if i in d1:
-            dic[i] = d1[i]
-        elif i in d2:
-            dic[i] = d2[i]
-        else:
-            dic[i] = d3[i]
-    
-    return dic
-
-def obtener_items_seleccionados(selection, user_id):
-    if len(selection) == 1:
-        if selection[0]  == "Demográfico":
-            diccionario = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
-        elif selection[0]  == "Basado en contenido":
-            diccionario = contenido_recomendacion(user_id)
-        elif selection[0]  == "Colaborativo":
-            diccionario = colaborativa_recomendacion(user_id)
-        else:
-            diccionario = {}
-    elif len(selection) == 2:
-        if "Demográfico" in selection:
-            d1 = demografico(user_id)
-            if "Basado en contenido" in selection:
-                d2 = contenido_recomendacion(user_id)
-                alpha, beta = 0.4, 0.6
-                diccionario = get_result_2(d1, d2, alpha, beta)
-            elif "Colaborativo" in selection:
-                d2 = colaborativa_recomendacion(user_id)
-                alpha, gamma = 0.35, 0.65
-                diccionario = get_result_2(d1, d2, alpha, gamma)
-        else:
-            d1 = contenido_recomendacion(user_id)
-            d2 = colaborativa_recomendacion(user_id)
-            beta, gamma = 0.45, 0.55
-            diccionario = get_result_2(d1, d2, beta, gamma)
-    else:
-        d1 = demografico(user_id)
-        d2 = contenido_recomendacion(user_id)
-        d3 = colaborativa_recomendacion(user_id)
-        alpha, beta, gamma = 0.25, 0.35, 0.4
-        diccionario = get_result_3(d1, d2, d3, alpha, beta, gamma)
-
-    return diccionario
+    print("RATINGS COLABORATIVO", ratings)
+    return dict(recomendaciones_ordenadas), ratings

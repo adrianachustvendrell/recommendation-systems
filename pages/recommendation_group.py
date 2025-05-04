@@ -6,7 +6,7 @@ from streamlit_folium import folium_static
 import folium
 from streamlit_javascript import st_javascript
 import numpy as np
-from pages.demographic import demografico
+from pages.recs_group import demografico
 from pages.content import contenido_recomendacion
 from pages.collaborative import colaborativa_recomendacion
 
@@ -120,7 +120,8 @@ def mostrar_items(diccionario, rating):
     
     # Tres imágenes arriba (i <= 2 muestra las tres primeras)
     cols = st.columns(3)
-    for i, (id_item, score) in enumerate(diccionario.items()):
+    top_items = list(diccionario.items())[:3]
+    for i, (id_item, score) in enumerate(top_items):
         item = items[items["id_item"] == id_item]
         item_id = item["id_item"].unique()[0]
         if item.empty:
@@ -156,7 +157,7 @@ def mostrar_items(diccionario, rating):
                     )
 
                     # Modificar la sección donde se muestra la coincidencia de puntuación
-                    st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia para tu grupo</div>', unsafe_allow_html=True)
+                    #st.markdown(f'<div class="score-matching">{np.round(score, 2)}% coincidencia para tu grupo</div>', unsafe_allow_html=True)
 
                     if rating[item_id] > 0:
                         st.markdown(f"Otros usuarios han puntuado: {rating[item_id]}/5⭐")
@@ -205,7 +206,8 @@ def mostrar_items(diccionario, rating):
 
     # Dos imágenes grandes debajo (i > 2 para las siguientes imágenes)
     cols = st.columns(2)
-    for i, (id_item, score) in enumerate(diccionario.items()):
+    bottom_items = list(diccionario.items())[3:5]
+    for i, (id_item, score) in enumerate(bottom_items, start=3):
         if i > 2:  # Solo mostrar los siguientes ítems en las imágenes grandes
             item = items[items["id_item"] == id_item]
             item_id = item["id_item"].unique()[0]
@@ -271,70 +273,7 @@ def toggle_info(i):
 # Funciones auxiliares para ponderar recomendadores
 # -------------------------------------------------
 
-def get_result_2(res1, res2, alpha, beta):
-    dic, r = {}, {}
-
-    combined_scores = defaultdict(float)
-    combined_ratings = {}
-
-    # Ponderar y combinar los scores
-    for d, _ in res1:
-        for k, v in d.items():
-            combined_scores[k] += alpha * v
-    for d, _ in res2:
-        for k, v in d.items():
-            combined_scores[k] += beta * v
-
-    # Dividir en top3 y sorpresa
-    sorted_items = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
-    final_top3 = dict(sorted_items[:3])
-    final_surprise = dict(sorted_items[3:5])  # siguientes 2
-
-    ids = list({**final_top3, **final_surprise}.keys())
-
-    # Obtener ratings asociados
-    for item_id in ids:
-        for d, r_dict in res1 + res2:
-            if item_id in r_dict:
-                dic[item_id] = combined_scores[item_id]
-                r[item_id] = r_dict[item_id]
-                break
-
-    return dic, r
-
-
-
-def get_result_3(res1, res2, res3, alpha, beta, gamma):
-    dic, r = {}, {}
-
-    combined_scores = defaultdict(float)
-    combined_ratings = {}
-
-    for d, _ in res1:
-        for k, v in d.items():
-            combined_scores[k] += alpha * v
-    for d, _ in res2:
-        for k, v in d.items():
-            combined_scores[k] += beta * v
-    for d, _ in res3:
-        for k, v in d.items():
-            combined_scores[k] += gamma * v
-
-    sorted_items = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
-    final_top3 = dict(sorted_items[:3])
-    final_surprise = dict(sorted_items[3:5])
-
-    ids = list({**final_top3, **final_surprise}.keys())
-
-    for item_id in ids:
-        for d, r_dict in res1 + res2 + res3:
-            if item_id in r_dict:
-                dic[item_id] = combined_scores[item_id]
-                r[item_id] = r_dict[item_id]
-                break
-
-    return dic, r
-
+from collections import defaultdict
 
 def res_ponderado_por_rec(group_ids_list, rec):
     res = []
@@ -353,60 +292,101 @@ def res_ponderado_por_rec(group_ids_list, rec):
     return res
 
 
-
-from collections import defaultdict
 def borda_count_from_res(res, top_k=10):
     scores = defaultdict(int)
-    for diccionario, _ in res:
-        items_ordenados = sorted(diccionario.items(), key=lambda x: x[1], reverse=True)
-        print(items_ordenados, "items_ordenados")
-        n = len(items_ordenados)
+    ratings = {}
 
+    for diccionario, rating_dict in res:
+        items_ordenados = sorted(diccionario.items(), key=lambda x: x[1], reverse=True)
+        n = len(items_ordenados)
         for rank, (item, _) in enumerate(items_ordenados):
-            print(rank, (item, _))
             scores[item] += n - rank
+            if item not in ratings:
+                ratings[item] = rating_dict.get(item, 0)
 
     sorted_items = sorted(scores.items(), key=lambda x: x[1], reverse=True)
     top_items_dict = dict(sorted_items[:top_k])
-    top_items_list = list(top_items_dict.keys())
+    return top_items_dict, ratings
 
-    print("top_items_dict", top_items_dict)
-    print("top_items_list", top_items_list)
-    return top_items_dict, top_items_list
 
+def mezclar_diccionarios(dic1, dic2, alpha, beta):
+    resultado = defaultdict(float)
+    for k, v in dic1.items():
+        resultado[k] += alpha * v
+    for k, v in dic2.items():
+        resultado[k] += beta * v
+    # Ordenar por valor descendente
+    resultado_ordenado = dict(sorted(resultado.items(), key=lambda x: x[1], reverse=True))
+    return resultado_ordenado
+
+
+def mezclar_tres_diccionarios(dic1, dic2, dic3, alpha, beta, gamma):
+    resultado = defaultdict(float)
+    for k, v in dic1.items():
+        resultado[k] += alpha * v
+    for k, v in dic2.items():
+        resultado[k] += beta * v
+    for k, v in dic3.items():
+        resultado[k] += gamma * v
+    # Ordenar por valor descendente
+    resultado_ordenado = dict(sorted(resultado.items(), key=lambda x: x[1], reverse=True))
+    return resultado_ordenado
+
+
+def combinar_ratings(*ratings_dicts):
+    resultado = {}
+    for d in ratings_dicts:
+        resultado.update(d)
+    return resultado
 
 
 def obtener_items_seleccionados(selection, group_ids):
     if len(selection) == 1:
         res = res_ponderado_por_rec(group_ids, selection[0])
-        diccionario, ranking = borda_count_from_res(res)
+        diccionario, rating = borda_count_from_res(res)
+        print("SELECTION", selection)
+        print("res", res)
+        print("diccionario", diccionario)
+        print('\n')
+
 
     elif len(selection) == 2:
-        if "Demográfico" in selection:
-            d1 = res_ponderado_por_rec(group_ids, "Demográfico")
-            if "Basado en contenido" in selection:
-                d2 = res_ponderado_por_rec(group_ids, "Basado en contenido")
-                alpha, beta = 0.4, 0.6
-                diccionario, ranking = get_result_2(d1, d2, alpha, beta)
-            elif "Colaborativo" in selection:
-                d2 = res_ponderado_por_rec(group_ids, "Colaborativo")
-                alpha, gamma = 0.35, 0.65
-                diccionario, ranking = get_result_2(d1, d2, alpha, gamma)
-        else:
-            d1 = res_ponderado_por_rec(group_ids, "Basado en contenido")
-            d2 = res_ponderado_por_rec(group_ids, "Colaborativo")
-            beta, gamma = 0.45, 0.55
-            diccionario, ranking = get_result_2(d1, d2, beta, gamma)
-    else:
-        d1 = res_ponderado_por_rec(group_ids, "Demográfico")
-        d2 = res_ponderado_por_rec(group_ids, "Basado en contenido")
-        d3 = res_ponderado_por_rec(group_ids, "Colaborativo")
-        alpha, beta, gamma = 0.25, 0.35, 0.4
-        diccionario, ranking = get_result_3(d1, d2, d3, alpha, beta, gamma)
+        rec1, rec2 = selection
+        res1 = res_ponderado_por_rec(group_ids, rec1)
+        res2 = res_ponderado_por_rec(group_ids, rec2)
 
-    mostrar_items(diccionario, ranking)
-    print("diccionario", diccionario)
-    return diccionario, ranking
+        dic1, rating1 = borda_count_from_res(res1)
+        dic2, rating2 = borda_count_from_res(res2)
+
+        # Asignar pesos
+        pesos = {
+            ("Demográfico", "Basado en contenido"): (0.2, 0.8),
+            ("Demográfico", "Colaborativo"): (0.15, 0.85),
+            ("Basado en contenido", "Colaborativo"): (0.45, 0.55)
+        }
+        clave = tuple(sorted([rec1, rec2]))
+        alpha, beta = pesos.get(clave, (0.5, 0.5))
+
+        diccionario = mezclar_diccionarios(dic1, dic2, alpha, beta)
+        rating = combinar_ratings(rating1, rating2)
+
+
+    else:
+        res1 = res_ponderado_por_rec(group_ids, "Demográfico")
+        res2 = res_ponderado_por_rec(group_ids, "Basado en contenido")
+        res3 = res_ponderado_por_rec(group_ids, "Colaborativo")
+
+        dic1, rating1 = borda_count_from_res(res1)
+        dic2, rating2 = borda_count_from_res(res2)
+        dic3, rating3 = borda_count_from_res(res3)
+
+        alpha, beta, gamma = 0.25, 0.35, 0.4
+        diccionario = mezclar_tres_diccionarios(dic1, dic2, dic3, alpha, beta, gamma)
+        rating = combinar_ratings(rating1, rating2, rating3)
+
+    mostrar_items(diccionario, rating)
+    return diccionario, rating
+
 
 
 
