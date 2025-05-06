@@ -233,7 +233,9 @@ if "items_propuestos" not in st.session_state:
 if "selected_item" not in st.session_state:
     st.session_state.selected_item = {}
 if "step" not in st.session_state:
-    st.session_state.step = "inicio" 
+    st.session_state.step = "inicio"
+if 'registrados' not in st.session_state:
+    st.session_state.registrados = True 
 
 
 
@@ -596,7 +598,12 @@ if submit_button:
         st.success("👌 Cuenta creada satisfactoriamente.")
                 
         # Redirect to Sign-in Page
-        time.sleep(2)
-        st.switch_page("pages/signin.py")
+        if st.session_state.registrados == False:
+            time.sleep(2)
+            st.switch_page("pages/group.py")
+
+        else:
+            time.sleep(2)
+            st.switch_page("pages/signin.py")
 
 

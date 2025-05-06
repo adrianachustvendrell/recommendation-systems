@@ -28,6 +28,9 @@ if "grupo_registrado" not in st.session_state:
 if 'ids_grupo' not in st.session_state:
     st.session_state.ids_grupo = []
 
+if 'registrados' not in st.session_state:
+    st.session_state.registrados = True
+
 
 
 if st.button("🏠 Home"):
@@ -88,6 +91,7 @@ for i in range(grupo_size):
             st.success(f"El usuario {nombre} está registrado.")
         else:
             st.error("Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
+            st.session_state.registrados = False
             st.page_link("pages/signup.py", label="👉 Regístrate aquí")
             break  # Si un usuario no está registrado, se detiene el registro de los siguientes
     else:
