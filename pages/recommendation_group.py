@@ -360,8 +360,8 @@ def obtener_items_seleccionados(selection, group_ids):
 
         # Asignar pesos
         pesos = {
-            ("Demográfico", "Basado en contenido"): (0.2, 0.8),
-            ("Demográfico", "Colaborativo"): (0.15, 0.85),
+            ("Demográfico", "Basado en contenido"): (0.4, 0.6),
+            ("Demográfico", "Colaborativo"): (0.35, 0.65),
             ("Basado en contenido", "Colaborativo"): (0.45, 0.55)
         }
         clave = tuple(sorted([rec1, rec2]))
