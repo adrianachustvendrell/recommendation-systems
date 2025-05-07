@@ -243,7 +243,7 @@ score_options = list(range(10, 110, 10))
 job_options = [
         "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
         "Empleados administrativos", "Vendedores", "Agricultores", 
-        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo"
+        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo o desocupado"
     ]
 
 
@@ -268,7 +268,7 @@ if st.session_state.step == "inicio":
     st.session_state.new_sex = sex_options[selected_sex]
 
 
-    st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo")))
+    st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo o desocupado")))
 
 
 
