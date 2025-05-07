@@ -478,7 +478,8 @@ elif st.session_state.step == "puntuacion":
                 label="Selecciona una valoración",  # Se necesita, pero será ocultado
                 options=score_options,
                 key=f"{elem}_select",
-                label_visibility="collapsed"
+                label_visibility="collapsed",
+                index = score_options.index(100)
             )
 
             st.markdown('\n\n\n')
