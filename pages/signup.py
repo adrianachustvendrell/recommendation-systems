@@ -74,9 +74,14 @@ USUARIOS_HOJA = "info_usuarios"
 PREFS_HOJA = "prefs_usuarios"
 BASE_HOJA = "puntuaciones_usuario_base"
 
-# Acceso a cada hoja
-usuarios_sheet = client.open("info_usuarios").sheet1 # o el nombre real de la pestaña
-prefs_sheet = client.open("prefs_usuarios").sheet1   # cambia "Hoja1" si tu pestaña tiene otro nombre
+@st.cache_resource
+def load_google_sheets():
+    usuarios_sheet = client.open("info_usuarios").sheet1
+    prefs_sheet = client.open("prefs_usuarios").sheet1
+    base_sheet = client.open("puntuaciones_usuario_base").sheet1
+    return usuarios_sheet, prefs_sheet, base_sheet
+
+usuarios_sheet, prefs_sheet, base_sheet = load_google_sheets()
 
 # Leer a DataFrames
 users_df = pd.DataFrame(usuarios_sheet.get_all_records())
