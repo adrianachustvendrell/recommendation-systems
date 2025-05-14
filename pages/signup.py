@@ -14,7 +14,8 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["google"], s
 
 @st.cache_resource
 def get_client():
-    return gspread.service_account()
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["google"], scope)
+    return gspread.authorize(creds)
 
 client = get_client()
 
