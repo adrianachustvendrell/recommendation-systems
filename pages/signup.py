@@ -33,8 +33,6 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # LEER CSV USUARIOS Y PREFERENCIAS
 # --------------------------------------
 
-
-# File where users will be stored
 USER_DATA_FILE = "info_usuarios.csv"
 PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
 ITEMS_DATA_FILE = 'items.csv'
@@ -47,33 +45,27 @@ cont_button = False
 
 def find_file(filename):
     """Search for the file in all directories starting from the root folder."""
-    for root, _, files in os.walk(os.getcwd()):  # Start searching from the current directory
+    for root, _, files in os.walk(os.getcwd()):
         if filename in files:
             return os.path.join(root, filename)
     return None
 
 
-
-# Locate the users.csv file dynamically
 user_file_path = find_file(USER_DATA_FILE)
 preference_user_file_path = find_file(PREFERENCE_USER_DATA_FILE)
 items_file_path = find_file(ITEMS_DATA_FILE)
 base_file_path = find_file(BASE_DATA_FILE)
-
 
 preference_df = pd.read_csv(preference_user_file_path)
 items_df = pd.read_csv(items_file_path)
 
 
 
-# Load the users file or create a new one
 if user_file_path:
     users_df = pd.read_csv(user_file_path)
 else:
     users_df = pd.DataFrame(columns=["id_usuario", "nombre_usuario", "edad", "sexo", "id_ocupacion", "hijos", "edad_hijo_menor", "edad_hijo_mayor", "ocupacion"])
-    user_file_path = os.path.join(os.getcwd(), USER_DATA_FILE)  # Save it in the current directory if not found
-
-
+    user_file_path = os.path.join(os.getcwd(), USER_DATA_FILE) 
 
 
 # --------------------------------------
@@ -81,28 +73,25 @@ else:
 # --------------------------------------
 
 def check_username_exists(username):
-    """Checks if a username is already in the DataFrame."""
     return username in users_df["nombre_usuario"].values
 
 
 def generate_user_id():
-    """Generates a new unique id_usuario."""
     if users_df.empty:
-        return 1  # Start from 1 if no users exist
+        return 1 
     else:
-        return users_df["id_usuario"].max() + 1  # Increment the highest ID
+        return users_df["id_usuario"].max() + 1 
 
 
 def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
     """Adds a new user to the DataFrame and saves it."""
-    new_id = generate_user_id()  # Generate a unique ID
-    id_ocupacion = job_options.index(job) + 1  # Assign a numerical ID for occupation (modify if needed)
+    new_id = generate_user_id()  
+    id_ocupacion = job_options.index(job) + 1  
 
-    # Ensure child ages are set correctly
     child1_age = int(child1_age) if children >= 1 else 0
     child2_age = int(child2_age) if children == 2 else 0
 
-    # Append new user to DataFrame
+    # Anañdir un nuevo usuario al df
     new_user = pd.DataFrame({
         "id_usuario": [new_id],
         "nombre_usuario": [username],
@@ -127,7 +116,6 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
 
 
 def add_preference(new_id, set_preferencias):
-
     global preference_user_file_path  # Asegurar la ruta correcta del CSV de preferencias
     
     # Crear un DataFrame con las preferencias
@@ -161,14 +149,17 @@ def add_preference(new_id, set_preferencias):
             prefs_df = pd.read_csv(preference_user_file_path)
             prefs_df = pd.concat([prefs_df, new_prefs_df], ignore_index=True)
         
+        else:
+            prefs_df = new_prefs_df 
         # Guardar en CSV
+        st.write("Escribiendo CSV en:", preference_user_file_path)
+        st.write("Existe archivo base:", os.path.exists(base_file_path))
         prefs_df.to_csv(preference_user_file_path, index=False)
 
 
 
 
 def add_base(new_id, selected_items):
-
     global base_file_path  # Asegurar la ruta correcta del CSV de preferencias
 
     # Crear un DataFrame con las preferencias
@@ -202,17 +193,6 @@ def toggle_info(i):
 
 
 
-
-
-
-
-
-
-# ---------------------------------
-# FORM DE REGISTRO
-# ---------------------------------
-
-
 # --------------------------------------
 # VARIABLES DE SESIÓN PARA NO PERDER DATOS
 # --------------------------------------
@@ -243,13 +223,11 @@ score_options = list(range(10, 110, 10))
 job_options = [
         "Fuerzas armadas", "Dirección de empresas", "Técnicos y profesionales", 
         "Empleados administrativos", "Vendedores", "Agricultores", 
-        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo o desocupado"
-    ]
+        "Artesanos", "Operadores de maquinaria", "Trabajadores no cualificados", "Inactivo o desocupado"]
 
 
 if st.button("🏠 Home"):
     st.switch_page("app.py") 
-
 
 
 # --------------------------------------
@@ -269,8 +247,6 @@ if st.session_state.step == "inicio":
 
 
     st.session_state.new_job = st.selectbox("Selecciona tu empleo", job_options, index=job_options.index(st.session_state.get("new_job", "Inactivo o desocupado")))
-
-
 
     children_options = {"No": 0, "Sí": 1}
     reverse_children_options = {v: k for k, v in children_options.items()}  # {0: 'Sin hijos', 1: 'Con hijos'}
@@ -486,8 +462,7 @@ elif st.session_state.step == "puntuacion":
 
             # Guardar la valoración seleccionada
             st.session_state.selected_item[elem] = selected_score
-
-                        
+           
             
     col1, col2 = st.columns(2)
     with col1:
@@ -502,13 +477,9 @@ elif st.session_state.step == "puntuacion":
 
 
 
-
-
 # -----------------------------------
 # OBTENER TIPO DE USUARIO DEMOGRÁFICO
 # -----------------------------------
-
-
 if st.session_state.new_age < 60:
     #tipo 2: viajero borrachera
     if st.session_state.new_age > 18 and (st.session_state.new_job == 'Trabajadores no cualificados' or st.session_state.new_job == 'Inactivo o desocupado') and st.session_state.new_children == 0:
@@ -532,16 +503,10 @@ else:
 
 
 
-
-
-
-
 # -----------------------------------
 # OBTENER VECINOS COLABORATIVO
 # -----------------------------------
 
-
-#usuarios = pd.DataFrame(users_df['id_usuario'])
 ratings_df = pd.read_csv(base_file_path)
 # Crear matriz usuario-item (usuarios en filas, ítems en columnas)
 user_item_matrix = ratings_df.pivot(index="id_usuario", columns="id_item", values="ratio")
@@ -573,14 +538,10 @@ top_neighbors = dict(sorted(similarities.items(), key=lambda x: x[1], reverse=Tr
 
 
 
-
-
-
 # ---------------------------------
 # CONTROLAR ERRORES FORMULARIO
 # ---------------------------------
 
-# Validate and store user
 if submit_button:
     if len(set(st.session_state.selected_item.values())) == 1:
         st.error("❌ Todos los ítems tienen la misma valoración. Cambia al menos uno.")
@@ -606,5 +567,3 @@ if submit_button:
         else:
             time.sleep(2)
             st.switch_page("pages/signin.py")
-
-
