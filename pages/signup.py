@@ -611,8 +611,9 @@ for user in user_item_matrix.index:
     common_items = user_item_matrix.loc[user].dropna().reindex(nuevo_usuario_series.index).dropna()
     nuevo_common = nuevo_usuario_series.reindex(common_items.index).dropna()
     
-    common_items = common_items.astype(float)
-    nuevo_common = nuevo_common.astype(float)
+    common_items = pd.to_numeric(common_items, errors="coerce")
+    nuevo_common = pd.to_numeric(nuevo_common, errors="coerce")
+
 
     if len(common_items) > 1:  # Se necesitan al menos 2 valores para Pearson
         if common_items.std() > 0 and nuevo_common.std() > 0:
