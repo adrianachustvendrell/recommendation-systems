@@ -75,9 +75,10 @@ PREFS_HOJA = "prefs_usuarios"
 BASE_HOJA = "puntuaciones_usuario_base"
 
 # Acceso a cada hoja
-usuarios_sheet = client.open(USUARIOS_HOJA).sheet1
-prefs_sheet = client.open(PREFS_HOJA).sheet1
-base_sheet = client.open(BASE_HOJA).sheet1
+usuarios_sheet = client.open("info_usuarios").worksheet("info_usuarios")  # o el nombre real de la pestaña
+prefs_sheet = client.open("prefs_usuarios").worksheet("prefs_usuarios")    # cambia "Hoja1" si tu pestaña tiene otro nombre
+base_sheet = client.open("puntuaciones_usuario_base").worksheet("puntuaciones_usuario_base")
+
 
 # Leer a DataFrames
 users_df = pd.DataFrame(usuarios_sheet.get_all_records())
