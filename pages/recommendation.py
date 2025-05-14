@@ -329,11 +329,14 @@ def obtener_items_seleccionados(selection):
         if selection[0]  == "Demográfico":
             diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
             print(diccionario, rating)
+            st.write(demografico(user_id))
         elif selection[0]  == "Basado en contenido":
             diccionario, rating = contenido_recomendacion(user_id)
+            st.write(contenido_recomendacion(user_id))
             print(diccionario, rating)
         elif selection[0]  == "Colaborativo":
             diccionario, rating = colaborativa_recomendacion(user_id)
+            st.write(st.write(colaborativa_recomendacion(user_id)))
             print(diccionario, rating)
         else:
             diccionario = {}
