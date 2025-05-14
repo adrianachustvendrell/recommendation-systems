@@ -23,7 +23,7 @@ client = get_client()
 BASE_HOJA = "puntuaciones_usuario_base"
 USUARIOS_HOJA = "info_usuarios"
 PREFS_HOJA = "prefs_usuarios"
-@st.cache_resource
+
 def load_google_sheets():
     usuarios_sheet = client.open("info_usuarios").sheet1
     prefs_sheet = client.open("prefs_usuarios").sheet1
