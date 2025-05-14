@@ -135,13 +135,20 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
     new_id = generate_user_id()
     id_ocupacion = job_options.index(job) + 1
 
+    # Asegurar que edades de hijos estén bien según cantidad de hijos
     child1_age = int(child1_age) if children >= 1 else 0
     child2_age = int(child2_age) if children == 2 else 0
 
+    # Lista con todos los campos
     new_user = [
         new_id, username, age, sex, id_ocupacion, children, child1_age, child2_age, job, tipo, top_neighbours
     ]
-    usuarios_sheet.append_row(new_user)
+
+    # Convertimos todo a string (evita errores de serialización JSON)
+    new_user_clean = [str(x) for x in new_user]
+
+    # Agregamos la fila a la hoja
+    usuarios_sheet.append_row(new_user_clean)
 
     return new_id
 
@@ -152,7 +159,7 @@ def add_preference(new_id, set_preferencias):
     for categoria, subcategoria, calificacion in set_preferencias:
         id_categoria = preference_df.loc[preference_df['categoria'] == categoria, 'id_categoria'].values
         id_subcategoria = preference_df.loc[preference_df['categoria'] == subcategoria, 'id_categoria'].values
-        
+
         if len(id_categoria) > 0:
             preferences_data.append([
                 new_id, id_categoria[0], calificacion, categoria
@@ -162,10 +169,9 @@ def add_preference(new_id, set_preferencias):
                 new_id, id_subcategoria[0], calificacion, subcategoria
             ])
     
-    # Añadir todas las filas a la hoja
+    # Añadir todas las filas a la hoja, asegurando que todo sea string
     for fila in preferences_data:
-        prefs_sheet.append_row(fila)
-
+        prefs_sheet.append_row([str(x) for x in fila])
 
 
 
@@ -176,7 +182,7 @@ def add_base(new_id, selected_items):
         items_data.append([new_id, idi, score])
 
     for fila in items_data:
-        base_sheet.append_row(fila)
+        base_sheet.append_row([str(x) for x in fila])
 
 
 
