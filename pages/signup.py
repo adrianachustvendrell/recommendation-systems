@@ -173,7 +173,6 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
     new_user_clean = [safe_str(x) for x in new_user]
 
     try:
-        st.write("👀 Intentando subir el usuario:", new_user_clean)
         usuarios_sheet.append_row(new_user_clean)
         return new_id
     except Exception as e:

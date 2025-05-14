@@ -106,15 +106,17 @@ with st.form(key="signin_form"):
 
 
 if submit_button:
-    # Find user in the dataset
-    user_row = user_data[user_data["nombre_usuario"] == username]
+    # Normalizar el nombre de usuario (eliminar espacios y convertir a minúsculas)
+    username_normalized = username.strip().lower()
+
+    # Comparar con los nombres de usuario en la base de datos (también normalizados)
+    user_row = user_data[user_data["nombre_usuario"].str.strip().str.lower() == username_normalized]
 
     if not user_row.empty:
         st.success(f"¡Bienvenido, {username}! ✅")
         st.session_state.user_logged_in = username
         time.sleep(2)
         st.switch_page("pages/recommendation.py")
-
     else:
         st.error("⚠️ Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
         st.page_link("pages/signup.py", label="👉 Regístrate aquí")
