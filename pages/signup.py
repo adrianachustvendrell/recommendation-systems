@@ -5,6 +5,14 @@ import time
 import random
 from PIL import Image
 from scipy.stats import pearsonr
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Autenticación Google
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["google"], scope)
+client = gspread.authorize(creds)
+
 
 # --------------------------------------
 # ESTILO PÁGINA
@@ -61,8 +69,21 @@ items_file_path = find_file(ITEMS_DATA_FILE)
 base_file_path = find_file(BASE_DATA_FILE)
 
 
-preference_df = pd.read_csv(preference_user_file_path)
-items_df = pd.read_csv(items_file_path)
+# Nombres de las hojas
+USUARIOS_HOJA = "info_usuarios"
+PREFS_HOJA = "prefs_usuarios"
+BASE_HOJA = "puntuaciones_usuario_base"
+
+# Acceso a cada hoja
+usuarios_sheet = client.open(USUARIOS_HOJA).sheet1
+prefs_sheet = client.open(PREFS_HOJA).sheet1
+base_sheet = client.open(BASE_HOJA).sheet1
+
+# Leer a DataFrames
+users_df = pd.DataFrame(usuarios_sheet.get_all_records())
+preference_df = pd.DataFrame(prefs_sheet.get_all_records())
+items_df = pd.read_csv(items_file_path)  # si no lo vas a modificar, no necesitas moverlo a Sheets
+
 
 
 
@@ -94,105 +115,51 @@ def generate_user_id():
 
 
 def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
-    """Adds a new user to the DataFrame and saves it."""
-    new_id = generate_user_id()  # Generate a unique ID
-    id_ocupacion = job_options.index(job) + 1  # Assign a numerical ID for occupation (modify if needed)
+    new_id = generate_user_id()
+    id_ocupacion = job_options.index(job) + 1
 
-    # Ensure child ages are set correctly
     child1_age = int(child1_age) if children >= 1 else 0
     child2_age = int(child2_age) if children == 2 else 0
 
-    # Append new user to DataFrame
-    new_user = pd.DataFrame({
-        "id_usuario": [new_id],
-        "nombre_usuario": [username],
-        "edad": [age],
-        "sexo": [sex],
-        "id_ocupacion": [id_ocupacion],
-        "hijos": [children],
-        "edad_hijo_menor": [child1_age],
-        "edad_hijo_mayor": [child2_age],
-        "ocupacion": [job],
-        "tipos_usuario": [tipo],
-        "vecinos":[top_neighbours]
-    })
-    
-    global users_df
-    users_df = pd.concat([users_df, new_user], ignore_index=True)
-    # Save to CSV
-    users_df.to_csv(user_file_path, index=False)
+    new_user = [
+        new_id, username, age, sex, id_ocupacion, children, child1_age, child2_age, job, tipo, top_neighbours
+    ]
+    usuarios_sheet.append_row(new_user)
 
     return new_id
 
 
 
 def add_preference(new_id, set_preferencias):
-
-    global preference_user_file_path  # Asegurar la ruta correcta del CSV de preferencias
-    
-    # Crear un DataFrame con las preferencias
     preferences_data = []
     for categoria, subcategoria, calificacion in set_preferencias:
-        # Buscar el ID de la categoría en el DataFrame
         id_categoria = preference_df.loc[preference_df['categoria'] == categoria, 'id_categoria'].values
         id_subcategoria = preference_df.loc[preference_df['categoria'] == subcategoria, 'id_categoria'].values
         
         if len(id_categoria) > 0:
-            preferences_data.append({
-                "id_usuario": new_id,
-                "id_categoria": id_categoria[0],  # Extraer el valor del array
-                "calificacion": calificacion,
-                "categoria": categoria
-            })
-
+            preferences_data.append([
+                new_id, id_categoria[0], calificacion, categoria
+            ])
         if len(id_subcategoria) > 0:
-            preferences_data.append({
-                "id_usuario": new_id,
-                "id_categoria": id_subcategoria[0],  # Extraer el valor del array
-                "calificacion": calificacion,
-                "categoria": subcategoria
-            })
+            preferences_data.append([
+                new_id, id_subcategoria[0], calificacion, subcategoria
+            ])
     
-    if preferences_data:
-        new_prefs_df = pd.DataFrame(preferences_data)
-        
-        # Cargar archivo existente o crear uno nuevo
-        if os.path.exists(preference_user_file_path):
-            prefs_df = pd.read_csv(preference_user_file_path)
-            prefs_df = pd.concat([prefs_df, new_prefs_df], ignore_index=True)
-        
-        # Guardar en CSV
-        prefs_df.to_csv(preference_user_file_path, index=False)
+    # Añadir todas las filas a la hoja
+    for fila in preferences_data:
+        prefs_sheet.append_row(fila)
 
 
 
 
 def add_base(new_id, selected_items):
-
-    global base_file_path  # Asegurar la ruta correcta del CSV de preferencias
-
-    # Crear un DataFrame con las preferencias
     items_data = []
     for elem, score in selected_items.items():
-        # Buscar el ID de la categoría en el DataFrame
         idi = items_df['id_item'][items_df['nombre_item'] == elem].iloc[0]
-        
-        items_data.append({
-                "id_usuario": new_id,
-                "id_item": idi,  
-                "ratio": score,
-            })
+        items_data.append([new_id, idi, score])
 
-    if items_data:
-        new_base_df = pd.DataFrame(items_data)
-        
-        # Cargar archivo existente o crear uno nuevo
-        if os.path.exists(base_file_path):
-            base_df = pd.read_csv(base_file_path)
-            base_df = pd.concat([base_df, new_base_df], ignore_index=True)
-        
-        # Guardar en CSV
-        base_df.to_csv(base_file_path, index=False)
+    for fila in items_data:
+        base_sheet.append_row(fila)
 
 
 
