@@ -511,6 +511,7 @@ elif st.session_state.step == "puntuacion":
 
             # Guardar la valoración seleccionada
             st.session_state.selected_item[elem] = selected_score
+            st.session_state.selected_item = {elem: safe_str(score) for elem, score in st.session_state.selected_item.items()}
 
                         
             
@@ -568,6 +569,7 @@ else:
 
 #usuarios = pd.DataFrame(users_df['id_usuario'])
 ratings_df = pd.read_csv(base_file_path)
+ratings_df = ratings_df.dropna(subset=["id_usuario", "id_item", "ratio"])  # Eliminar filas con NaN
 # Crear matriz usuario-item (usuarios en filas, ítems en columnas)
 user_item_matrix = ratings_df.pivot(index="id_usuario", columns="id_item", values="ratio")
 
