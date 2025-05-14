@@ -24,7 +24,7 @@ El repositorio contiene los siguientes directorios y archivos:
 
 ## Requisitos
 
-- Python 3.8 o superior
+- Python 3.12.7
 - Streamlit
 - Pandas
 - Numpy
