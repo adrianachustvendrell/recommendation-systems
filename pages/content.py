@@ -1,5 +1,40 @@
 import pandas as pd
 import numpy as np
+import gspread
+from google.oauth2.service_account import Credentials
+import streamlit as st
+# Alcances requeridos
+scope = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive",
+]
+
+@st.cache_resource
+def get_client():
+    # Usar las credenciales directamente desde st.secrets
+    creds = Credentials.from_service_account_info(st.secrets["google"], scopes=scope)
+    return gspread.authorize(creds)
+
+
+
+client = get_client()
+
+BASE_HOJA = "puntuaciones_usuario_base"
+USUARIOS_HOJA = "info_usuarios"
+PREFS_HOJA = "prefs_usuarios"
+@st.cache_resource
+def load_google_sheets():
+    usuarios_sheet = client.open("info_usuarios").sheet1
+    prefs_sheet = client.open("prefs_usuarios").sheet1
+    base_sheet = client.open("puntuaciones_usuario_base").sheet1
+    return usuarios_sheet, prefs_sheet, base_sheet
+
+usuarios_sheet, prefs_sheet, base_sheet = load_google_sheets()
+
+items = pd.read_csv("data/items.csv")
+usuarios = pd.DataFrame(usuarios_sheet.get_all_records())
+puntuaciones_usuario = pd.DataFrame(base_sheet.get_all_records())
+preferencias_usuario = pd.DataFrame(prefs_sheet.get_all_records())
 
 def reserva(n, excluidos):
     """
@@ -28,9 +63,7 @@ def calcular_score(adec, pref, count):
 
 
 items = pd.read_csv("data/items.csv")
-usuarios = pd.read_csv("data/info_usuarios.csv")
-puntuaciones_usuario = pd.read_csv("data/puntuaciones_usuario_base.csv")
-preferencias_usuario = pd.read_csv("data/prefs_usuarios.csv")
+
 
 def contenido_recomendacion(usuario):
     """
