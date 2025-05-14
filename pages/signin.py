@@ -104,6 +104,7 @@ with st.form(key="signin_form"):
 if submit_button:
     # Normalizar el nombre de usuario (eliminar espacios y convertir a minúsculas)
     username_normalized = username.strip().lower()
+    st.write(f'Usuario:{username_normalized}')
 
     # Comparar con los nombres de usuario en la base de datos (también normalizados)
     user_row = user_data[user_data["nombre_usuario"].str.strip().str.lower() == username_normalized]
