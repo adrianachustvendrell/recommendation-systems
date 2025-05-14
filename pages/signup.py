@@ -5,18 +5,18 @@ import time
 import random
 from PIL import Image
 from scipy.stats import pearsonr
-import gspread
 from google.oauth2.service_account import Credentials
+import gspread
 
-
-# Autenticación Google
-scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+scope = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive',
+]
 
 @st.cache_resource
 def get_client():
     creds = Credentials.from_service_account_info(st.secrets["google"], scopes=scope)
-    return gspread.authorize(creds)
-
+    return gspread.Client(auth=creds)
 
 client = get_client()
 
