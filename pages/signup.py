@@ -99,6 +99,7 @@ usuarios_sheet, prefs_sheet, base_sheet = load_google_sheets()
 # Leer a DataFrames
 users_df = pd.DataFrame(usuarios_sheet.get_all_records())
 preference_df = pd.DataFrame(prefs_sheet.get_all_records())
+ratings_df = pd.DataFrame(base_sheet.get_all_records())
 items_df = pd.read_csv(items_file_path)  # si no lo vas a modificar, no necesitas moverlo a Sheets
 
 
@@ -568,8 +569,6 @@ else:
 
 
 #usuarios = pd.DataFrame(users_df['id_usuario'])
-ratings_df = pd.read_csv(base_file_path)
-print(ratings_df)
 ratings_df = ratings_df.dropna(subset=["id_usuario", "id_item", "ratio"])  # Eliminar filas con NaN
 # Crear matriz usuario-item (usuarios en filas, ítems en columnas)
 user_item_matrix = ratings_df.pivot(index="id_usuario", columns="id_item", values="ratio")
