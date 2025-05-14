@@ -16,7 +16,10 @@ scope = [
 @st.cache_resource
 def get_client():
     creds = Credentials.from_service_account_info(st.secrets["google"], scopes=scope)
-    return gspread.Client(auth=creds)
+    client = gspread.Client(auth=creds)
+    client.session.headers.update({'Accept': 'application/json'})
+    return client
+
 
 client = get_client()
 
