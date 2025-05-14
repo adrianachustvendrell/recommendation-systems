@@ -4,7 +4,24 @@ import pandas as pd
 from pathlib import Path
 import time
 import os
+import gspread
+from google.oauth2.service_account import Credentials
 
+# Alcances requeridos
+scope = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive",
+]
+
+@st.cache_resource
+def get_client():
+    # Usar las credenciales directamente desde st.secrets
+    creds = Credentials.from_service_account_info(st.secrets["google"], scopes=scope)
+    return gspread.authorize(creds)
+
+
+
+client = get_client()
 
 # --------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
@@ -34,7 +51,11 @@ if "new_username" not in st.session_state:
 # LEER CSV
 # --------------------------------
 
-USER_DATA_FILE = "info_usuarios.csv"
+USUARIOS_HOJA = "info_usuarios"
+@st.cache_resource
+def load_google_sheets():
+    usuarios_sheet = client.open("info_usuarios").sheet1
+    return usuarios_sheet
 
 def find_file(filename):
     """Search for the file in all directories starting from the root folder."""
@@ -44,8 +65,8 @@ def find_file(filename):
     return None
 
 # Locate the users.csv file dynamically
-user_file_path = find_file(USER_DATA_FILE)
-user_data = pd.read_csv(user_file_path)
+usuarios_sheet = load_google_sheets()
+users_data = pd.DataFrame(usuarios_sheet.get_all_records())
 
 
 if st.button("🏠 Home"):
