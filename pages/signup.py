@@ -90,17 +90,8 @@ def load_google_sheets():
 usuarios_sheet, prefs_sheet, base_sheet = load_google_sheets()
 
 # Leer a DataFrames
-@st.cache_data
-def load_users_df(sheet):
-    return pd.DataFrame(sheet.get_all_records())
-
-@st.cache_data
-def load_prefs_df(sheet):
-    return pd.DataFrame(sheet.get_all_records())
-
-users_df = load_users_df(usuarios_sheet)
-preference_df = load_prefs_df(prefs_sheet)
-
+users_df = pd.DataFrame(usuarios_sheet.get_all_records())
+preference_df = pd.DataFrame(prefs_sheet.get_all_records())
 items_df = pd.read_csv(items_file_path)  # si no lo vas a modificar, no necesitas moverlo a Sheets
 
 
