@@ -4,7 +4,7 @@
 
 El objetivo del proyecto es ofrecer recomendaciones personalizadas de lugares y actividades en la ciudad de Valencia, utilizando diferentes enfoques de recomendación, incluyendo estrategias individuales y grupales.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://<your-custom-subdomain>.streamlit.app](https://descubre-valencia.streamlit.app/))
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://descubre-valencia.streamlit.app/](https://descubre-valencia.streamlit.app/))
 
 ## Estructura del repositorio
 
