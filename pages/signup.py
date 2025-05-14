@@ -11,7 +11,13 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Autenticación Google
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["google"], scope)
-client = gspread.authorize(creds)
+
+@st.cache_resource
+def get_client():
+    return gspread.service_account()
+
+client = get_client()
+
 
 
 # --------------------------------------
