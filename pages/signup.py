@@ -178,7 +178,6 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
         return new_id
     except Exception as e:
         st.error(f"❌ Error en append_row (usuario): {e}")
-        st.write("🔍 Datos del usuario:", new_user_clean)
         return None
 
 

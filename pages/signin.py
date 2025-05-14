@@ -66,7 +66,7 @@ def find_file(filename):
 
 # Locate the users.csv file dynamically
 usuarios_sheet = load_google_sheets()
-users_data = pd.DataFrame(usuarios_sheet.get_all_records())
+user_data = pd.DataFrame(usuarios_sheet.get_all_records())
 
 
 if st.button("🏠 Home"):
