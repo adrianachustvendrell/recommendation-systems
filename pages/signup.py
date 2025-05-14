@@ -131,42 +131,38 @@ def generate_user_id():
         return users_df["id_usuario"].max() + 1  # Increment the highest ID
 
 
-def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
-    import numpy as np
+import numpy as np
+import json
 
+def safe_str(x):
+    if isinstance(x, (np.integer, np.floating)):
+        return str(x.item())
+    elif isinstance(x, (dict, list)):
+        return json.dumps(x)  # convierte listas o dicts a string JSON
+    elif x is None:
+        return ""
+    else:
+        return str(x)
+
+def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
     new_id = generate_user_id()
     id_ocupacion = job_options.index(job) + 1
 
-    # Asegurar edades de hijos
+    # Asegurar edades
     child1_age = int(child1_age) if children >= 1 else 0
     child2_age = int(child2_age) if children == 2 else 0
 
-    # Convertir top_neighbours en string plano si es lista o dict
-    if isinstance(top_neighbours, (list, dict)):
-        top_neighbours = str(top_neighbours)
-
-    # Convertir tipos no estándar (como numpy.int64) a int o str
-    def clean(x):
-        if isinstance(x, (np.integer, np.floating)):
-            return str(x.item())
-        elif x is None:
-            return ""
-        else:
-            return str(x)
-
     new_user = [
-        new_id, username, age, sex, id_ocupacion, children,
-        child1_age, child2_age, job, tipo, top_neighbours
+        new_id, username, age, sex, id_ocupacion, children, child1_age, child2_age, job, tipo, top_neighbours
     ]
-    
-    new_user_clean = [clean(x) for x in new_user]
 
-    # Debug opcional:
-    # st.write("Datos a guardar:", new_user_clean)
+    # Usamos safe_str para asegurarnos que todo sea serializable
+    new_user_clean = [safe_str(x) for x in new_user]
 
     usuarios_sheet.append_row(new_user_clean)
 
     return new_id
+
 
 
 
