@@ -134,15 +134,23 @@ def generate_user_id():
 import numpy as np
 import json
 
+import numpy as np
+import json
+
 def safe_str(x):
-    if isinstance(x, (np.integer, np.floating)):
-        return str(x.item())
-    elif isinstance(x, (dict, list)):
-        return json.dumps(x)  # convierte listas o dicts a string JSON
-    elif x is None:
-        return ""
-    else:
+    try:
+        if isinstance(x, (float, int, np.integer, np.floating)):
+            if isinstance(x, float) and (np.isnan(x) or x is None):
+                return ""
+            return str(x)
+        elif isinstance(x, dict):
+            return json.dumps(x)  # convierte dict a string JSON
+        elif x is None:
+            return ""
         return str(x)
+    except Exception as e:
+        return f"ERROR_CONV: {repr(x)}"
+
 
 def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
     new_id = generate_user_id()
