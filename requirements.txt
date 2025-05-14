@@ -17,6 +17,7 @@ joblib==1.4.2
 tqdm==4.66.5
 plotly==6.0.0
 streamlit-folium==0.24.0
+streamlit-javascript==0.1.5
 
 # Para visualizaciones o procesamiento adicional
 seaborn==0.13.2
