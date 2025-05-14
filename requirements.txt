@@ -1,6 +1,6 @@
 
 # requirements.txt para la app 'Descubre Valencia'
-streamlit==1.35.0
+streamlit==1.45.1
 streamlit_carousel==1.1.2
 pandas==2.2.2
 numpy==1.26.4
