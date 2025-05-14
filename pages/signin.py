@@ -120,3 +120,4 @@ if submit_button:
     else:
         st.error("⚠️ Usuario no encontrado. Por favor, regístrate y vuelve a iniciar sesión.")
         st.page_link("pages/signup.py", label="👉 Regístrate aquí")
+
