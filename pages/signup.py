@@ -153,6 +153,7 @@ def safe_str(x):
 
 
 def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, top_neighbours):
+    vecinos_str = ";".join(f"{k}:{round(float(v), 4)}" for k, v in top_neighbours.items())
     new_id = generate_user_id()
     id_ocupacion = job_options.index(job) + 1
 
@@ -161,7 +162,7 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
     child2_age = int(child2_age) if children == 2 else 0
 
     new_user = [
-        new_id, username, age, sex, id_ocupacion, children, child1_age, child2_age, job, tipo, top_neighbours
+        new_id, username, age, sex, id_ocupacion, children, child1_age, child2_age, job, tipo, vecinos_str
     ]
 
     # Usamos safe_str para asegurarnos que todo sea serializable
