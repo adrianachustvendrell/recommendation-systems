@@ -615,10 +615,16 @@ for user in user_item_matrix.index:
     common_items = pd.to_numeric(common_items, errors="coerce").dropna()
     nuevo_common = pd.to_numeric(nuevo_common, errors="coerce").dropna()
 
-    # Ahora puedes calcular el std sin problema
-    if common_items.std(skipna=True) > 0 and nuevo_common.std(skipna=True) > 0:
-        corr, _ = pearsonr(common_items, nuevo_common)
-        similarities[user] = round(float(corr), 6)
+    # Verificar que no estén vacíos antes de calcular std
+    if not common_items.empty and not nuevo_common.empty:
+        # Ahora puedes calcular el std sin problema
+        if common_items.std(skipna=True) > 0 and nuevo_common.std(skipna=True) > 0:
+            corr, _ = pearsonr(common_items, nuevo_common)
+            similarities[user] = round(float(corr), 6)
+    else:
+        # Si alguna de las series está vacía, asignamos un valor de similitud nula (por ejemplo, 0)
+        similarities[user] = 0
+
 
 # Ordenar por similitud y seleccionar los 8 más cercanos
 top_neighbors = dict(sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:8])
