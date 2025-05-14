@@ -52,10 +52,7 @@ if "new_username" not in st.session_state:
 # --------------------------------
 
 USUARIOS_HOJA = "info_usuarios"
-@st.cache_resource
-def load_google_sheets():
-    usuarios_sheet = client.open("info_usuarios").sheet1
-    return usuarios_sheet
+usuarios_sheet = client.open("info_usuarios").sheet1
 
 def find_file(filename):
     """Search for the file in all directories starting from the root folder."""
@@ -65,7 +62,6 @@ def find_file(filename):
     return None
 
 # Locate the users.csv file dynamically
-usuarios_sheet = load_google_sheets()
 user_data = pd.DataFrame(usuarios_sheet.get_all_records())
 
 
