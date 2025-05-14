@@ -5,20 +5,22 @@ import time
 import random
 from PIL import Image
 from scipy.stats import pearsonr
-from google.oauth2.service_account import Credentials
+import streamlit as st
 import gspread
+from google.oauth2.service_account import Credentials
 
+# Alcances requeridos
 scope = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive',
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive",
 ]
 
 @st.cache_resource
 def get_client():
+    # Usar las credenciales directamente desde st.secrets
     creds = Credentials.from_service_account_info(st.secrets["google"], scopes=scope)
-    client = gspread.Client(auth=creds)
-    client.session.headers.update({'Accept': 'application/json'})
-    return client
+    return gspread.authorize(creds)
+
 
 
 client = get_client()
