@@ -43,10 +43,10 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 
 # File where users will be stored
-USER_DATA_FILE = "info_usuarios"
-PREFERENCE_USER_DATA_FILE = 'prefs_usuarios'
-ITEMS_DATA_FILE = 'items'
-BASE_DATA_FILE = 'puntuaciones_usuario_base'
+USER_DATA_FILE = "info_usuarios.csv"
+PREFERENCE_USER_DATA_FILE = 'prefs_usuarios.csv'
+ITEMS_DATA_FILE = 'items.csv'
+BASE_DATA_FILE = 'puntuaciones_usuario_base.csv'
 submit_button = False
 preferencias_button = False
 cont_button = False
