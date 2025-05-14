@@ -3,7 +3,7 @@ import time
 from groq import Groq
 
 client = Groq(
-    api_key='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',
+    api_key='YOUR_API_KEY',
 )
 
 # Function to generate description for an item
