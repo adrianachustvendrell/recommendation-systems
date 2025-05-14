@@ -610,15 +610,15 @@ for user in user_item_matrix.index:
     # Filtrar ítems comunes entre el nuevo usuario y el usuario existente
     common_items = user_item_matrix.loc[user].dropna().reindex(nuevo_usuario_series.index).dropna()
     nuevo_common = nuevo_usuario_series.reindex(common_items.index).dropna()
-    
-    common_items = pd.to_numeric(common_items, errors="coerce")
-    nuevo_common = pd.to_numeric(nuevo_common, errors="coerce")
 
+    # Convierte ambos a numéricos, ignorando errores de conversión
+    common_items = pd.to_numeric(common_items, errors="coerce").dropna()
+    nuevo_common = pd.to_numeric(nuevo_common, errors="coerce").dropna()
 
-    if len(common_items) > 1:  # Se necesitan al menos 2 valores para Pearson
-        if common_items.std() > 0 and nuevo_common.std() > 0:
-            corr, _ = pearsonr(common_items, nuevo_common)
-            similarities[user] = round(float(corr), 6)
+    # Ahora puedes calcular el std sin problema
+    if common_items.std(skipna=True) > 0 and nuevo_common.std(skipna=True) > 0:
+        corr, _ = pearsonr(common_items, nuevo_common)
+        similarities[user] = round(float(corr), 6)
 
 # Ordenar por similitud y seleccionar los 8 más cercanos
 top_neighbors = dict(sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:8])
