@@ -159,9 +159,17 @@ def add_user(username, age, sex, job, children, child1_age, child2_age, tipo, to
     # Usamos safe_str para asegurarnos que todo sea serializable
     new_user_clean = [safe_str(x) for x in new_user]
 
-    usuarios_sheet.append_row(new_user_clean)
+    try:
+        st.write("👀 Intentando subir el usuario:", new_user_clean)
+        usuarios_sheet.append_row(new_user_clean)
+        return new_id
+    except Exception as e:
+        st.error(f"❌ Error en append_row (usuario): {e}")
+        st.write("🔍 Datos del usuario:", new_user_clean)
+        return None
 
-    return new_id
+
+    
 
 
 
@@ -569,8 +577,6 @@ else:
 
 #usuarios = pd.DataFrame(users_df['id_usuario'])
 ratings_df = pd.read_csv(base_file_path)
-st.write("Columns in ratings_df:", ratings_df.columns.tolist())
-st.write(ratings_df.head())
 
 # Crear matriz usuario-item (usuarios en filas, ítems en columnas)
 user_item_matrix = ratings_df.pivot(index="id_usuario", columns="id_item", values="ratio")
