@@ -134,12 +134,6 @@ def generate_user_id():
 import numpy as np
 import json
 
-import numpy as np
-import json
-
-import numpy as np
-import json
-
 
 def safe_str(x):
     try:
@@ -613,6 +607,8 @@ for user in user_item_matrix.index:
     # Convierte ambos a numéricos, ignorando errores de conversión
     common_items = pd.to_numeric(common_items, errors="coerce").dropna()
     nuevo_common = pd.to_numeric(nuevo_common, errors="coerce").dropna()
+
+    print(common_items, nuevo_common)
 
     # Verificar que no estén vacíos antes de calcular std
     if not common_items.empty and not nuevo_common.empty:
