@@ -608,8 +608,6 @@ for user in user_item_matrix.index:
     common_items = pd.to_numeric(common_items, errors="coerce").dropna()
     nuevo_common = pd.to_numeric(nuevo_common, errors="coerce").dropna()
 
-    print(common_items, nuevo_common)
-
     # Verificar que no estén vacíos antes de calcular std
     if not common_items.empty and not nuevo_common.empty:
         # Ahora puedes calcular el std sin problema
