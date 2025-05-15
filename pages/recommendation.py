@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
+
 import os
 from PIL import Image
 import pandas as pd
@@ -16,7 +18,6 @@ from pages.collaborative import colaborativa_recomendacion
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------------
 
-st.set_page_config(page_title="Descubre Valencia", page_icon="🚀", layout="wide")
 st.cache_data.clear()
 
 # Inject JavaScript to get page width
