@@ -328,13 +328,13 @@ def get_result_3(d1, r1, d2, r2, d3, r3, alpha, beta, gamma):
 def obtener_items_seleccionados(selection):
     if len(selection) == 1:
         if selection[0]  == "Demográfico":
-            st.write(demografico(user_id))
+            #st.write(demografico(user_id))
             diccionario, rating = demografico(user_id)  # Suponiendo que esta función devuelve un diccionario de {id_item: score}
         elif selection[0]  == "Basado en contenido":
-            st.write(contenido_recomendacion(user_id))
+            #st.write(contenido_recomendacion(user_id))
             diccionario, rating = contenido_recomendacion(user_id)
         elif selection[0]  == "Colaborativo":
-            st.write(colaborativa_recomendacion(user_id))
+            #st.write(colaborativa_recomendacion(user_id))
             diccionario, rating = colaborativa_recomendacion(user_id)
             
         else:
