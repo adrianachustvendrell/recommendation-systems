@@ -1,5 +1,6 @@
 # signup.py
 import streamlit as st
+st.set_page_config(page_title="Iniciar sesión", page_icon="🚀", layout="wide")
 import pandas as pd
 from pathlib import Path
 import time
@@ -27,7 +28,7 @@ client = get_client()
 # CONFIGURACIÓN DE LA PÁGINA
 # --------------------------------
 
-st.set_page_config(page_title="Iniciar sesión", page_icon="🚀", layout="wide")
+
 
 custom_css = """
     <style>
