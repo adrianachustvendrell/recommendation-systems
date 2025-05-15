@@ -213,5 +213,4 @@ def demografico(usuario):
     
 
 
-    st.write(recomendaciones_finales)
     return recomendaciones_finales, ratings
