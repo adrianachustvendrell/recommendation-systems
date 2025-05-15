@@ -36,10 +36,12 @@ items = pd.read_csv("data/items.csv")
 usuarios = pd.DataFrame(usuarios_sheet.get_all_records())
 puntuaciones_usuario = pd.DataFrame(base_sheet.get_all_records())
 
-columnas_a_convertir = [0, 3, 5, 6, 7, 8]
-usuarios.iloc[:, columnas_a_convertir] = usuarios.iloc[:, columnas_a_convertir].astype(int)
 
-
+try:
+    columnas_a_convertir = [0, 3, 5, 6, 7, 8]
+    usuarios.iloc[:, columnas_a_convertir] = usuarios.iloc[:, columnas_a_convertir].astype(int)
+except:
+    pass
 
 
 def reserva(n, excluidos):
