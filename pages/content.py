@@ -56,9 +56,27 @@ def calcular_score(adec, pref, count):
     - pref (preferencia del usuario por la categoría, de 0 a 100, con más peso que adec)
     - count (número de visitas, sumado directamente)
     """
-    score = (0.4 * adec + 0.6 * pref + count)  # Más peso a pref, se suma count
-    score_normalizado = (score / (100 + max(count, 1))) * 100  # Normalización a [0,100]
+
+    try:
+        adec = float(adec)
+    except (ValueError, TypeError):
+        adec = 0.0
+
+    try:
+        pref = float(pref)
+    except (ValueError, TypeError):
+        pref = 0.0
+
+    try:
+        count = float(count)
+    except (ValueError, TypeError):
+        count = 0.0
+
+    score = (0.4 * adec + 0.6 * pref + count)
+    score_normalizado = (score / (100 + max(count, 1))) * 100
+
     return min(max(score_normalizado, 0), 100)
+
 
 
 
