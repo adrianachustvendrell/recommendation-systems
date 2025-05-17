@@ -93,17 +93,14 @@ def load_google_sheets():
     usuarios_sheet = client.open("info_usuarios").sheet1
     prefs_sheet = client.open("prefs_usuarios").sheet1
     base_sheet = client.open("puntuaciones_usuario_base").sheet1
+    return usuarios_sheet, prefs_sheet, base_sheet
 
-    # Leer a DataFrames
-    users_df = pd.DataFrame(usuarios_sheet.get_all_records())
-    preference_df = pd.DataFrame(prefs_sheet.get_all_records())
-    items_df = pd.read_csv(items_file_path)  # si no lo vas a modificar, no necesitas moverlo a Sheets
+usuarios_sheet, prefs_sheet, base_sheet = load_google_sheets()
 
-    return users_df, preference_df, items_df
-
-users_df, preference_df, items_df = load_google_sheets()
-
-
+# Leer a DataFrames
+users_df = pd.DataFrame(usuarios_sheet.get_all_records())
+preference_df = pd.DataFrame(prefs_sheet.get_all_records())
+items_df = pd.read_csv(items_file_path)  # si no lo vas a modificar, no necesitas moverlo a Sheets
 
 
 
