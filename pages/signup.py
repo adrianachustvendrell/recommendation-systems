@@ -512,14 +512,14 @@ elif st.session_state.step == "puntuacion":
 
                     st.write(fila_desc)
 
-            
+            import random
             # Selectbox para la valoración
             selected_score = st.selectbox(
                 label="Selecciona una valoración",  # Se necesita, pero será ocultado
                 options=score_options,
                 key=f"{elem}_select",
                 label_visibility="collapsed",
-                index = score_options.index(100)
+                index = score_options.index(random.choice(range(10, 101, 10)))
             )
 
             st.markdown('\n\n\n')
