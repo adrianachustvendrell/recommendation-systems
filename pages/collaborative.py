@@ -40,6 +40,28 @@ usuarios = pd.DataFrame(usuarios_sheet.get_all_records())
 puntuaciones_usuario = pd.DataFrame(base_sheet.get_all_records())
 preferencias_usuario = pd.DataFrame(prefs_sheet.get_all_records())
 
+import ast
+
+def parse_vecinos(vecinos_str):
+    try:
+        # Intentar parsear como diccionario válido en Python
+        vecinos = ast.literal_eval(vecinos_str)
+        if isinstance(vecinos, dict):
+            return {int(k): float(v) for k, v in vecinos.items()}
+    except (ValueError, SyntaxError):
+        pass  # si falla, pasamos al siguiente intento
+
+    # Intentar parsear el formato tipo '123:1.0;159:1.0'
+    vecinos = {}
+    for par in vecinos_str.split(";"):
+        if ":" in par:
+            try:
+                k, v = par.split(":")
+                vecinos[int(k)] = float(v)
+            except ValueError:
+                continue  # ignorar pares mal formateados
+    return vecinos
+
 
 
 def reserva(n, excluidos):
@@ -84,7 +106,7 @@ def colaborativa_recomendacion(usuario):
     
     # Tomar los vecinos
     vecinos_str = usuario_data['vecinos'].iloc[0]
-    vecinos_raw = ast.literal_eval(vecinos_str)
+    vecinos_raw = parse_vecinos(vecinos_str)
     vecinos = {int(k): v for k, v in vecinos_raw.items()}
 
     id_usuario = int(usuario_data['id_usuario'].iloc[0])
